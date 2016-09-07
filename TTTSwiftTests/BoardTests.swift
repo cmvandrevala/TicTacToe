@@ -13,57 +13,53 @@ import Nimble
 
 class BoardTests: QuickSpec {
     override func spec() {
-        describe("the initial board") {
+        describe("the board") {
             
-            it("has nine cells") {
+            it("starts off with no recorded marks") {
                 let board = Board()
-                expect(board.marks.count).to(equal(9))
+                let noMarks = ["", "", "", "", "", "", "", "", ""]
+                expect(board.current_marks()).to(equal(noMarks))
             }
             
-            it("the cells have a default mark of nil") {
+            it("a cell can be taken by 'player 1'") {
                 let board = Board()
-                expect(board.marks).to(equal([nil, nil, nil, nil, nil, nil, nil, nil, nil]))
+                board.move(5, player: "player 1")
+                expect(board.current_marks()).to(equal(["", "", "", "", "", "player 1", "", "", ""]))
             }
             
-            it("a cell can be taken by player 1") {
+            it("a cell can be taken by 'player two'") {
                 let board = Board()
-                board.move(1, space: 5)
-                expect(board.marks).to(equal([nil, nil, nil, nil, 1, nil, nil, nil, nil]))
-            }
-            
-            it("multiple cells can be taken by player 1") {
-                let board = Board()
-                board.move(1, space: 1)
-                board.move(1, space: 3)
-                board.move(1, space: 8)
-                expect(board.marks).to(equal([1, nil, 1, nil, nil, nil, nil, 1, nil]))
-            }
-            
-            it("a cell can be taken by player 2") {
-                let board = Board()
-                board.move(2, space: 9)
-                expect(board.marks).to(equal([nil, nil, nil, nil, nil, nil, nil, nil, 2]))
+                board.move(2, player: "player two")
+                expect(board.current_marks()).to(equal(["", "", "player two", "", "", "", "", "", ""]))
             }
             
             it("multiple cells can be taken by multiple players") {
                 let board = Board()
-                board.move(1, space: 3)
-                board.move(2, space: 4)
-                expect(board.marks).to(equal([nil, nil, 1, 2, nil, nil, nil, nil, nil]))
+                board.move(1, player: "p1")
+                board.move(2, player: "p2")
+                board.move(3, player: "p3")
+                expect(board.current_marks()).to(equal(["", "p1", "p2", "p3", "", "", "", "", ""]))
             }
             
-            it("rejects a move in a taken spot by the same player") {
+            it("does not allow players to make moves in the same spot twice") {
                 let board = Board()
-                board.move(1, space: 5)
-                board.move(1, space: 5)
-                expect(board.marks).to(equal([nil, nil, nil, nil, 1, nil, nil, nil, nil]))
+                board.move(7, player: "X")
+                board.move(7, player: "O")
+                expect(board.current_marks()).to(equal(["", "", "", "", "", "", "", "X", ""]))
             }
             
-            it("rejects a move in a taken spot by a different player") {
+            it("does not allow a move in an index greater than 8") {
                 let board = Board()
-                board.move(1, space: 5)
-                board.move(2, space: 5)
-                expect(board.marks).to(equal([nil, nil, nil, nil, 1, nil, nil, nil, nil]))
+                let noMarks = ["", "", "", "", "", "", "", "", ""]
+                board.move(14, player: "Happy")
+                expect(board.current_marks()).to(equal(noMarks))
+            }
+            
+            it("does not allow a move in an index less than 0") {
+                let board = Board()
+                let noMarks = ["", "", "", "", "", "", "", "", ""]
+                board.move(-1, player: "Sad")
+                expect(board.current_marks()).to(equal(noMarks))
             }
 
         }

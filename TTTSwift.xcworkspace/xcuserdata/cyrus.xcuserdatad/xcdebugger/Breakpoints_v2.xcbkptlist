@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TTTSwiftTests/BoardTests.swift"
-            timestampString = "494888567.920556"
+            timestampString = "494951900.282643"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "30"
-            endingLineNumber = "30"
+            startingLineNumber = "26"
+            endingLineNumber = "26"
             landmarkName = "spec()"
             landmarkType = "5">
          </BreakpointContent>
