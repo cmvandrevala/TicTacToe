@@ -10,30 +10,30 @@ public class Rules {
     
     public init() {}
     
-    public func gameIsOver(currentMarks: [String]) -> Bool {
-        if winnerExists(currentMarks) {
+    public func gameIsOver(board: Board) -> Bool {
+        if winnerExists(board) {
             return true
-        } else if tieExists(currentMarks) {
+        } else if tieExists(board) {
             return true
         } else {
             return false
         }
     }
     
-    public func winnerExists(currentMarks: [String]) -> Bool {
+    private func winnerExists(board: Board) -> Bool {
         for combo in winningCombinations() {
-            if marksMatchCombo(currentMarks, potentialCombination: combo) {
+            if marksMatchCombo(board.current_marks(), potentialCombination: combo) {
                 return true
             }
         }
         return false
     }
     
-    public func tieExists(currentMarks: [String]) -> Bool {
-        if winnerExists(currentMarks) {
+    private func tieExists(board: Board) -> Bool {
+        if winnerExists(board) {
             return false
         }
-        for mark in currentMarks {
+        for mark in board.current_marks() {
             if mark == "" {
                 return false
             }
