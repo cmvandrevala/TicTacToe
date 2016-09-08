@@ -1,11 +1,3 @@
-//
-//  Rules.swift
-//  TTTSwift
-//
-//  Created by Cyrus Vandrevala on 9/7/16.
-//  Copyright © 2016 Cyrus Vandrevala. All rights reserved.
-//
-
 public class Rules {
     
     public init() {}
@@ -22,7 +14,7 @@ public class Rules {
     
     private func winnerExists(board: Board) -> Bool {
         for combo in winningCombinations() {
-            if marksMatchCombo(board.current_marks(), potentialCombination: combo) {
+            if marksMatchCombo(board.currentMarks(), potentialCombination: combo) {
                 return true
             }
         }
@@ -33,7 +25,7 @@ public class Rules {
         if winnerExists(board) {
             return false
         }
-        for mark in board.current_marks() {
+        for mark in board.currentMarks() {
             if mark == "" {
                 return false
             }

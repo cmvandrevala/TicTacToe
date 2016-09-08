@@ -4,26 +4,26 @@ public class Board {
     
     public init() {}
 
-    public func current_marks() -> [String] {
-        var marks_in_cells = ["", "", "", "", "", "", "", "", ""]
+    public func currentMarks() -> [String] {
+        var marksInCells = ["", "", "", "", "", "", "", "", ""]
         for (cell, player) in marks {
-            marks_in_cells[cell] = player
+            marksInCells[cell] = player
         }
-        return marks_in_cells
+        return marksInCells
     }
     
     public func forEachMarkByRow(f: String -> String) -> [[String]] {
-        let u = current_marks().map(f)
+        let u = currentMarks().map(f)
         return [[u[0], u[1], u[2]], [u[3], u[4], u[5]], [u[6], u[7], u[8]]]
     }
 
     public func move(cell: Int, player: String) {
-        if valid_cell(cell) && empty_cell(cell) {
+        if validCell(cell) && emptyCell(cell) {
             marks[cell] = player
         }
     }
     
-    private func valid_cell(cell: Int) -> Bool {
+    private func validCell(cell: Int) -> Bool {
         switch cell {
         case let x where x < 0:
             return false
@@ -34,9 +34,9 @@ public class Board {
         }
     }
     
-    private func empty_cell(cell: Int) -> Bool {
-        for (potential_occupied_cell,_) in marks {
-            if potential_occupied_cell == cell {
+    private func emptyCell(cell: Int) -> Bool {
+        for (potentialOccupiedCell,_) in marks {
+            if potentialOccupiedCell == cell {
                 return false
             }
         }

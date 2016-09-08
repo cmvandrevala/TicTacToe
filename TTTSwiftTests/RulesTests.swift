@@ -1,11 +1,3 @@
-//
-//  RulesTests.swift
-//  TTTSwift
-//
-//  Created by Cyrus Vandrevala on 9/7/16.
-//  Copyright © 2016 Cyrus Vandrevala. All rights reserved.
-//
-
 import Quick
 import Nimble
 import TTTSwift

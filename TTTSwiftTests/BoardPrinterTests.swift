@@ -1,11 +1,3 @@
-//
-//  BoardPrinterTests.swift
-//  TTTSwift
-//
-//  Created by Cyrus Vandrevala on 9/8/16.
-//  Copyright © 2016 Cyrus Vandrevala. All rights reserved.
-//
-
 import Quick
 import Nimble
 import TTTSwift
@@ -43,7 +35,7 @@ class BoardPrinterTests: QuickSpec {
                 board.move(1, player: "O")
                 board.move(2, player: "X")
                 board.move(0, player: "O")
-                print(board.current_marks())
+                print(board.currentMarks())
                 let output = " O | O | X \n===========\n   |   |   \n===========\n   |   |   "
                 expect(printer.formattedBoardForConsole(board)).to(equal(output))
             }

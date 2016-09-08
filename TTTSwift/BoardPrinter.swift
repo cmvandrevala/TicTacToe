@@ -1,11 +1,3 @@
-//
-//  BoardPrinter.swift
-//  TTTSwift
-//
-//  Created by Cyrus Vandrevala on 9/8/16.
-//  Copyright © 2016 Cyrus Vandrevala. All rights reserved.
-//
-
 public class BoardPrinter {
     
     public init() {}
