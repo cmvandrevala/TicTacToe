@@ -40,6 +40,14 @@ class BoardTests: QuickSpec {
                 expect(board.current_marks()).to(equal(["", "p1", "p2", "p3", "", "", "", "", ""]))
             }
             
+            it("multiple cells can be taken by two players") {
+                let board = Board()
+                board.move(1, player: "O")
+                board.move(2, player: "X")
+                board.move(0, player: "O")
+                expect(board.current_marks()).to(equal(["O", "O", "X", "", "", "", "", "", ""]))
+            }
+            
             it("does not allow players to make moves in the same spot twice") {
                 let board = Board()
                 board.move(7, player: "X")
@@ -60,7 +68,53 @@ class BoardTests: QuickSpec {
                 board.move(-1, player: "Sad")
                 expect(board.current_marks()).to(equal(noMarks))
             }
+            
+            it("does allow a move at index 0") {
+                let board = Board()
+                let marks = ["X", "", "", "", "", "", "", "", ""]
+                board.move(0, player: "X")
+                expect(board.current_marks()).to(equal(marks))
+            }
+            
+            it("does allow a move at index 8") {
+                let board = Board()
+                let marks = ["", "", "", "", "", "", "", "", "Z"]
+                board.move(8, player: "Z")
+                expect(board.current_marks()).to(equal(marks))
+            }
 
+        }
+        
+        describe("#forEachMarkByRow") {
+            
+            it("returns the current marks grouped by row if the function is the identity function") {
+                let board = Board()
+                board.move(5, player: "X")
+                let originalMarks = [["", "", ""], ["", "", "X"], ["", "", ""]]
+                expect(board.forEachMarkByRow({(s: String) -> (String) in return s})).to(equal(originalMarks))
+            }
+            
+            it("returns the current marks with padding if the function calls for a space on each side of the mark") {
+                let board = Board()
+                board.move(5, player: "X")
+                let originalMarks = [["  ", "  ", "  "], ["  ", "  ", " X "], ["  ", "  ", "  "]]
+                expect(board.forEachMarkByRow({(s: String) -> (String) in return " \(s) "})).to(equal(originalMarks))
+            }
+            
+            it("correctly handles the edge case of index 0") {
+                let board = Board()
+                board.move(0, player: "X")
+                let originalMarks = [[" X ", "  ", "  "], ["  ", "  ", "  "], ["  ", "  ", "  "]]
+                expect(board.forEachMarkByRow({(s: String) -> (String) in return " \(s) "})).to(equal(originalMarks))
+            }
+            
+            it("correctly handles the edge case of index 8") {
+                let board = Board()
+                board.move(8, player: "Y")
+                let originalMarks = [["  ", "  ", "  "], ["  ", "  ", "  "], ["  ", "  ", " Y "]]
+                expect(board.forEachMarkByRow({(s: String) -> (String) in return " \(s) "})).to(equal(originalMarks))
+            }
+            
         }
     }
 }

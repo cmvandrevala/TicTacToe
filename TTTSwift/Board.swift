@@ -1,20 +1,25 @@
 public class Board {
     
-    var marks = [String: Int]()
+    var marks = [Int: String]()
     
     public init() {}
 
     public func current_marks() -> [String] {
         var marks_in_cells = ["", "", "", "", "", "", "", "", ""]
-        for (player, cell) in marks {
+        for (cell, player) in marks {
             marks_in_cells[cell] = player
         }
         return marks_in_cells
     }
+    
+    public func forEachMarkByRow(f: String -> String) -> [[String]] {
+        let u = current_marks().map(f)
+        return [[u[0], u[1], u[2]], [u[3], u[4], u[5]], [u[6], u[7], u[8]]]
+    }
 
     public func move(cell: Int, player: String) {
         if valid_cell(cell) && empty_cell(cell) {
-            marks[player] = cell
+            marks[cell] = player
         }
     }
     
@@ -30,7 +35,7 @@ public class Board {
     }
     
     private func empty_cell(cell: Int) -> Bool {
-        for (_,potential_occupied_cell) in marks {
+        for (potential_occupied_cell,_) in marks {
             if potential_occupied_cell == cell {
                 return false
             }
