@@ -1,8 +1,10 @@
 public class Board {
     
     var marks = [String: Int]()
+    
+    public init() {}
 
-    func current_marks() -> [String] {
+    public func current_marks() -> [String] {
         var marks_in_cells = ["", "", "", "", "", "", "", "", ""]
         for (player, cell) in marks {
             marks_in_cells[cell] = player
@@ -10,7 +12,7 @@ public class Board {
         return marks_in_cells
     }
 
-    func move(cell: Int, player: String) {
+    public func move(cell: Int, player: String) {
         if valid_cell(cell) && empty_cell(cell) {
             marks[player] = cell
         }

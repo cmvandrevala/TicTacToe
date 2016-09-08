@@ -8,8 +8,7 @@
 
 import Quick
 import Nimble
-
-@testable import TTTSwift
+import TTTSwift
 
 class BoardTests: QuickSpec {
     override func spec() {

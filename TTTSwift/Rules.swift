@@ -6,9 +6,11 @@
 //  Copyright © 2016 Cyrus Vandrevala. All rights reserved.
 //
 
-class Rules {
+public class Rules {
     
-    func winnerExists(currentMarks: [String]) -> Bool {
+    public init() {}
+    
+    public func winnerExists(currentMarks: [String]) -> Bool {
         for combo in winningCombinations() {
             if marksMatchCombo(currentMarks, potentialCombination: combo) {
                 return true
