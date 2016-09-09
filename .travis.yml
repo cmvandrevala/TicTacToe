@@ -1,5 +1,5 @@
 language: swift
 osx_image: xcode7.3
-xcode_scheme: TTTSwiftTests
+xcode_scheme: TTTSwift
 xcode_sdk: iphonesimulator9.3
 xcode_workspace: TTTSwift.xcworkspace
