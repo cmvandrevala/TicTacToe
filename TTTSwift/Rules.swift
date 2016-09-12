@@ -26,17 +26,17 @@ public class Rules {
     }
     
     public func updateGameStatus() {
-        gameEndsInWin()
-        gameEndsInTie()
+        checkIfGameEndsInWin()
+        checkIfGameEndsInTie()
     }
     
-    public func gameEndsInWin() {
+    private func checkIfGameEndsInWin() {
         if gameBoard.threeInRow() {
             currentGameStatus = .Winner
         }
     }
     
-    public func gameEndsInTie() {
+    private func checkIfGameEndsInTie() {
         if gameBoard.filledBoard() && !gameBoard.threeInRow() {
             currentGameStatus = .Tie
         }

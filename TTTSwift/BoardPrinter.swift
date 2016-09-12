@@ -1,10 +1,18 @@
 public class BoardPrinter {
     
-    public init() {}
+    var gameBoard: Board
     
-    public func formattedBoardForConsole(board: Board) -> String {
+    public init(board: Board) {
+        gameBoard = board
+    }
+    
+    public func printFormattedBoardForConsole() {
+        print(formattedBoardForConsole())
+    }
+    
+    public func formattedBoardForConsole() -> String {
         var formattedString = ""
-        let paddedMarks = forEachMarkByRow(board, f: padMark)
+        let paddedMarks = forEachMarkByRow(padMark)
         for (index, row) in paddedMarks.enumerate() {
             formattedString = addRowOfMarks(formattedString, row: row)
             if haveNotReachedLastRowOfBoard(index) {
@@ -36,15 +44,15 @@ public class BoardPrinter {
         }
     }
     
-    private func forEachMarkByRow(board: Board, f: String -> String) -> [[String]] {
-        let marks = currentMarks(board)
+    private func forEachMarkByRow(f: String -> String) -> [[String]] {
+        let marks = currentMarks()
         let u = marks.map(f)
         return [ [u[0], u[1], u[2]], [u[3], u[4], u[5]], [u[6], u[7], u[8]] ]
     }
     
-    private func currentMarks(board: Board) -> [String] {
+    private func currentMarks() -> [String] {
         var marksInCells: [String] = []
-        for status in board.currentBoard() {
+        for status in gameBoard.currentBoard() {
             if status == .PlayerOne {
                 marksInCells.append("X")
             } else if status == .PlayerTwo {
@@ -55,6 +63,5 @@ public class BoardPrinter {
         }
         return marksInCells
     }
-
     
 }

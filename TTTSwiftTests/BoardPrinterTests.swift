@@ -10,25 +10,25 @@ class BoardPrinterTests: QuickSpec {
             
             beforeEach {
                 board = Board()
-                printer = BoardPrinter()
+                printer = BoardPrinter(board: board)
             }
             
             it("returns a blank board if no moves have been made") {
                 let output = "   |   |   \n===========\n   |   |   \n===========\n   |   |   "
-                expect(printer.formattedBoardForConsole(board)).to(equal(output))
+                expect(printer.formattedBoardForConsole()).to(equal(output))
             }
             
             it("returns a board with one move") {
                 board.move(5, cellStatus: .PlayerOne)
                 let output = "   |   |   \n===========\n   |   | X \n===========\n   |   |   "
-                expect(printer.formattedBoardForConsole(board)).to(equal(output))
+                expect(printer.formattedBoardForConsole()).to(equal(output))
             }
             
             it("returns a board with two moves (first test)") {
                 board.move(2, cellStatus: .PlayerOne)
                 board.move(7, cellStatus: .PlayerTwo)
                 let output = "   |   | X \n===========\n   |   |   \n===========\n   | O |   "
-                expect(printer.formattedBoardForConsole(board)).to(equal(output))
+                expect(printer.formattedBoardForConsole()).to(equal(output))
             }
             
             it("returns a board with three moves") {
@@ -36,7 +36,7 @@ class BoardPrinterTests: QuickSpec {
                 board.move(2, cellStatus: .PlayerOne)
                 board.move(0, cellStatus: .PlayerTwo)
                 let output = " O | O | X \n===========\n   |   |   \n===========\n   |   |   "
-                expect(printer.formattedBoardForConsole(board)).to(equal(output))
+                expect(printer.formattedBoardForConsole()).to(equal(output))
             }
             
             it("returns a filled board") {
@@ -46,7 +46,7 @@ class BoardPrinterTests: QuickSpec {
                     i += 1
                 } while i < 9
                 let output = " X | X | X \n===========\n X | X | X \n===========\n X | X | X "
-                expect(printer.formattedBoardForConsole(board)).to(equal(output))
+                expect(printer.formattedBoardForConsole()).to(equal(output))
             }
             
         }

@@ -1,18 +1,13 @@
-var board = Board()
-let rules = Rules(board: board)
-var printer = BoardPrinter()
+var gameBoard = Board()
+let rules = Rules(board: gameBoard)
+var manager = IOManager(board: gameBoard)
+var printer = BoardPrinter(board: gameBoard)
 
-var currentTurn = 1
+printer.printFormattedBoardForConsole()
 
 while !rules.gameIsOver() {
-    print("Please enter your input [0-8]:")
-    var response = Int(readLine(stripNewline: true)!)
-    if currentTurn%2 == 1 {
-        board.move(response!, cellStatus: .PlayerOne)
-    } else {
-        board.move(response!, cellStatus: .PlayerTwo)
-    }
+    manager.humanPlayersTurn()
     rules.updateGameStatus()
-    currentTurn += 1
-    print(printer.formattedBoardForConsole(board))
+    manager.incrementTurn()
+    printer.printFormattedBoardForConsole()
 }
