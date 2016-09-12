@@ -1,13 +1,22 @@
 public class Board {
     
-    var marks = [Int: String]()
+    public enum Player {
+        case PlayerOne
+        case PlayerTwo
+    }
+    
+    var marks = [Int: Player]()
     
     public init() {}
 
     public func currentMarks() -> [String] {
         var marksInCells = ["", "", "", "", "", "", "", "", ""]
         for (cell, player) in marks {
-            marksInCells[cell] = player
+            if player == .PlayerOne {
+                marksInCells[cell] = "X"
+            } else {
+                marksInCells[cell] = "O"
+            }
         }
         return marksInCells
     }
@@ -17,7 +26,7 @@ public class Board {
         return [[u[0], u[1], u[2]], [u[3], u[4], u[5]], [u[6], u[7], u[8]]]
     }
 
-    public func move(cell: Int, player: String) {
+    public func move(cell: Int, player: Player) {
         if validCell(cell) && emptyCell(cell) {
             marks[cell] = player
         }

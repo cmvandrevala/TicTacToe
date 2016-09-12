@@ -2,13 +2,16 @@ var board = Board()
 let rules = Rules()
 var printer = BoardPrinter()
 
-var players = ["X", "O"]
+var currentTurn = 1
 
 while !rules.gameIsOver(board) {
-    var currentPlayer = players[0]
     print("Please enter your input [0-8]:")
     var response = Int(readLine(stripNewline: true)!)
-    board.move(response!, player: currentPlayer)
-    players = [players[1], players[0]]
+    if currentTurn%2 == 1 {
+        board.move(response!, player: .PlayerOne)
+    } else {
+        board.move(response!, player: .PlayerTwo)
+    }
+    currentTurn += 1
     print(printer.formattedBoardForConsole(board))
 }
