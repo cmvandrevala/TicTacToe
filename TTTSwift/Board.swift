@@ -1,34 +1,49 @@
 public class Board {
     
-    public enum Player {
+    public enum CellStatus {
         case PlayerOne
         case PlayerTwo
+        case Empty
     }
     
-    var marks = [Int: Player]()
+    let numberOfCells = 9
+    var currentCells = [Int: CellStatus]()
     
-    public init() {}
+    public init() {
+        for cell in 0...numberOfCells - 1 {
+            currentCells[cell] = .Empty
+        }
+    }
+    
+    public func currentBoard() -> [CellStatus] {
+        var marksInCells = [CellStatus](count: 9, repeatedValue: .Empty)
+        for (cell, status) in currentCells {
+            marksInCells[cell] = status
+        }
+        return marksInCells
+    }
 
     public func currentMarks() -> [String] {
         var marksInCells = ["", "", "", "", "", "", "", "", ""]
-        for (cell, player) in marks {
-            if player == .PlayerOne {
+        for (cell, status) in currentCells {
+            if status == .PlayerOne {
                 marksInCells[cell] = "X"
-            } else {
+            } else if status == .PlayerTwo {
                 marksInCells[cell] = "O"
             }
         }
         return marksInCells
     }
     
-    public func forEachMarkByRow(f: String -> String) -> [[String]] {
-        let u = currentMarks().map(f)
-        return [[u[0], u[1], u[2]], [u[3], u[4], u[5]], [u[6], u[7], u[8]]]
+    public func rowsOfCells() -> [[CellStatus]] {
+        let temp = currentBoard()
+        let marksInCells = [[temp[0], temp[1], temp[2]], [temp[3], temp[4], temp[5]], [temp[6], temp[7], temp[8]]]
+        return marksInCells
     }
-
-    public func move(cell: Int, player: Player) {
+    
+    public func move(cell: Int, cellStatus: CellStatus) {
         if validCell(cell) && emptyCell(cell) {
-            marks[cell] = player
+            currentCells[cell] = cellStatus
         }
     }
     
@@ -44,12 +59,10 @@ public class Board {
     }
     
     private func emptyCell(cell: Int) -> Bool {
-        for (potentialOccupiedCell,_) in marks {
-            if potentialOccupiedCell == cell {
-                return false
-            }
+        if currentCells[cell] == .Empty {
+            return true
         }
-        return true
+        return false
     }
     
 }

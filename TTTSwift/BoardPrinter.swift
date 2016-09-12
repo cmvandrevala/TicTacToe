@@ -4,7 +4,7 @@ public class BoardPrinter {
     
     public func formattedBoardForConsole(board: Board) -> String {
         var formattedString = ""
-        let paddedMarks = board.forEachMarkByRow(padMark)
+        let paddedMarks = forEachMarkByRow(board, f: padMark)
         for (index, row) in paddedMarks.enumerate() {
             formattedString = addRowOfMarks(formattedString, row: row)
             if haveNotReachedLastRowOfBoard(index) {
@@ -34,6 +34,12 @@ public class BoardPrinter {
         } else {
             return " \(mark) "
         }
+    }
+    
+    private func forEachMarkByRow(board: Board, f: String -> String) -> [[String]] {
+        let marks = board.currentMarks()
+        let u = marks.map(f)
+        return [ [u[0], u[1], u[2]], [u[3], u[4], u[5]], [u[6], u[7], u[8]] ]
     }
 
     
