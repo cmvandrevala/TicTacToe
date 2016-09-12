@@ -52,6 +52,13 @@ public class Board {
         }
     }
     
+    public func emptyCell(cell: Int) -> Bool {
+        if currentCells[cell] == .Empty {
+            return true
+        }
+        return false
+    }
+    
     private func validCell(cell: Int) -> Bool {
         switch cell {
         case let x where x < 0:
@@ -62,14 +69,7 @@ public class Board {
             return true
         }
     }
-    
-    private func emptyCell(cell: Int) -> Bool {
-        if currentCells[cell] == .Empty {
-            return true
-        }
-        return false
-    }
-    
+
     private func rows() -> [[Int]] {
         return [ [0, 1, 2], [3, 4, 5], [6, 7, 8] ]
     }
