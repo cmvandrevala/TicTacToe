@@ -37,9 +37,23 @@ public class BoardPrinter {
     }
     
     private func forEachMarkByRow(board: Board, f: String -> String) -> [[String]] {
-        let marks = board.currentMarks()
+        let marks = currentMarks(board)
         let u = marks.map(f)
         return [ [u[0], u[1], u[2]], [u[3], u[4], u[5]], [u[6], u[7], u[8]] ]
+    }
+    
+    private func currentMarks(board: Board) -> [String] {
+        var marksInCells: [String] = []
+        for status in board.currentBoard() {
+            if status == .PlayerOne {
+                marksInCells.append("X")
+            } else if status == .PlayerTwo {
+                marksInCells.append("O")
+            } else {
+                marksInCells.append("")
+            }
+        }
+        return marksInCells
     }
 
     

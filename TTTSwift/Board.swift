@@ -22,23 +22,28 @@ public class Board {
         }
         return marksInCells
     }
-
-    public func currentMarks() -> [String] {
-        var marksInCells = ["", "", "", "", "", "", "", "", ""]
-        for (cell, status) in currentCells {
-            if status == .PlayerOne {
-                marksInCells[cell] = "X"
-            } else if status == .PlayerTwo {
-                marksInCells[cell] = "O"
-            }
-        }
-        return marksInCells
-    }
     
     public func rowsOfCells() -> [[CellStatus]] {
         let temp = currentBoard()
         let marksInCells = [[temp[0], temp[1], temp[2]], [temp[3], temp[4], temp[5]], [temp[6], temp[7], temp[8]]]
         return marksInCells
+    }
+    
+    public func threeInRow() -> Bool {
+        for triple in rows() + columns() + diagonals() {
+            if currentCells[triple[0]] == currentCells[triple[1]] && currentCells[triple[1]] == currentCells[triple[2]] && currentCells[triple[0]] != .Empty {
+                return true
+            }
+        }
+        return false
+    }
+    
+    public func filledBoard() -> Bool {
+        if currentBoard().contains(.Empty) {
+            return false
+        } else {
+            return true
+        }
     }
     
     public func move(cell: Int, cellStatus: CellStatus) {
@@ -63,6 +68,18 @@ public class Board {
             return true
         }
         return false
+    }
+    
+    private func rows() -> [[Int]] {
+        return [ [0, 1, 2], [3, 4, 5], [6, 7, 8] ]
+    }
+    
+    private func columns() -> [[Int]] {
+        return [ [0, 3, 6], [1, 4, 7], [2, 5, 8] ]
+    }
+    
+    private func diagonals() -> [[Int]] {
+        return [ [0, 4, 8], [2, 4, 6] ]
     }
     
 }

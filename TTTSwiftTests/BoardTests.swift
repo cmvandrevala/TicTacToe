@@ -72,6 +72,52 @@ class BoardTests: QuickSpec {
             it("returns the current cells grouped by row") {}
             
         }
+        
+        describe("#filledBoard") {
+            var board: Board!
+            
+            beforeEach {
+                board = Board()
+            }
+            
+            it("returns false if the board is completely filled with empty spaces") {
+                expect(board.filledBoard()).to(equal(false))
+            }
+            
+            it("returns false if not all of the cells are filled") {
+                board.move(1, cellStatus: .PlayerOne)
+                board.move(5, cellStatus: .PlayerTwo)
+                expect(board.filledBoard()).to(equal(false))
+            }
+            
+            it("returns true if the board is completely filled") {
+                for i in 0...8 {
+                    board.move(i, cellStatus: .PlayerOne)
+                }
+                expect(board.filledBoard()).to(equal(true))
+            }
+            
+        }
+        
+        describe("#threeInRow") {
+            var board: Board!
+            
+            beforeEach {
+                board = Board()
+            }
+            
+            it("returns false if the board is completely filled with empty spaces") {
+                expect(board.threeInRow()).to(equal(false))
+            }
+            
+            it("returns true if there is a winner in the right column") {
+                board.move(2, cellStatus: .PlayerTwo)
+                board.move(5, cellStatus: .PlayerTwo)
+                board.move(8, cellStatus: .PlayerTwo)
+                expect(board.threeInRow()).to(equal(true))
+            }
+            
+        }
 
     }
 }
