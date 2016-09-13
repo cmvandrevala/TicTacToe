@@ -23,51 +23,58 @@ public class Board {
         return marksInCells
     }
     
-    public func rowsOfCells() -> [[CellStatus]] {
-        let temp = currentBoard()
-        let marksInCells = [[temp[0], temp[1], temp[2]], [temp[3], temp[4], temp[5]], [temp[6], temp[7], temp[8]]]
-        return marksInCells
+    public func move(cellIndex: Int, cellStatus: CellStatus) {
+        currentCells[cellIndex] = cellStatus
     }
     
-    public func threeInRow() -> Bool {
-        for triple in rows() + columns() + diagonals() {
-            if currentCells[triple[0]] == currentCells[triple[1]] && currentCells[triple[1]] == currentCells[triple[2]] && currentCells[triple[0]] != .Empty {
-                return true
+    public func rowsOfCells() -> [[CellStatus]] {
+        let u = currentBoard()
+        return [ [u[0], u[1], u[2] ], [ u[3], u[4], u[5] ], [ u[6], u[7], u[8] ] ]
+    }
+    
+    public func threeInRow() -> CellStatus {
+        for group in groupsOfThreeCells() {
+            if allThreeCellsMatch(group) && allThreeCellsAreFilled(group) {
+                return currentCells[group[0]]!
             }
         }
-        return false
+        return .Empty
     }
     
     public func filledBoard() -> Bool {
-        if currentBoard().contains(.Empty) {
+        return !currentBoard().contains(.Empty)
+    }
+    
+    public func emptyCellAtIndex(cellIndex: Int) -> Bool {
+        switch currentCells[cellIndex]! {
+        case .PlayerOne:
             return false
-        } else {
+        case .PlayerTwo:
+            return false
+        case .Empty:
             return true
         }
     }
     
-    public func move(cell: Int, cellStatus: CellStatus) {
-        if validCell(cell) && emptyCell(cell) {
-            currentCells[cell] = cellStatus
-        }
+    private func allThreeCellsMatch(group: [Int]) -> Bool {
+        let marks = marksContainedInGroup(group)
+        return marks[0] == marks[1] && marks[1] == marks[2]
     }
     
-    public func emptyCell(cell: Int) -> Bool {
-        if currentCells[cell] == .Empty {
-            return true
-        }
-        return false
+    private func allThreeCellsAreFilled(group: [Int]) -> Bool {
+        let marks = marksContainedInGroup(group)
+        return marks[0] != .Empty && marks[1] != .Empty && marks[2] != .Empty
     }
     
-    private func validCell(cell: Int) -> Bool {
-        switch cell {
-        case let x where x < 0:
-            return false
-        case let x where x > 8:
-            return false
-        default:
-            return true
-        }
+    private func marksContainedInGroup(group: [Int]) -> [CellStatus] {
+        let firstMark = currentCells[group[0]]!
+        let secondMark = currentCells[group[1]]!
+        let thirdMark = currentCells[group[2]]!
+        return [firstMark, secondMark, thirdMark]
+    }
+    
+    private func groupsOfThreeCells() -> [[Int]] {
+        return rows() + columns() + diagonals()
     }
 
     private func rows() -> [[Int]] {

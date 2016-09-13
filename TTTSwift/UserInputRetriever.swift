@@ -23,7 +23,7 @@ public class UserInputRetriever {
         case let x where x < 0:
             return .TooSmall
         default:
-            if !gameBoard.emptyCell(Int(cell)!) {
+            if !gameBoard.emptyCellAtIndex(Int(cell)!) {
                 return .CellTaken
             } else {
                 return .Passed

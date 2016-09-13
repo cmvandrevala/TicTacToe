@@ -1,22 +1,25 @@
 public class Rules {
     
-    enum GameStatus {
-        case Winner
+    public enum GameStatus {
+        case PlayerOneWins
+        case PlayerTwoWins
         case Tie
         case InProgress
     }
     
+    public var currentGameStatus = GameStatus.InProgress
+
     var gameBoard: Board
-    var currentGameStatus: GameStatus
-    
+
     public init(board: Board) {
         gameBoard = board
-        currentGameStatus = .InProgress
     }
     
     public func gameIsOver() -> Bool {
         switch currentGameStatus {
-        case .Winner:
+        case .PlayerOneWins:
+            return true
+        case .PlayerTwoWins:
             return true
         case .Tie:
             return true
@@ -26,18 +29,23 @@ public class Rules {
     }
     
     public func updateGameStatus() {
-        checkIfGameEndedInWin()
-        checkIfGameEndedInTie()
+        updateGameStatusWithPotentialWinner()
+        updateGameStatusWithPotentialTie()
     }
     
-    private func checkIfGameEndedInWin() {
-        if gameBoard.threeInRow() {
-            currentGameStatus = .Winner
+    private func updateGameStatusWithPotentialWinner() {
+        switch gameBoard.threeInRow() {
+        case .PlayerOne:
+            currentGameStatus = .PlayerOneWins
+        case .PlayerTwo:
+            currentGameStatus = .PlayerTwoWins
+        default:
+            break
         }
     }
     
-    private func checkIfGameEndedInTie() {
-        if gameBoard.filledBoard() && !gameBoard.threeInRow() {
+    private func updateGameStatusWithPotentialTie() {
+        if gameBoard.filledBoard() && gameBoard.threeInRow() == .Empty {
             currentGameStatus = .Tie
         }
     }
