@@ -26,20 +26,20 @@ public class Rules {
     }
     
     public func updateGameStatus() {
-        checkIfGameEndsInWin()
-        checkIfGameEndsInTie()
+        checkIfGameEndedInWin()
+        checkIfGameEndedInTie()
     }
     
-    private func checkIfGameEndsInWin() {
+    private func checkIfGameEndedInWin() {
         if gameBoard.threeInRow() {
             currentGameStatus = .Winner
         }
     }
     
-    private func checkIfGameEndsInTie() {
+    private func checkIfGameEndedInTie() {
         if gameBoard.filledBoard() && !gameBoard.threeInRow() {
             currentGameStatus = .Tie
         }
     }
-    
+
 }

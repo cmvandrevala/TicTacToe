@@ -1,4 +1,4 @@
-public class IOManager {
+public class UserInputRetriever {
     
     public enum InputClassification {
         case Passed
@@ -8,7 +8,6 @@ public class IOManager {
         case CellTaken
     }
 
-    var turn = 1
     var gameBoard: Board
     
     public init(board: Board) {
@@ -33,22 +32,15 @@ public class IOManager {
 
     }
     
-    public func currentTurn() -> Int {
-        return turn
+    public func humanPlayersTurn(clock: GameClock) {
+        move(getUserMove(), clock: clock)
     }
     
-    public func incrementTurn() {
-        turn += 1
-    }
-    
-    public func humanPlayersTurn() {
-        move(getUserMove())
-    }
-    
-    public func move(cell: Int) {
-        if playerOnesTurn() {
+    public func move(cell: Int, clock: GameClock) {
+        switch clock.playerOnesTurn() {
+        case true:
             gameBoard.move(cell, cellStatus: .PlayerOne)
-        } else {
+        case false:
             gameBoard.move(cell, cellStatus: .PlayerTwo)
         }
 
@@ -73,11 +65,7 @@ public class IOManager {
             print("That space has already been taken!")
             return getUserMove()
         }
-            
+
     }
-    
-    private func playerOnesTurn() -> Bool {
-        return currentTurn()%2 == 1
-    }
-    
+
 }

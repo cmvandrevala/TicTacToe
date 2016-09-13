@@ -1,13 +1,14 @@
-var gameBoard = Board()
-let rules = Rules(board: gameBoard)
-var manager = IOManager(board: gameBoard)
-var printer = BoardPrinter(board: gameBoard)
+var clock = GameClock()
+var board = Board()
+let rules = Rules(board: board)
+var manager = UserInputRetriever(board: board)
+var printer = BoardPrinter(board: board)
 
 printer.printFormattedBoardForConsole()
 
 while !rules.gameIsOver() {
-    manager.humanPlayersTurn()
+    manager.humanPlayersTurn(clock)
     rules.updateGameStatus()
-    manager.incrementTurn()
+    clock.incrementTurnNumber()
     printer.printFormattedBoardForConsole()
 }
