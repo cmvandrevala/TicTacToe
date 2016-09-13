@@ -1,14 +1,41 @@
-var clock = GameClock()
-var board = Board()
-let rules = Rules(board: board)
-var manager = UserInputRetriever(board: board)
-var printer = BoardPrinter(board: board)
+func newGame() {
+    let clock = GameClock()
+    let board = Board()
+    let rules = Rules(board: board)
+    let retriever = UserInputRetriever(board: board)
+    let printer = ConsoleBoard(board: board)
+    
+    print(printer.formattedBoardForConsole())
+    
+    while !rules.gameIsOver() {
+        retriever.humanPlayersTurn(clock)
+        rules.updateGameStatus()
+        clock.incrementTurnNumber()
+        print(printer.formattedBoardForConsole())
+    }
+}
 
-printer.printFormattedBoardForConsole()
+let messages = ConsoleMessages()
+var playerWantsToContinue = true
 
-while !rules.gameIsOver() {
-    manager.humanPlayersTurn(clock)
-    rules.updateGameStatus()
-    clock.incrementTurnNumber()
-    printer.printFormattedBoardForConsole()
+print(messages.welcomeMessage())
+
+while playerWantsToContinue {
+    var playerResponse = readLine()
+    switch playerResponse! {
+    case "1":
+        newGame()
+        print(messages.askToPlayAgain())
+    case "Yes":
+        newGame()
+        print(messages.askToPlayAgain())
+    case "2":
+        playerWantsToContinue = false
+        print(messages.leaveGameMessage())
+    case "No":
+        playerWantsToContinue = false
+        print(messages.leaveGameMessage())
+    default:
+        print(messages.invalidInputMessage())
+    }
 }

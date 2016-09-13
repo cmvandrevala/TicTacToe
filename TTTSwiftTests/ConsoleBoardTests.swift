@@ -2,16 +2,18 @@ import Quick
 import Nimble
 import TTTSwift
 
-class BoardPrinterTests: QuickSpec {
+class ConsoleBoardTests: QuickSpec {
     override func spec() {
-        describe("creating a string of the current board") {
-            var board: Board!
-            var printer: BoardPrinter!
-            
-            beforeEach {
-                board = Board()
-                printer = BoardPrinter(board: board)
-            }
+        
+        var board: Board!
+        var printer: ConsoleBoard!
+        
+        beforeEach {
+            board = Board()
+            printer = ConsoleBoard(board: board)
+        }
+        
+        describe("#formattedBoardForConsole") {
             
             it("returns a blank board if no moves have been made") {
                 let output = "   |   |   \n===========\n   |   |   \n===========\n   |   |   "
@@ -50,5 +52,6 @@ class BoardPrinterTests: QuickSpec {
             }
             
         }
+        
     }
 }

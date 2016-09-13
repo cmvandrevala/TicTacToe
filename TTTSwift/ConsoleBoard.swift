@@ -1,13 +1,9 @@
-public class BoardPrinter {
+public class ConsoleBoard {
     
     var gameBoard: Board
     
     public init(board: Board) {
         gameBoard = board
-    }
-    
-    public func printFormattedBoardForConsole() {
-        print(formattedBoardForConsole())
     }
     
     public func formattedBoardForConsole() -> String {
