@@ -23,7 +23,7 @@ public class UserInputRetriever {
         case let x where x < 0:
             return .TooSmall
         default:
-            if !gameBoard.emptyCellAtIndex(Int(cell)!) {
+            if !gameBoard.isEmptyCellAtIndex(Int(cell)!) {
                 return .CellTaken
             } else {
                 return .Passed
@@ -32,11 +32,11 @@ public class UserInputRetriever {
 
     }
     
-    public func humanPlayersTurn(clock: GameClock) {
+    public func humanPlayersTurn(clock: Clock) {
         move(getUserMove(), clock: clock)
     }
     
-    public func move(cell: Int, clock: GameClock) {
+    public func move(cell: Int, clock: Clock) {
         switch clock.playerOnesTurn() {
         case true:
             gameBoard.move(cell, cellStatus: .PlayerOne)
