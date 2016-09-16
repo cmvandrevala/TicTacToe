@@ -1,5 +1,17 @@
-# Tic Tac Toe in Swift
+# Tic-Tac-Toe in Swift
 
 [![Build Status](https://travis-ci.org/cmvandrevala/TTTSwift.svg?branch=master)](https://travis-ci.org/cmvandrevala/TTTSwift)
 
-The world needs another tic tac toe app. And I am here to answer the call...
+This is my first project as an apprentice at 8th Light. It is a Tic-Tac-Toe app in Swift.
+
+## Development
+
+This project uses CocoaPods to manage its dependencies. Thus, do not open the `TTTSwift.xcodeproj` file bundled with the app. Instead, open the Xcode workspace file: `open TTTSwift.xcworkspace`.
+
+## Testing
+
+In order to run the test suite, open the Xcode workspace, switch to the "TTTSwift" target, and hit `⌘ + U`.
+
+## Running the App
+
+In order to run the app on the iOS simulator or a personal device, open the Xcode workspace, switch to the "TTTSwift" target and hit `⌘ + R`.
