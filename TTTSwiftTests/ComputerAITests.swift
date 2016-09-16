@@ -58,7 +58,5 @@ class ComputerAITests: QuickSpec {
             
         }
         
-        describe("winning move") {}
-        
     }
 }

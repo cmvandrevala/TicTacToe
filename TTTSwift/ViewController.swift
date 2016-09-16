@@ -1,11 +1,3 @@
-//
-//  ViewController.swift
-//  TTTSwift
-//
-//  Created by Cyrus Vandrevala on 9/6/16.
-//  Copyright © 2016 Cyrus Vandrevala. All rights reserved.
-//
-
 import UIKit
 
 class ViewController: UIViewController {
