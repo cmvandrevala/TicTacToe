@@ -1,4 +1,3 @@
 language: objective-c
-osx_image: xcode7.3
-script: xcodebuild -workspace TTTSwift.xcworkspace -scheme TTTSwift -sdk iphonesimulator9.3 clean build test
-
+osx_image: xcode8
+script: xcodebuild -workspace TTTSwift.xcworkspace -scheme TTTSwift -sdk iphonesimulator10.0 -destination "name=iPhone 6s" clean build test
