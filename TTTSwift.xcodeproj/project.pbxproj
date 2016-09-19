@@ -16,6 +16,9 @@
 		6E2237821D88628300676B77 /* FirstAvailableSpotComputerPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E2237811D88628300676B77 /* FirstAvailableSpotComputerPlayer.swift */; };
 		6E2237831D88628300676B77 /* FirstAvailableSpotComputerPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E2237811D88628300676B77 /* FirstAvailableSpotComputerPlayer.swift */; };
 		6E2237851D88629300676B77 /* FirstAvailableSpotComputerPlayerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E2237841D88629300676B77 /* FirstAvailableSpotComputerPlayerTests.swift */; };
+		6E44974A1D90493A009526DE /* MainMenuTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E4497491D90493A009526DE /* MainMenuTests.swift */; };
+		6E44974C1D90494B009526DE /* MainMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E44974B1D90494B009526DE /* MainMenu.swift */; };
+		6E44974D1D90494B009526DE /* MainMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E44974B1D90494B009526DE /* MainMenu.swift */; };
 		6E4797921D83106D0027ADAC /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E4797911D83106D0027ADAC /* main.swift */; };
 		6E4797961D8310A20027ADAC /* Board.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9995251D7F60D500616838 /* Board.swift */; };
 		6E4797981D8313350027ADAC /* Rules.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E1811631D8099F200B73B7A /* Rules.swift */; };
@@ -76,6 +79,8 @@
 		6E22377F1D885A7900676B77 /* ConsoleBoardTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsoleBoardTests.swift; sourceTree = "<group>"; };
 		6E2237811D88628300676B77 /* FirstAvailableSpotComputerPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstAvailableSpotComputerPlayer.swift; sourceTree = "<group>"; };
 		6E2237841D88629300676B77 /* FirstAvailableSpotComputerPlayerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstAvailableSpotComputerPlayerTests.swift; sourceTree = "<group>"; };
+		6E4497491D90493A009526DE /* MainMenuTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenuTests.swift; sourceTree = "<group>"; };
+		6E44974B1D90494B009526DE /* MainMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenu.swift; sourceTree = "<group>"; };
 		6E47978F1D83106D0027ADAC /* TTTSwiftCommandLine */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = TTTSwiftCommandLine; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E4797911D83106D0027ADAC /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		6E75F1F31D87299A00FAB787 /* UserInputRetrieverTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInputRetrieverTests.swift; sourceTree = "<group>"; };
@@ -145,6 +150,7 @@
 				6EEECB371D8B1ADE00B92641 /* HumanPlayer.swift */,
 				6EEECB3F1D8B246B00B92641 /* Game.swift */,
 				6EEECB421D8B255A00B92641 /* Player.swift */,
+				6E44974B1D90494B009526DE /* MainMenu.swift */,
 			);
 			path = TTTSwiftCommandLine;
 			sourceTree = "<group>";
@@ -198,6 +204,7 @@
 				6EEECB351D8B1AC200B92641 /* HumanPlayerTests.swift */,
 				6EEECB3D1D8B245E00B92641 /* GameTests.swift */,
 				6E8685E31D904083002484F7 /* TTTAcceptanceTests.swift */,
+				6E4497491D90493A009526DE /* MainMenuTests.swift */,
 			);
 			path = TTTSwiftTests;
 			sourceTree = "<group>";
@@ -404,6 +411,7 @@
 				6EEECB391D8B1ADE00B92641 /* HumanPlayer.swift in Sources */,
 				6E4797991D8313390027ADAC /* ConsoleMessages.swift in Sources */,
 				6E75F1F71D8729AA00FAB787 /* UserInputRetriever.swift in Sources */,
+				6E44974D1D90494B009526DE /* MainMenu.swift in Sources */,
 				6E2237831D88628300676B77 /* FirstAvailableSpotComputerPlayer.swift in Sources */,
 				6E4797921D83106D0027ADAC /* main.swift in Sources */,
 				6E22377E1D885A6400676B77 /* ConsoleBoard.swift in Sources */,
@@ -415,6 +423,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6E44974C1D90494B009526DE /* MainMenu.swift in Sources */,
 				6E2237821D88628300676B77 /* FirstAvailableSpotComputerPlayer.swift in Sources */,
 				6EB5C1DB1D7F5C7800A5829F /* ViewController.swift in Sources */,
 				6E1811641D8099F200B73B7A /* Rules.swift in Sources */,
@@ -441,6 +450,7 @@
 				6EEECB361D8B1AC200B92641 /* HumanPlayerTests.swift in Sources */,
 				6E75F1F41D87299A00FAB787 /* UserInputRetrieverTests.swift in Sources */,
 				6EF6F6BC1D81D1FF00B545F2 /* ConsoleMessagesTests.swift in Sources */,
+				6E44974A1D90493A009526DE /* MainMenuTests.swift in Sources */,
 				6E2237851D88629300676B77 /* FirstAvailableSpotComputerPlayerTests.swift in Sources */,
 				6ECEA3551D883F830035E9DA /* ClockTests.swift in Sources */,
 				6E9995241D7F5CF800616838 /* BoardTests.swift in Sources */,
