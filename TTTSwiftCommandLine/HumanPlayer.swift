@@ -9,7 +9,7 @@ public class HumanPlayer: Player {
     }
     
     public func getMove(board: Board) -> Int? {
-        let inputRetriever = UserInputRetriever(board: board)
+        let inputRetriever = TTTMoveReader(board: board)
         return inputRetriever.getUserMove()
     }
     

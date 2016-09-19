@@ -1,4 +1,4 @@
-public class UserInputRetriever {
+public class TTTMoveReader {
     
     public enum InputClassification {
         case Passed
