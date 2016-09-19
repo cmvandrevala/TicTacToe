@@ -46,6 +46,7 @@
 		6EFC78A81D907098005BB491 /* MainMenuTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EFC78A71D907098005BB491 /* MainMenuTests.swift */; };
 		6EFC78AA1D9070B5005BB491 /* MainMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EFC78A91D9070B5005BB491 /* MainMenu.swift */; };
 		6EFC78AB1D9070B5005BB491 /* MainMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EFC78A91D9070B5005BB491 /* MainMenu.swift */; };
+		6EFC78AD1D907311005BB491 /* TTTAcceptanceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EFC78AC1D907311005BB491 /* TTTAcceptanceTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -104,6 +105,7 @@
 		6EF6F6BD1D81D20D00B545F2 /* ConsoleMessages.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsoleMessages.swift; sourceTree = "<group>"; };
 		6EFC78A71D907098005BB491 /* MainMenuTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenuTests.swift; sourceTree = "<group>"; };
 		6EFC78A91D9070B5005BB491 /* MainMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenu.swift; sourceTree = "<group>"; };
+		6EFC78AC1D907311005BB491 /* TTTAcceptanceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTTAcceptanceTests.swift; sourceTree = "<group>"; };
 		DE02BD03A871D35FD8716CF3 /* Pods_TTTSwiftTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TTTSwiftTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E95CC427C4F5DFE9BDA4D792 /* Pods-TTTSwiftTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TTTSwiftTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TTTSwiftTests/Pods-TTTSwiftTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -202,6 +204,7 @@
 				6EEECB351D8B1AC200B92641 /* HumanPlayerTests.swift */,
 				6EEECB3D1D8B245E00B92641 /* GameTests.swift */,
 				6EFC78A71D907098005BB491 /* MainMenuTests.swift */,
+				6EFC78AC1D907311005BB491 /* TTTAcceptanceTests.swift */,
 			);
 			path = TTTSwiftTests;
 			sourceTree = "<group>";
@@ -450,6 +453,7 @@
 				6E2237851D88629300676B77 /* FirstAvailableSpotComputerPlayerTests.swift in Sources */,
 				6ECEA3551D883F830035E9DA /* ClockTests.swift in Sources */,
 				6E9995241D7F5CF800616838 /* BoardTests.swift in Sources */,
+				6EFC78AD1D907311005BB491 /* TTTAcceptanceTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
