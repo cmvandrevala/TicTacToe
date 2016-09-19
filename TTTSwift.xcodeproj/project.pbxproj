@@ -290,10 +290,12 @@
 					6EB5C1D41D7F5C7800A5829F = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = K5JVXNKUGY;
+						LastSwiftMigration = 0800;
 					};
 					6EB5C1E81D7F5C7800A5829F = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = K5JVXNKUGY;
+						LastSwiftMigration = 0800;
 						TestTargetID = 6EB5C1D41D7F5C7800A5829F;
 					};
 				};
@@ -583,6 +585,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cyrusvandrevala.TTTSwift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 2.3;
 			};
 			name = Debug;
 		};
@@ -594,6 +597,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cyrusvandrevala.TTTSwift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 2.3;
 			};
 			name = Release;
 		};
@@ -606,6 +610,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cyrusvandrevala.TTTSwiftTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 2.3;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TTTSwift.app/TTTSwift";
 			};
 			name = Debug;
@@ -619,6 +624,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cyrusvandrevala.TTTSwiftTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 2.3;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TTTSwift.app/TTTSwift";
 			};
 			name = Release;

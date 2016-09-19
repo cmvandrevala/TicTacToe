@@ -93,7 +93,5 @@ class FirstAvailableSpotComputerPlayerTests: QuickSpec {
             
         }
         
-        describe("winning move") {}
-        
     }
 }
