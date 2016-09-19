@@ -1,9 +1,9 @@
 public class Game {
     
     public var board: Board!
-    
     let clock: Clock!
     let rules: Rules!
+    
     var firstPlayer: Player!
     var secondPlayer: Player!
     
