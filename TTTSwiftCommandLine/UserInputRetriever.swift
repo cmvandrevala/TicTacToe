@@ -14,39 +14,7 @@ public class UserInputRetriever {
         gameBoard = board
     }
     
-    public func checkInput(cell: String) -> InputClassification {
-        switch Int(cell) {
-        case nil:
-            return .NonInteger
-        case let x where x > 8:
-            return .TooLarge
-        case let x where x < 0:
-            return .TooSmall
-        default:
-            if !gameBoard.isEmptyCellAtIndex(Int(cell)!) {
-                return .CellTaken
-            } else {
-                return .Passed
-            }
-        }
-
-    }
-    
-    public func humanPlayersTurn(clock: Clock) {
-        move(getUserMove(), clock: clock)
-    }
-    
-    public func move(cell: Int, clock: Clock) {
-        switch clock.playerOnesTurn() {
-        case true:
-            gameBoard.move(cell, cellStatus: .PlayerOne)
-        case false:
-            gameBoard.move(cell, cellStatus: .PlayerTwo)
-        }
-
-    }
-    
-    private func getUserMove() -> Int {
+    public func getUserMove() -> Int {
         print("\nPlease enter your input [0-8]:")
         let response = readLine(stripNewline: true)!
         switch checkInput(response) {
@@ -65,7 +33,21 @@ public class UserInputRetriever {
             print("That space has already been taken!")
             return getUserMove()
         }
-
+    }
+    
+    public func checkInput(cell: String) -> InputClassification {
+        switch Int(cell) {
+        case nil:
+            return .NonInteger
+        case let x where x > 8:
+            return .TooLarge
+        case let x where x < 0:
+            return .TooSmall
+        case let x where gameBoard.isEmptyCellAtIndex(x!) == false:
+            return .CellTaken
+        default:
+            return .Passed
+        }
     }
 
 }

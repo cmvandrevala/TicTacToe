@@ -1,22 +1,6 @@
-func newGame() {
-    let clock = Clock()
-    let board = Board()
-    let rules = Rules(board: board)
-    let retriever = UserInputRetriever(board: board)
-    let printer = ConsoleBoard(board: board)
-    
-    print(printer.formattedBoardForConsole())
-    
-    while !rules.isGameOver() {
-        retriever.humanPlayersTurn(clock)
-        rules.updateGameStatus()
-        clock.incrementTurnNumber()
-        print(printer.formattedBoardForConsole())
-    }
-}
-
 let messages = ConsoleMessages()
 let playerOne = HumanPlayer()
+let playerTwo = HumanPlayer()
 
 print(messages.welcomeMessage())
 
@@ -24,10 +8,12 @@ while playerOne.wantsToContinuePlaying {
     var playerResponse = readLine()
     switch playerResponse! {
     case "1":
-        newGame()
+        let game = Game(playerOne: playerOne, playerTwo: playerTwo)
+        game.play()
         print(messages.askToPlayAgain())
     case "Yes":
-        newGame()
+        let game = Game(playerOne: playerOne, playerTwo: playerTwo)
+        game.play()
         print(messages.askToPlayAgain())
     case "2":
         playerOne.noLongerWantsToPlay()

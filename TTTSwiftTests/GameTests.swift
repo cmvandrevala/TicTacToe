@@ -12,28 +12,6 @@ class GameTests: QuickSpec {
             ai = FirstAvailableSpotComputerPlayer()
             game = Game(playerOne: ai, playerTwo: ai)
         }
-
-        describe("#takeTurn") {
-            
-            it("lets a 'first available spot' computer player take one turn") {
-                game.takeTurn()
-                expect(game.board.currentBoard() == [.PlayerOne, .Empty, .Empty, .Empty, .Empty, .Empty, .Empty, .Empty, .Empty] ).to(beTrue())
-            }
-            
-            it("lets two 'first available spot' computer players take one turn") {
-                game.takeTurn()
-                game.takeTurn()
-                expect(game.board.currentBoard() == [.PlayerOne, .PlayerTwo, .Empty, .Empty, .Empty, .Empty, .Empty, .Empty, .Empty] ).to(beTrue())
-            }
-            
-            it("lets two 'first available spot' computer players make many turns") {
-                for _ in 1...6 {
-                    game.takeTurn()
-                }
-                expect(game.board.currentBoard() == [.PlayerOne, .PlayerTwo, .PlayerOne, .PlayerTwo, .PlayerOne, .PlayerTwo, .Empty, .Empty, .Empty] ).to(beTrue())
-            }
-            
-        }
         
         describe("#isInProgress") {
             
@@ -52,7 +30,6 @@ class GameTests: QuickSpec {
                 for _ in 1...7 {
                     game.takeTurn()
                 }
-                print(game.board.currentBoard())
                 expect(game.isInProgress()).to(equal(false))
             }
             
