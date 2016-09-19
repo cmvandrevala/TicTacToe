@@ -1,4 +1,4 @@
-public protocol UserInputReader {
+public protocol ConsoleInputReader {
     
     func getInput() -> String?
     

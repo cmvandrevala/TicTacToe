@@ -2,7 +2,7 @@ import Quick
 import Nimble
 import TTTSwift
 
-class MockInputReader: UserInputReader {
+class MockInputReader: ConsoleInputReader {
     
     var mockValue: String
     

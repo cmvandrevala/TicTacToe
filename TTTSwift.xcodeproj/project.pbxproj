@@ -28,8 +28,8 @@
 		6E9DE1EC1D90807900321653 /* MainMenuTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9DE1EB1D90807900321653 /* MainMenuTests.swift */; };
 		6E9DE1EE1D90826E00321653 /* MainMenuInputReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9DE1ED1D90826E00321653 /* MainMenuInputReader.swift */; };
 		6E9DE1EF1D90826E00321653 /* MainMenuInputReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9DE1ED1D90826E00321653 /* MainMenuInputReader.swift */; };
-		6E9DE1F11D90830300321653 /* UserInputReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9DE1F01D90830300321653 /* UserInputReader.swift */; };
-		6E9DE1F21D90830300321653 /* UserInputReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9DE1F01D90830300321653 /* UserInputReader.swift */; };
+		6E9DE1F11D90830300321653 /* ConsoleInputReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9DE1F01D90830300321653 /* ConsoleInputReader.swift */; };
+		6E9DE1F21D90830300321653 /* ConsoleInputReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9DE1F01D90830300321653 /* ConsoleInputReader.swift */; };
 		6EB5C1D91D7F5C7800A5829F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EB5C1D81D7F5C7800A5829F /* AppDelegate.swift */; };
 		6EB5C1DB1D7F5C7800A5829F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EB5C1DA1D7F5C7800A5829F /* ViewController.swift */; };
 		6EB5C1DE1D7F5C7800A5829F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6EB5C1DC1D7F5C7800A5829F /* Main.storyboard */; };
@@ -91,7 +91,7 @@
 		6E9995251D7F60D500616838 /* Board.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Board.swift; sourceTree = "<group>"; };
 		6E9DE1EB1D90807900321653 /* MainMenuTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenuTests.swift; sourceTree = "<group>"; };
 		6E9DE1ED1D90826E00321653 /* MainMenuInputReader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenuInputReader.swift; sourceTree = "<group>"; };
-		6E9DE1F01D90830300321653 /* UserInputReader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInputReader.swift; sourceTree = "<group>"; };
+		6E9DE1F01D90830300321653 /* ConsoleInputReader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsoleInputReader.swift; sourceTree = "<group>"; };
 		6EB5C1D51D7F5C7800A5829F /* TTTSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TTTSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6EB5C1D81D7F5C7800A5829F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6EB5C1DA1D7F5C7800A5829F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -158,7 +158,7 @@
 				6EEECB421D8B255A00B92641 /* Player.swift */,
 				6EFC78A91D9070B5005BB491 /* MainMenu.swift */,
 				6E9DE1ED1D90826E00321653 /* MainMenuInputReader.swift */,
-				6E9DE1F01D90830300321653 /* UserInputReader.swift */,
+				6E9DE1F01D90830300321653 /* ConsoleInputReader.swift */,
 			);
 			path = TTTSwiftCommandLine;
 			sourceTree = "<group>";
@@ -417,7 +417,7 @@
 				6EEECB411D8B246B00B92641 /* Game.swift in Sources */,
 				6E4797961D8310A20027ADAC /* Board.swift in Sources */,
 				6E9DE1EF1D90826E00321653 /* MainMenuInputReader.swift in Sources */,
-				6E9DE1F21D90830300321653 /* UserInputReader.swift in Sources */,
+				6E9DE1F21D90830300321653 /* ConsoleInputReader.swift in Sources */,
 				6EEECB391D8B1ADE00B92641 /* HumanPlayer.swift in Sources */,
 				6E4797991D8313390027ADAC /* ConsoleMessages.swift in Sources */,
 				6E75F1F71D8729AA00FAB787 /* TTTMoveReader.swift in Sources */,
@@ -442,7 +442,7 @@
 				6E22377D1D885A6400676B77 /* ConsoleBoard.swift in Sources */,
 				6EB5C1D91D7F5C7800A5829F /* AppDelegate.swift in Sources */,
 				6EEECB401D8B246B00B92641 /* Game.swift in Sources */,
-				6E9DE1F11D90830300321653 /* UserInputReader.swift in Sources */,
+				6E9DE1F11D90830300321653 /* ConsoleInputReader.swift in Sources */,
 				6ECEA3531D883F6F0035E9DA /* Clock.swift in Sources */,
 				6E9995261D7F60D500616838 /* Board.swift in Sources */,
 				6EEECB381D8B1ADE00B92641 /* HumanPlayer.swift in Sources */,

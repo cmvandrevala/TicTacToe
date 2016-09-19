@@ -1,4 +1,4 @@
-public class TTTMoveReader {
+public class TTTMoveReader: ConsoleInputReader {
     
     public enum InputClassification {
         case Passed
@@ -14,24 +14,24 @@ public class TTTMoveReader {
         gameBoard = board
     }
     
-    public func getUserMove() -> Int {
+    public func getInput() -> String? {
         print("\nPlease enter your input [0-8]:")
         let response = readLine(stripNewline: true)!
         switch checkInput(response) {
         case .Passed:
-            return Int(response)!
+            return response
         case .NonInteger:
             print("That is not an integer input! Try again.")
-            return getUserMove()
+            return getInput()
         case .TooLarge:
             print("That integer is way too big!")
-            return getUserMove()
+            return getInput()
         case .TooSmall:
             print("That integer is way too small!")
-            return getUserMove()
+            return getInput()
         case .CellTaken:
             print("That space has already been taken!")
-            return getUserMove()
+            return getInput()
         }
     }
     

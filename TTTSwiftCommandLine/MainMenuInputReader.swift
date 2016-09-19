@@ -1,4 +1,4 @@
-public class MainMenuInputReader: UserInputReader {
+public class MainMenuInputReader: ConsoleInputReader {
     
     public init() {}
     

@@ -9,8 +9,8 @@ public class HumanPlayer: Player {
     }
     
     public func getMove(board: Board) -> Int? {
-        let inputRetriever = TTTMoveReader(board: board)
-        return inputRetriever.getUserMove()
+        let inputReader = TTTMoveReader(board: board)
+        return Int(inputReader.getInput()!)
     }
     
     

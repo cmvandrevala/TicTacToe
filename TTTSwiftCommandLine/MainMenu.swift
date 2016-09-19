@@ -2,9 +2,9 @@ public class MainMenu {
     
     public let playerOne: HumanPlayer!
     let messages: ConsoleMessages!
-    let inputReader: UserInputReader!
+    let inputReader: ConsoleInputReader!
     
-    public init(userInputReader: UserInputReader) {
+    public init(userInputReader: ConsoleInputReader) {
         playerOne = HumanPlayer()
         messages = ConsoleMessages()
         inputReader = userInputReader
