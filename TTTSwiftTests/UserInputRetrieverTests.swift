@@ -8,12 +8,12 @@ class UserInputRetrieverTests: QuickSpec {
         describe("#move") {
 
             var board: Board!
-            var clock: GameClock!
+            var clock: Clock!
             var manager: UserInputRetriever!
             
             beforeEach {
                 board = Board()
-                clock = GameClock()
+                clock = Clock()
                 manager = UserInputRetriever(board: board)
             }
             
