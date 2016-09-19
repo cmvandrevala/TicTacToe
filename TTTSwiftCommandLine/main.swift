@@ -1,5 +1,5 @@
 func newGame() {
-    let clock = GameClock()
+    let clock = Clock()
     let board = Board()
     let rules = Rules(board: board)
     let retriever = UserInputRetriever(board: board)
@@ -7,7 +7,7 @@ func newGame() {
     
     print(printer.formattedBoardForConsole())
     
-    while !rules.gameIsOver() {
+    while !rules.isGameOver() {
         retriever.humanPlayersTurn(clock)
         rules.updateGameStatus()
         clock.incrementTurnNumber()
@@ -16,11 +16,11 @@ func newGame() {
 }
 
 let messages = ConsoleMessages()
-var playerWantsToContinue = true
+let playerOne = HumanPlayer()
 
 print(messages.welcomeMessage())
 
-while playerWantsToContinue {
+while playerOne.wantsToContinuePlaying {
     var playerResponse = readLine()
     switch playerResponse! {
     case "1":
@@ -30,10 +30,10 @@ while playerWantsToContinue {
         newGame()
         print(messages.askToPlayAgain())
     case "2":
-        playerWantsToContinue = false
+        playerOne.noLongerWantsToPlay()
         print(messages.leaveGameMessage())
     case "No":
-        playerWantsToContinue = false
+        playerOne.noLongerWantsToPlay()
         print(messages.leaveGameMessage())
     default:
         print(messages.invalidInputMessage())

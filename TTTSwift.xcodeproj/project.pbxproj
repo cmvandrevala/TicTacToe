@@ -13,9 +13,9 @@
 		6E22377D1D885A6400676B77 /* ConsoleBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E22377C1D885A6400676B77 /* ConsoleBoard.swift */; };
 		6E22377E1D885A6400676B77 /* ConsoleBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E22377C1D885A6400676B77 /* ConsoleBoard.swift */; };
 		6E2237801D885A7900676B77 /* ConsoleBoardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E22377F1D885A7900676B77 /* ConsoleBoardTests.swift */; };
-		6E2237821D88628300676B77 /* ComputerAI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E2237811D88628300676B77 /* ComputerAI.swift */; };
-		6E2237831D88628300676B77 /* ComputerAI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E2237811D88628300676B77 /* ComputerAI.swift */; };
-		6E2237851D88629300676B77 /* ComputerAITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E2237841D88629300676B77 /* ComputerAITests.swift */; };
+		6E2237821D88628300676B77 /* FirstAvailableSpotComputerPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E2237811D88628300676B77 /* FirstAvailableSpotComputerPlayer.swift */; };
+		6E2237831D88628300676B77 /* FirstAvailableSpotComputerPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E2237811D88628300676B77 /* FirstAvailableSpotComputerPlayer.swift */; };
+		6E2237851D88629300676B77 /* FirstAvailableSpotComputerPlayerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E2237841D88629300676B77 /* FirstAvailableSpotComputerPlayerTests.swift */; };
 		6E4797921D83106D0027ADAC /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E4797911D83106D0027ADAC /* main.swift */; };
 		6E4797961D8310A20027ADAC /* Board.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9995251D7F60D500616838 /* Board.swift */; };
 		6E4797981D8313350027ADAC /* Rules.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E1811631D8099F200B73B7A /* Rules.swift */; };
@@ -30,9 +30,17 @@
 		6EB5C1DE1D7F5C7800A5829F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6EB5C1DC1D7F5C7800A5829F /* Main.storyboard */; };
 		6EB5C1E01D7F5C7800A5829F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6EB5C1DF1D7F5C7800A5829F /* Assets.xcassets */; };
 		6EB5C1E31D7F5C7800A5829F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6EB5C1E11D7F5C7800A5829F /* LaunchScreen.storyboard */; };
-		6ECEA3531D883F6F0035E9DA /* GameClock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ECEA3521D883F6F0035E9DA /* GameClock.swift */; };
-		6ECEA3551D883F830035E9DA /* GameClockTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ECEA3541D883F830035E9DA /* GameClockTests.swift */; };
-		6ECEA3561D883F870035E9DA /* GameClock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ECEA3521D883F6F0035E9DA /* GameClock.swift */; };
+		6ECEA3531D883F6F0035E9DA /* Clock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ECEA3521D883F6F0035E9DA /* Clock.swift */; };
+		6ECEA3551D883F830035E9DA /* ClockTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ECEA3541D883F830035E9DA /* ClockTests.swift */; };
+		6ECEA3561D883F870035E9DA /* Clock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ECEA3521D883F6F0035E9DA /* Clock.swift */; };
+		6EEECB361D8B1AC200B92641 /* HumanPlayerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EEECB351D8B1AC200B92641 /* HumanPlayerTests.swift */; };
+		6EEECB381D8B1ADE00B92641 /* HumanPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EEECB371D8B1ADE00B92641 /* HumanPlayer.swift */; };
+		6EEECB391D8B1ADE00B92641 /* HumanPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EEECB371D8B1ADE00B92641 /* HumanPlayer.swift */; };
+		6EEECB3E1D8B245E00B92641 /* GameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EEECB3D1D8B245E00B92641 /* GameTests.swift */; };
+		6EEECB401D8B246B00B92641 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EEECB3F1D8B246B00B92641 /* Game.swift */; };
+		6EEECB411D8B246B00B92641 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EEECB3F1D8B246B00B92641 /* Game.swift */; };
+		6EEECB431D8B255A00B92641 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EEECB421D8B255A00B92641 /* Player.swift */; };
+		6EEECB441D8B255A00B92641 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EEECB421D8B255A00B92641 /* Player.swift */; };
 		6EF6F6BC1D81D1FF00B545F2 /* ConsoleMessagesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF6F6BB1D81D1FF00B545F2 /* ConsoleMessagesTests.swift */; };
 		6EF6F6BE1D81D20D00B545F2 /* ConsoleMessages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF6F6BD1D81D20D00B545F2 /* ConsoleMessages.swift */; };
 /* End PBXBuildFile section */
@@ -62,17 +70,17 @@
 /* Begin PBXFileReference section */
 		12BE161286AE3EA75A6ADBA1 /* Pods-TTTSwiftTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TTTSwiftTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TTTSwiftTests/Pods-TTTSwiftTests.debug.xcconfig"; sourceTree = "<group>"; };
 		6E1811611D80989D00B73B7A /* RulesTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RulesTests.swift; sourceTree = "<group>"; };
-		6E1811631D8099F200B73B7A /* Rules.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rules.swift; sourceTree = "<group>"; };
-		6E22377C1D885A6400676B77 /* ConsoleBoard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsoleBoard.swift; sourceTree = "<group>"; };
+		6E1811631D8099F200B73B7A /* Rules.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Rules.swift; path = ../TTTSwift/Rules.swift; sourceTree = "<group>"; };
+		6E22377C1D885A6400676B77 /* ConsoleBoard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ConsoleBoard.swift; path = ../TTTSwift/ConsoleBoard.swift; sourceTree = "<group>"; };
 		6E22377F1D885A7900676B77 /* ConsoleBoardTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsoleBoardTests.swift; sourceTree = "<group>"; };
-		6E2237811D88628300676B77 /* ComputerAI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComputerAI.swift; sourceTree = "<group>"; };
-		6E2237841D88629300676B77 /* ComputerAITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComputerAITests.swift; sourceTree = "<group>"; };
+		6E2237811D88628300676B77 /* FirstAvailableSpotComputerPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FirstAvailableSpotComputerPlayer.swift; path = ../TTTSwift/FirstAvailableSpotComputerPlayer.swift; sourceTree = "<group>"; };
+		6E2237841D88629300676B77 /* FirstAvailableSpotComputerPlayerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstAvailableSpotComputerPlayerTests.swift; sourceTree = "<group>"; };
 		6E47978F1D83106D0027ADAC /* TTTSwiftCommandLine */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = TTTSwiftCommandLine; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E4797911D83106D0027ADAC /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		6E75F1F31D87299A00FAB787 /* UserInputRetrieverTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInputRetrieverTests.swift; sourceTree = "<group>"; };
-		6E75F1F51D8729AA00FAB787 /* UserInputRetriever.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInputRetriever.swift; sourceTree = "<group>"; };
+		6E75F1F51D8729AA00FAB787 /* UserInputRetriever.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserInputRetriever.swift; path = ../TTTSwift/UserInputRetriever.swift; sourceTree = "<group>"; };
 		6E9995231D7F5CF800616838 /* BoardTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardTests.swift; sourceTree = "<group>"; };
-		6E9995251D7F60D500616838 /* Board.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Board.swift; sourceTree = "<group>"; };
+		6E9995251D7F60D500616838 /* Board.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Board.swift; path = ../TTTSwift/Board.swift; sourceTree = "<group>"; };
 		6EB5C1D51D7F5C7800A5829F /* TTTSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TTTSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6EB5C1D81D7F5C7800A5829F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6EB5C1DA1D7F5C7800A5829F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -82,10 +90,15 @@
 		6EB5C1E41D7F5C7800A5829F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6EB5C1E91D7F5C7800A5829F /* TTTSwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TTTSwiftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6EB5C1EF1D7F5C7800A5829F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6ECEA3521D883F6F0035E9DA /* GameClock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameClock.swift; sourceTree = "<group>"; };
-		6ECEA3541D883F830035E9DA /* GameClockTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameClockTests.swift; sourceTree = "<group>"; };
+		6ECEA3521D883F6F0035E9DA /* Clock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Clock.swift; path = ../TTTSwift/Clock.swift; sourceTree = "<group>"; };
+		6ECEA3541D883F830035E9DA /* ClockTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClockTests.swift; sourceTree = "<group>"; };
+		6EEECB351D8B1AC200B92641 /* HumanPlayerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HumanPlayerTests.swift; sourceTree = "<group>"; };
+		6EEECB371D8B1ADE00B92641 /* HumanPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HumanPlayer.swift; sourceTree = "<group>"; };
+		6EEECB3D1D8B245E00B92641 /* GameTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameTests.swift; sourceTree = "<group>"; };
+		6EEECB3F1D8B246B00B92641 /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		6EEECB421D8B255A00B92641 /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		6EF6F6BB1D81D1FF00B545F2 /* ConsoleMessagesTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsoleMessagesTests.swift; sourceTree = "<group>"; };
-		6EF6F6BD1D81D20D00B545F2 /* ConsoleMessages.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsoleMessages.swift; sourceTree = "<group>"; };
+		6EF6F6BD1D81D20D00B545F2 /* ConsoleMessages.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ConsoleMessages.swift; path = ../TTTSwift/ConsoleMessages.swift; sourceTree = "<group>"; };
 		DE02BD03A871D35FD8716CF3 /* Pods_TTTSwiftTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TTTSwiftTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E95CC427C4F5DFE9BDA4D792 /* Pods-TTTSwiftTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TTTSwiftTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TTTSwiftTests/Pods-TTTSwiftTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -119,7 +132,17 @@
 		6E4797901D83106D0027ADAC /* TTTSwiftCommandLine */ = {
 			isa = PBXGroup;
 			children = (
+				6E9995251D7F60D500616838 /* Board.swift */,
+				6E1811631D8099F200B73B7A /* Rules.swift */,
+				6EF6F6BD1D81D20D00B545F2 /* ConsoleMessages.swift */,
+				6E75F1F51D8729AA00FAB787 /* UserInputRetriever.swift */,
+				6ECEA3521D883F6F0035E9DA /* Clock.swift */,
+				6E22377C1D885A6400676B77 /* ConsoleBoard.swift */,
+				6E2237811D88628300676B77 /* FirstAvailableSpotComputerPlayer.swift */,
 				6E4797911D83106D0027ADAC /* main.swift */,
+				6EEECB371D8B1ADE00B92641 /* HumanPlayer.swift */,
+				6EEECB3F1D8B246B00B92641 /* Game.swift */,
+				6EEECB421D8B255A00B92641 /* Player.swift */,
 			);
 			path = TTTSwiftCommandLine;
 			sourceTree = "<group>";
@@ -155,13 +178,6 @@
 				6EB5C1DF1D7F5C7800A5829F /* Assets.xcassets */,
 				6EB5C1E11D7F5C7800A5829F /* LaunchScreen.storyboard */,
 				6EB5C1E41D7F5C7800A5829F /* Info.plist */,
-				6E9995251D7F60D500616838 /* Board.swift */,
-				6E1811631D8099F200B73B7A /* Rules.swift */,
-				6EF6F6BD1D81D20D00B545F2 /* ConsoleMessages.swift */,
-				6E75F1F51D8729AA00FAB787 /* UserInputRetriever.swift */,
-				6ECEA3521D883F6F0035E9DA /* GameClock.swift */,
-				6E22377C1D885A6400676B77 /* ConsoleBoard.swift */,
-				6E2237811D88628300676B77 /* ComputerAI.swift */,
 			);
 			path = TTTSwift;
 			sourceTree = "<group>";
@@ -174,9 +190,11 @@
 				6E1811611D80989D00B73B7A /* RulesTests.swift */,
 				6EF6F6BB1D81D1FF00B545F2 /* ConsoleMessagesTests.swift */,
 				6E75F1F31D87299A00FAB787 /* UserInputRetrieverTests.swift */,
-				6ECEA3541D883F830035E9DA /* GameClockTests.swift */,
+				6ECEA3541D883F830035E9DA /* ClockTests.swift */,
 				6E22377F1D885A7900676B77 /* ConsoleBoardTests.swift */,
-				6E2237841D88629300676B77 /* ComputerAITests.swift */,
+				6E2237841D88629300676B77 /* FirstAvailableSpotComputerPlayerTests.swift */,
+				6EEECB351D8B1AC200B92641 /* HumanPlayerTests.swift */,
+				6EEECB3D1D8B245E00B92641 /* GameTests.swift */,
 			);
 			path = TTTSwiftTests;
 			sourceTree = "<group>";
@@ -263,11 +281,12 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = "Cyrus Vandrevala";
 				TargetAttributes = {
 					6E47978E1D83106D0027ADAC = {
 						CreatedOnToolsVersion = 7.3.1;
+						LastSwiftMigration = 0800;
 					};
 					6EB5C1D41D7F5C7800A5829F = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -375,11 +394,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6ECEA3561D883F870035E9DA /* GameClock.swift in Sources */,
+				6EEECB441D8B255A00B92641 /* Player.swift in Sources */,
+				6ECEA3561D883F870035E9DA /* Clock.swift in Sources */,
+				6EEECB411D8B246B00B92641 /* Game.swift in Sources */,
 				6E4797961D8310A20027ADAC /* Board.swift in Sources */,
+				6EEECB391D8B1ADE00B92641 /* HumanPlayer.swift in Sources */,
 				6E4797991D8313390027ADAC /* ConsoleMessages.swift in Sources */,
 				6E75F1F71D8729AA00FAB787 /* UserInputRetriever.swift in Sources */,
-				6E2237831D88628300676B77 /* ComputerAI.swift in Sources */,
+				6E2237831D88628300676B77 /* FirstAvailableSpotComputerPlayer.swift in Sources */,
 				6E4797921D83106D0027ADAC /* main.swift in Sources */,
 				6E22377E1D885A6400676B77 /* ConsoleBoard.swift in Sources */,
 				6E4797981D8313350027ADAC /* Rules.swift in Sources */,
@@ -390,14 +412,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6E2237821D88628300676B77 /* ComputerAI.swift in Sources */,
+				6E2237821D88628300676B77 /* FirstAvailableSpotComputerPlayer.swift in Sources */,
 				6EB5C1DB1D7F5C7800A5829F /* ViewController.swift in Sources */,
 				6E1811641D8099F200B73B7A /* Rules.swift in Sources */,
 				6EF6F6BE1D81D20D00B545F2 /* ConsoleMessages.swift in Sources */,
+				6EEECB431D8B255A00B92641 /* Player.swift in Sources */,
 				6E22377D1D885A6400676B77 /* ConsoleBoard.swift in Sources */,
 				6EB5C1D91D7F5C7800A5829F /* AppDelegate.swift in Sources */,
-				6ECEA3531D883F6F0035E9DA /* GameClock.swift in Sources */,
+				6EEECB401D8B246B00B92641 /* Game.swift in Sources */,
+				6ECEA3531D883F6F0035E9DA /* Clock.swift in Sources */,
 				6E9995261D7F60D500616838 /* Board.swift in Sources */,
+				6EEECB381D8B1ADE00B92641 /* HumanPlayer.swift in Sources */,
 				6E75F1F61D8729AA00FAB787 /* UserInputRetriever.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -407,11 +432,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				6E1811621D80989D00B73B7A /* RulesTests.swift in Sources */,
+				6EEECB3E1D8B245E00B92641 /* GameTests.swift in Sources */,
 				6E2237801D885A7900676B77 /* ConsoleBoardTests.swift in Sources */,
+				6EEECB361D8B1AC200B92641 /* HumanPlayerTests.swift in Sources */,
 				6E75F1F41D87299A00FAB787 /* UserInputRetrieverTests.swift in Sources */,
 				6EF6F6BC1D81D1FF00B545F2 /* ConsoleMessagesTests.swift in Sources */,
-				6E2237851D88629300676B77 /* ComputerAITests.swift in Sources */,
-				6ECEA3551D883F830035E9DA /* GameClockTests.swift in Sources */,
+				6E2237851D88629300676B77 /* FirstAvailableSpotComputerPlayerTests.swift in Sources */,
+				6ECEA3551D883F830035E9DA /* ClockTests.swift in Sources */,
 				6E9995241D7F5CF800616838 /* BoardTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -453,6 +480,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
+				SWIFT_VERSION = 2.3;
 			};
 			name = Debug;
 		};
@@ -463,6 +491,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
+				SWIFT_VERSION = 2.3;
 			};
 			name = Release;
 		};
@@ -480,8 +509,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -526,8 +557,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -546,6 +579,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -579,6 +613,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 12BE161286AE3EA75A6ADBA1 /* Pods-TTTSwiftTests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = TTTSwiftTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -593,6 +628,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E95CC427C4F5DFE9BDA4D792 /* Pods-TTTSwiftTests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = TTTSwiftTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";

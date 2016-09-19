@@ -15,7 +15,7 @@ public class Rules {
         gameBoard = board
     }
     
-    public func gameIsOver() -> Bool {
+    public func isGameOver() -> Bool {
         switch currentGameStatus {
         case .PlayerOneWins:
             return true
@@ -45,7 +45,7 @@ public class Rules {
     }
     
     private func updateGameStatusWithPotentialTie() {
-        if gameBoard.filledBoard() && gameBoard.threeInRow() == .Empty {
+        if gameBoard.isFilled() && gameBoard.threeInRow() == .Empty {
             currentGameStatus = .Tie
         }
     }

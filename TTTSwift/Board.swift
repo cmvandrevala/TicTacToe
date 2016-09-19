@@ -34,18 +34,18 @@ public class Board {
     
     public func threeInRow() -> CellStatus {
         for group in groupsOfThreeCells() {
-            if allThreeCellsMatch(group) && allThreeCellsAreFilled(group) {
+            if areAllThreeCellsMatching(group) && areAllThreeCellsFilled(group) {
                 return currentCells[group[0]]!
             }
         }
         return .Empty
     }
     
-    public func filledBoard() -> Bool {
+    public func isFilled() -> Bool {
         return !currentBoard().contains(.Empty)
     }
     
-    public func emptyCellAtIndex(cellIndex: Int) -> Bool {
+    public func isEmptyCellAtIndex(cellIndex: Int) -> Bool {
         switch currentCells[cellIndex]! {
         case .PlayerOne:
             return false
@@ -56,12 +56,12 @@ public class Board {
         }
     }
     
-    private func allThreeCellsMatch(group: [Int]) -> Bool {
+    private func areAllThreeCellsMatching(group: [Int]) -> Bool {
         let marks = marksContainedInGroup(group)
         return marks[0] == marks[1] && marks[1] == marks[2]
     }
     
-    private func allThreeCellsAreFilled(group: [Int]) -> Bool {
+    private func areAllThreeCellsFilled(group: [Int]) -> Bool {
         let marks = marksContainedInGroup(group)
         return marks[0] != .Empty && marks[1] != .Empty && marks[2] != .Empty
     }
