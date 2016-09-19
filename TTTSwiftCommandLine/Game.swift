@@ -1,9 +1,10 @@
 public class Game {
     
-    public var board: Board!
-    
+    let board: Board!
     let clock: Clock!
     let rules: Rules!
+    let boardPrinter: ConsoleBoard!
+    
     var firstPlayer: Player!
     var secondPlayer: Player!
     
@@ -13,9 +14,18 @@ public class Game {
         board = Board()
         clock = Clock()
         rules = Rules(board: board)
+        boardPrinter = ConsoleBoard(board: board)
+    }
+    
+    public func play() {
+        while isInProgress() {
+            takeTurn()
+        }
+        printBoardAndMessagesToConsole()
     }
     
     public func takeTurn() {
+        printBoardAndMessagesToConsole()
         switch clock.playerOnesTurn() {
         case true:
             board.move(firstPlayer.getMove(board)!, cellStatus: .PlayerOne)
@@ -28,6 +38,10 @@ public class Game {
     
     public func isInProgress() -> Bool {
         return !rules.isGameOver()
+    }
+    
+    private func printBoardAndMessagesToConsole() {
+        print(boardPrinter.formattedBoardForConsole())
     }
 
 }
