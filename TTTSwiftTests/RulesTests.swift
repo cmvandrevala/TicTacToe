@@ -21,7 +21,7 @@ class RulesTests: QuickSpec {
                 board.move(1, cellStatus: .PlayerOne)
                 board.move(2, cellStatus: .PlayerOne)
                 rules.updateGameStatus()
-                expect(rules.isGameOver()).to(equal(true))
+                expect(rules.isGameOver()).to(beTrue())
             }
             
             it("returns true if there is a winner in the middle row") {
@@ -29,7 +29,7 @@ class RulesTests: QuickSpec {
                 board.move(4, cellStatus: .PlayerOne)
                 board.move(5, cellStatus: .PlayerOne)
                 rules.updateGameStatus()
-                expect(rules.isGameOver()).to(equal(true))
+                expect(rules.isGameOver()).to(beTrue())
             }
             
             it("returns true if there is a winner in the bottom row") {
@@ -37,7 +37,7 @@ class RulesTests: QuickSpec {
                 board.move(7, cellStatus: .PlayerOne)
                 board.move(8, cellStatus: .PlayerOne)
                 rules.updateGameStatus()
-                expect(rules.isGameOver()).to(equal(true))
+                expect(rules.isGameOver()).to(beTrue())
             }
             
             it("returns true if there is a winner in the left column") {
@@ -45,7 +45,7 @@ class RulesTests: QuickSpec {
                 board.move(3, cellStatus: .PlayerTwo)
                 board.move(6, cellStatus: .PlayerTwo)
                 rules.updateGameStatus()
-                expect(rules.isGameOver()).to(equal(true))
+                expect(rules.isGameOver()).to(beTrue())
             }
             
             it("returns true if there is a winner in the middle column") {
@@ -53,7 +53,7 @@ class RulesTests: QuickSpec {
                 board.move(4, cellStatus: .PlayerTwo)
                 board.move(7, cellStatus: .PlayerTwo)
                 rules.updateGameStatus()
-                expect(rules.isGameOver()).to(equal(true))
+                expect(rules.isGameOver()).to(beTrue())
             }
             
             it("returns true if there is a winner in the right column") {
@@ -61,7 +61,7 @@ class RulesTests: QuickSpec {
                 board.move(5, cellStatus: .PlayerTwo)
                 board.move(8, cellStatus: .PlayerTwo)
                 rules.updateGameStatus()
-                expect(rules.isGameOver()).to(equal(true))
+                expect(rules.isGameOver()).to(beTrue())
             }
             
             it("returns true if there is a winner in the first diagonal") {
@@ -69,7 +69,7 @@ class RulesTests: QuickSpec {
                 board.move(4, cellStatus: .PlayerOne)
                 board.move(8, cellStatus: .PlayerOne)
                 rules.updateGameStatus()
-                expect(rules.isGameOver()).to(equal(true))
+                expect(rules.isGameOver()).to(beTrue())
             }
             
             it("returns true if there is a winner in the second diagonal") {
@@ -77,7 +77,7 @@ class RulesTests: QuickSpec {
                 board.move(4, cellStatus: .PlayerTwo)
                 board.move(6, cellStatus: .PlayerTwo)
                 rules.updateGameStatus()
-                expect(rules.isGameOver()).to(equal(true))
+                expect(rules.isGameOver()).to(beTrue())
             }
             
             it("returns false if not all of the cells are filled and there is no winner") {
@@ -85,7 +85,7 @@ class RulesTests: QuickSpec {
                 board.move(8, cellStatus: .PlayerOne)
                 board.move(4, cellStatus: .PlayerTwo)
                 rules.updateGameStatus()
-                expect(rules.isGameOver()).to(equal(false))
+                expect(rules.isGameOver()).to(beFalse())
             }
             
             it("returns true if all of the cells are filled and there is a tie") {
@@ -99,7 +99,7 @@ class RulesTests: QuickSpec {
                 board.move(7, cellStatus: .PlayerOne)
                 board.move(8, cellStatus: .PlayerTwo)
                 rules.updateGameStatus()
-                expect(rules.isGameOver()).to(equal(true))
+                expect(rules.isGameOver()).to(beTrue())
             }
             
             it("returns true if all of the cells are filled and there is a winner") {
@@ -113,7 +113,7 @@ class RulesTests: QuickSpec {
                 board.move(7, cellStatus: .PlayerOne)
                 board.move(8, cellStatus: .PlayerTwo)
                 rules.updateGameStatus()
-                expect(rules.isGameOver()).to(equal(true))
+                expect(rules.isGameOver()).to(beTrue())
             }
 
         }
@@ -125,7 +125,7 @@ class RulesTests: QuickSpec {
                 board.move(4, cellStatus: .PlayerOne)
                 board.move(8, cellStatus: .PlayerOne)
                 rules.updateGameStatus()
-                expect(rules.currentGameStatus == .PlayerOneWins).to(beTruthy())
+                expect(rules.currentGameStatus == .PlayerOneWins).to(beTrue())
             }
             
             it("returns .PlayerTwoWins if player two has a vertical win") {
@@ -133,7 +133,7 @@ class RulesTests: QuickSpec {
                 board.move(4, cellStatus: .PlayerTwo)
                 board.move(7, cellStatus: .PlayerTwo)
                 rules.updateGameStatus()
-                expect(rules.currentGameStatus == .PlayerTwoWins).to(beTruthy())
+                expect(rules.currentGameStatus == .PlayerTwoWins).to(beTrue())
             }
             
             it("returns .Tie if the game has ended in a tie") {
@@ -147,7 +147,7 @@ class RulesTests: QuickSpec {
                 board.move(7, cellStatus: .PlayerOne)
                 board.move(8, cellStatus: .PlayerTwo)
                 rules.updateGameStatus()
-                expect(rules.currentGameStatus == .Tie).to(beTruthy())
+                expect(rules.currentGameStatus == .Tie).to(beTrue())
             }
             
             it("returns .InProgress if the game is still in progress") {
@@ -155,7 +155,21 @@ class RulesTests: QuickSpec {
                 board.move(2, cellStatus: .PlayerTwo)
                 board.move(7, cellStatus: .PlayerOne)
                 rules.updateGameStatus()
-                expect(rules.currentGameStatus == .InProgress).to(beTruthy())
+                expect(rules.currentGameStatus == .InProgress).to(beTrue())
+            }
+            
+        }
+        
+        describe("#clear") {
+            
+            it("clears the winner of the game") {
+                board.move(0, cellStatus: .PlayerOne)
+                board.move(4, cellStatus: .PlayerOne)
+                board.move(8, cellStatus: .PlayerOne)
+                rules.updateGameStatus()
+                expect(rules.currentGameStatus == .PlayerOneWins).to(beTrue())
+                rules.clear()
+                expect(rules.currentGameStatus == .InProgress).to(beTrue())
             }
             
         }
