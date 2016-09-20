@@ -22,12 +22,12 @@ class MainMenuTests: QuickSpec {
         describe("interpreting user input") {
             
             it("ends the game if the player no longer wants to play") {
-                let inputReader = MockInputReader(mockOutputString: "3")
+                let inputReader = MockInputReader(mockOutputString: "4")
                 let menu = MainMenu(userInputReader: inputReader)
 
                 menu.start()
                 
-                expect(menu.playerOne.wantsToContinuePlaying).to(beFalse())
+                expect(menu.humanPlayer.wantsToContinuePlaying).to(beFalse())
             }
             
         }

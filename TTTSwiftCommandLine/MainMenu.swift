@@ -1,29 +1,33 @@
 public class MainMenu {
     
-    public let playerOne: HumanPlayer!
+    public let humanPlayer: HumanPlayer!
     let messages: ConsoleMessages!
     let inputReader: ConsoleInputReader!
     
     public init(userInputReader: ConsoleInputReader) {
-        playerOne = HumanPlayer()
+        humanPlayer = HumanPlayer()
         messages = ConsoleMessages()
         inputReader = userInputReader
     }
     
     public func start() {
         print(messages.welcomeMessage())
-        while playerOne.wantsToContinuePlaying {
+        while humanPlayer.wantsToContinuePlaying {
             switch inputReader.getInput()! {
             case "1":
-                let playerTwo = HumanPlayer()
-                Game(playerOne: playerOne, playerTwo: playerTwo).play()
+                let anotherHumanPlayer = HumanPlayer()
+                Game(playerOne: humanPlayer, playerTwo: anotherHumanPlayer).play()
                 print(messages.askToPlayAgain())
             case "2":
-                let playerTwo = FirstAvailableSpotComputerPlayer()
-                Game(playerOne: playerOne, playerTwo: playerTwo).play()
+                let computerPlayer = FirstAvailableSpotComputerPlayer()
+                Game(playerOne: humanPlayer, playerTwo: computerPlayer).play()
                 print(messages.askToPlayAgain())
             case "3":
-                playerOne.noLongerWantsToPlay()
+                let computerPlayer = FirstAvailableSpotComputerPlayer()
+                Game(playerOne: computerPlayer, playerTwo: humanPlayer).play()
+                print(messages.askToPlayAgain())
+            case "4":
+                humanPlayer.noLongerWantsToPlay()
                 print(messages.leaveGameMessage())
             default:
                 print(messages.invalidInputMessage())

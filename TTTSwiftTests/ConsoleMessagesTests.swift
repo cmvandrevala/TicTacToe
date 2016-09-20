@@ -14,11 +14,11 @@ class ConsoleMessagesTests: QuickSpec {
         describe("tic-tac-toe console messages") {
             
             it("#welcomeMessage returns 'Welcome to Tic-Tac-Toe! What would you like to do?'") {
-                expect(printer.welcomeMessage()).to(equal("\nWelcome to Tic-Tac-Toe! What would you like to do?\n1) Play Human vs. Human\n2) Play Human vs. Computer\n3) Exit Tic-TacToe"))
+                expect(printer.welcomeMessage()).to(equal("\nWelcome to Tic-Tac-Toe! What would you like to do?\n1) Play Human vs. Human\n2) Play Human vs. Computer\n3) Play Computer vs. Human\n4) Exit Tic-TacToe"))
             }
             
             it("#askToPlayAgain returns 'Would you like to play again?'") {
-                expect(printer.askToPlayAgain()).to(equal("\nWould you like to play again?\n1) Yes, Human vs. Human\n2) Yes, Human vs. Computer\n3) No Thank You"))
+                expect(printer.askToPlayAgain()).to(equal("\nWould you like to play again?\n1) Yes, Human vs. Human\n2) Yes, Human vs. Computer\n3) Yes, Computer vs. Human\n4) No Thank You"))
             }
             
             it("#leaveGameMessage returns 'Thank you for playing!'") {
@@ -26,7 +26,7 @@ class ConsoleMessagesTests: QuickSpec {
             }
             
             it("#invalidInputMessage returns 'Sorry, I don't understand your input. Please enter 1, 2, or 3.'") {
-                expect(printer.invalidInputMessage()).to(equal("\nSorry, I don't understand your input. Please enter 1, 2, or 3."))
+                expect(printer.invalidInputMessage()).to(equal("\nSorry, I don't understand your input. Please enter 1, 2, 3, or 4."))
             }
 
         }
