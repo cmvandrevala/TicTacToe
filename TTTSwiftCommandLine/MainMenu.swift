@@ -1,31 +1,33 @@
 public class MainMenu {
     
-    let playerOne: HumanPlayer!
-    let playerTwo: HumanPlayer!
+    public let humanPlayer: HumanPlayer!
     let messages: ConsoleMessages!
+    let inputReader: ConsoleInputReader!
     
-    public init() {
-        playerOne = HumanPlayer()
-        playerTwo = HumanPlayer()
+    public init(userInputReader: ConsoleInputReader) {
+        humanPlayer = HumanPlayer()
         messages = ConsoleMessages()
+        inputReader = userInputReader
     }
     
     public func start() {
         print(messages.welcomeMessage())
-        while playerOne.wantsToContinuePlaying {
-            let playerResponse = readLine()
-            switch playerResponse! {
+        while humanPlayer.wantsToContinuePlaying {
+            switch inputReader.getInput()! {
             case "1":
-                Game(playerOne: playerOne, playerTwo: playerTwo).play()
-                print(messages.askToPlayAgain())
-            case "Yes":
-                Game(playerOne: playerOne, playerTwo: playerTwo).play()
+                let anotherHumanPlayer = HumanPlayer()
+                Game(playerOne: humanPlayer, playerTwo: anotherHumanPlayer).play()
                 print(messages.askToPlayAgain())
             case "2":
-                playerOne.noLongerWantsToPlay()
-                print(messages.leaveGameMessage())
-            case "No":
-                playerOne.noLongerWantsToPlay()
+                let computerPlayer = FirstAvailableSpotComputerPlayer()
+                Game(playerOne: humanPlayer, playerTwo: computerPlayer).play()
+                print(messages.askToPlayAgain())
+            case "3":
+                let computerPlayer = FirstAvailableSpotComputerPlayer()
+                Game(playerOne: computerPlayer, playerTwo: humanPlayer).play()
+                print(messages.askToPlayAgain())
+            case "4":
+                humanPlayer.noLongerWantsToPlay()
                 print(messages.leaveGameMessage())
             default:
                 print(messages.invalidInputMessage())

@@ -3,11 +3,11 @@ public class ConsoleMessages {
     public init() {}
     
     public func welcomeMessage() -> String {
-        return "\nWelcome to Tic-Tac-Toe! Would You Like to Start a New Game?\n1) Yes\n2) No"
+        return "\nWelcome to Tic-Tac-Toe! What would you like to do?\n1) Play Human vs. Human\n2) Play Human vs. Computer\n3) Play Computer vs. Human\n4) Exit Tic-TacToe"
     }
     
     public func askToPlayAgain() -> String {
-        return "\nWould you like to play again?\n1) Yes\n2) No"
+        return "\nWould you like to play again?\n1) Yes, Human vs. Human\n2) Yes, Human vs. Computer\n3) Yes, Computer vs. Human\n4) No Thank You"
     }
     
     public func leaveGameMessage() -> String {
@@ -15,7 +15,7 @@ public class ConsoleMessages {
     }
     
     public func invalidInputMessage() -> String {
-        return "\nSorry, I don't understand your input. Enter 1 or 2."
+        return "\nSorry, I don't understand your input. Please enter 1, 2, 3, or 4."
     }
 
 }

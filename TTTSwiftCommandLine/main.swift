@@ -1,1 +1,1 @@
-MainMenu().start()
+MainMenu(userInputReader: MainMenuInputReader()).start()
