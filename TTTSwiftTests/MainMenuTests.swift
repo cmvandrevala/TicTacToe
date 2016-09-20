@@ -28,12 +28,9 @@ class MockGame: TwoPlayerGame {
     var firstPlayer: Player!
     var secondPlayer: Player!
     
-    required init(playerOne: Player, playerTwo: Player) {
+    func play(playerOne: Player, playerTwo: Player) {
         firstPlayer = playerOne
         secondPlayer = playerTwo
-    }
-    
-    func play() {
         hasBeenPlayed = true
     }
     
@@ -49,14 +46,6 @@ class MockGame: TwoPlayerGame {
         return secondPlayer
     }
     
-    func changePlayerOne(player: Player) {
-        firstPlayer = player
-    }
-    
-    func changePlayerTwo(player: Player) {
-        secondPlayer = player
-    }
-    
 }
 
 class MainMenuTests: QuickSpec {
@@ -67,8 +56,7 @@ class MainMenuTests: QuickSpec {
             it("starts a new game if a user selects option 1") {
                 let inputReader = MockInputReader(mockOutputString: "1")
                 let menu = MainMenu(userInputReader: inputReader)
-                let ai = FirstAvailableSpotComputerPlayer()
-                let game = MockGame(playerOne: ai, playerTwo: ai)
+                let game = MockGame()
                 
                 menu.start(game)
                 
@@ -78,8 +66,7 @@ class MainMenuTests: QuickSpec {
             it("plays human vs human if a user selects option 1") {
                 let inputReader = MockInputReader(mockOutputString: "1")
                 let menu = MainMenu(userInputReader: inputReader)
-                let ai = FirstAvailableSpotComputerPlayer()
-                let game = MockGame(playerOne: ai, playerTwo: ai)
+                let game = MockGame()
                 
                 menu.start(game)
                 let p1 = Mirror(reflecting: game.playerOne())
@@ -92,8 +79,7 @@ class MainMenuTests: QuickSpec {
             it("starts a new game if a user selects option 2") {
                 let inputReader = MockInputReader(mockOutputString: "2")
                 let menu = MainMenu(userInputReader: inputReader)
-                let ai = FirstAvailableSpotComputerPlayer()
-                let game = MockGame(playerOne: ai, playerTwo: ai)
+                let game = MockGame()
                 
                 menu.start(game)
                 
@@ -103,8 +89,7 @@ class MainMenuTests: QuickSpec {
             it("plays human vs computer if a user selects option 2") {
                 let inputReader = MockInputReader(mockOutputString: "2")
                 let menu = MainMenu(userInputReader: inputReader)
-                let ai = FirstAvailableSpotComputerPlayer()
-                let game = MockGame(playerOne: ai, playerTwo: ai)
+                let game = MockGame()
                 
                 menu.start(game)
                 let p1 = Mirror(reflecting: game.playerOne())
@@ -117,8 +102,7 @@ class MainMenuTests: QuickSpec {
             it("starts a new game if a user selects option 3") {
                 let inputReader = MockInputReader(mockOutputString: "3")
                 let menu = MainMenu(userInputReader: inputReader)
-                let ai = FirstAvailableSpotComputerPlayer()
-                let game = MockGame(playerOne: ai, playerTwo: ai)
+                let game = MockGame()
                 
                 menu.start(game)
                 
@@ -128,8 +112,7 @@ class MainMenuTests: QuickSpec {
             it("plays computer vs human if a user selects option 3") {
                 let inputReader = MockInputReader(mockOutputString: "3")
                 let menu = MainMenu(userInputReader: inputReader)
-                let ai = FirstAvailableSpotComputerPlayer()
-                let game = MockGame(playerOne: ai, playerTwo: ai)
+                let game = MockGame()
                 
                 menu.start(game)
                 let p1 = Mirror(reflecting: game.playerOne())
@@ -142,8 +125,7 @@ class MainMenuTests: QuickSpec {
             it("does not start a new game if the player no longer wants to play") {
                 let inputReader = MockInputReader(mockOutputString: "4")
                 let menu = MainMenu(userInputReader: inputReader)
-                let ai = FirstAvailableSpotComputerPlayer()
-                let game = MockGame(playerOne: ai, playerTwo: ai)
+                let game = MockGame()
                 
                 menu.start(game)
                 

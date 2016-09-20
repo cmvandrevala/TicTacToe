@@ -11,20 +11,6 @@ class GameTests: QuickSpec {
             game = Game()
         }
         
-        describe("#updating a player") {
-            
-            it("updates the first player to a new type") {
-                game.changePlayerOne(HumanPlayer())
-                expect(game.playerOne()).toNot(beAnInstanceOf(FirstAvailableSpotComputerPlayer))
-            }
-            
-            it("updates the second player to a new type") {
-                game.changePlayerTwo(HumanPlayer())
-                expect(game.playerTwo()).toNot(beAnInstanceOf(FirstAvailableSpotComputerPlayer))
-            }
-            
-        }
-        
         describe("#isInProgress") {
             
             it("returns true when a game is initialized") {

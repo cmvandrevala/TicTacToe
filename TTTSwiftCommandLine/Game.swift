@@ -8,16 +8,18 @@ public class Game: TwoPlayerGame {
     var firstPlayer: Player!
     var secondPlayer: Player!
     
-    public required init(playerOne: Player = FirstAvailableSpotComputerPlayer(), playerTwo: Player = FirstAvailableSpotComputerPlayer()) {
-        firstPlayer = playerOne
-        secondPlayer = playerTwo
+    public init() {
         board = Board()
         clock = Clock()
         rules = Rules(board: board)
         boardPrinter = ConsoleBoard(board: board)
+        firstPlayer = FirstAvailableSpotComputerPlayer()
+        secondPlayer = FirstAvailableSpotComputerPlayer()
     }
     
-    public func play() {
+    public func play(playerOne: Player, playerTwo: Player) {
+        firstPlayer = playerOne
+        secondPlayer = playerTwo
         while isInProgress() {
             takeTurn()
         }
@@ -46,14 +48,6 @@ public class Game: TwoPlayerGame {
     
     public func playerTwo() -> Player {
         return secondPlayer
-    }
-    
-    public func changePlayerOne(player: Player) {
-        firstPlayer = player
-    }
-    
-    public func changePlayerTwo(player: Player) {
-        secondPlayer = player
     }
     
     public func clear() {

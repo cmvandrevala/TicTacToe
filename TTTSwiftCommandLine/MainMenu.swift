@@ -16,21 +16,15 @@ public class MainMenu {
             switch inputReader.getInput()! {
             case "1":
                 game.clear()
-                game.changePlayerOne(humanPlayer)
-                game.changePlayerTwo(HumanPlayer())
-                game.play()
+                game.play(humanPlayer, playerTwo: HumanPlayer())
                 print(messages.askToPlayAgain())
             case "2":
                 game.clear()
-                game.changePlayerOne(humanPlayer)
-                game.changePlayerTwo(FirstAvailableSpotComputerPlayer())
-                game.play()
+                game.play(humanPlayer, playerTwo: FirstAvailableSpotComputerPlayer())
                 print(messages.askToPlayAgain())
             case "3":
                 game.clear()
-                game.changePlayerOne(FirstAvailableSpotComputerPlayer())
-                game.changePlayerTwo(humanPlayer)
-                game.play()
+                game.play(FirstAvailableSpotComputerPlayer(), playerTwo: humanPlayer)
                 print(messages.askToPlayAgain())
             case "4":
                 humanPlayer.noLongerWantsToPlay()
