@@ -1,3 +1,5 @@
+import Foundation
+
 public class ConsoleBoard {
     
     var gameBoard: Board
@@ -7,54 +9,26 @@ public class ConsoleBoard {
     }
     
     public func formattedBoardForConsole() -> String {
-        var formattedString = ""
-        let paddedMarks = forEachMarkByRow(padMark)
-        for (index, row) in paddedMarks.enumerate() {
-            formattedString = addRowOfMarks(formattedString, row: row)
-            if haveNotReachedLastRowOfBoard(index) {
-                formattedString = addHorizontalLine(formattedString)
-            }
+        var boardString = emptyFormattedBoard()
+        for (index, mark) in currentMarks().enumerate() {
+            boardString = boardString.stringByReplacingOccurrencesOfString("\(index)", withString: mark)
         }
-        return formattedString
+        return boardString
     }
     
-    private func haveNotReachedLastRowOfBoard(index: Int) -> Bool {
-        return index < 2
-    }
-    
-    private func addRowOfMarks(formattedString: String, row: [String]) -> String{
-        let formattedRow = "\(row[0])|\(row[1])|\(row[2])"
-        return "\(formattedString)\(formattedRow)"
-    }
-    
-    private func addHorizontalLine(formattedString: String) -> String {
-        let horizontalLine = "\n===========\n"
-        return "\(formattedString)\(horizontalLine)"
-    }
-    
-    private func padMark(mark: String) -> String {
-        if mark == "" {
-            return "   "
-        } else {
-            return " \(mark) "
-        }
-    }
-    
-    private func forEachMarkByRow(f: String -> String) -> [[String]] {
-        let marks = currentMarks()
-        let u = marks.map(f)
-        return [ [u[0], u[1], u[2]], [u[3], u[4], u[5]], [u[6], u[7], u[8]] ]
+    private func emptyFormattedBoard() -> String {
+        return "\n 0 | 1 | 2 \n===========\n 3 | 4 | 5 \n===========\n 6 | 7 | 8 "
     }
     
     private func currentMarks() -> [String] {
         var marksInCells: [String] = []
-        for status in gameBoard.currentBoard() {
+        for (index,status) in gameBoard.currentBoard().enumerate() {
             if status == .PlayerOne {
                 marksInCells.append("X")
             } else if status == .PlayerTwo {
                 marksInCells.append("O")
             } else {
-                marksInCells.append("")
+                marksInCells.append("\(index)")
             }
         }
         return marksInCells
