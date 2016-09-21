@@ -88,20 +88,20 @@ class BoardTests: QuickSpec {
         describe("#filledBoard") {
             
             it("returns false if the board is completely filled with empty spaces") {
-                expect(board.isFilled()).to(equal(false))
+                expect(board.isFilled()).to(beFalse())
             }
             
             it("returns false if not all of the cells are filled") {
                 board.move(1, cellStatus: .PlayerOne)
                 board.move(5, cellStatus: .PlayerTwo)
-                expect(board.isFilled()).to(equal(false))
+                expect(board.isFilled()).to(beFalse())
             }
             
             it("returns true if the board is completely filled") {
                 for i in 0...8 {
                     board.move(i, cellStatus: .PlayerOne)
                 }
-                expect(board.isFilled()).to(equal(true))
+                expect(board.isFilled()).to(beTrue())
             }
             
         }
@@ -110,16 +110,26 @@ class BoardTests: QuickSpec {
             
             it("returns false if the cell is taken by player one") {
                 board.move(1, cellStatus: .PlayerOne)
-                expect(board.isEmptyCellAtIndex(1)).to(equal(false))
+                expect(board.isEmptyCellAtIndex(1)).to(beFalse())
             }
             
             it("returns false if the cell is taken by player two") {
                 board.move(7, cellStatus: .PlayerTwo)
-                expect(board.isEmptyCellAtIndex(7)).to(equal(false))
+                expect(board.isEmptyCellAtIndex(7)).to(beFalse())
             }
             
             it("returns true if the cell is empty") {
-                expect(board.isEmptyCellAtIndex(6)).to(equal(true))
+                expect(board.isEmptyCellAtIndex(6)).to(beTrue())
+            }
+            
+        }
+        
+        describe("#clear") {
+            
+            it("erases all current moves on the board") {
+                board.move(1, cellStatus: .PlayerOne)
+                board.clear()
+                expect(board.isEmptyCellAtIndex(1)).to(beTrue())
             }
             
         }

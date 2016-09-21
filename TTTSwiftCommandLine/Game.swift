@@ -1,4 +1,4 @@
-public class Game {
+public class Game: TwoPlayerGame {
     
     let board: Board!
     let clock: Clock!
@@ -8,16 +8,18 @@ public class Game {
     var firstPlayer: Player!
     var secondPlayer: Player!
     
-    public init(playerOne: Player, playerTwo: Player) {
-        firstPlayer = playerOne
-        secondPlayer = playerTwo
+    public init() {
         board = Board()
         clock = Clock()
         rules = Rules(board: board)
         boardPrinter = ConsoleBoard(board: board)
+        firstPlayer = FirstAvailableSpotComputerPlayer()
+        secondPlayer = FirstAvailableSpotComputerPlayer()
     }
     
-    public func play() {
+    public func play(playerOne: Player, playerTwo: Player) {
+        firstPlayer = playerOne
+        secondPlayer = playerTwo
         while isInProgress() {
             takeTurn()
         }
@@ -38,6 +40,20 @@ public class Game {
     
     public func isInProgress() -> Bool {
         return !rules.isGameOver()
+    }
+    
+    public func playerOne() -> Player {
+        return firstPlayer
+    }
+    
+    public func playerTwo() -> Player {
+        return secondPlayer
+    }
+    
+    public func clear() {
+        board.clear()
+        rules.clear()
+        clock.clear()
     }
     
     private func printBoardAndMessagesToConsole() {

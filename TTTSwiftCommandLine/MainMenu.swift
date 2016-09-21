@@ -1,6 +1,6 @@
 public class MainMenu {
     
-    public let humanPlayer: HumanPlayer!
+    let humanPlayer: HumanPlayer!
     let messages: ConsoleMessages!
     let inputReader: ConsoleInputReader!
     
@@ -10,21 +10,21 @@ public class MainMenu {
         inputReader = userInputReader
     }
     
-    public func start() {
+    public func start(game: TwoPlayerGame) {
         print(messages.welcomeMessage())
         while humanPlayer.wantsToContinuePlaying {
             switch inputReader.getInput()! {
             case "1":
-                let anotherHumanPlayer = HumanPlayer()
-                Game(playerOne: humanPlayer, playerTwo: anotherHumanPlayer).play()
+                game.clear()
+                game.play(humanPlayer, playerTwo: HumanPlayer())
                 print(messages.askToPlayAgain())
             case "2":
-                let computerPlayer = FirstAvailableSpotComputerPlayer()
-                Game(playerOne: humanPlayer, playerTwo: computerPlayer).play()
+                game.clear()
+                game.play(humanPlayer, playerTwo: FirstAvailableSpotComputerPlayer())
                 print(messages.askToPlayAgain())
             case "3":
-                let computerPlayer = FirstAvailableSpotComputerPlayer()
-                Game(playerOne: computerPlayer, playerTwo: humanPlayer).play()
+                game.clear()
+                game.play(FirstAvailableSpotComputerPlayer(), playerTwo: humanPlayer)
                 print(messages.askToPlayAgain())
             case "4":
                 humanPlayer.noLongerWantsToPlay()

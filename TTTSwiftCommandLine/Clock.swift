@@ -12,4 +12,8 @@ public class Clock {
         return turnNumber%2 == 1
     }
     
+    public func clear() {
+        turnNumber = 1
+    }
+    
 }

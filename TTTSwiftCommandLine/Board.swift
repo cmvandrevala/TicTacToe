@@ -56,6 +56,12 @@ public class Board {
         }
     }
     
+    public func clear() {
+        for cell in 0...numberOfCells - 1 {
+            currentCells[cell] = .Empty
+        }
+    }
+    
     private func areAllThreeCellsMatching(group: [Int]) -> Bool {
         let marks = marksContainedInGroup(group)
         return marks[0] == marks[1] && marks[1] == marks[2]

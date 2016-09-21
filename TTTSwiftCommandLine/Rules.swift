@@ -33,6 +33,10 @@ public class Rules {
         updateGameStatusWithPotentialTie()
     }
     
+    public func clear() {
+        currentGameStatus = .InProgress
+    }
+    
     private func updateGameStatusWithPotentialWinner() {
         switch gameBoard.threeInRow() {
         case .PlayerOne:
