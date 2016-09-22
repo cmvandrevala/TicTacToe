@@ -17,25 +17,13 @@ public class Game: TwoPlayerGame {
         secondPlayer = FirstAvailableSpotComputerPlayer()
     }
     
-    public func play(playerOne: Player, playerTwo: Player) {
-        firstPlayer = playerOne
-        secondPlayer = playerTwo
-        while isInProgress() {
-            takeTurn()
-        }
-        printBoardAndMessagesToConsole()
+    public func play() {
+        gameLoop()
     }
-    
-    public func takeTurn() {
-        printBoardAndMessagesToConsole()
-        switch clock.playerOnesTurn() {
-        case true:
-            board.move(firstPlayer.getMove(board)!, cellStatus: .PlayerOne)
-        case false:
-            board.move(secondPlayer.getMove(board)!, cellStatus: .PlayerTwo)
-        }
-        clock.incrementTurnNumber()
-        rules.updateGameStatus()
+
+    public func play(playerOne: Player, playerTwo: Player) {
+        updatePlayers(playerOne, playerTwo: playerTwo)
+        gameLoop()
     }
     
     public func isInProgress() -> Bool {
@@ -54,6 +42,30 @@ public class Game: TwoPlayerGame {
         board.clear()
         rules.clear()
         clock.clear()
+    }
+
+    private func updatePlayers(playerOne: Player, playerTwo: Player) {
+        firstPlayer = playerOne
+        secondPlayer = playerTwo
+    }
+    
+    private func gameLoop() {
+        while isInProgress() {
+            takeTurn()
+        }
+        printBoardAndMessagesToConsole()
+    }
+    
+    private func takeTurn() {
+        printBoardAndMessagesToConsole()
+        switch clock.playerOnesTurn() {
+        case true:
+            board.move(firstPlayer.getMove(board)!, cellStatus: .PlayerOne)
+        case false:
+            board.move(secondPlayer.getMove(board)!, cellStatus: .PlayerTwo)
+        }
+        clock.incrementTurnNumber()
+        rules.updateGameStatus()
     }
     
     private func printBoardAndMessagesToConsole() {
