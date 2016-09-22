@@ -11,23 +11,41 @@ class GameTests: QuickSpec {
             game = Game()
         }
         
+        describe("the current set of players") {
+            
+            it("defaults to two first available spot computer players") {
+                let mirrorPlayerOne = Mirror(reflecting: game.playerOne())
+                let mirrorPlayerTwo = Mirror(reflecting: game.playerTwo())
+                expect(String(mirrorPlayerOne.subjectType)).to(equal("FirstAvailableSpotComputerPlayer"))
+                expect(String(mirrorPlayerTwo.subjectType)).to(equal("FirstAvailableSpotComputerPlayer"))
+            }
+            
+            it("plays a game through with the two default players") {
+                game.play()
+                let mirrorPlayerOne = Mirror(reflecting: game.playerOne())
+                let mirrorPlayerTwo = Mirror(reflecting: game.playerTwo())
+                expect(String(mirrorPlayerOne.subjectType)).to(equal("FirstAvailableSpotComputerPlayer"))
+                expect(String(mirrorPlayerTwo.subjectType)).to(equal("FirstAvailableSpotComputerPlayer"))
+            }
+            
+            it("plays a game through with two non-default players") {
+                game.play(RandomSpotComputerPlayer(), playerTwo: RandomSpotComputerPlayer())
+                let mirrorPlayerOne = Mirror(reflecting: game.playerOne())
+                let mirrorPlayerTwo = Mirror(reflecting: game.playerTwo())
+                expect(String(mirrorPlayerOne.subjectType)).to(equal("RandomSpotComputerPlayer"))
+                expect(String(mirrorPlayerTwo.subjectType)).to(equal("RandomSpotComputerPlayer"))
+            }
+
+        }
+        
         describe("#isInProgress") {
             
             it("returns true when a game is initialized") {
                 expect(game.isInProgress()).to(beTrue())
             }
             
-            it("returns true when there is no winner or tie") {
-                game.takeTurn()
-                game.takeTurn()
-                game.takeTurn()
-                expect(game.isInProgress()).to(beTrue())
-            }
-            
             it("returns false when there is a winner") {
-                for _ in 1...7 {
-                    game.takeTurn()
-                }
+                game.play()
                 expect(game.isInProgress()).to(beFalse())
             }
             
@@ -36,9 +54,7 @@ class GameTests: QuickSpec {
         describe("#clear") {
             
             it("resets the game to start anew") {
-                for _ in 1...7 {
-                    game.takeTurn()
-                }
+                game.play()
                 expect(game.isInProgress()).to(beFalse())
                 game.clear()
                 expect(game.isInProgress()).to(beTrue())
