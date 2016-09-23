@@ -15,3 +15,9 @@ In order to run the test suite, open the Xcode workspace, switch to the "TTTSwif
 ## Running the App
 
 In order to run the app on the iOS simulator or a personal device, open the Xcode workspace, switch to the "TTTSwift" target and hit `⌘ + R`.
+
+Xcode saves the executable files for a project under the `DerivedData` directory. You can find the location of this directory by opening up Xcode and selecting `Xcode > Preferences > Locations` from the menu. In order to create an executable, run the following command from the root directory of the project folder:
+
+`xcodebuild -workspace TTTSwift.xcworkspace -scheme TTTSwiftCommandLine clean build`
+
+The executable will be located in `path/to/DerivedData/TTTSwift-<Some-Unique-ID>/Build/Products/Debug/`
