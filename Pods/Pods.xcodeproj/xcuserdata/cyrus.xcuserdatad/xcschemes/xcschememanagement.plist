@@ -9,7 +9,7 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-TTTSwiftTests.xcscheme</key>
+		<key>Pods-TicTacToeiOSTests.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -22,17 +22,17 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>0867ABA979B4BC65D7A80F3DC1AC0810</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>40FF1C77152F384080A1A02E90A36DA9</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>71A7BEC0462E90726770E487BF567D3B</key>
+		<key>ED1C2C8CA54B1E42AC4702764191FB43</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F39C7AE4629E68B8FC50636A77F9A8C2</key>
 		<dict>
 			<key>primary</key>
 			<true/>

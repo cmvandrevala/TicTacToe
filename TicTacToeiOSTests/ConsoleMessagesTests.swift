@@ -1,6 +1,6 @@
 import Quick
 import Nimble
-import TTTSwift
+import TicTacToeiOS
 
 class ConsoleMessagesTests: QuickSpec {
     override func spec() {

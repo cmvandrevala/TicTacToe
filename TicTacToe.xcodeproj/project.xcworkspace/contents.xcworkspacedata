@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:TTTSwift.xcodeproj">
+      location = "self:/Users/cyrus/Documents/TTTSwift/TicTacToe.xcodeproj">
    </FileRef>
 </Workspace>
