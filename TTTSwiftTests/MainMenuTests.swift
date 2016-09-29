@@ -28,7 +28,7 @@ class MockGame: TwoPlayerGame {
     var firstPlayer: Player!
     var secondPlayer: Player!
     
-    func play(playerOne: Player, playerTwo: Player) {
+    func play(_ playerOne: Player, playerTwo: Player) {
         firstPlayer = playerOne
         secondPlayer = playerTwo
         hasBeenPlayed = true

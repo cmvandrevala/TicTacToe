@@ -1,18 +1,18 @@
-public class Clock {
+open class Clock {
     
     var turnNumber = 1
     
     public init() {}
     
-    public func incrementTurnNumber() {
+    open func incrementTurnNumber() {
         turnNumber += 1
     }
     
-    public func playerOnesTurn() -> Bool {
+    open func playerOnesTurn() -> Bool {
         return turnNumber%2 == 1
     }
     
-    public func clear() {
+    open func clear() {
         turnNumber = 1
     }
     

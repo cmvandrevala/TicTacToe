@@ -1,4 +1,4 @@
-public class MainMenu {
+open class MainMenu {
     
     let humanPlayer: HumanPlayer!
     let messages: ConsoleMessages!
@@ -10,7 +10,7 @@ public class MainMenu {
         inputReader = userInputReader
     }
     
-    public func start(game: TwoPlayerGame) {
+    open func start(_ game: TwoPlayerGame) {
         print(messages.welcomeMessage())
         while humanPlayer.wantsToContinuePlaying {
             switch inputReader.getInput()! {

@@ -1,6 +1,6 @@
 public protocol TwoPlayerGame {
 
-    func play(playerOne: Player, playerTwo: Player)
+    func play(_ playerOne: Player, playerTwo: Player)
     func clear()
     
     func playerOne() -> Player

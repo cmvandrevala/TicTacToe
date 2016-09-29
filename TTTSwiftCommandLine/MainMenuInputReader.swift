@@ -1,8 +1,8 @@
-public class MainMenuInputReader: ConsoleInputReader {
+open class MainMenuInputReader: ConsoleInputReader {
     
     public init() {}
     
-    public func getInput() -> String? {
+    open func getInput() -> String? {
         return readLine()
     }
     

@@ -1,10 +1,10 @@
 import Foundation
 
-public class RandomSpotComputerPlayer: Player {
+open class RandomSpotComputerPlayer: Player {
     
     public init() {}
     
-    public func getMove(board: Board) -> Int? {
+    open func getMove(_ board: Board) -> Int? {
         if board.isFilled() {
             return nil
         }

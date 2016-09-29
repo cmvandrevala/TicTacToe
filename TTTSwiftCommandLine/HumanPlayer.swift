@@ -1,14 +1,14 @@
-public class HumanPlayer: Player {
+open class HumanPlayer: Player {
     
-    public var wantsToContinuePlaying: Bool = true
+    open var wantsToContinuePlaying: Bool = true
     
     public init() {}
     
-    public func noLongerWantsToPlay() {
+    open func noLongerWantsToPlay() {
         wantsToContinuePlaying = !wantsToContinuePlaying
     }
     
-    public func getMove(board: Board) -> Int? {
+    open func getMove(_ board: Board) -> Int? {
         let inputReader = TTTMoveReader(board: board)
         return Int(inputReader.getInput()!)
     }

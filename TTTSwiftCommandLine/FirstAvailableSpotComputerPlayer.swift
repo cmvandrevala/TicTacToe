@@ -1,9 +1,9 @@
-public class FirstAvailableSpotComputerPlayer: Player {
+open class FirstAvailableSpotComputerPlayer: Player {
     
     public init() {}
     
-    public func getMove(board: Board) -> Int? {
-        return board.currentBoard().indexOf(.Empty)
+    open func getMove(_ board: Board) -> Int? {
+        return board.currentBoard().index(of: .empty)
     }
 
 }

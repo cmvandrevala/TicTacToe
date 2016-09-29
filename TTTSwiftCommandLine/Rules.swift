@@ -1,13 +1,13 @@
-public class Rules {
+open class Rules {
     
     public enum GameStatus {
-        case PlayerOneWins
-        case PlayerTwoWins
-        case Tie
-        case InProgress
+        case playerOneWins
+        case playerTwoWins
+        case tie
+        case inProgress
     }
     
-    public var currentGameStatus = GameStatus.InProgress
+    open var currentGameStatus = GameStatus.inProgress
 
     var gameBoard: Board
 
@@ -15,42 +15,42 @@ public class Rules {
         gameBoard = board
     }
     
-    public func isGameOver() -> Bool {
+    open func isGameOver() -> Bool {
         switch currentGameStatus {
-        case .PlayerOneWins:
+        case .playerOneWins:
             return true
-        case .PlayerTwoWins:
+        case .playerTwoWins:
             return true
-        case .Tie:
+        case .tie:
             return true
-        case .InProgress:
+        case .inProgress:
             return false
         }
     }
     
-    public func updateGameStatus() {
+    open func updateGameStatus() {
         updateGameStatusWithPotentialWinner()
         updateGameStatusWithPotentialTie()
     }
     
-    public func clear() {
-        currentGameStatus = .InProgress
+    open func clear() {
+        currentGameStatus = .inProgress
     }
     
-    private func updateGameStatusWithPotentialWinner() {
+    fileprivate func updateGameStatusWithPotentialWinner() {
         switch gameBoard.threeInRow() {
-        case .PlayerOne:
-            currentGameStatus = .PlayerOneWins
-        case .PlayerTwo:
-            currentGameStatus = .PlayerTwoWins
+        case .playerOne:
+            currentGameStatus = .playerOneWins
+        case .playerTwo:
+            currentGameStatus = .playerTwoWins
         default:
             break
         }
     }
     
-    private func updateGameStatusWithPotentialTie() {
-        if gameBoard.isFilled() && gameBoard.threeInRow() == .Empty {
-            currentGameStatus = .Tie
+    fileprivate func updateGameStatusWithPotentialTie() {
+        if gameBoard.isFilled() && gameBoard.threeInRow() == .empty {
+            currentGameStatus = .tie
         }
     }
 

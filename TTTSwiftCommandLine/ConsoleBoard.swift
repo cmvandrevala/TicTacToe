@@ -1,6 +1,6 @@
 import Foundation
 
-public class ConsoleBoard {
+open class ConsoleBoard {
     
     var gameBoard: Board
     
@@ -8,24 +8,24 @@ public class ConsoleBoard {
         gameBoard = board
     }
     
-    public func formattedBoardForConsole() -> String {
+    open func formattedBoardForConsole() -> String {
         var boardString = emptyFormattedBoard()
-        for (index, mark) in currentMarks().enumerate() {
-            boardString = boardString.stringByReplacingOccurrencesOfString("\(index)", withString: mark)
+        for (index, mark) in currentMarks().enumerated() {
+            boardString = boardString.replacingOccurrences(of: "\(index)", with: mark)
         }
         return boardString
     }
     
-    private func emptyFormattedBoard() -> String {
+    fileprivate func emptyFormattedBoard() -> String {
         return "\nThe current board is:\n\n 0 | 1 | 2 \n===========\n 3 | 4 | 5 \n===========\n 6 | 7 | 8 "
     }
     
-    private func currentMarks() -> [String] {
+    fileprivate func currentMarks() -> [String] {
         var marksInCells: [String] = []
-        for (index,status) in gameBoard.currentBoard().enumerate() {
-            if status == .PlayerOne {
+        for (index,status) in gameBoard.currentBoard().enumerated() {
+            if status == .playerOne {
                 marksInCells.append("X")
-            } else if status == .PlayerTwo {
+            } else if status == .playerTwo {
                 marksInCells.append("O")
             } else {
                 marksInCells.append("\(index)")

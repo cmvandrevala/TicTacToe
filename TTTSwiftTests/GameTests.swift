@@ -16,24 +16,24 @@ class GameTests: QuickSpec {
             it("defaults to two first available spot computer players") {
                 let mirrorPlayerOne = Mirror(reflecting: game.playerOne())
                 let mirrorPlayerTwo = Mirror(reflecting: game.playerTwo())
-                expect(String(mirrorPlayerOne.subjectType)).to(equal("FirstAvailableSpotComputerPlayer"))
-                expect(String(mirrorPlayerTwo.subjectType)).to(equal("FirstAvailableSpotComputerPlayer"))
+                expect(String(describing: mirrorPlayerOne.subjectType)).to(equal("FirstAvailableSpotComputerPlayer"))
+                expect(String(describing: mirrorPlayerTwo.subjectType)).to(equal("FirstAvailableSpotComputerPlayer"))
             }
             
             it("plays a game through with the two default players") {
                 game.play()
                 let mirrorPlayerOne = Mirror(reflecting: game.playerOne())
                 let mirrorPlayerTwo = Mirror(reflecting: game.playerTwo())
-                expect(String(mirrorPlayerOne.subjectType)).to(equal("FirstAvailableSpotComputerPlayer"))
-                expect(String(mirrorPlayerTwo.subjectType)).to(equal("FirstAvailableSpotComputerPlayer"))
+                expect(String(describing: mirrorPlayerOne.subjectType)).to(equal("FirstAvailableSpotComputerPlayer"))
+                expect(String(describing: mirrorPlayerTwo.subjectType)).to(equal("FirstAvailableSpotComputerPlayer"))
             }
             
             it("plays a game through with two non-default players") {
                 game.play(RandomSpotComputerPlayer(), playerTwo: RandomSpotComputerPlayer())
                 let mirrorPlayerOne = Mirror(reflecting: game.playerOne())
                 let mirrorPlayerTwo = Mirror(reflecting: game.playerTwo())
-                expect(String(mirrorPlayerOne.subjectType)).to(equal("RandomSpotComputerPlayer"))
-                expect(String(mirrorPlayerTwo.subjectType)).to(equal("RandomSpotComputerPlayer"))
+                expect(String(describing: mirrorPlayerOne.subjectType)).to(equal("RandomSpotComputerPlayer"))
+                expect(String(describing: mirrorPlayerTwo.subjectType)).to(equal("RandomSpotComputerPlayer"))
             }
 
         }
