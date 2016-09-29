@@ -8,29 +8,36 @@
 
 /* Begin PBXBuildFile section */
 		2A59133398252D5A15AC0D8C /* Pods_TicTacToeiOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DDB6B62D0ECC7660DC76C70 /* Pods_TicTacToeiOSTests.framework */; };
-		6E1811621D80989D00B73B7A /* RulesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E1811611D80989D00B73B7A /* RulesTests.swift */; };
+		2D199D24C6A2BDB6A8B45D52 /* Pods_TicTacToeCommandLineTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC09E3F5F41476B23648C945 /* Pods_TicTacToeCommandLineTests.framework */; };
 		6E1811641D8099F200B73B7A /* Rules.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E1811631D8099F200B73B7A /* Rules.swift */; };
 		6E22377D1D885A6400676B77 /* ConsoleBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E22377C1D885A6400676B77 /* ConsoleBoard.swift */; };
 		6E22377E1D885A6400676B77 /* ConsoleBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E22377C1D885A6400676B77 /* ConsoleBoard.swift */; };
-		6E2237801D885A7900676B77 /* ConsoleBoardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E22377F1D885A7900676B77 /* ConsoleBoardTests.swift */; };
 		6E2237821D88628300676B77 /* FirstAvailableSpotComputerPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E2237811D88628300676B77 /* FirstAvailableSpotComputerPlayer.swift */; };
 		6E2237831D88628300676B77 /* FirstAvailableSpotComputerPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E2237811D88628300676B77 /* FirstAvailableSpotComputerPlayer.swift */; };
-		6E2237851D88629300676B77 /* FirstAvailableSpotComputerPlayerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E2237841D88629300676B77 /* FirstAvailableSpotComputerPlayerTests.swift */; };
 		6E2E70BF1D91C5AE00BF8644 /* TwoPlayerGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E2E70BE1D91C5AE00BF8644 /* TwoPlayerGame.swift */; };
 		6E2E70C01D91C5AE00BF8644 /* TwoPlayerGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E2E70BE1D91C5AE00BF8644 /* TwoPlayerGame.swift */; };
-		6E36FC881D9416B60018E83F /* RandomSpotComputerPlayerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E36FC871D9416B60018E83F /* RandomSpotComputerPlayerTests.swift */; };
 		6E36FC8A1D9416CA0018E83F /* RandomSpotComputerPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E36FC891D9416CA0018E83F /* RandomSpotComputerPlayer.swift */; };
 		6E36FC8B1D9416CA0018E83F /* RandomSpotComputerPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E36FC891D9416CA0018E83F /* RandomSpotComputerPlayer.swift */; };
+		6E420ED41D9D9E6C009B308F /* BoardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9995231D7F5CF800616838 /* BoardTests.swift */; };
+		6E420ED51D9D9E6C009B308F /* ClockTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ECEA3541D883F830035E9DA /* ClockTests.swift */; };
+		6E420ED61D9D9E6C009B308F /* ConsoleBoardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E22377F1D885A7900676B77 /* ConsoleBoardTests.swift */; };
+		6E420ED71D9D9E6C009B308F /* ConsoleMessagesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF6F6BB1D81D1FF00B545F2 /* ConsoleMessagesTests.swift */; };
+		6E420ED81D9D9E6C009B308F /* FirstAvailableSpotComputerPlayerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E2237841D88629300676B77 /* FirstAvailableSpotComputerPlayerTests.swift */; };
+		6E420ED91D9D9E6C009B308F /* GameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EEECB3D1D8B245E00B92641 /* GameTests.swift */; };
+		6E420EDA1D9D9E6C009B308F /* HumanPlayerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EEECB351D8B1AC200B92641 /* HumanPlayerTests.swift */; };
+		6E420EDB1D9D9E6C009B308F /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6E4E95351D9D9BC400B9B445 /* Info.plist */; };
+		6E420EDC1D9D9E6C009B308F /* MainMenuTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9DE1EB1D90807900321653 /* MainMenuTests.swift */; };
+		6E420EDD1D9D9E6C009B308F /* RandomSpotComputerPlayerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E36FC871D9416B60018E83F /* RandomSpotComputerPlayerTests.swift */; };
+		6E420EDE1D9D9E6C009B308F /* RulesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E1811611D80989D00B73B7A /* RulesTests.swift */; };
+		6E420EDF1D9D9E6C009B308F /* TTTAcceptanceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EFC78AC1D907311005BB491 /* TTTAcceptanceTests.swift */; };
+		6E420EE01D9D9E6C009B308F /* TTTMoveReaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E75F1F31D87299A00FAB787 /* TTTMoveReaderTests.swift */; };
 		6E4797921D83106D0027ADAC /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E4797911D83106D0027ADAC /* main.swift */; };
 		6E4797961D8310A20027ADAC /* Board.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9995251D7F60D500616838 /* Board.swift */; };
 		6E4797981D8313350027ADAC /* Rules.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E1811631D8099F200B73B7A /* Rules.swift */; };
 		6E4797991D8313390027ADAC /* ConsoleMessages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF6F6BD1D81D20D00B545F2 /* ConsoleMessages.swift */; };
-		6E75F1F41D87299A00FAB787 /* TTTMoveReaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E75F1F31D87299A00FAB787 /* TTTMoveReaderTests.swift */; };
 		6E75F1F61D8729AA00FAB787 /* TTTMoveReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E75F1F51D8729AA00FAB787 /* TTTMoveReader.swift */; };
 		6E75F1F71D8729AA00FAB787 /* TTTMoveReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E75F1F51D8729AA00FAB787 /* TTTMoveReader.swift */; };
-		6E9995241D7F5CF800616838 /* BoardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9995231D7F5CF800616838 /* BoardTests.swift */; };
 		6E9995261D7F60D500616838 /* Board.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9995251D7F60D500616838 /* Board.swift */; };
-		6E9DE1EC1D90807900321653 /* MainMenuTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9DE1EB1D90807900321653 /* MainMenuTests.swift */; };
 		6E9DE1EE1D90826E00321653 /* MainMenuInputReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9DE1ED1D90826E00321653 /* MainMenuInputReader.swift */; };
 		6E9DE1EF1D90826E00321653 /* MainMenuInputReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9DE1ED1D90826E00321653 /* MainMenuInputReader.swift */; };
 		6E9DE1F11D90830300321653 /* ConsoleInputReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9DE1F01D90830300321653 /* ConsoleInputReader.swift */; };
@@ -40,22 +47,32 @@
 		6EB5C1DE1D7F5C7800A5829F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6EB5C1DC1D7F5C7800A5829F /* Main.storyboard */; };
 		6EB5C1E01D7F5C7800A5829F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6EB5C1DF1D7F5C7800A5829F /* Assets.xcassets */; };
 		6EB5C1E31D7F5C7800A5829F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6EB5C1E11D7F5C7800A5829F /* LaunchScreen.storyboard */; };
+		6ECA902A1D9DA0CE00E55C18 /* Board.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9995251D7F60D500616838 /* Board.swift */; };
+		6ECA902B1D9DA0CE00E55C18 /* Clock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ECEA3521D883F6F0035E9DA /* Clock.swift */; };
+		6ECA902C1D9DA0CE00E55C18 /* ConsoleBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E22377C1D885A6400676B77 /* ConsoleBoard.swift */; };
+		6ECA902D1D9DA0CE00E55C18 /* ConsoleInputReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9DE1F01D90830300321653 /* ConsoleInputReader.swift */; };
+		6ECA902E1D9DA0CE00E55C18 /* ConsoleMessages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF6F6BD1D81D20D00B545F2 /* ConsoleMessages.swift */; };
+		6ECA902F1D9DA0CE00E55C18 /* FirstAvailableSpotComputerPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E2237811D88628300676B77 /* FirstAvailableSpotComputerPlayer.swift */; };
+		6ECA90301D9DA0CE00E55C18 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EEECB3F1D8B246B00B92641 /* Game.swift */; };
+		6ECA90311D9DA0CE00E55C18 /* HumanPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EEECB371D8B1ADE00B92641 /* HumanPlayer.swift */; };
+		6ECA90321D9DA0CE00E55C18 /* MainMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EFC78A91D9070B5005BB491 /* MainMenu.swift */; };
+		6ECA90331D9DA0CE00E55C18 /* MainMenuInputReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9DE1ED1D90826E00321653 /* MainMenuInputReader.swift */; };
+		6ECA90341D9DA0CE00E55C18 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EEECB421D8B255A00B92641 /* Player.swift */; };
+		6ECA90351D9DA0CE00E55C18 /* RandomSpotComputerPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E36FC891D9416CA0018E83F /* RandomSpotComputerPlayer.swift */; };
+		6ECA90361D9DA0CE00E55C18 /* Rules.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E1811631D8099F200B73B7A /* Rules.swift */; };
+		6ECA90371D9DA0CE00E55C18 /* TTTMoveReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E75F1F51D8729AA00FAB787 /* TTTMoveReader.swift */; };
+		6ECA90381D9DA0CE00E55C18 /* TwoPlayerGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E2E70BE1D91C5AE00BF8644 /* TwoPlayerGame.swift */; };
 		6ECEA3531D883F6F0035E9DA /* Clock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ECEA3521D883F6F0035E9DA /* Clock.swift */; };
-		6ECEA3551D883F830035E9DA /* ClockTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ECEA3541D883F830035E9DA /* ClockTests.swift */; };
 		6ECEA3561D883F870035E9DA /* Clock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ECEA3521D883F6F0035E9DA /* Clock.swift */; };
-		6EEECB361D8B1AC200B92641 /* HumanPlayerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EEECB351D8B1AC200B92641 /* HumanPlayerTests.swift */; };
 		6EEECB381D8B1ADE00B92641 /* HumanPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EEECB371D8B1ADE00B92641 /* HumanPlayer.swift */; };
 		6EEECB391D8B1ADE00B92641 /* HumanPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EEECB371D8B1ADE00B92641 /* HumanPlayer.swift */; };
-		6EEECB3E1D8B245E00B92641 /* GameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EEECB3D1D8B245E00B92641 /* GameTests.swift */; };
 		6EEECB401D8B246B00B92641 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EEECB3F1D8B246B00B92641 /* Game.swift */; };
 		6EEECB411D8B246B00B92641 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EEECB3F1D8B246B00B92641 /* Game.swift */; };
 		6EEECB431D8B255A00B92641 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EEECB421D8B255A00B92641 /* Player.swift */; };
 		6EEECB441D8B255A00B92641 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EEECB421D8B255A00B92641 /* Player.swift */; };
-		6EF6F6BC1D81D1FF00B545F2 /* ConsoleMessagesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF6F6BB1D81D1FF00B545F2 /* ConsoleMessagesTests.swift */; };
 		6EF6F6BE1D81D20D00B545F2 /* ConsoleMessages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF6F6BD1D81D20D00B545F2 /* ConsoleMessages.swift */; };
 		6EFC78AA1D9070B5005BB491 /* MainMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EFC78A91D9070B5005BB491 /* MainMenu.swift */; };
 		6EFC78AB1D9070B5005BB491 /* MainMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EFC78A91D9070B5005BB491 /* MainMenu.swift */; };
-		6EFC78AD1D907311005BB491 /* TTTAcceptanceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EFC78AC1D907311005BB491 /* TTTAcceptanceTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,6 +111,8 @@
 		6E36FC891D9416CA0018E83F /* RandomSpotComputerPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RandomSpotComputerPlayer.swift; sourceTree = "<group>"; };
 		6E47978F1D83106D0027ADAC /* TicTacToeCommandLine */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = TicTacToeCommandLine; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E4797911D83106D0027ADAC /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		6E4E95311D9D9BC400B9B445 /* TicTacToeCommandLineTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TicTacToeCommandLineTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6E4E95351D9D9BC400B9B445 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6E75F1F31D87299A00FAB787 /* TTTMoveReaderTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTTMoveReaderTests.swift; sourceTree = "<group>"; };
 		6E75F1F51D8729AA00FAB787 /* TTTMoveReader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTTMoveReader.swift; sourceTree = "<group>"; };
 		6E9995231D7F5CF800616838 /* BoardTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardTests.swift; sourceTree = "<group>"; };
@@ -121,6 +140,9 @@
 		6EF6F6BD1D81D20D00B545F2 /* ConsoleMessages.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsoleMessages.swift; sourceTree = "<group>"; };
 		6EFC78A91D9070B5005BB491 /* MainMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenu.swift; sourceTree = "<group>"; };
 		6EFC78AC1D907311005BB491 /* TTTAcceptanceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTTAcceptanceTests.swift; sourceTree = "<group>"; };
+		ACD7EFD86B9D18A76D3B2C85 /* Pods-TicTacToeCommandLineTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TicTacToeCommandLineTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TicTacToeCommandLineTests/Pods-TicTacToeCommandLineTests.debug.xcconfig"; sourceTree = "<group>"; };
+		BC09E3F5F41476B23648C945 /* Pods_TicTacToeCommandLineTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TicTacToeCommandLineTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E90E1189E2C4B669E9273408 /* Pods-TicTacToeCommandLineTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TicTacToeCommandLineTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TicTacToeCommandLineTests/Pods-TicTacToeCommandLineTests.release.xcconfig"; sourceTree = "<group>"; };
 		EF46F8A1F4B5588D5856AC19 /* Pods-TicTacToeiOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TicTacToeiOSTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TicTacToeiOSTests/Pods-TicTacToeiOSTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -129,6 +151,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6E4E952E1D9D9BC400B9B445 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2D199D24C6A2BDB6A8B45D52 /* Pods_TicTacToeCommandLineTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -173,6 +203,26 @@
 			path = TicTacToeCommandLine;
 			sourceTree = "<group>";
 		};
+		6E4E95321D9D9BC400B9B445 /* TicTacToeCommandLineTests */ = {
+			isa = PBXGroup;
+			children = (
+				6E9995231D7F5CF800616838 /* BoardTests.swift */,
+				6ECEA3541D883F830035E9DA /* ClockTests.swift */,
+				6E22377F1D885A7900676B77 /* ConsoleBoardTests.swift */,
+				6EF6F6BB1D81D1FF00B545F2 /* ConsoleMessagesTests.swift */,
+				6E2237841D88629300676B77 /* FirstAvailableSpotComputerPlayerTests.swift */,
+				6EEECB3D1D8B245E00B92641 /* GameTests.swift */,
+				6EEECB351D8B1AC200B92641 /* HumanPlayerTests.swift */,
+				6E4E95351D9D9BC400B9B445 /* Info.plist */,
+				6E9DE1EB1D90807900321653 /* MainMenuTests.swift */,
+				6E36FC871D9416B60018E83F /* RandomSpotComputerPlayerTests.swift */,
+				6E1811611D80989D00B73B7A /* RulesTests.swift */,
+				6EFC78AC1D907311005BB491 /* TTTAcceptanceTests.swift */,
+				6E75F1F31D87299A00FAB787 /* TTTMoveReaderTests.swift */,
+			);
+			path = TicTacToeCommandLineTests;
+			sourceTree = "<group>";
+		};
 		6EB5C1CC1D7F5C7800A5829F = {
 			isa = PBXGroup;
 			children = (
@@ -180,6 +230,7 @@
 				B7953F1766707BB55D29E15F /* Pods */,
 				6EB5C1D61D7F5C7800A5829F /* Products */,
 				6E4797901D83106D0027ADAC /* TicTacToeCommandLine */,
+				6E4E95321D9D9BC400B9B445 /* TicTacToeCommandLineTests */,
 				6EB5C1D71D7F5C7800A5829F /* TicTacToeiOS */,
 				6EB5C1EC1D7F5C7800A5829F /* TicTacToeiOSTests */,
 			);
@@ -191,6 +242,7 @@
 				6EB5C1D51D7F5C7800A5829F /* TicTacToeiOS.app */,
 				6EB5C1E91D7F5C7800A5829F /* TicTacToeiOSTests.xctest */,
 				6E47978F1D83106D0027ADAC /* TicTacToeCommandLine */,
+				6E4E95311D9D9BC400B9B445 /* TicTacToeCommandLineTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -211,19 +263,7 @@
 		6EB5C1EC1D7F5C7800A5829F /* TicTacToeiOSTests */ = {
 			isa = PBXGroup;
 			children = (
-				6E9995231D7F5CF800616838 /* BoardTests.swift */,
-				6ECEA3541D883F830035E9DA /* ClockTests.swift */,
-				6E22377F1D885A7900676B77 /* ConsoleBoardTests.swift */,
-				6EF6F6BB1D81D1FF00B545F2 /* ConsoleMessagesTests.swift */,
-				6E2237841D88629300676B77 /* FirstAvailableSpotComputerPlayerTests.swift */,
-				6EEECB3D1D8B245E00B92641 /* GameTests.swift */,
-				6EEECB351D8B1AC200B92641 /* HumanPlayerTests.swift */,
 				6EB5C1EF1D7F5C7800A5829F /* Info.plist */,
-				6E9DE1EB1D90807900321653 /* MainMenuTests.swift */,
-				6E36FC871D9416B60018E83F /* RandomSpotComputerPlayerTests.swift */,
-				6E1811611D80989D00B73B7A /* RulesTests.swift */,
-				6EFC78AC1D907311005BB491 /* TTTAcceptanceTests.swift */,
-				6E75F1F31D87299A00FAB787 /* TTTMoveReaderTests.swift */,
 			);
 			path = TicTacToeiOSTests;
 			sourceTree = "<group>";
@@ -233,6 +273,8 @@
 			children = (
 				53D8AC7E668D1EB7C483B3B5 /* Pods-TicTacToeiOSTests.debug.xcconfig */,
 				EF46F8A1F4B5588D5856AC19 /* Pods-TicTacToeiOSTests.release.xcconfig */,
+				ACD7EFD86B9D18A76D3B2C85 /* Pods-TicTacToeCommandLineTests.debug.xcconfig */,
+				E90E1189E2C4B669E9273408 /* Pods-TicTacToeCommandLineTests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -241,6 +283,7 @@
 			isa = PBXGroup;
 			children = (
 				0DDB6B62D0ECC7660DC76C70 /* Pods_TicTacToeiOSTests.framework */,
+				BC09E3F5F41476B23648C945 /* Pods_TicTacToeCommandLineTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -264,6 +307,26 @@
 			productName = TTTSwiftCommandLine;
 			productReference = 6E47978F1D83106D0027ADAC /* TicTacToeCommandLine */;
 			productType = "com.apple.product-type.tool";
+		};
+		6E4E95301D9D9BC400B9B445 /* TicTacToeCommandLineTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6E4E95381D9D9BC400B9B445 /* Build configuration list for PBXNativeTarget "TicTacToeCommandLineTests" */;
+			buildPhases = (
+				D2504D04E94BB22DC315CF3E /* [CP] Check Pods Manifest.lock */,
+				6E4E952D1D9D9BC400B9B445 /* Sources */,
+				6E4E952E1D9D9BC400B9B445 /* Frameworks */,
+				6E4E952F1D9D9BC400B9B445 /* Resources */,
+				AA22A2908484D7612A3085BA /* [CP] Embed Pods Frameworks */,
+				71FBBB30D0C216157EEA45E4 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TicTacToeCommandLineTests;
+			productName = TicTacToeCommandLineTests;
+			productReference = 6E4E95311D9D9BC400B9B445 /* TicTacToeCommandLineTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		6EB5C1D41D7F5C7800A5829F /* TicTacToeiOS */ = {
 			isa = PBXNativeTarget;
@@ -309,13 +372,20 @@
 		6EB5C1CD1D7F5C7800A5829F /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0730;
+				LastSwiftUpdateCheck = 0800;
 				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = "Cyrus Vandrevala";
 				TargetAttributes = {
 					6E47978E1D83106D0027ADAC = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = K5JVXNKUGY;
 						LastSwiftMigration = 0800;
+						ProvisioningStyle = Automatic;
+					};
+					6E4E95301D9D9BC400B9B445 = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = K5JVXNKUGY;
+						ProvisioningStyle = Automatic;
 					};
 					6EB5C1D41D7F5C7800A5829F = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -346,11 +416,20 @@
 				6EB5C1D41D7F5C7800A5829F /* TicTacToeiOS */,
 				6EB5C1E81D7F5C7800A5829F /* TicTacToeiOSTests */,
 				6E47978E1D83106D0027ADAC /* TicTacToeCommandLine */,
+				6E4E95301D9D9BC400B9B445 /* TicTacToeCommandLineTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		6E4E952F1D9D9BC400B9B445 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6E420EDB1D9D9E6C009B308F /* Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		6EB5C1D31D7F5C7800A5829F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -416,6 +495,51 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TicTacToeiOSTests/Pods-TicTacToeiOSTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		71FBBB30D0C216157EEA45E4 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TicTacToeCommandLineTests/Pods-TicTacToeCommandLineTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AA22A2908484D7612A3085BA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TicTacToeCommandLineTests/Pods-TicTacToeCommandLineTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D2504D04E94BB22DC315CF3E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -439,6 +563,40 @@
 				6E4797921D83106D0027ADAC /* main.swift in Sources */,
 				6E22377E1D885A6400676B77 /* ConsoleBoard.swift in Sources */,
 				6E4797981D8313350027ADAC /* Rules.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6E4E952D1D9D9BC400B9B445 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6ECA90371D9DA0CE00E55C18 /* TTTMoveReader.swift in Sources */,
+				6E420EDD1D9D9E6C009B308F /* RandomSpotComputerPlayerTests.swift in Sources */,
+				6E420ED51D9D9E6C009B308F /* ClockTests.swift in Sources */,
+				6ECA902F1D9DA0CE00E55C18 /* FirstAvailableSpotComputerPlayer.swift in Sources */,
+				6E420ED91D9D9E6C009B308F /* GameTests.swift in Sources */,
+				6ECA90351D9DA0CE00E55C18 /* RandomSpotComputerPlayer.swift in Sources */,
+				6ECA90341D9DA0CE00E55C18 /* Player.swift in Sources */,
+				6ECA902C1D9DA0CE00E55C18 /* ConsoleBoard.swift in Sources */,
+				6E420EDE1D9D9E6C009B308F /* RulesTests.swift in Sources */,
+				6E420ED41D9D9E6C009B308F /* BoardTests.swift in Sources */,
+				6ECA90361D9DA0CE00E55C18 /* Rules.swift in Sources */,
+				6E420EDC1D9D9E6C009B308F /* MainMenuTests.swift in Sources */,
+				6ECA902A1D9DA0CE00E55C18 /* Board.swift in Sources */,
+				6ECA90331D9DA0CE00E55C18 /* MainMenuInputReader.swift in Sources */,
+				6E420EDA1D9D9E6C009B308F /* HumanPlayerTests.swift in Sources */,
+				6ECA902D1D9DA0CE00E55C18 /* ConsoleInputReader.swift in Sources */,
+				6E420ED81D9D9E6C009B308F /* FirstAvailableSpotComputerPlayerTests.swift in Sources */,
+				6ECA902E1D9DA0CE00E55C18 /* ConsoleMessages.swift in Sources */,
+				6E420EE01D9D9E6C009B308F /* TTTMoveReaderTests.swift in Sources */,
+				6ECA90301D9DA0CE00E55C18 /* Game.swift in Sources */,
+				6ECA90381D9DA0CE00E55C18 /* TwoPlayerGame.swift in Sources */,
+				6ECA902B1D9DA0CE00E55C18 /* Clock.swift in Sources */,
+				6ECA90321D9DA0CE00E55C18 /* MainMenu.swift in Sources */,
+				6E420ED61D9D9E6C009B308F /* ConsoleBoardTests.swift in Sources */,
+				6E420ED71D9D9E6C009B308F /* ConsoleMessagesTests.swift in Sources */,
+				6ECA90311D9DA0CE00E55C18 /* HumanPlayer.swift in Sources */,
+				6E420EDF1D9D9E6C009B308F /* TTTAcceptanceTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -470,18 +628,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6E36FC881D9416B60018E83F /* RandomSpotComputerPlayerTests.swift in Sources */,
-				6E1811621D80989D00B73B7A /* RulesTests.swift in Sources */,
-				6EEECB3E1D8B245E00B92641 /* GameTests.swift in Sources */,
-				6E2237801D885A7900676B77 /* ConsoleBoardTests.swift in Sources */,
-				6EEECB361D8B1AC200B92641 /* HumanPlayerTests.swift in Sources */,
-				6E75F1F41D87299A00FAB787 /* TTTMoveReaderTests.swift in Sources */,
-				6EF6F6BC1D81D1FF00B545F2 /* ConsoleMessagesTests.swift in Sources */,
-				6E2237851D88629300676B77 /* FirstAvailableSpotComputerPlayerTests.swift in Sources */,
-				6E9DE1EC1D90807900321653 /* MainMenuTests.swift in Sources */,
-				6ECEA3551D883F830035E9DA /* ClockTests.swift in Sources */,
-				6E9995241D7F5CF800616838 /* BoardTests.swift in Sources */,
-				6EFC78AD1D907311005BB491 /* TTTAcceptanceTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -520,7 +666,8 @@
 		6E4797941D83106D0027ADAC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				DEVELOPMENT_TEAM = K5JVXNKUGY;
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
@@ -531,8 +678,48 @@
 		6E4797951D83106D0027ADAC /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				DEVELOPMENT_TEAM = K5JVXNKUGY;
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		6E4E95361D9D9BC400B9B445 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = ACD7EFD86B9D18A76D3B2C85 /* Pods-TicTacToeCommandLineTests.debug.xcconfig */;
+			buildSettings = {
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = K5JVXNKUGY;
+				INFOPLIST_FILE = TicTacToeCommandLineTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cyrusvandrevala.TicTacToeCommandLineTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		6E4E95371D9D9BC400B9B445 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E90E1189E2C4B669E9273408 /* Pods-TicTacToeCommandLineTests.release.xcconfig */;
+			buildSettings = {
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = K5JVXNKUGY;
+				INFOPLIST_FILE = TicTacToeCommandLineTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cyrusvandrevala.TicTacToeCommandLineTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				SWIFT_VERSION = 3.0;
@@ -689,6 +876,15 @@
 			buildConfigurations = (
 				6E4797941D83106D0027ADAC /* Debug */,
 				6E4797951D83106D0027ADAC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6E4E95381D9D9BC400B9B445 /* Build configuration list for PBXNativeTarget "TicTacToeCommandLineTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6E4E95361D9D9BC400B9B445 /* Debug */,
+				6E4E95371D9D9BC400B9B445 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

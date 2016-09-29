@@ -4,7 +4,17 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Nimble.xcscheme</key>
+		<key>Nimble-OSX.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Nimble-iOS.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-TicTacToeCommandLineTests.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -14,7 +24,12 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Quick.xcscheme</key>
+		<key>Quick-OSX.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Quick-iOS.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -22,17 +37,32 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>40FF1C77152F384080A1A02E90A36DA9</key>
+		<key>1463C1CE210F3B5F584F454E16418808</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>ED1C2C8CA54B1E42AC4702764191FB43</key>
+		<key>4B0AED187423C4576B1EE828012E9D72</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>F39C7AE4629E68B8FC50636A77F9A8C2</key>
+		<key>6C1162504825E5877E1CA9116A091401</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>80FD5FE5F98438E0E7E5FDCC2602E618</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>88CBF28CDF400099B6C7671F23D75A69</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A4BFEB4813EFAB69827C8761D92D90D6</key>
 		<dict>
 			<key>primary</key>
 			<true/>
