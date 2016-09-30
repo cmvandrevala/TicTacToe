@@ -115,6 +115,7 @@
 		6E4E95351D9D9BC400B9B445 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6E75F1F31D87299A00FAB787 /* TTTMoveReaderTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTTMoveReaderTests.swift; sourceTree = "<group>"; };
 		6E75F1F51D8729AA00FAB787 /* TTTMoveReader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTTMoveReader.swift; sourceTree = "<group>"; };
+		6E826E931D9EC399009C5902 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6E9995231D7F5CF800616838 /* BoardTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardTests.swift; sourceTree = "<group>"; };
 		6E9995251D7F60D500616838 /* Board.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Board.swift; sourceTree = "<group>"; };
 		6E9DE1EB1D90807900321653 /* MainMenuTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenuTests.swift; sourceTree = "<group>"; };
@@ -183,6 +184,7 @@
 		6E4797901D83106D0027ADAC /* TicTacToeCommandLine */ = {
 			isa = PBXGroup;
 			children = (
+				6E826E931D9EC399009C5902 /* Info.plist */,
 				6E9995251D7F60D500616838 /* Board.swift */,
 				6ECEA3521D883F6F0035E9DA /* Clock.swift */,
 				6E22377C1D885A6400676B77 /* ConsoleBoard.swift */,
@@ -668,6 +670,7 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				DEVELOPMENT_TEAM = K5JVXNKUGY;
+				INFOPLIST_FILE = "$(SRCROOT)/TicTacToeCommandLine/Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
@@ -680,6 +683,7 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				DEVELOPMENT_TEAM = K5JVXNKUGY;
+				INFOPLIST_FILE = "$(SRCROOT)/TicTacToeCommandLine/Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
