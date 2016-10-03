@@ -29,7 +29,7 @@ class GameTests: QuickSpec {
             }
             
             it("plays a game through with two non-default players") {
-                game.play(RandomSpotComputerPlayer(), playerTwo: RandomSpotComputerPlayer())
+                game.play(playerOne: RandomSpotComputerPlayer(), playerTwo: RandomSpotComputerPlayer())
                 let mirrorPlayerOne = Mirror(reflecting: game.playerOne())
                 let mirrorPlayerTwo = Mirror(reflecting: game.playerTwo())
                 expect(String(describing: mirrorPlayerOne.subjectType)).to(equal("RandomSpotComputerPlayer"))

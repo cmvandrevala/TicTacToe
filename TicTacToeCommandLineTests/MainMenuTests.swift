@@ -28,7 +28,7 @@ class MockGame: TwoPlayerGame {
     var firstPlayer: Player!
     var secondPlayer: Player!
     
-    func play(_ playerOne: Player, playerTwo: Player) {
+    func play(playerOne: Player, playerTwo: Player) {
         firstPlayer = playerOne
         secondPlayer = playerTwo
         hasBeenPlayed = true
@@ -58,7 +58,7 @@ class MainMenuTests: QuickSpec {
                 let menu = MainMenu(userInputReader: inputReader)
                 let game = MockGame()
                 
-                menu.start(game)
+                menu.start(game: game)
                 
                 expect(game.hasBeenPlayed).to(beTrue())
             }
@@ -68,7 +68,7 @@ class MainMenuTests: QuickSpec {
                 let menu = MainMenu(userInputReader: inputReader)
                 let game = MockGame()
                 
-                menu.start(game)
+                menu.start(game: game)
                 let p1 = Mirror(reflecting: game.playerOne())
                 let p2 = Mirror(reflecting: game.playerTwo())
 
@@ -81,7 +81,7 @@ class MainMenuTests: QuickSpec {
                 let menu = MainMenu(userInputReader: inputReader)
                 let game = MockGame()
                 
-                menu.start(game)
+                menu.start(game: game)
                 
                 expect(game.hasBeenPlayed).to(beTrue())
             }
@@ -91,7 +91,7 @@ class MainMenuTests: QuickSpec {
                 let menu = MainMenu(userInputReader: inputReader)
                 let game = MockGame()
                 
-                menu.start(game)
+                menu.start(game: game)
                 let p1 = Mirror(reflecting: game.playerOne())
                 let p2 = Mirror(reflecting: game.playerTwo())
                 
@@ -104,7 +104,7 @@ class MainMenuTests: QuickSpec {
                 let menu = MainMenu(userInputReader: inputReader)
                 let game = MockGame()
                 
-                menu.start(game)
+                menu.start(game: game)
                 
                 expect(game.hasBeenPlayed).to(beTrue())
             }
@@ -114,7 +114,7 @@ class MainMenuTests: QuickSpec {
                 let menu = MainMenu(userInputReader: inputReader)
                 let game = MockGame()
                 
-                menu.start(game)
+                menu.start(game: game)
                 let p1 = Mirror(reflecting: game.playerOne())
                 let p2 = Mirror(reflecting: game.playerTwo())
                 
@@ -127,7 +127,7 @@ class MainMenuTests: QuickSpec {
                 let menu = MainMenu(userInputReader: inputReader)
                 let game = MockGame()
                 
-                menu.start(game)
+                menu.start(game: game)
                 
                 expect(game.hasBeenPlayed).to(beFalse())
             }

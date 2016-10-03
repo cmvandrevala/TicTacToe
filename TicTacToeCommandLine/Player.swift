@@ -1,5 +1,5 @@
 public protocol Player {
     
-    func getMove(_ board: Board) -> Int?
+    func getMove(board: Board) -> Int?
     
 }

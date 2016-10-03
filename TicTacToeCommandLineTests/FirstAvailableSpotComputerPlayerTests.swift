@@ -16,16 +16,16 @@ class FirstAvailableSpotComputerPlayerTests: QuickSpec {
         describe("filled board") {
 
             it("returns nil if there are no available spaces") {
-                board.move(0, cellStatus: .playerTwo)
-                board.move(1, cellStatus: .playerTwo)
-                board.move(2, cellStatus: .playerTwo)
-                board.move(3, cellStatus: .playerTwo)
-                board.move(4, cellStatus: .playerOne)
-                board.move(5, cellStatus: .playerTwo)
-                board.move(6, cellStatus: .playerTwo)
-                board.move(7, cellStatus: .playerTwo)
-                board.move(8, cellStatus: .playerTwo)
-                expect(ai.getMove(board)).to(beNil())
+                board.move(cellIndex: 0, cellStatus: .playerTwo)
+                board.move(cellIndex: 1, cellStatus: .playerTwo)
+                board.move(cellIndex: 2, cellStatus: .playerTwo)
+                board.move(cellIndex: 3, cellStatus: .playerTwo)
+                board.move(cellIndex: 4, cellStatus: .playerOne)
+                board.move(cellIndex: 5, cellStatus: .playerTwo)
+                board.move(cellIndex: 6, cellStatus: .playerTwo)
+                board.move(cellIndex: 7, cellStatus: .playerTwo)
+                board.move(cellIndex: 8, cellStatus: .playerTwo)
+                expect(ai.getMove(board: board)).to(beNil())
             }
 
         }
@@ -33,27 +33,27 @@ class FirstAvailableSpotComputerPlayerTests: QuickSpec {
         describe("the board is almost full") {
             
             it("takes the final unoccupied cell at the end of the game, even if it is a loss") {
-                board.move(0, cellStatus: .playerOne)
-                board.move(2, cellStatus: .playerOne)
-                board.move(3, cellStatus: .playerOne)
-                board.move(4, cellStatus: .playerOne)
-                board.move(5, cellStatus: .playerOne)
-                board.move(6, cellStatus: .playerOne)
-                board.move(7, cellStatus: .playerOne)
-                board.move(8, cellStatus: .playerOne)
-                expect(ai.getMove(board)).to(equal(1))
+                board.move(cellIndex: 0, cellStatus: .playerOne)
+                board.move(cellIndex: 2, cellStatus: .playerOne)
+                board.move(cellIndex: 3, cellStatus: .playerOne)
+                board.move(cellIndex: 4, cellStatus: .playerOne)
+                board.move(cellIndex: 5, cellStatus: .playerOne)
+                board.move(cellIndex: 6, cellStatus: .playerOne)
+                board.move(cellIndex: 7, cellStatus: .playerOne)
+                board.move(cellIndex: 8, cellStatus: .playerOne)
+                expect(ai.getMove(board: board)).to(equal(1))
             }
             
             it("takes the final unoccupied cell at the end of the game if it is a win") {
-                board.move(0, cellStatus: .playerTwo)
-                board.move(1, cellStatus: .playerTwo)
-                board.move(2, cellStatus: .playerTwo)
-                board.move(3, cellStatus: .playerTwo)
-                board.move(5, cellStatus: .playerTwo)
-                board.move(6, cellStatus: .playerTwo)
-                board.move(7, cellStatus: .playerTwo)
-                board.move(8, cellStatus: .playerTwo)
-                expect(ai.getMove(board)).to(equal(4))
+                board.move(cellIndex: 0, cellStatus: .playerTwo)
+                board.move(cellIndex: 1, cellStatus: .playerTwo)
+                board.move(cellIndex: 2, cellStatus: .playerTwo)
+                board.move(cellIndex: 3, cellStatus: .playerTwo)
+                board.move(cellIndex: 5, cellStatus: .playerTwo)
+                board.move(cellIndex: 6, cellStatus: .playerTwo)
+                board.move(cellIndex: 7, cellStatus: .playerTwo)
+                board.move(cellIndex: 8, cellStatus: .playerTwo)
+                expect(ai.getMove(board: board)).to(equal(4))
             }
             
         }
@@ -61,34 +61,34 @@ class FirstAvailableSpotComputerPlayerTests: QuickSpec {
         describe("partially filled boards") {
             
             it("takes the first cell if it is open") {
-                board.move(2, cellStatus: .playerOne)
-                board.move(3, cellStatus: .playerTwo)
-                board.move(4, cellStatus: .playerOne)
-                board.move(6, cellStatus: .playerTwo)
-                board.move(7, cellStatus: .playerOne)
-                expect(ai.getMove(board)).to(equal(0))
+                board.move(cellIndex: 2, cellStatus: .playerOne)
+                board.move(cellIndex: 3, cellStatus: .playerTwo)
+                board.move(cellIndex: 4, cellStatus: .playerOne)
+                board.move(cellIndex: 6, cellStatus: .playerTwo)
+                board.move(cellIndex: 7, cellStatus: .playerOne)
+                expect(ai.getMove(board: board)).to(equal(0))
             }
             
             it("takes the second cell if the first one is taken") {
-                board.move(0, cellStatus: .playerTwo)
-                board.move(2, cellStatus: .playerTwo)
-                board.move(3, cellStatus: .playerOne)
-                expect(ai.getMove(board)).to(equal(1))
+                board.move(cellIndex: 0, cellStatus: .playerTwo)
+                board.move(cellIndex: 2, cellStatus: .playerTwo)
+                board.move(cellIndex: 3, cellStatus: .playerOne)
+                expect(ai.getMove(board: board)).to(equal(1))
             }
             
             it("takes the next available cell") {
-                board.move(0, cellStatus: .playerTwo)
-                board.move(1, cellStatus: .playerTwo)
-                board.move(2, cellStatus: .playerOne)
-                expect(ai.getMove(board)).to(equal(3))
+                board.move(cellIndex: 0, cellStatus: .playerTwo)
+                board.move(cellIndex: 1, cellStatus: .playerTwo)
+                board.move(cellIndex: 2, cellStatus: .playerOne)
+                expect(ai.getMove(board: board)).to(equal(3))
             }
             
             it("takes the next available cell, even if it means a loss") {
-                board.move(0, cellStatus: .playerTwo)
-                board.move(2, cellStatus: .playerOne)
-                board.move(5, cellStatus: .playerOne)
+                board.move(cellIndex: 0, cellStatus: .playerTwo)
+                board.move(cellIndex: 2, cellStatus: .playerOne)
+                board.move(cellIndex: 5, cellStatus: .playerOne)
                 
-                expect(ai.getMove(board)).to(equal(1))
+                expect(ai.getMove(board: board)).to(equal(1))
             }
             
         }

@@ -1,1 +1,1 @@
-MainMenu(userInputReader: MainMenuInputReader()).start(Game())
+MainMenu(userInputReader: MainMenuInputReader()).start(game: Game())

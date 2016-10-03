@@ -25,9 +25,21 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1ml-Iz-sLc">
+                                <frame key="frameInset" minX="140" minY="304" width="41" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Board"/>
+                                <connections>
+                                    <action selector="changeText" destination="BYZ-38-t0r" eventType="touchUpInside" id="t9j-Dp-kGL"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
+                    <connections>
+                        <outlet property="textBox" destination="9Bb-kt-4CY" id="iW8-z0-DQ3"/>
+                        <outlet property="textButton" destination="1ml-Iz-sLc" id="ZBr-Yl-g2F"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

@@ -17,7 +17,7 @@ open class TTTMoveReader: ConsoleInputReader {
     open func getInput() -> String? {
         print("\nPlease enter your input [0-8]:")
         let response = readLine(strippingNewline: true)!
-        switch checkInput(response) {
+        switch checkInput(cell: response) {
         case .passed:
             return response
         case .nonInteger:
@@ -35,7 +35,7 @@ open class TTTMoveReader: ConsoleInputReader {
         }
     }
     
-    open func checkInput(_ cell: String) -> InputClassification {
+    open func checkInput(cell: String) -> InputClassification {
         switch Int(cell) {
         case nil:
             return .nonInteger
@@ -43,7 +43,7 @@ open class TTTMoveReader: ConsoleInputReader {
             return .tooLarge
         case let x where x! < 0:
             return .tooSmall
-        case let x where gameBoard.isEmptyCellAtIndex(x!) == false:
+        case let x where gameBoard.isEmptyCellAtIndex(cellIndex: x!) == false:
             return .cellTaken
         default:
             return .passed

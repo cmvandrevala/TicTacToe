@@ -10,21 +10,21 @@ open class MainMenu {
         inputReader = userInputReader
     }
     
-    open func start(_ game: TwoPlayerGame) {
+    open func start(game: TwoPlayerGame) {
         print(messages.welcomeMessage())
         while humanPlayer.wantsToContinuePlaying {
             switch inputReader.getInput()! {
             case "1":
                 game.clear()
-                game.play(humanPlayer, playerTwo: HumanPlayer())
+                game.play(playerOne: humanPlayer, playerTwo: HumanPlayer())
                 print(messages.askToPlayAgain())
             case "2":
                 game.clear()
-                game.play(humanPlayer, playerTwo: FirstAvailableSpotComputerPlayer())
+                game.play(playerOne: humanPlayer, playerTwo: FirstAvailableSpotComputerPlayer())
                 print(messages.askToPlayAgain())
             case "3":
                 game.clear()
-                game.play(FirstAvailableSpotComputerPlayer(), playerTwo: humanPlayer)
+                game.play(playerOne: FirstAvailableSpotComputerPlayer(), playerTwo: humanPlayer)
                 print(messages.askToPlayAgain())
             case "4":
                 humanPlayer.noLongerWantsToPlay()

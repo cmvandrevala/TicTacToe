@@ -8,7 +8,7 @@ open class HumanPlayer: Player {
         wantsToContinuePlaying = !wantsToContinuePlaying
     }
     
-    open func getMove(_ board: Board) -> Int? {
+    open func getMove(board: Board) -> Int? {
         let inputReader = TTTMoveReader(board: board)
         return Int(inputReader.getInput()!)
     }

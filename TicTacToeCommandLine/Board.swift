@@ -23,7 +23,7 @@ open class Board {
         return marksInCells
     }
     
-    open func move(_ cellIndex: Int, cellStatus: CellStatus) {
+    open func move(cellIndex: Int, cellStatus: CellStatus) {
         currentCells[cellIndex] = cellStatus
     }
     
@@ -34,7 +34,7 @@ open class Board {
     
     open func threeInRow() -> CellStatus {
         for group in groupsOfThreeCells() {
-            if areAllThreeCellsMatching(group) && areAllThreeCellsFilled(group) {
+            if areAllThreeCellsMatching(group: group) && areAllThreeCellsFilled(group: group) {
                 return currentCells[group[0]]!
             }
         }
@@ -45,7 +45,7 @@ open class Board {
         return !currentBoard().contains(.empty)
     }
     
-    open func isEmptyCellAtIndex(_ cellIndex: Int) -> Bool {
+    open func isEmptyCellAtIndex(cellIndex: Int) -> Bool {
         switch currentCells[cellIndex]! {
         case .playerOne:
             return false
@@ -62,17 +62,17 @@ open class Board {
         }
     }
     
-    fileprivate func areAllThreeCellsMatching(_ group: [Int]) -> Bool {
-        let marks = marksContainedInGroup(group)
+    fileprivate func areAllThreeCellsMatching(group: [Int]) -> Bool {
+        let marks = marksContainedInGroup(group: group)
         return marks[0] == marks[1] && marks[1] == marks[2]
     }
     
-    fileprivate func areAllThreeCellsFilled(_ group: [Int]) -> Bool {
-        let marks = marksContainedInGroup(group)
+    fileprivate func areAllThreeCellsFilled(group: [Int]) -> Bool {
+        let marks = marksContainedInGroup(group: group)
         return marks[0] != .empty && marks[1] != .empty && marks[2] != .empty
     }
     
-    fileprivate func marksContainedInGroup(_ group: [Int]) -> [CellStatus] {
+    fileprivate func marksContainedInGroup(group: [Int]) -> [CellStatus] {
         let firstMark = currentCells[group[0]]!
         let secondMark = currentCells[group[1]]!
         let thirdMark = currentCells[group[2]]!

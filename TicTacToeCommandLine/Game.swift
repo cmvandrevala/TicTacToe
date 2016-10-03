@@ -26,8 +26,8 @@ open class Game: TwoPlayerGame {
         gameLoop()
     }
 
-    open func play(_ playerOne: Player, playerTwo: Player) {
-        updatePlayers(playerOne, playerTwo: playerTwo)
+    open func play(playerOne: Player, playerTwo: Player) {
+        updatePlayers(playerOne: playerOne, playerTwo: playerTwo)
         gameLoop()
     }
     
@@ -49,7 +49,7 @@ open class Game: TwoPlayerGame {
         clock.clear()
     }
 
-    fileprivate func updatePlayers(_ playerOne: Player, playerTwo: Player) {
+    fileprivate func updatePlayers(playerOne: Player, playerTwo: Player) {
         firstPlayer = playerOne
         secondPlayer = playerTwo
     }
@@ -64,20 +64,20 @@ open class Game: TwoPlayerGame {
     fileprivate func takeTurn() {
         switch clock.playerOnesTurn() {
         case true:
-            printBoardAndBeginningMessagesToConsole(.playerOne)
-            let cellIndex = firstPlayer.getMove(board)!
-            board.move(cellIndex, cellStatus: .playerOne)
-            printEndingMessagesToConsole(.playerOne, cellIndex: cellIndex)
+            printBoardAndBeginningMessagesToConsole(currentPlayer: .playerOne)
+            let cellIndex = firstPlayer.getMove(board: board)!
+            board.move(cellIndex: cellIndex, cellStatus: .playerOne)
+            printEndingMessagesToConsole(currentPlayer: .playerOne, cellIndex: cellIndex)
         case false:
-            printBoardAndBeginningMessagesToConsole(.playerTwo)
-            let cellIndex = secondPlayer.getMove(board)!
-            board.move(cellIndex, cellStatus: .playerTwo)
-            printEndingMessagesToConsole(.playerTwo, cellIndex: cellIndex)
+            printBoardAndBeginningMessagesToConsole(currentPlayer: .playerTwo)
+            let cellIndex = secondPlayer.getMove(board: board)!
+            board.move(cellIndex: cellIndex, cellStatus: .playerTwo)
+            printEndingMessagesToConsole(currentPlayer: .playerTwo, cellIndex: cellIndex)
         }
         endTurn()
     }
     
-    fileprivate func printBoardAndBeginningMessagesToConsole(_ currentPlayer: CurrentPlayer) {
+    fileprivate func printBoardAndBeginningMessagesToConsole(currentPlayer: CurrentPlayer) {
         print(boardPrinter.formattedBoardForConsole())
         switch currentPlayer {
         case .playerOne:
@@ -87,7 +87,7 @@ open class Game: TwoPlayerGame {
         }
     }
     
-    fileprivate func printEndingMessagesToConsole(_ currentPlayer: CurrentPlayer, cellIndex: Int) {
+    fileprivate func printEndingMessagesToConsole(currentPlayer: CurrentPlayer, cellIndex: Int) {
         switch currentPlayer {
         case .playerOne:
             print("\nPlayer One just moved in cell \(cellIndex).")
