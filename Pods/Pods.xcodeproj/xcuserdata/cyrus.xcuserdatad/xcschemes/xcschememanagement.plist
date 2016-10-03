@@ -4,35 +4,77 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Nimble.xcscheme</key>
+		<key>Nimble-OSX.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
+			<key>orderHint</key>
+			<integer>4</integer>
 		</dict>
-		<key>Pods-TTTSwiftTests.xcscheme</key>
+		<key>Nimble-iOS.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
+			<key>orderHint</key>
+			<integer>3</integer>
 		</dict>
-		<key>Quick.xcscheme</key>
+		<key>Pods-TicTacToeCommandLineTests.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
+			<key>orderHint</key>
+			<integer>5</integer>
+		</dict>
+		<key>Pods-TicTacToeiOSTests.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+			<key>orderHint</key>
+			<integer>6</integer>
+		</dict>
+		<key>Quick-OSX.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+			<key>orderHint</key>
+			<integer>8</integer>
+		</dict>
+		<key>Quick-iOS.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+			<key>orderHint</key>
+			<integer>7</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>0867ABA979B4BC65D7A80F3DC1AC0810</key>
+		<key>1463C1CE210F3B5F584F454E16418808</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>40FF1C77152F384080A1A02E90A36DA9</key>
+		<key>4B0AED187423C4576B1EE828012E9D72</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>71A7BEC0462E90726770E487BF567D3B</key>
+		<key>6C1162504825E5877E1CA9116A091401</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>80FD5FE5F98438E0E7E5FDCC2602E618</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>88CBF28CDF400099B6C7671F23D75A69</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A4BFEB4813EFAB69827C8761D92D90D6</key>
 		<dict>
 			<key>primary</key>
 			<true/>
