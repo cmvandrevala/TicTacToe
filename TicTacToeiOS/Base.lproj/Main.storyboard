@@ -67,55 +67,73 @@
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="exG-9Y-ebr">
                                                         <color key="backgroundColor" red="0.63615813659999998" green="0.80093105190000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                                        <state key="normal" title="X"/>
+                                                        <connections>
+                                                            <action selector="playerTapsCell:" destination="4wa-nM-yst" eventType="touchUpInside" id="gXu-Jx-4tK"/>
+                                                        </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UAs-3c-cE1">
+                                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UAs-3c-cE1">
                                                         <color key="backgroundColor" red="0.63615813659999998" green="0.80093105190000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                                        <state key="normal" title="X"/>
+                                                        <connections>
+                                                            <action selector="playerTapsCell:" destination="4wa-nM-yst" eventType="touchUpInside" id="eOQ-KD-CzM"/>
+                                                        </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4ih-wQ-wAz">
+                                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4ih-wQ-wAz">
                                                         <color key="backgroundColor" red="0.63615813659999998" green="0.80093105190000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                                        <state key="normal" title="X"/>
+                                                        <connections>
+                                                            <action selector="playerTapsCell:" destination="4wa-nM-yst" eventType="touchUpInside" id="ei2-lL-KHD"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="tKj-7d-R1F">
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mZT-LO-1Bb">
+                                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mZT-LO-1Bb">
                                                         <color key="backgroundColor" red="0.63615813659999998" green="0.80093105190000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                                        <state key="normal" title="X"/>
+                                                        <connections>
+                                                            <action selector="playerTapsCell:" destination="4wa-nM-yst" eventType="touchUpInside" id="rNS-Bl-kJy"/>
+                                                        </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fa9-ji-i0S">
+                                                    <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fa9-ji-i0S">
                                                         <color key="backgroundColor" red="0.63615813659999998" green="0.80093105190000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                                        <state key="normal" title="X"/>
+                                                        <connections>
+                                                            <action selector="playerTapsCell:" destination="4wa-nM-yst" eventType="touchUpInside" id="6X4-L6-N1F"/>
+                                                        </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w9X-Jk-vJA">
+                                                    <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w9X-Jk-vJA">
                                                         <color key="backgroundColor" red="0.63615813659999998" green="0.80093105190000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                                        <state key="normal" title="X"/>
+                                                        <connections>
+                                                            <action selector="playerTapsCell:" destination="4wa-nM-yst" eventType="touchUpInside" id="eE9-s4-KsQ"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="z0y-rt-cno">
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BkL-aJ-T15">
+                                                    <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BkL-aJ-T15">
                                                         <color key="backgroundColor" red="0.63615813659999998" green="0.80093105190000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                                        <state key="normal" title="X"/>
+                                                        <connections>
+                                                            <action selector="playerTapsCell:" destination="4wa-nM-yst" eventType="touchUpInside" id="lLO-IR-PHI"/>
+                                                        </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sY6-J5-nFu">
+                                                    <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sY6-J5-nFu">
                                                         <color key="backgroundColor" red="0.63615813659999998" green="0.80093105190000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                                        <state key="normal" title="X"/>
+                                                        <connections>
+                                                            <action selector="playerTapsCell:" destination="4wa-nM-yst" eventType="touchUpInside" id="HYl-2W-YDH"/>
+                                                        </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YGC-Wq-1N5">
+                                                    <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YGC-Wq-1N5">
                                                         <color key="backgroundColor" red="0.63615813659999998" green="0.80093105190000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                                        <state key="normal" title="X"/>
+                                                        <connections>
+                                                            <action selector="playerTapsCell:" destination="4wa-nM-yst" eventType="touchUpInside" id="SA0-12-4Rw"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
@@ -159,6 +177,17 @@
                             <constraint firstItem="s0K-Lm-yfq" firstAttribute="trailing" secondItem="eJI-CO-MBg" secondAttribute="trailingMargin" id="JDe-UL-rxV"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="cell0" destination="exG-9Y-ebr" id="1Gu-dR-Pqo"/>
+                        <outlet property="cell1" destination="UAs-3c-cE1" id="kwN-Jt-1V1"/>
+                        <outlet property="cell2" destination="4ih-wQ-wAz" id="yAH-oB-kX9"/>
+                        <outlet property="cell3" destination="mZT-LO-1Bb" id="3Gd-vc-zcN"/>
+                        <outlet property="cell4" destination="fa9-ji-i0S" id="Xuc-Gh-XrZ"/>
+                        <outlet property="cell5" destination="w9X-Jk-vJA" id="4gf-gJ-vcV"/>
+                        <outlet property="cell6" destination="BkL-aJ-T15" id="owt-7G-mG0"/>
+                        <outlet property="cell7" destination="sY6-J5-nFu" id="NS1-7U-bdi"/>
+                        <outlet property="cell8" destination="YGC-Wq-1N5" id="2Ch-1p-7jg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aR6-G4-aKm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

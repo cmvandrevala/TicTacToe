@@ -45,7 +45,7 @@
 		6EAD07CF1DA557D80013AE5B /* HumanVsHumanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EAD07CE1DA557D80013AE5B /* HumanVsHumanViewController.swift */; };
 		6EB5C1D91D7F5C7800A5829F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EB5C1D81D7F5C7800A5829F /* AppDelegate.swift */; };
 		6EB5C1DB1D7F5C7800A5829F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EB5C1DA1D7F5C7800A5829F /* ViewController.swift */; };
-		6EB5C1DE1D7F5C7800A5829F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6EB5C1DC1D7F5C7800A5829F /* Main.storyboard */; };
+		6EB5C1DE1D7F5C7800A5829F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6EB5C1DC1D7F5C7800A5829F /* Main.storyboard */; settings = {ASSET_TAGS = (0, ); }; };
 		6EB5C1E01D7F5C7800A5829F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6EB5C1DF1D7F5C7800A5829F /* Assets.xcassets */; };
 		6EB5C1E31D7F5C7800A5829F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6EB5C1E11D7F5C7800A5829F /* LaunchScreen.storyboard */; };
 		6ECA902A1D9DA0CE00E55C18 /* Board.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9995251D7F60D500616838 /* Board.swift */; };
@@ -377,6 +377,9 @@
 		6EB5C1CD1D7F5C7800A5829F /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				KnownAssetTags = (
+					0,
+				);
 				LastSwiftUpdateCheck = 0800;
 				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = "Cyrus Vandrevala";
