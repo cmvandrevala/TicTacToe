@@ -1,6 +1,6 @@
 import UIKit
 
-class ViewController: UIViewController {
+class HumanVsHumanViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -13,4 +13,3 @@ class ViewController: UIViewController {
     }
 
 }
-
