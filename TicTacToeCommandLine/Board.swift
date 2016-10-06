@@ -14,7 +14,7 @@ open class Board {
     }
     
     open func currentBoard() -> [CellStatus] {
-        var marksInCells = [CellStatus](repeating: .empty, count: 9)
+        var marksInCells = [CellStatus](repeating: .empty, count: numberOfCells)
         for (cell, status) in currentCells {
             marksInCells[cell] = status
         }

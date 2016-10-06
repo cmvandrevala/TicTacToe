@@ -65,7 +65,7 @@ class BoardTests: QuickSpec {
             
         }
         
-        describe("#filledBoard") {
+        describe("#isFilled") {
             
             it("returns false if the board is completely filled with empty spaces") {
                 expect(board.isFilled()).to(beFalse())
@@ -86,7 +86,7 @@ class BoardTests: QuickSpec {
             
         }
         
-        describe("#emptyCellAtIndex") {
+        describe("#isEmptyAtIndex") {
             
             it("returns false if the cell is taken by player one") {
                 board.move(cellIndex: 1, cellStatus: .playerOne)

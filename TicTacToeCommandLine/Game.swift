@@ -8,6 +8,7 @@ open class Game: TwoPlayerGame {
     let board: Board!
     let clock: Clock!
     let rules: Rules!
+    let marks: PlayerMarks!
     let boardPrinter: ConsoleBoard!
     
     var firstPlayer: Player!
@@ -19,6 +20,7 @@ open class Game: TwoPlayerGame {
         board = Board()
         clock = Clock()
         rules = Rules(board: board)
+        marks = PlayerMarks()
         boardPrinter = ConsoleBoard(board: board)
         firstPlayer = FirstAvailableSpotComputerPlayer()
         secondPlayer = FirstAvailableSpotComputerPlayer()
@@ -84,9 +86,9 @@ open class Game: TwoPlayerGame {
         print(boardPrinter.formattedBoardForConsole())
         switch currentPlayer {
         case .playerOne:
-            print(messages.itsPlayerOnesTurn)
+            print(messages.itsPlayerOnesTurn(playerOnesMark: marks.playerOnesMark))
         case .playerTwo:
-            print(messages.itsPlayerTwosTurn)
+            print(messages.itsPlayerTwosTurn(playerTwosMark: marks.playerTwosMark))
         }
     }
     

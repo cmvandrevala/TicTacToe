@@ -1,10 +1,12 @@
 import Foundation
 
 open class ConsoleBoard {
-    
+
+    var marks: PlayerMarks!
     var gameBoard: Board
     
     public init(board: Board) {
+        marks = PlayerMarks()
         gameBoard = board
     }
     
@@ -24,9 +26,9 @@ open class ConsoleBoard {
         var marksInCells: [String] = []
         for (index,status) in gameBoard.currentBoard().enumerated() {
             if status == .playerOne {
-                marksInCells.append("X")
+                marksInCells.append(marks.playerOnesMark)
             } else if status == .playerTwo {
-                marksInCells.append("O")
+                marksInCells.append(marks.playerTwosMark)
             } else {
                 marksInCells.append("\(index)")
             }

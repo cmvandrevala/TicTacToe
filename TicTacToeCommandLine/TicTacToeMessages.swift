@@ -6,8 +6,6 @@ public struct TicTacToeMessages {
     public var welcome = "Welcome to Tic-Tac-Toe!\n"
     public var thankYouForPlaying = "Thank you for playing!\n"
     public var theGameHasEnded = "The game has ended.\n"
-    public var itsPlayerOnesTurn = "It is Player One's turn, moving as X.\n"
-    public var itsPlayerTwosTurn = "It is Player Two's turn, moving as O.\n"
     public var cellIsTaken = "That cell has already been taken!\n"
     public var selectedCellIndexTooSmall = "That cell index is way too small!\n"
     public var selectedCellIndexTooLarge = "That cell index is way too large!\n"
@@ -39,6 +37,12 @@ public struct TicTacToeMessages {
         return "Player Two just moved in cell \(cellIndex).\n"
     }
 
+    public func itsPlayerOnesTurn(playerOnesMark: String) -> String {
+        return "It is Player One's turn, moving as \(playerOnesMark).\n"
+    }
 
+    public func itsPlayerTwosTurn(playerTwosMark: String) -> String {
+        return "It is Player Two's turn, moving as \(playerTwosMark).\n"
+    }
 
 }

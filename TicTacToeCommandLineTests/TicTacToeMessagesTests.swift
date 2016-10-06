@@ -46,11 +46,11 @@ class TicTacToeMessagesTests: QuickSpec {
             }
 
             it("#itsPlayerOnesTurn returns the current player's turn") {
-                expect(printer.itsPlayerOnesTurn).to(equal("It is Player One's turn, moving as X.\n"))
+                expect(printer.itsPlayerOnesTurn(playerOnesMark: "X")).to(equal("It is Player One's turn, moving as X.\n"))
             }
 
             it("#itsPlayerTwosTurn returns the current player's turn") {
-                expect(printer.itsPlayerTwosTurn).to(equal("It is Player Two's turn, moving as O.\n"))
+                expect(printer.itsPlayerTwosTurn(playerTwosMark: "O")).to(equal("It is Player Two's turn, moving as O.\n"))
             }
 
             it("#cellIsTaken alerts the player that a cell has been taken") {
