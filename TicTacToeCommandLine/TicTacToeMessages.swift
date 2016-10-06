@@ -13,6 +13,13 @@ public struct TicTacToeMessages {
     public var selectCellPrompt = "Please enter your input [0-8]:\n"
 
 
+    public var emptyConsoleBoard = "The current board is:\n\n" +
+                                   " 0 | 1 | 2 \n" +
+                                   "===========\n" +
+                                   " 3 | 4 | 5 \n" +
+                                   "===========\n" +
+                                   " 6 | 7 | 8 \n"
+
     public var consoleMenuOptions = "What would you like to do?\n" +
                                     "1) Play Human vs. Human\n" +
                                     "2) Play Human vs. Computer\n" +

@@ -73,6 +73,10 @@ class TicTacToeMessagesTests: QuickSpec {
                 expect(printer.selectCellPrompt).to(equal("Please enter your input [0-8]:\n"))
             }
 
+            it("#emptyConsoleBoard returns an empty board") {
+                expect(printer.emptyConsoleBoard).to(equal("The current board is:\n\n 0 | 1 | 2 \n===========\n 3 | 4 | 5 \n===========\n 6 | 7 | 8 \n"))
+            }
+
         }
 
     }

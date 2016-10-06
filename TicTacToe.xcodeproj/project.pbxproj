@@ -144,7 +144,7 @@
 		6EEECB371D8B1ADE00B92641 /* HumanPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HumanPlayer.swift; sourceTree = "<group>"; };
 		6EEECB3D1D8B245E00B92641 /* GameTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameTests.swift; sourceTree = "<group>"; };
 		6EEECB3F1D8B246B00B92641 /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
-		6EEECB421D8B255A00B92641 /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		6EEECB421D8B255A00B92641 /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Player.swift; path = TicTacToeCommandLine/Player.swift; sourceTree = "<group>"; };
 		6EF6F6BB1D81D1FF00B545F2 /* TicTacToeMessagesTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TicTacToeMessagesTests.swift; path = TicTacToeCommandLineTests/TicTacToeMessagesTests.swift; sourceTree = "<group>"; };
 		6EF6F6BD1D81D20D00B545F2 /* TicTacToeMessages.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TicTacToeMessages.swift; path = TicTacToeCommandLine/TicTacToeMessages.swift; sourceTree = "<group>"; };
 		6EFC78A91D9070B5005BB491 /* MainMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenu.swift; sourceTree = "<group>"; };
@@ -200,7 +200,6 @@
 				6EEECB371D8B1ADE00B92641 /* HumanPlayer.swift */,
 				6EFC78A91D9070B5005BB491 /* MainMenu.swift */,
 				6E9DE1ED1D90826E00321653 /* MainMenuInputReader.swift */,
-				6EEECB421D8B255A00B92641 /* Player.swift */,
 				6E36FC891D9416CA0018E83F /* RandomSpotComputerPlayer.swift */,
 				6E75F1F51D8729AA00FAB787 /* TTTMoveReader.swift */,
 				6E2E70BE1D91C5AE00BF8644 /* TwoPlayerGame.swift */,
@@ -230,6 +229,7 @@
 		6EAD07D11DA5A81F0013AE5B /* TicTacToe */ = {
 			isa = PBXGroup;
 			children = (
+				6EEECB421D8B255A00B92641 /* Player.swift */,
 				6EF6F6BD1D81D20D00B545F2 /* TicTacToeMessages.swift */,
 				6E1811631D8099F200B73B7A /* Rules.swift */,
 				6E9995251D7F60D500616838 /* Board.swift */,
