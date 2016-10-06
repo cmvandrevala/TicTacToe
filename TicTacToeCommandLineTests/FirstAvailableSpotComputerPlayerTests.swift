@@ -87,7 +87,6 @@ class FirstAvailableSpotComputerPlayerTests: QuickSpec {
                 board.move(cellIndex: 0, cellStatus: .playerTwo)
                 board.move(cellIndex: 2, cellStatus: .playerOne)
                 board.move(cellIndex: 5, cellStatus: .playerOne)
-                
                 expect(ai.getMove(board: board)).to(equal(1))
             }
             

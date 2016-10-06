@@ -114,5 +114,13 @@ class BoardTests: QuickSpec {
             
         }
 
+        describe("initializing the board") {
+
+            it("contains nine cells") {
+                expect(board.numberOfCells).to(equal(9))
+            }
+
+        }
+
     }
 }

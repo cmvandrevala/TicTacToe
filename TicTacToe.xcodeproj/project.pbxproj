@@ -47,6 +47,7 @@
 		6E9DE1F11D90830300321653 /* InputReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9DE1F01D90830300321653 /* InputReader.swift */; };
 		6E9DE1F21D90830300321653 /* InputReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9DE1F01D90830300321653 /* InputReader.swift */; };
 		6EAD07CF1DA557D80013AE5B /* HumanVsHumanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EAD07CE1DA557D80013AE5B /* HumanVsHumanViewController.swift */; };
+		6EB2E17F1DA7FD1A0072EEF4 /* HumanVsHumanViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EB2E17E1DA7FD1A0072EEF4 /* HumanVsHumanViewControllerTests.swift */; };
 		6EB5C1D91D7F5C7800A5829F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EB5C1D81D7F5C7800A5829F /* AppDelegate.swift */; };
 		6EB5C1DB1D7F5C7800A5829F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EB5C1DA1D7F5C7800A5829F /* ViewController.swift */; };
 		6EB5C1DE1D7F5C7800A5829F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6EB5C1DC1D7F5C7800A5829F /* Main.storyboard */; settings = {ASSET_TAGS = (0, ); }; };
@@ -109,13 +110,13 @@
 		6E1811631D8099F200B73B7A /* Rules.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Rules.swift; path = TicTacToeCommandLine/Rules.swift; sourceTree = "<group>"; };
 		6E22377C1D885A6400676B77 /* ConsoleBoard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsoleBoard.swift; sourceTree = "<group>"; };
 		6E22377F1D885A7900676B77 /* ConsoleBoardTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsoleBoardTests.swift; sourceTree = "<group>"; };
-		6E2237811D88628300676B77 /* FirstAvailableSpotComputerPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstAvailableSpotComputerPlayer.swift; sourceTree = "<group>"; };
-		6E2237841D88629300676B77 /* FirstAvailableSpotComputerPlayerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstAvailableSpotComputerPlayerTests.swift; sourceTree = "<group>"; };
+		6E2237811D88628300676B77 /* FirstAvailableSpotComputerPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FirstAvailableSpotComputerPlayer.swift; path = TicTacToeCommandLine/FirstAvailableSpotComputerPlayer.swift; sourceTree = "<group>"; };
+		6E2237841D88629300676B77 /* FirstAvailableSpotComputerPlayerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FirstAvailableSpotComputerPlayerTests.swift; path = TicTacToeCommandLineTests/FirstAvailableSpotComputerPlayerTests.swift; sourceTree = "<group>"; };
 		6E26AB441DA6D030002B8C60 /* PlayerMarks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerMarks.swift; sourceTree = "<group>"; };
 		6E26AB461DA6D048002B8C60 /* PlayerMarksTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerMarksTests.swift; sourceTree = "<group>"; };
 		6E2E70BE1D91C5AE00BF8644 /* TwoPlayerGame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwoPlayerGame.swift; sourceTree = "<group>"; };
-		6E36FC871D9416B60018E83F /* RandomSpotComputerPlayerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RandomSpotComputerPlayerTests.swift; sourceTree = "<group>"; };
-		6E36FC891D9416CA0018E83F /* RandomSpotComputerPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RandomSpotComputerPlayer.swift; sourceTree = "<group>"; };
+		6E36FC871D9416B60018E83F /* RandomSpotComputerPlayerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RandomSpotComputerPlayerTests.swift; path = TicTacToeCommandLineTests/RandomSpotComputerPlayerTests.swift; sourceTree = "<group>"; };
+		6E36FC891D9416CA0018E83F /* RandomSpotComputerPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RandomSpotComputerPlayer.swift; path = TicTacToeCommandLine/RandomSpotComputerPlayer.swift; sourceTree = "<group>"; };
 		6E47978F1D83106D0027ADAC /* TicTacToeCommandLine */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = TicTacToeCommandLine; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E4797911D83106D0027ADAC /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		6E4E95311D9D9BC400B9B445 /* TicTacToeCommandLineTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TicTacToeCommandLineTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -129,6 +130,7 @@
 		6E9DE1ED1D90826E00321653 /* MainMenuInputReader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenuInputReader.swift; sourceTree = "<group>"; };
 		6E9DE1F01D90830300321653 /* InputReader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputReader.swift; sourceTree = "<group>"; };
 		6EAD07CE1DA557D80013AE5B /* HumanVsHumanViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HumanVsHumanViewController.swift; sourceTree = "<group>"; };
+		6EB2E17E1DA7FD1A0072EEF4 /* HumanVsHumanViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HumanVsHumanViewControllerTests.swift; sourceTree = "<group>"; };
 		6EB5C1D51D7F5C7800A5829F /* TicTacToeiOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TicTacToeiOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6EB5C1D81D7F5C7800A5829F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6EB5C1DA1D7F5C7800A5829F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -195,12 +197,10 @@
 				6E826E931D9EC399009C5902 /* Info.plist */,
 				6E22377C1D885A6400676B77 /* ConsoleBoard.swift */,
 				6E9DE1F01D90830300321653 /* InputReader.swift */,
-				6E2237811D88628300676B77 /* FirstAvailableSpotComputerPlayer.swift */,
 				6EEECB3F1D8B246B00B92641 /* Game.swift */,
 				6EEECB371D8B1ADE00B92641 /* HumanPlayer.swift */,
 				6EFC78A91D9070B5005BB491 /* MainMenu.swift */,
 				6E9DE1ED1D90826E00321653 /* MainMenuInputReader.swift */,
-				6E36FC891D9416CA0018E83F /* RandomSpotComputerPlayer.swift */,
 				6E75F1F51D8729AA00FAB787 /* TTTMoveReader.swift */,
 				6E2E70BE1D91C5AE00BF8644 /* TwoPlayerGame.swift */,
 				6E4797911D83106D0027ADAC /* main.swift */,
@@ -213,12 +213,10 @@
 			isa = PBXGroup;
 			children = (
 				6E22377F1D885A7900676B77 /* ConsoleBoardTests.swift */,
-				6E2237841D88629300676B77 /* FirstAvailableSpotComputerPlayerTests.swift */,
 				6EEECB3D1D8B245E00B92641 /* GameTests.swift */,
 				6EEECB351D8B1AC200B92641 /* HumanPlayerTests.swift */,
 				6E4E95351D9D9BC400B9B445 /* Info.plist */,
 				6E9DE1EB1D90807900321653 /* MainMenuTests.swift */,
-				6E36FC871D9416B60018E83F /* RandomSpotComputerPlayerTests.swift */,
 				6EFC78AC1D907311005BB491 /* TTTAcceptanceTests.swift */,
 				6E75F1F31D87299A00FAB787 /* TTTMoveReaderTests.swift */,
 				6E26AB461DA6D048002B8C60 /* PlayerMarksTests.swift */,
@@ -230,6 +228,8 @@
 			isa = PBXGroup;
 			children = (
 				6EEECB421D8B255A00B92641 /* Player.swift */,
+				6E2237811D88628300676B77 /* FirstAvailableSpotComputerPlayer.swift */,
+				6E36FC891D9416CA0018E83F /* RandomSpotComputerPlayer.swift */,
 				6EF6F6BD1D81D20D00B545F2 /* TicTacToeMessages.swift */,
 				6E1811631D8099F200B73B7A /* Rules.swift */,
 				6E9995251D7F60D500616838 /* Board.swift */,
@@ -242,6 +242,8 @@
 			isa = PBXGroup;
 			children = (
 				6EF6F6BB1D81D1FF00B545F2 /* TicTacToeMessagesTests.swift */,
+				6E36FC871D9416B60018E83F /* RandomSpotComputerPlayerTests.swift */,
+				6E2237841D88629300676B77 /* FirstAvailableSpotComputerPlayerTests.swift */,
 				6E9995231D7F5CF800616838 /* BoardTests.swift */,
 				6ECEA3541D883F830035E9DA /* ClockTests.swift */,
 				6E1811611D80989D00B73B7A /* RulesTests.swift */,
@@ -293,6 +295,7 @@
 			isa = PBXGroup;
 			children = (
 				6EB5C1EF1D7F5C7800A5829F /* Info.plist */,
+				6EB2E17E1DA7FD1A0072EEF4 /* HumanVsHumanViewControllerTests.swift */,
 			);
 			path = TicTacToeiOSTests;
 			sourceTree = "<group>";
@@ -665,6 +668,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6EB2E17F1DA7FD1A0072EEF4 /* HumanVsHumanViewControllerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -884,10 +888,12 @@
 			baseConfigurationReference = 53D8AC7E668D1EB7C483B3B5 /* Pods-TicTacToeiOSTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = TicTacToeiOSTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cyrusvandrevala.TTTSwiftTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TicTacToeiOS.app/TicTacToeiOS";
 			};
@@ -898,6 +904,7 @@
 			baseConfigurationReference = EF46F8A1F4B5588D5856AC19 /* Pods-TicTacToeiOSTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = TicTacToeiOSTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cyrusvandrevala.TTTSwiftTests;

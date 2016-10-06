@@ -9,7 +9,7 @@ open class RandomSpotComputerPlayer: Player {
             return nil
         }
         while true {
-            let testIndex = Int(arc4random_uniform(9))
+            let testIndex = Int(arc4random_uniform(UInt32(board.numberOfCells)))
             if board.isEmptyCellAtIndex(cellIndex: testIndex) {
                 return testIndex
             }

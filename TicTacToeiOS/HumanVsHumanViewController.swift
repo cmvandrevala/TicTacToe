@@ -1,75 +1,60 @@
 import UIKit
 
-class HumanVsHumanViewController: UIViewController {
+public class HumanVsHumanViewController: UIViewController {
 
+    var game: Game!
     var board: Board!
-    var clock: Clock!
-    var rules: Rules!
 
-    var firstPlayer: HumanPlayer!
-    var secondPlayer: HumanPlayer!
+    @IBOutlet weak public var cell0: UIButton!
+    @IBOutlet weak public var cell1: UIButton!
+    @IBOutlet weak public var cell2: UIButton!
+    @IBOutlet weak public var cell3: UIButton!
+    @IBOutlet weak public var cell4: UIButton!
+    @IBOutlet weak public var cell5: UIButton!
+    @IBOutlet weak public var cell6: UIButton!
+    @IBOutlet weak public var cell7: UIButton!
+    @IBOutlet weak public var cell8: UIButton!
 
-    @IBOutlet weak var cell0: UIButton!
-    @IBOutlet weak var cell1: UIButton!
-    @IBOutlet weak var cell2: UIButton!
-    @IBOutlet weak var cell3: UIButton!
-    @IBOutlet weak var cell4: UIButton!
-    @IBOutlet weak var cell5: UIButton!
-    @IBOutlet weak var cell6: UIButton!
-    @IBOutlet weak var cell7: UIButton!
-    @IBOutlet weak var cell8: UIButton!
-
-    var indicesToButtons: [Int : UIButton]!
-
-    override func viewDidLoad() {
+    override public func viewDidLoad() {
         super.viewDidLoad()
         board = Board()
-        clock = Clock()
-        rules = Rules(board: board)
-        firstPlayer = HumanPlayer()
-        secondPlayer = HumanPlayer()
+        game = Game(board: board)
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
+    @IBAction public func playerTapsCell(_ sender: UIButton) {
+        if sender.isEnabled {
+            let cellIndex = Int(sender.tag)
+            game.takeTurn(cellIndex: cellIndex)
+            refreshBoard()
+        }
     }
 
-    @IBAction func playerTapsCell(_ sender: UIButton) {
-        let cellIndex = Int(sender.tag)
-        takeTurn(cellIndex: cellIndex)
+    @IBAction public func newGame() {
+        game.clear()
         refreshBoard()
     }
 
-    fileprivate func takeTurn(cellIndex: Int) {
-        switch clock.playerOnesTurn() {
-        case true:
-            board.move(cellIndex: cellIndex, cellStatus: .playerOne)
-        case false:
-            board.move(cellIndex: cellIndex, cellStatus: .playerTwo)
-        }
-        endTurn()
-    }
-
-    fileprivate func endTurn() {
-        clock.incrementTurnNumber()
-        rules.updateGameStatus()
-    }
-
     fileprivate func refreshBoard() {
-        let cells: [UIButton] = [cell0, cell1, cell2, cell3, cell4, cell5, cell6, cell7, cell8]
+        let cells: [UIButton?] = [cell0, cell1, cell2, cell3, cell4, cell5, cell6, cell7, cell8]
         for cell in cells {
-            refreshCell(cell: cell)
+            if let cell = cell {
+                refreshCell(cell: cell)
+            }
         }
     }
 
     fileprivate func refreshCell(cell: UIButton) {
-        switch board.currentCells[Int(cell.tag)]! {
+        let currentBoard = board.currentBoard()
+        switch currentBoard[Int(cell.tag)] {
         case .playerOne:
-            cell.setTitle("X", for: .normal)
+            cell.setTitle(game.marks.playerOnesMark, for: .normal)
+            cell.isEnabled = false
         case .playerTwo:
-            cell.setTitle("O", for: .normal)
+            cell.setTitle(game.marks.playerTwosMark, for: .normal)
+            cell.isEnabled = false
         case .empty:
             cell.setTitle("", for: .normal)
+            cell.isEnabled = true
         }
     }
 

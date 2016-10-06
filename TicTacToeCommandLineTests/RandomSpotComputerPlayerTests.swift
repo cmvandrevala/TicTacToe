@@ -29,7 +29,19 @@ class RandomSpotComputerPlayerTests: QuickSpec {
             }
             
         }
-        
+
+        describe("bounds of the selected cell") {
+
+            it("has a lower bound of zero") {
+                expect(ai.getMove(board: board)).to(beGreaterThanOrEqualTo(0))
+            }
+
+            it("has an upper bound of the number of cells") {
+                expect(ai.getMove(board: board)).to(beLessThan(board.numberOfCells))
+            }
+
+        }
+
         describe("the board is almost full") {
             
             it("takes the final unoccupied cell at the end of the game, even if it is a loss") {

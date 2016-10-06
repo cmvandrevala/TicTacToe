@@ -6,8 +6,8 @@ open class Board {
         case empty
     }
     
-    let numberOfCells = 9
-    var currentCells = [Int: CellStatus]()
+    open let numberOfCells = 9
+    private var currentCells = [Int: CellStatus]()
     
     public init() {
         clear()

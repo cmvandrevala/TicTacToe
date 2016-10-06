@@ -5,7 +5,7 @@ open class Game: TwoPlayerGame {
         case playerTwo
     }
     
-    let board: Board!
+    let gameBoard: Board!
     let clock: Clock!
     let rules: Rules!
     let marks: PlayerMarks!
@@ -16,12 +16,12 @@ open class Game: TwoPlayerGame {
 
     var messages: TicTacToeMessages!
     
-    public init() {
-        board = Board()
+    public init(board: Board) {
+        gameBoard = board
         clock = Clock()
-        rules = Rules(board: board)
+        rules = Rules(board: gameBoard)
         marks = PlayerMarks()
-        boardPrinter = ConsoleBoard(board: board)
+        boardPrinter = ConsoleBoard(board: gameBoard)
         firstPlayer = FirstAvailableSpotComputerPlayer()
         secondPlayer = FirstAvailableSpotComputerPlayer()
         messages = TicTacToeMessages()
@@ -49,9 +49,21 @@ open class Game: TwoPlayerGame {
     }
     
     open func clear() {
-        board.clear()
+        gameBoard.clear()
         rules.clear()
         clock.clear()
+    }
+
+    open func takeTurn(cellIndex: Int) {
+        switch clock.playerOnesTurn() {
+        case true:
+            gameBoard.move(cellIndex: cellIndex, cellStatus: .playerOne)
+            printEndingMessagesToConsole(currentPlayer: .playerOne, cellIndex: cellIndex)
+        case false:
+            gameBoard.move(cellIndex: cellIndex, cellStatus: .playerTwo)
+            printEndingMessagesToConsole(currentPlayer: .playerTwo, cellIndex: cellIndex)
+        }
+        endTurn()
     }
 
     fileprivate func updatePlayers(playerOne: Player, playerTwo: Player) {
@@ -60,26 +72,19 @@ open class Game: TwoPlayerGame {
     }
     
     fileprivate func gameLoop() {
+        var cellIndex = 0
         while isInProgress() {
-            takeTurn()
+            switch clock.playerOnesTurn() {
+            case true:
+                printBoardAndBeginningMessagesToConsole(currentPlayer: .playerOne)
+                cellIndex = firstPlayer.getMove(board: gameBoard)!
+            case false:
+                printBoardAndBeginningMessagesToConsole(currentPlayer: .playerTwo)
+                cellIndex = secondPlayer.getMove(board: gameBoard)!
+            }
+            takeTurn(cellIndex: cellIndex)
         }
         gameOverMessage()
-    }
-    
-    fileprivate func takeTurn() {
-        switch clock.playerOnesTurn() {
-        case true:
-            printBoardAndBeginningMessagesToConsole(currentPlayer: .playerOne)
-            let cellIndex = firstPlayer.getMove(board: board)!
-            board.move(cellIndex: cellIndex, cellStatus: .playerOne)
-            printEndingMessagesToConsole(currentPlayer: .playerOne, cellIndex: cellIndex)
-        case false:
-            printBoardAndBeginningMessagesToConsole(currentPlayer: .playerTwo)
-            let cellIndex = secondPlayer.getMove(board: board)!
-            board.move(cellIndex: cellIndex, cellStatus: .playerTwo)
-            printEndingMessagesToConsole(currentPlayer: .playerTwo, cellIndex: cellIndex)
-        }
-        endTurn()
     }
     
     fileprivate func printBoardAndBeginningMessagesToConsole(currentPlayer: CurrentPlayer) {
