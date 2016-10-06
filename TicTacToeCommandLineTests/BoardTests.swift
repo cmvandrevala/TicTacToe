@@ -45,26 +45,6 @@ class BoardTests: QuickSpec {
 
         }
         
-        describe("#rowsOfCells()") {
-            
-            it("returns empty cells grouped by row if no moves were made") {
-                let emptyCells = board.rowsOfCells()
-                expect(emptyCells[0]).to(equal( [.empty, .empty, .empty] ))
-                expect(emptyCells[1]).to(equal( [.empty, .empty, .empty] ))
-                expect(emptyCells[2]).to(equal( [.empty, .empty, .empty] ))
-            }
-            
-            it("returns the proper cells grouped by row if a few moves were made") {
-                board.move(cellIndex: 2, cellStatus: .playerTwo)
-                board.move(cellIndex: 3, cellStatus: .playerOne)
-                let emptyCells = board.rowsOfCells()
-                expect(emptyCells[0]).to(equal( [.empty, .empty, .playerTwo] ))
-                expect(emptyCells[1]).to(equal( [.playerOne, .empty, .empty] ))
-                expect(emptyCells[2]).to(equal( [.empty, .empty, .empty] ))
-            }
-            
-        }
-        
         describe("#threeInRow") {
             var board: Board!
             

@@ -2,7 +2,7 @@ import Quick
 import Nimble
 import TicTacToeCommandLine
 
-class MockInputReader: ConsoleInputReader {
+class MockInputReader: InputReader {
     
     var mockValue: String
     var playerWantsToPlay = true

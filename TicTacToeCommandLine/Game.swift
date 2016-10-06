@@ -12,6 +12,8 @@ open class Game: TwoPlayerGame {
     
     var firstPlayer: Player!
     var secondPlayer: Player!
+
+    var messages: TicTacToeMessages!
     
     public init() {
         board = Board()
@@ -20,6 +22,7 @@ open class Game: TwoPlayerGame {
         boardPrinter = ConsoleBoard(board: board)
         firstPlayer = FirstAvailableSpotComputerPlayer()
         secondPlayer = FirstAvailableSpotComputerPlayer()
+        messages = TicTacToeMessages()
     }
     
     open func play() {
@@ -81,18 +84,18 @@ open class Game: TwoPlayerGame {
         print(boardPrinter.formattedBoardForConsole())
         switch currentPlayer {
         case .playerOne:
-            print("\nIt is Player One's Turn, Moving as X.")
+            print(messages.itsPlayerOnesTurn)
         case .playerTwo:
-            print("\nIt is Player Two's Turn, Moving as O.")
+            print(messages.itsPlayerTwosTurn)
         }
     }
     
     fileprivate func printEndingMessagesToConsole(currentPlayer: CurrentPlayer, cellIndex: Int) {
         switch currentPlayer {
         case .playerOne:
-            print("\nPlayer One just moved in cell \(cellIndex).")
+            print(messages.playerOneJustMovedIn(cellIndex: cellIndex))
         case .playerTwo:
-            print("\nPlayer Two just moved in cell \(cellIndex).")
+            print(messages.playerTwoJustMovedIn(cellIndex: cellIndex))
         }
     }
     
@@ -103,7 +106,7 @@ open class Game: TwoPlayerGame {
     
     fileprivate func gameOverMessage() {
         print(boardPrinter.formattedBoardForConsole())
-        print("\nThe game has ended.")
+        print(messages.theGameHasEnded)
     }
     
 }
