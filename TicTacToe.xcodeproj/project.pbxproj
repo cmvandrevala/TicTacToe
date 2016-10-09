@@ -14,6 +14,10 @@
 		6E22377E1D885A6400676B77 /* ConsoleBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E22377C1D885A6400676B77 /* ConsoleBoard.swift */; };
 		6E2237821D88628300676B77 /* FirstAvailableSpotComputerPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E2237811D88628300676B77 /* FirstAvailableSpotComputerPlayer.swift */; };
 		6E2237831D88628300676B77 /* FirstAvailableSpotComputerPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E2237811D88628300676B77 /* FirstAvailableSpotComputerPlayer.swift */; };
+		6E26AB451DA6D030002B8C60 /* PlayerMarks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E26AB441DA6D030002B8C60 /* PlayerMarks.swift */; };
+		6E26AB471DA6D048002B8C60 /* PlayerMarksTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E26AB461DA6D048002B8C60 /* PlayerMarksTests.swift */; };
+		6E26AB481DA6D1D4002B8C60 /* PlayerMarks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E26AB441DA6D030002B8C60 /* PlayerMarks.swift */; };
+		6E26AB491DA6D1D5002B8C60 /* PlayerMarks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E26AB441DA6D030002B8C60 /* PlayerMarks.swift */; };
 		6E2E70BF1D91C5AE00BF8644 /* TwoPlayerGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E2E70BE1D91C5AE00BF8644 /* TwoPlayerGame.swift */; };
 		6E2E70C01D91C5AE00BF8644 /* TwoPlayerGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E2E70BE1D91C5AE00BF8644 /* TwoPlayerGame.swift */; };
 		6E36FC8A1D9416CA0018E83F /* RandomSpotComputerPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E36FC891D9416CA0018E83F /* RandomSpotComputerPlayer.swift */; };
@@ -21,7 +25,7 @@
 		6E420ED41D9D9E6C009B308F /* BoardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9995231D7F5CF800616838 /* BoardTests.swift */; };
 		6E420ED51D9D9E6C009B308F /* ClockTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ECEA3541D883F830035E9DA /* ClockTests.swift */; };
 		6E420ED61D9D9E6C009B308F /* ConsoleBoardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E22377F1D885A7900676B77 /* ConsoleBoardTests.swift */; };
-		6E420ED71D9D9E6C009B308F /* ConsoleMessagesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF6F6BB1D81D1FF00B545F2 /* ConsoleMessagesTests.swift */; };
+		6E420ED71D9D9E6C009B308F /* TicTacToeMessagesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF6F6BB1D81D1FF00B545F2 /* TicTacToeMessagesTests.swift */; };
 		6E420ED81D9D9E6C009B308F /* FirstAvailableSpotComputerPlayerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E2237841D88629300676B77 /* FirstAvailableSpotComputerPlayerTests.swift */; };
 		6E420ED91D9D9E6C009B308F /* GameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EEECB3D1D8B245E00B92641 /* GameTests.swift */; };
 		6E420EDA1D9D9E6C009B308F /* HumanPlayerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EEECB351D8B1AC200B92641 /* HumanPlayerTests.swift */; };
@@ -34,24 +38,26 @@
 		6E4797921D83106D0027ADAC /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E4797911D83106D0027ADAC /* main.swift */; };
 		6E4797961D8310A20027ADAC /* Board.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9995251D7F60D500616838 /* Board.swift */; };
 		6E4797981D8313350027ADAC /* Rules.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E1811631D8099F200B73B7A /* Rules.swift */; };
-		6E4797991D8313390027ADAC /* ConsoleMessages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF6F6BD1D81D20D00B545F2 /* ConsoleMessages.swift */; };
+		6E4797991D8313390027ADAC /* TicTacToeMessages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF6F6BD1D81D20D00B545F2 /* TicTacToeMessages.swift */; };
 		6E75F1F61D8729AA00FAB787 /* TTTMoveReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E75F1F51D8729AA00FAB787 /* TTTMoveReader.swift */; };
 		6E75F1F71D8729AA00FAB787 /* TTTMoveReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E75F1F51D8729AA00FAB787 /* TTTMoveReader.swift */; };
 		6E9995261D7F60D500616838 /* Board.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9995251D7F60D500616838 /* Board.swift */; };
 		6E9DE1EE1D90826E00321653 /* MainMenuInputReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9DE1ED1D90826E00321653 /* MainMenuInputReader.swift */; };
 		6E9DE1EF1D90826E00321653 /* MainMenuInputReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9DE1ED1D90826E00321653 /* MainMenuInputReader.swift */; };
-		6E9DE1F11D90830300321653 /* ConsoleInputReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9DE1F01D90830300321653 /* ConsoleInputReader.swift */; };
-		6E9DE1F21D90830300321653 /* ConsoleInputReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9DE1F01D90830300321653 /* ConsoleInputReader.swift */; };
+		6E9DE1F11D90830300321653 /* InputReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9DE1F01D90830300321653 /* InputReader.swift */; };
+		6E9DE1F21D90830300321653 /* InputReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9DE1F01D90830300321653 /* InputReader.swift */; };
+		6EAD07CF1DA557D80013AE5B /* HumanVsHumanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EAD07CE1DA557D80013AE5B /* HumanVsHumanViewController.swift */; };
+		6EB2E17F1DA7FD1A0072EEF4 /* HumanVsHumanViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EB2E17E1DA7FD1A0072EEF4 /* HumanVsHumanViewControllerTests.swift */; };
 		6EB5C1D91D7F5C7800A5829F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EB5C1D81D7F5C7800A5829F /* AppDelegate.swift */; };
 		6EB5C1DB1D7F5C7800A5829F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EB5C1DA1D7F5C7800A5829F /* ViewController.swift */; };
-		6EB5C1DE1D7F5C7800A5829F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6EB5C1DC1D7F5C7800A5829F /* Main.storyboard */; };
+		6EB5C1DE1D7F5C7800A5829F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6EB5C1DC1D7F5C7800A5829F /* Main.storyboard */; settings = {ASSET_TAGS = (0, ); }; };
 		6EB5C1E01D7F5C7800A5829F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6EB5C1DF1D7F5C7800A5829F /* Assets.xcassets */; };
 		6EB5C1E31D7F5C7800A5829F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6EB5C1E11D7F5C7800A5829F /* LaunchScreen.storyboard */; };
 		6ECA902A1D9DA0CE00E55C18 /* Board.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9995251D7F60D500616838 /* Board.swift */; };
 		6ECA902B1D9DA0CE00E55C18 /* Clock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ECEA3521D883F6F0035E9DA /* Clock.swift */; };
 		6ECA902C1D9DA0CE00E55C18 /* ConsoleBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E22377C1D885A6400676B77 /* ConsoleBoard.swift */; };
-		6ECA902D1D9DA0CE00E55C18 /* ConsoleInputReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9DE1F01D90830300321653 /* ConsoleInputReader.swift */; };
-		6ECA902E1D9DA0CE00E55C18 /* ConsoleMessages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF6F6BD1D81D20D00B545F2 /* ConsoleMessages.swift */; };
+		6ECA902D1D9DA0CE00E55C18 /* InputReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9DE1F01D90830300321653 /* InputReader.swift */; };
+		6ECA902E1D9DA0CE00E55C18 /* TicTacToeMessages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF6F6BD1D81D20D00B545F2 /* TicTacToeMessages.swift */; };
 		6ECA902F1D9DA0CE00E55C18 /* FirstAvailableSpotComputerPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E2237811D88628300676B77 /* FirstAvailableSpotComputerPlayer.swift */; };
 		6ECA90301D9DA0CE00E55C18 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EEECB3F1D8B246B00B92641 /* Game.swift */; };
 		6ECA90311D9DA0CE00E55C18 /* HumanPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EEECB371D8B1ADE00B92641 /* HumanPlayer.swift */; };
@@ -70,7 +76,7 @@
 		6EEECB411D8B246B00B92641 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EEECB3F1D8B246B00B92641 /* Game.swift */; };
 		6EEECB431D8B255A00B92641 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EEECB421D8B255A00B92641 /* Player.swift */; };
 		6EEECB441D8B255A00B92641 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EEECB421D8B255A00B92641 /* Player.swift */; };
-		6EF6F6BE1D81D20D00B545F2 /* ConsoleMessages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF6F6BD1D81D20D00B545F2 /* ConsoleMessages.swift */; };
+		6EF6F6BE1D81D20D00B545F2 /* TicTacToeMessages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF6F6BD1D81D20D00B545F2 /* TicTacToeMessages.swift */; };
 		6EFC78AA1D9070B5005BB491 /* MainMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EFC78A91D9070B5005BB491 /* MainMenu.swift */; };
 		6EFC78AB1D9070B5005BB491 /* MainMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EFC78A91D9070B5005BB491 /* MainMenu.swift */; };
 /* End PBXBuildFile section */
@@ -100,15 +106,17 @@
 /* Begin PBXFileReference section */
 		0DDB6B62D0ECC7660DC76C70 /* Pods_TicTacToeiOSTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TicTacToeiOSTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		53D8AC7E668D1EB7C483B3B5 /* Pods-TicTacToeiOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TicTacToeiOSTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TicTacToeiOSTests/Pods-TicTacToeiOSTests.debug.xcconfig"; sourceTree = "<group>"; };
-		6E1811611D80989D00B73B7A /* RulesTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RulesTests.swift; sourceTree = "<group>"; };
-		6E1811631D8099F200B73B7A /* Rules.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rules.swift; sourceTree = "<group>"; };
+		6E1811611D80989D00B73B7A /* RulesTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RulesTests.swift; path = TicTacToeCommandLineTests/RulesTests.swift; sourceTree = "<group>"; };
+		6E1811631D8099F200B73B7A /* Rules.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Rules.swift; path = TicTacToeCommandLine/Rules.swift; sourceTree = "<group>"; };
 		6E22377C1D885A6400676B77 /* ConsoleBoard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsoleBoard.swift; sourceTree = "<group>"; };
 		6E22377F1D885A7900676B77 /* ConsoleBoardTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsoleBoardTests.swift; sourceTree = "<group>"; };
-		6E2237811D88628300676B77 /* FirstAvailableSpotComputerPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstAvailableSpotComputerPlayer.swift; sourceTree = "<group>"; };
-		6E2237841D88629300676B77 /* FirstAvailableSpotComputerPlayerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstAvailableSpotComputerPlayerTests.swift; sourceTree = "<group>"; };
+		6E2237811D88628300676B77 /* FirstAvailableSpotComputerPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FirstAvailableSpotComputerPlayer.swift; path = TicTacToeCommandLine/FirstAvailableSpotComputerPlayer.swift; sourceTree = "<group>"; };
+		6E2237841D88629300676B77 /* FirstAvailableSpotComputerPlayerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FirstAvailableSpotComputerPlayerTests.swift; path = TicTacToeCommandLineTests/FirstAvailableSpotComputerPlayerTests.swift; sourceTree = "<group>"; };
+		6E26AB441DA6D030002B8C60 /* PlayerMarks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerMarks.swift; sourceTree = "<group>"; };
+		6E26AB461DA6D048002B8C60 /* PlayerMarksTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerMarksTests.swift; sourceTree = "<group>"; };
 		6E2E70BE1D91C5AE00BF8644 /* TwoPlayerGame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwoPlayerGame.swift; sourceTree = "<group>"; };
-		6E36FC871D9416B60018E83F /* RandomSpotComputerPlayerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RandomSpotComputerPlayerTests.swift; sourceTree = "<group>"; };
-		6E36FC891D9416CA0018E83F /* RandomSpotComputerPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RandomSpotComputerPlayer.swift; sourceTree = "<group>"; };
+		6E36FC871D9416B60018E83F /* RandomSpotComputerPlayerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RandomSpotComputerPlayerTests.swift; path = TicTacToeCommandLineTests/RandomSpotComputerPlayerTests.swift; sourceTree = "<group>"; };
+		6E36FC891D9416CA0018E83F /* RandomSpotComputerPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RandomSpotComputerPlayer.swift; path = TicTacToeCommandLine/RandomSpotComputerPlayer.swift; sourceTree = "<group>"; };
 		6E47978F1D83106D0027ADAC /* TicTacToeCommandLine */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = TicTacToeCommandLine; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E4797911D83106D0027ADAC /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		6E4E95311D9D9BC400B9B445 /* TicTacToeCommandLineTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TicTacToeCommandLineTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -116,11 +124,13 @@
 		6E75F1F31D87299A00FAB787 /* TTTMoveReaderTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTTMoveReaderTests.swift; sourceTree = "<group>"; };
 		6E75F1F51D8729AA00FAB787 /* TTTMoveReader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTTMoveReader.swift; sourceTree = "<group>"; };
 		6E826E931D9EC399009C5902 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6E9995231D7F5CF800616838 /* BoardTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardTests.swift; sourceTree = "<group>"; };
-		6E9995251D7F60D500616838 /* Board.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Board.swift; sourceTree = "<group>"; };
+		6E9995231D7F5CF800616838 /* BoardTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BoardTests.swift; path = TicTacToeCommandLineTests/BoardTests.swift; sourceTree = "<group>"; };
+		6E9995251D7F60D500616838 /* Board.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Board.swift; path = TicTacToeCommandLine/Board.swift; sourceTree = "<group>"; };
 		6E9DE1EB1D90807900321653 /* MainMenuTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenuTests.swift; sourceTree = "<group>"; };
 		6E9DE1ED1D90826E00321653 /* MainMenuInputReader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenuInputReader.swift; sourceTree = "<group>"; };
-		6E9DE1F01D90830300321653 /* ConsoleInputReader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsoleInputReader.swift; sourceTree = "<group>"; };
+		6E9DE1F01D90830300321653 /* InputReader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputReader.swift; sourceTree = "<group>"; };
+		6EAD07CE1DA557D80013AE5B /* HumanVsHumanViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HumanVsHumanViewController.swift; sourceTree = "<group>"; };
+		6EB2E17E1DA7FD1A0072EEF4 /* HumanVsHumanViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HumanVsHumanViewControllerTests.swift; sourceTree = "<group>"; };
 		6EB5C1D51D7F5C7800A5829F /* TicTacToeiOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TicTacToeiOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6EB5C1D81D7F5C7800A5829F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6EB5C1DA1D7F5C7800A5829F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -130,15 +140,15 @@
 		6EB5C1E41D7F5C7800A5829F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6EB5C1E91D7F5C7800A5829F /* TicTacToeiOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TicTacToeiOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6EB5C1EF1D7F5C7800A5829F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6ECEA3521D883F6F0035E9DA /* Clock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Clock.swift; sourceTree = "<group>"; };
-		6ECEA3541D883F830035E9DA /* ClockTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClockTests.swift; sourceTree = "<group>"; };
+		6ECEA3521D883F6F0035E9DA /* Clock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Clock.swift; path = TicTacToeCommandLine/Clock.swift; sourceTree = "<group>"; };
+		6ECEA3541D883F830035E9DA /* ClockTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ClockTests.swift; path = TicTacToeCommandLineTests/ClockTests.swift; sourceTree = "<group>"; };
 		6EEECB351D8B1AC200B92641 /* HumanPlayerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HumanPlayerTests.swift; sourceTree = "<group>"; };
 		6EEECB371D8B1ADE00B92641 /* HumanPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HumanPlayer.swift; sourceTree = "<group>"; };
 		6EEECB3D1D8B245E00B92641 /* GameTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameTests.swift; sourceTree = "<group>"; };
 		6EEECB3F1D8B246B00B92641 /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
-		6EEECB421D8B255A00B92641 /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
-		6EF6F6BB1D81D1FF00B545F2 /* ConsoleMessagesTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsoleMessagesTests.swift; sourceTree = "<group>"; };
-		6EF6F6BD1D81D20D00B545F2 /* ConsoleMessages.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsoleMessages.swift; sourceTree = "<group>"; };
+		6EEECB421D8B255A00B92641 /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Player.swift; path = TicTacToeCommandLine/Player.swift; sourceTree = "<group>"; };
+		6EF6F6BB1D81D1FF00B545F2 /* TicTacToeMessagesTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TicTacToeMessagesTests.swift; path = TicTacToeCommandLineTests/TicTacToeMessagesTests.swift; sourceTree = "<group>"; };
+		6EF6F6BD1D81D20D00B545F2 /* TicTacToeMessages.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TicTacToeMessages.swift; path = TicTacToeCommandLine/TicTacToeMessages.swift; sourceTree = "<group>"; };
 		6EFC78A91D9070B5005BB491 /* MainMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenu.swift; sourceTree = "<group>"; };
 		6EFC78AC1D907311005BB491 /* TTTAcceptanceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTTAcceptanceTests.swift; sourceTree = "<group>"; };
 		ACD7EFD86B9D18A76D3B2C85 /* Pods-TicTacToeCommandLineTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TicTacToeCommandLineTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TicTacToeCommandLineTests/Pods-TicTacToeCommandLineTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -185,22 +195,16 @@
 			isa = PBXGroup;
 			children = (
 				6E826E931D9EC399009C5902 /* Info.plist */,
-				6E9995251D7F60D500616838 /* Board.swift */,
-				6ECEA3521D883F6F0035E9DA /* Clock.swift */,
 				6E22377C1D885A6400676B77 /* ConsoleBoard.swift */,
-				6E9DE1F01D90830300321653 /* ConsoleInputReader.swift */,
-				6EF6F6BD1D81D20D00B545F2 /* ConsoleMessages.swift */,
-				6E2237811D88628300676B77 /* FirstAvailableSpotComputerPlayer.swift */,
+				6E9DE1F01D90830300321653 /* InputReader.swift */,
 				6EEECB3F1D8B246B00B92641 /* Game.swift */,
 				6EEECB371D8B1ADE00B92641 /* HumanPlayer.swift */,
 				6EFC78A91D9070B5005BB491 /* MainMenu.swift */,
 				6E9DE1ED1D90826E00321653 /* MainMenuInputReader.swift */,
-				6EEECB421D8B255A00B92641 /* Player.swift */,
-				6E36FC891D9416CA0018E83F /* RandomSpotComputerPlayer.swift */,
-				6E1811631D8099F200B73B7A /* Rules.swift */,
 				6E75F1F51D8729AA00FAB787 /* TTTMoveReader.swift */,
 				6E2E70BE1D91C5AE00BF8644 /* TwoPlayerGame.swift */,
 				6E4797911D83106D0027ADAC /* main.swift */,
+				6E26AB441DA6D030002B8C60 /* PlayerMarks.swift */,
 			);
 			path = TicTacToeCommandLine;
 			sourceTree = "<group>";
@@ -208,26 +212,50 @@
 		6E4E95321D9D9BC400B9B445 /* TicTacToeCommandLineTests */ = {
 			isa = PBXGroup;
 			children = (
-				6E9995231D7F5CF800616838 /* BoardTests.swift */,
-				6ECEA3541D883F830035E9DA /* ClockTests.swift */,
 				6E22377F1D885A7900676B77 /* ConsoleBoardTests.swift */,
-				6EF6F6BB1D81D1FF00B545F2 /* ConsoleMessagesTests.swift */,
-				6E2237841D88629300676B77 /* FirstAvailableSpotComputerPlayerTests.swift */,
 				6EEECB3D1D8B245E00B92641 /* GameTests.swift */,
 				6EEECB351D8B1AC200B92641 /* HumanPlayerTests.swift */,
 				6E4E95351D9D9BC400B9B445 /* Info.plist */,
 				6E9DE1EB1D90807900321653 /* MainMenuTests.swift */,
-				6E36FC871D9416B60018E83F /* RandomSpotComputerPlayerTests.swift */,
-				6E1811611D80989D00B73B7A /* RulesTests.swift */,
 				6EFC78AC1D907311005BB491 /* TTTAcceptanceTests.swift */,
 				6E75F1F31D87299A00FAB787 /* TTTMoveReaderTests.swift */,
+				6E26AB461DA6D048002B8C60 /* PlayerMarksTests.swift */,
 			);
 			path = TicTacToeCommandLineTests;
+			sourceTree = "<group>";
+		};
+		6EAD07D11DA5A81F0013AE5B /* TicTacToe */ = {
+			isa = PBXGroup;
+			children = (
+				6EEECB421D8B255A00B92641 /* Player.swift */,
+				6E2237811D88628300676B77 /* FirstAvailableSpotComputerPlayer.swift */,
+				6E36FC891D9416CA0018E83F /* RandomSpotComputerPlayer.swift */,
+				6EF6F6BD1D81D20D00B545F2 /* TicTacToeMessages.swift */,
+				6E1811631D8099F200B73B7A /* Rules.swift */,
+				6E9995251D7F60D500616838 /* Board.swift */,
+				6ECEA3521D883F6F0035E9DA /* Clock.swift */,
+			);
+			name = TicTacToe;
+			sourceTree = "<group>";
+		};
+		6EAD07D21DA5A8270013AE5B /* TicTacToeTests */ = {
+			isa = PBXGroup;
+			children = (
+				6EF6F6BB1D81D1FF00B545F2 /* TicTacToeMessagesTests.swift */,
+				6E36FC871D9416B60018E83F /* RandomSpotComputerPlayerTests.swift */,
+				6E2237841D88629300676B77 /* FirstAvailableSpotComputerPlayerTests.swift */,
+				6E9995231D7F5CF800616838 /* BoardTests.swift */,
+				6ECEA3541D883F830035E9DA /* ClockTests.swift */,
+				6E1811611D80989D00B73B7A /* RulesTests.swift */,
+			);
+			name = TicTacToeTests;
 			sourceTree = "<group>";
 		};
 		6EB5C1CC1D7F5C7800A5829F = {
 			isa = PBXGroup;
 			children = (
+				6EAD07D21DA5A8270013AE5B /* TicTacToeTests */,
+				6EAD07D11DA5A81F0013AE5B /* TicTacToe */,
 				DA02B91B29E0301B37D72624 /* Frameworks */,
 				B7953F1766707BB55D29E15F /* Pods */,
 				6EB5C1D61D7F5C7800A5829F /* Products */,
@@ -258,6 +286,7 @@
 				6EB5C1E11D7F5C7800A5829F /* LaunchScreen.storyboard */,
 				6EB5C1DC1D7F5C7800A5829F /* Main.storyboard */,
 				6EB5C1DA1D7F5C7800A5829F /* ViewController.swift */,
+				6EAD07CE1DA557D80013AE5B /* HumanVsHumanViewController.swift */,
 			);
 			path = TicTacToeiOS;
 			sourceTree = "<group>";
@@ -266,6 +295,7 @@
 			isa = PBXGroup;
 			children = (
 				6EB5C1EF1D7F5C7800A5829F /* Info.plist */,
+				6EB2E17E1DA7FD1A0072EEF4 /* HumanVsHumanViewControllerTests.swift */,
 			);
 			path = TicTacToeiOSTests;
 			sourceTree = "<group>";
@@ -374,6 +404,9 @@
 		6EB5C1CD1D7F5C7800A5829F /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				KnownAssetTags = (
+					0,
+				);
 				LastSwiftUpdateCheck = 0800;
 				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = "Cyrus Vandrevala";
@@ -554,10 +587,11 @@
 				6EEECB411D8B246B00B92641 /* Game.swift in Sources */,
 				6E4797961D8310A20027ADAC /* Board.swift in Sources */,
 				6E9DE1EF1D90826E00321653 /* MainMenuInputReader.swift in Sources */,
-				6E9DE1F21D90830300321653 /* ConsoleInputReader.swift in Sources */,
+				6E9DE1F21D90830300321653 /* InputReader.swift in Sources */,
 				6EEECB391D8B1ADE00B92641 /* HumanPlayer.swift in Sources */,
-				6E4797991D8313390027ADAC /* ConsoleMessages.swift in Sources */,
+				6E4797991D8313390027ADAC /* TicTacToeMessages.swift in Sources */,
 				6E2E70C01D91C5AE00BF8644 /* TwoPlayerGame.swift in Sources */,
+				6E26AB451DA6D030002B8C60 /* PlayerMarks.swift in Sources */,
 				6E75F1F71D8729AA00FAB787 /* TTTMoveReader.swift in Sources */,
 				6EFC78AB1D9070B5005BB491 /* MainMenu.swift in Sources */,
 				6E2237831D88628300676B77 /* FirstAvailableSpotComputerPlayer.swift in Sources */,
@@ -574,6 +608,7 @@
 			files = (
 				6ECA90371D9DA0CE00E55C18 /* TTTMoveReader.swift in Sources */,
 				6E420EDD1D9D9E6C009B308F /* RandomSpotComputerPlayerTests.swift in Sources */,
+				6E26AB481DA6D1D4002B8C60 /* PlayerMarks.swift in Sources */,
 				6E420ED51D9D9E6C009B308F /* ClockTests.swift in Sources */,
 				6ECA902F1D9DA0CE00E55C18 /* FirstAvailableSpotComputerPlayer.swift in Sources */,
 				6E420ED91D9D9E6C009B308F /* GameTests.swift in Sources */,
@@ -587,18 +622,19 @@
 				6ECA902A1D9DA0CE00E55C18 /* Board.swift in Sources */,
 				6ECA90331D9DA0CE00E55C18 /* MainMenuInputReader.swift in Sources */,
 				6E420EDA1D9D9E6C009B308F /* HumanPlayerTests.swift in Sources */,
-				6ECA902D1D9DA0CE00E55C18 /* ConsoleInputReader.swift in Sources */,
+				6ECA902D1D9DA0CE00E55C18 /* InputReader.swift in Sources */,
 				6E420ED81D9D9E6C009B308F /* FirstAvailableSpotComputerPlayerTests.swift in Sources */,
-				6ECA902E1D9DA0CE00E55C18 /* ConsoleMessages.swift in Sources */,
+				6ECA902E1D9DA0CE00E55C18 /* TicTacToeMessages.swift in Sources */,
 				6E420EE01D9D9E6C009B308F /* TTTMoveReaderTests.swift in Sources */,
 				6ECA90301D9DA0CE00E55C18 /* Game.swift in Sources */,
 				6ECA90381D9DA0CE00E55C18 /* TwoPlayerGame.swift in Sources */,
 				6ECA902B1D9DA0CE00E55C18 /* Clock.swift in Sources */,
 				6ECA90321D9DA0CE00E55C18 /* MainMenu.swift in Sources */,
 				6E420ED61D9D9E6C009B308F /* ConsoleBoardTests.swift in Sources */,
-				6E420ED71D9D9E6C009B308F /* ConsoleMessagesTests.swift in Sources */,
+				6E420ED71D9D9E6C009B308F /* TicTacToeMessagesTests.swift in Sources */,
 				6ECA90311D9DA0CE00E55C18 /* HumanPlayer.swift in Sources */,
 				6E420EDF1D9D9E6C009B308F /* TTTAcceptanceTests.swift in Sources */,
+				6E26AB471DA6D048002B8C60 /* PlayerMarksTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -608,18 +644,20 @@
 			files = (
 				6EFC78AA1D9070B5005BB491 /* MainMenu.swift in Sources */,
 				6E2237821D88628300676B77 /* FirstAvailableSpotComputerPlayer.swift in Sources */,
+				6EAD07CF1DA557D80013AE5B /* HumanVsHumanViewController.swift in Sources */,
 				6EB5C1DB1D7F5C7800A5829F /* ViewController.swift in Sources */,
 				6E1811641D8099F200B73B7A /* Rules.swift in Sources */,
-				6EF6F6BE1D81D20D00B545F2 /* ConsoleMessages.swift in Sources */,
+				6EF6F6BE1D81D20D00B545F2 /* TicTacToeMessages.swift in Sources */,
 				6EEECB431D8B255A00B92641 /* Player.swift in Sources */,
 				6E36FC8A1D9416CA0018E83F /* RandomSpotComputerPlayer.swift in Sources */,
 				6E22377D1D885A6400676B77 /* ConsoleBoard.swift in Sources */,
 				6EB5C1D91D7F5C7800A5829F /* AppDelegate.swift in Sources */,
 				6EEECB401D8B246B00B92641 /* Game.swift in Sources */,
-				6E9DE1F11D90830300321653 /* ConsoleInputReader.swift in Sources */,
+				6E9DE1F11D90830300321653 /* InputReader.swift in Sources */,
 				6ECEA3531D883F6F0035E9DA /* Clock.swift in Sources */,
 				6E9995261D7F60D500616838 /* Board.swift in Sources */,
 				6EEECB381D8B1ADE00B92641 /* HumanPlayer.swift in Sources */,
+				6E26AB491DA6D1D5002B8C60 /* PlayerMarks.swift in Sources */,
 				6E75F1F61D8729AA00FAB787 /* TTTMoveReader.swift in Sources */,
 				6E9DE1EE1D90826E00321653 /* MainMenuInputReader.swift in Sources */,
 				6E2E70BF1D91C5AE00BF8644 /* TwoPlayerGame.swift in Sources */,
@@ -630,6 +668,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6EB2E17F1DA7FD1A0072EEF4 /* HumanVsHumanViewControllerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -849,10 +888,12 @@
 			baseConfigurationReference = 53D8AC7E668D1EB7C483B3B5 /* Pods-TicTacToeiOSTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = TicTacToeiOSTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cyrusvandrevala.TTTSwiftTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TicTacToeiOS.app/TicTacToeiOS";
 			};
@@ -863,6 +904,7 @@
 			baseConfigurationReference = EF46F8A1F4B5588D5856AC19 /* Pods-TicTacToeiOSTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = TicTacToeiOSTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cyrusvandrevala.TTTSwiftTests;

@@ -1,4 +1,4 @@
-open class TTTMoveReader: ConsoleInputReader {
+open class TTTMoveReader: InputReader {
     
     public enum InputClassification {
         case passed
@@ -9,28 +9,30 @@ open class TTTMoveReader: ConsoleInputReader {
     }
     
     var gameBoard: Board
+    var messages: TicTacToeMessages
     
     public init(board: Board) {
         gameBoard = board
+        messages = TicTacToeMessages()
     }
     
     open func getInput() -> String? {
-        print("\nPlease enter your input [0-8]:")
+        print(messages.selectCellPrompt)
         let response = readLine(strippingNewline: true)!
         switch checkInput(cell: response) {
         case .passed:
             return response
         case .nonInteger:
-            print("That is not an integer input! Try again.")
+            print(messages.notAnIntegerInput)
             return getInput()
         case .tooLarge:
-            print("That integer is way too big!")
+            print(messages.selectedCellIndexTooLarge)
             return getInput()
         case .tooSmall:
-            print("That integer is way too small!")
+            print(messages.selectedCellIndexTooSmall)
             return getInput()
         case .cellTaken:
-            print("That space has already been taken!")
+            print(messages.cellIsTaken)
             return getInput()
         }
     }
@@ -51,3 +53,5 @@ open class TTTMoveReader: ConsoleInputReader {
     }
     
 }
+
+

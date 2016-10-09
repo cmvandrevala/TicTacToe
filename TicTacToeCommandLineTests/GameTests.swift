@@ -5,10 +5,12 @@ import TicTacToeCommandLine
 class GameTests: QuickSpec {
     override func spec() {
 
+        var board: Board!
         var game: Game!
         
         beforeEach {
-            game = Game()
+            board = Board()
+            game = Game(board: board)
         }
         
         describe("the current set of players") {
@@ -61,6 +63,6 @@ class GameTests: QuickSpec {
             }
 
         }
-        
+
     }
 }

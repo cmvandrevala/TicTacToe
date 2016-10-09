@@ -1,36 +1,37 @@
 open class MainMenu {
     
     let humanPlayer: HumanPlayer!
-    let messages: ConsoleMessages!
-    let inputReader: ConsoleInputReader!
+    let messages: TicTacToeMessages!
+    let inputReader: InputReader!
     
-    public init(userInputReader: ConsoleInputReader) {
+    public init(userInputReader: InputReader) {
         humanPlayer = HumanPlayer()
-        messages = ConsoleMessages()
+        messages = TicTacToeMessages()
         inputReader = userInputReader
     }
     
     open func start(game: TwoPlayerGame) {
-        print(messages.welcomeMessage())
+        print(messages.welcome)
+        print(messages.consoleMenuOptions)
         while humanPlayer.wantsToContinuePlaying {
             switch inputReader.getInput()! {
             case "1":
                 game.clear()
                 game.play(playerOne: humanPlayer, playerTwo: HumanPlayer())
-                print(messages.askToPlayAgain())
+                print(messages.playAgain)
             case "2":
                 game.clear()
                 game.play(playerOne: humanPlayer, playerTwo: FirstAvailableSpotComputerPlayer())
-                print(messages.askToPlayAgain())
+                print(messages.playAgain)
             case "3":
                 game.clear()
                 game.play(playerOne: FirstAvailableSpotComputerPlayer(), playerTwo: humanPlayer)
-                print(messages.askToPlayAgain())
+                print(messages.playAgain)
             case "4":
                 humanPlayer.noLongerWantsToPlay()
-                print(messages.leaveGameMessage())
+                print(messages.thankYouForPlaying)
             default:
-                print(messages.invalidInputMessage())
+                print(messages.invalidInputForConsoleMenu)
             }
         }
     }
