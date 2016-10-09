@@ -78,7 +78,7 @@ class HumanVsHumanViewControllerTests: QuickSpec {
 
         describe("making a move") {
 
-            it("puts a X in cell zero on the first turn") {
+            xit("puts a X in cell zero on the first turn") {
                 let button = UIButton()
                 button.tag = 0
                 controller.cell0 = button
@@ -97,7 +97,7 @@ class HumanVsHumanViewControllerTests: QuickSpec {
                 expect(button.titleLabel?.text).to(equal("X"))
             }
 
-            it("puts an O in the second cell taken") {
+            xit("puts an O in the second cell taken") {
                 let button0 = UIButton()
                 let button1 = UIButton()
                 button0.tag = 0
@@ -110,7 +110,7 @@ class HumanVsHumanViewControllerTests: QuickSpec {
                 expect(button1.titleLabel?.text).to(equal("O"))
             }
 
-            it("correctly makes three moves") {
+            xit("correctly makes three moves") {
                 let button0 = UIButton()
                 let button1 = UIButton()
                 let button2 = UIButton()
@@ -129,7 +129,7 @@ class HumanVsHumanViewControllerTests: QuickSpec {
                 expect(button2.titleLabel?.text).to(equal("X"))
             }
 
-            it("does not allow duplicate moves") {
+            xit("does not allow duplicate moves") {
                 let button = UIButton()
                 button.tag = 0
                 controller.cell6 = button
@@ -143,7 +143,7 @@ class HumanVsHumanViewControllerTests: QuickSpec {
 
         describe("restarting the game") {
 
-            it("clears the only cell") {
+            xit("clears the only cell") {
                 let button = UIButton()
                 button.tag = 0
                 controller.cell0 = button
@@ -153,7 +153,7 @@ class HumanVsHumanViewControllerTests: QuickSpec {
                 expect(button.titleLabel?.text).to(beNil())
             }
 
-            it("clears multiple cells") {
+            xit("clears multiple cells") {
                 let button0 = UIButton()
                 let button1 = UIButton()
                 button0.tag = 0
@@ -167,6 +167,25 @@ class HumanVsHumanViewControllerTests: QuickSpec {
 
                 expect(button0.titleLabel?.text).to(beNil())
                 expect(button1.titleLabel?.text).to(beNil())
+            }
+
+        }
+
+        describe("messages") {
+
+            xit("starts with a default message of 'It is Player One's turn, moving as X.'") {
+                expect(controller.messages.text).toEventually(equal("It is Player One's turn, moving as X."))
+            }
+
+            xit("displays the correct player after one move") {
+                let messages = UILabel()
+                let button = UIButton()
+                button.tag = 0
+                controller.cell0 = button
+                controller.messages = messages
+                controller.playerTapsCell(button)
+
+                expect(controller.messages.text).to(equal("It is Player Two's turn, moving as O."))
             }
 
         }

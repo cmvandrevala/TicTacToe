@@ -4,6 +4,7 @@ public class HumanVsHumanViewController: UIViewController {
 
     var game: Game!
     var board: Board!
+    var ticTacToeMessages: TicTacToeMessages!
 
     @IBOutlet weak public var cell0: UIButton!
     @IBOutlet weak public var cell1: UIButton!
@@ -15,23 +16,32 @@ public class HumanVsHumanViewController: UIViewController {
     @IBOutlet weak public var cell7: UIButton!
     @IBOutlet weak public var cell8: UIButton!
 
+    @IBOutlet weak public var messages: UILabel!
+
     override public func viewDidLoad() {
         super.viewDidLoad()
         board = Board()
         game = Game(board: board)
+        ticTacToeMessages = TicTacToeMessages()
+    }
+
+    override public func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        newGame()
     }
 
     @IBAction public func playerTapsCell(_ sender: UIButton) {
         if sender.isEnabled {
-            let cellIndex = Int(sender.tag)
-            game.takeTurn(cellIndex: cellIndex)
+            game.takeTurn(cellIndex: Int(sender.tag))
             refreshBoard()
+            refreshMessages()
         }
     }
 
     @IBAction public func newGame() {
         game.clear()
         refreshBoard()
+        messages.text = ticTacToeMessages.itsPlayerOnesTurn(playerOnesMark: "X")
     }
 
     fileprivate func refreshBoard() {
@@ -40,6 +50,25 @@ public class HumanVsHumanViewController: UIViewController {
             if let cell = cell {
                 refreshCell(cell: cell)
             }
+        }
+        if !game.isInProgress() {
+            for cell in cells {
+                if let cell = cell {
+                    cell.isEnabled = false
+                }
+            }
+        }
+    }
+
+    fileprivate func refreshMessages() {
+        if game.isInProgress() {
+            if messages.text == ticTacToeMessages.itsPlayerOnesTurn(playerOnesMark: "X") {
+                messages.text = ticTacToeMessages.itsPlayerTwosTurn(playerTwosMark: "O")
+            } else {
+                messages.text = ticTacToeMessages.itsPlayerOnesTurn(playerOnesMark: "X")
+            }
+        } else {
+            messages.text = ticTacToeMessages.theGameHasEnded
         }
     }
 

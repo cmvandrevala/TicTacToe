@@ -190,6 +190,7 @@
                         <outlet property="cell6" destination="BkL-aJ-T15" id="owt-7G-mG0"/>
                         <outlet property="cell7" destination="sY6-J5-nFu" id="NS1-7U-bdi"/>
                         <outlet property="cell8" destination="YGC-Wq-1N5" id="2Ch-1p-7jg"/>
+                        <outlet property="messages" destination="KYE-Cx-Haw" id="bfv-el-ezQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aR6-G4-aKm" userLabel="First Responder" sceneMemberID="firstResponder"/>
