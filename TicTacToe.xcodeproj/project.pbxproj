@@ -77,6 +77,10 @@
 		6EEECB431D8B255A00B92641 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EEECB421D8B255A00B92641 /* Player.swift */; };
 		6EEECB441D8B255A00B92641 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EEECB421D8B255A00B92641 /* Player.swift */; };
 		6EEF7BE11DAD2C1D000EC22C /* SegueTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EEF7BE01DAD2C1D000EC22C /* SegueTests.swift */; };
+		6EEF7BE51DAD4FAB000EC22C /* BoardPatterns.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EEF7BE41DAD4FAB000EC22C /* BoardPatterns.swift */; };
+		6EEF7BE61DAD4FD1000EC22C /* BoardPatterns.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EEF7BE41DAD4FAB000EC22C /* BoardPatterns.swift */; };
+		6EEF7BE71DAD4FDE000EC22C /* BoardPatternsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EEF7BE21DAD4F79000EC22C /* BoardPatternsTests.swift */; };
+		6EEF7BE81DAD4FF3000EC22C /* BoardPatterns.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EEF7BE41DAD4FAB000EC22C /* BoardPatterns.swift */; };
 		6EF6F6BE1D81D20D00B545F2 /* TicTacToeMessages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF6F6BD1D81D20D00B545F2 /* TicTacToeMessages.swift */; };
 		6EFC78AA1D9070B5005BB491 /* MainMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EFC78A91D9070B5005BB491 /* MainMenu.swift */; };
 		6EFC78AB1D9070B5005BB491 /* MainMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EFC78A91D9070B5005BB491 /* MainMenu.swift */; };
@@ -149,6 +153,8 @@
 		6EEECB3F1D8B246B00B92641 /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		6EEECB421D8B255A00B92641 /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Player.swift; path = TicTacToeCommandLine/Player.swift; sourceTree = "<group>"; };
 		6EEF7BE01DAD2C1D000EC22C /* SegueTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegueTests.swift; sourceTree = "<group>"; };
+		6EEF7BE21DAD4F79000EC22C /* BoardPatternsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardPatternsTests.swift; sourceTree = "<group>"; };
+		6EEF7BE41DAD4FAB000EC22C /* BoardPatterns.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardPatterns.swift; sourceTree = "<group>"; };
 		6EF6F6BB1D81D1FF00B545F2 /* TicTacToeMessagesTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TicTacToeMessagesTests.swift; path = TicTacToeCommandLineTests/TicTacToeMessagesTests.swift; sourceTree = "<group>"; };
 		6EF6F6BD1D81D20D00B545F2 /* TicTacToeMessages.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TicTacToeMessages.swift; path = TicTacToeCommandLine/TicTacToeMessages.swift; sourceTree = "<group>"; };
 		6EFC78A91D9070B5005BB491 /* MainMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenu.swift; sourceTree = "<group>"; };
@@ -235,6 +241,7 @@
 				6E1811631D8099F200B73B7A /* Rules.swift */,
 				6E9995251D7F60D500616838 /* Board.swift */,
 				6ECEA3521D883F6F0035E9DA /* Clock.swift */,
+				6EEF7BE41DAD4FAB000EC22C /* BoardPatterns.swift */,
 			);
 			name = TicTacToe;
 			sourceTree = "<group>";
@@ -249,6 +256,7 @@
 				6ECEA3541D883F830035E9DA /* ClockTests.swift */,
 				6E1811611D80989D00B73B7A /* RulesTests.swift */,
 				6E26AB461DA6D048002B8C60 /* PlayerMarksTests.swift */,
+				6EEF7BE21DAD4F79000EC22C /* BoardPatternsTests.swift */,
 			);
 			name = TicTacToeTests;
 			sourceTree = "<group>";
@@ -598,6 +606,7 @@
 				6E75F1F71D8729AA00FAB787 /* TTTMoveReader.swift in Sources */,
 				6EFC78AB1D9070B5005BB491 /* MainMenu.swift in Sources */,
 				6E2237831D88628300676B77 /* FirstAvailableSpotComputerPlayer.swift in Sources */,
+				6EEF7BE61DAD4FD1000EC22C /* BoardPatterns.swift in Sources */,
 				6E36FC8B1D9416CA0018E83F /* RandomSpotComputerPlayer.swift in Sources */,
 				6E4797921D83106D0027ADAC /* main.swift in Sources */,
 				6E22377E1D885A6400676B77 /* ConsoleBoard.swift in Sources */,
@@ -609,6 +618,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6EEF7BE81DAD4FF3000EC22C /* BoardPatterns.swift in Sources */,
 				6ECA90371D9DA0CE00E55C18 /* TTTMoveReader.swift in Sources */,
 				6E420EDD1D9D9E6C009B308F /* RandomSpotComputerPlayerTests.swift in Sources */,
 				6E26AB481DA6D1D4002B8C60 /* PlayerMarks.swift in Sources */,
@@ -624,6 +634,7 @@
 				6E420EDC1D9D9E6C009B308F /* MainMenuTests.swift in Sources */,
 				6ECA902A1D9DA0CE00E55C18 /* Board.swift in Sources */,
 				6ECA90331D9DA0CE00E55C18 /* MainMenuInputReader.swift in Sources */,
+				6EEF7BE71DAD4FDE000EC22C /* BoardPatternsTests.swift in Sources */,
 				6E420EDA1D9D9E6C009B308F /* HumanPlayerTests.swift in Sources */,
 				6ECA902D1D9DA0CE00E55C18 /* InputReader.swift in Sources */,
 				6E420ED81D9D9E6C009B308F /* FirstAvailableSpotComputerPlayerTests.swift in Sources */,
@@ -664,6 +675,7 @@
 				6E75F1F61D8729AA00FAB787 /* TTTMoveReader.swift in Sources */,
 				6E9DE1EE1D90826E00321653 /* MainMenuInputReader.swift in Sources */,
 				6E2E70BF1D91C5AE00BF8644 /* TwoPlayerGame.swift in Sources */,
+				6EEF7BE51DAD4FAB000EC22C /* BoardPatterns.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
