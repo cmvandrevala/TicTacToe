@@ -20,6 +20,10 @@ class PlayerMarksTests: QuickSpec {
             it("player two's mark") {
                 expect(marks.playerTwosMark).to(equal("O"))
             }
+
+            it("blank mark") {
+                expect(marks.blankMark).to(equal(""))
+            }
         }
 
     }

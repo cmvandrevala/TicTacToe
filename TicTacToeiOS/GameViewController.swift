@@ -1,10 +1,17 @@
 import UIKit
 
-public class HumanVsHumanViewController: UIViewController {
+public class GameViewController: UIViewController {
 
     var game: Game!
     var board: Board!
     var ticTacToeMessages: TicTacToeMessages!
+
+    public enum GameType {
+        case humanVsHuman
+        case humanVsComputer
+    }
+
+    public var gameType: GameType = .humanVsHuman
 
     @IBOutlet weak public var cell0: UIButton!
     @IBOutlet weak public var cell1: UIButton!
@@ -27,17 +34,39 @@ public class HumanVsHumanViewController: UIViewController {
     }
 
     @IBAction public func playerTapsCell(_ sender: UIButton) {
-        if sender.isEnabled {
-            game.takeTurn(cellIndex: Int(sender.tag))
+        if sender.isEnabled && gameType == .humanVsHuman {
+            let humanMove = Int(sender.tag)
+            game.takeTurn(cellIndex: humanMove)
             refreshBoard()
             refreshMessages()
+        }
+
+        if sender.isEnabled && gameType == .humanVsComputer {
+            let humanMove = Int(sender.tag)
+            game.takeTurn(cellIndex: humanMove)
+            refreshBoard()
+            refreshMessages()
+            if game.isInProgress() {
+                let computerMove = game.secondPlayerType.getMove(board: board)
+                game.takeTurn(cellIndex: computerMove!)
+                refreshBoard()
+                refreshMessages()
+            }
         }
     }
 
     @IBAction public func newGame() {
+        switch gameType {
+        case .humanVsHuman:
+            game.firstPlayerType = HumanPlayer()
+            game.secondPlayerType = HumanPlayer()
+        case .humanVsComputer:
+            game.firstPlayerType = HumanPlayer()
+            game.secondPlayerType = FirstAvailableSpotComputerPlayer()
+        }
         game.clear()
         refreshBoard()
-        messages.text = ticTacToeMessages.itsPlayerOnesTurn(playerOnesMark: "X")
+        messages.text = ticTacToeMessages.itsPlayerOnesTurn(playerOnesMark: game.marks.playerOnesMark)
     }
 
     fileprivate func refreshBoard() {
@@ -58,10 +87,10 @@ public class HumanVsHumanViewController: UIViewController {
 
     fileprivate func refreshMessages() {
         if game.isInProgress() {
-            if messages.text == ticTacToeMessages.itsPlayerOnesTurn(playerOnesMark: "X") {
-                messages.text = ticTacToeMessages.itsPlayerTwosTurn(playerTwosMark: "O")
+            if game.currentPlayer == .playerTwo {
+                messages.text = ticTacToeMessages.itsPlayerTwosTurn(playerTwosMark: game.marks.playerTwosMark)
             } else {
-                messages.text = ticTacToeMessages.itsPlayerOnesTurn(playerOnesMark: "X")
+                messages.text = ticTacToeMessages.itsPlayerOnesTurn(playerOnesMark: game.marks.playerOnesMark)
             }
         } else {
             messages.text = ticTacToeMessages.theGameHasEnded
@@ -78,7 +107,7 @@ public class HumanVsHumanViewController: UIViewController {
             cell.setTitle(game.marks.playerTwosMark, for: .normal)
             cell.isEnabled = false
         case .empty:
-            cell.setTitle("", for: .normal)
+            cell.setTitle(game.marks.blankMark, for: .normal)
             cell.isEnabled = true
         }
     }

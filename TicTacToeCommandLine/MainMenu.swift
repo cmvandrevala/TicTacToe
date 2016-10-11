@@ -11,21 +11,28 @@ open class MainMenu {
     }
     
     open func start(game: TwoPlayerGame) {
+        var currentGame = game
         print(messages.welcome)
         print(messages.consoleMenuOptions)
         while humanPlayer.wantsToContinuePlaying {
             switch inputReader.getInput()! {
             case "1":
-                game.clear()
-                game.play(playerOne: humanPlayer, playerTwo: HumanPlayer())
+                currentGame.clear()
+                currentGame.firstPlayerType = HumanPlayer()
+                currentGame.secondPlayerType = HumanPlayer()
+                currentGame.play()
                 print(messages.playAgain)
             case "2":
-                game.clear()
-                game.play(playerOne: humanPlayer, playerTwo: FirstAvailableSpotComputerPlayer())
+                currentGame.clear()
+                currentGame.firstPlayerType = HumanPlayer()
+                currentGame.secondPlayerType = FirstAvailableSpotComputerPlayer()
+                currentGame.play()
                 print(messages.playAgain)
             case "3":
-                game.clear()
-                game.play(playerOne: FirstAvailableSpotComputerPlayer(), playerTwo: humanPlayer)
+                currentGame.clear()
+                currentGame.firstPlayerType = FirstAvailableSpotComputerPlayer()
+                currentGame.secondPlayerType = HumanPlayer()
+                currentGame.play()
                 print(messages.playAgain)
             case "4":
                 humanPlayer.noLongerWantsToPlay()

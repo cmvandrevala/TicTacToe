@@ -1,9 +1,11 @@
 public protocol TwoPlayerGame {
 
-    func play(playerOne: Player, playerTwo: Player)
+    func play()
     func clear()
-    
-    func playerOne() -> Player
-    func playerTwo() -> Player
+    func isInProgress() -> Bool
+
+    var playCount: Int { get }
+    var firstPlayerType: Player { get set }
+    var secondPlayerType: Player { get set }
     
 }

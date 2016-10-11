@@ -9,7 +9,7 @@ class TTTAcceptanceTests: QuickSpec {
             
             it("a full game of tic-tac-toe between two first available space computers plays through and exits properly") {
                 let game = Game(board: Board())
-                game.play(playerOne: FirstAvailableSpotComputerPlayer(), playerTwo: FirstAvailableSpotComputerPlayer())
+                game.play()
                 expect(game.isInProgress()).to(beFalse())
             }
             

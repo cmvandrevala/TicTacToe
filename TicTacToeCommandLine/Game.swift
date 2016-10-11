@@ -1,51 +1,36 @@
 open class Game: TwoPlayerGame {
     
-    enum CurrentPlayer {
+    public enum PlayerNumber {
         case playerOne
         case playerTwo
     }
-    
-    let gameBoard: Board!
-    let clock: Clock!
-    let rules: Rules!
-    let marks: PlayerMarks!
-    let boardPrinter: ConsoleBoard!
-    
-    var firstPlayer: Player!
-    var secondPlayer: Player!
 
-    var messages: TicTacToeMessages!
+    private let gameBoard: Board!
+    private let clock = Clock()
+    private let rules: Rules!
+    private let boardPrinter: ConsoleBoard!
+    private let messages = TicTacToeMessages()
+
+    public let marks = PlayerMarks()
+    public var currentPlayer: PlayerNumber = .playerOne
+    public var playCount = 0
+
+    public var firstPlayerType: Player = FirstAvailableSpotComputerPlayer()
+    public var secondPlayerType: Player = FirstAvailableSpotComputerPlayer()
     
     public init(board: Board) {
         gameBoard = board
-        clock = Clock()
         rules = Rules(board: gameBoard)
-        marks = PlayerMarks()
         boardPrinter = ConsoleBoard(board: gameBoard)
-        firstPlayer = FirstAvailableSpotComputerPlayer()
-        secondPlayer = FirstAvailableSpotComputerPlayer()
-        messages = TicTacToeMessages()
     }
     
     open func play() {
         gameLoop()
-    }
-
-    open func play(playerOne: Player, playerTwo: Player) {
-        updatePlayers(playerOne: playerOne, playerTwo: playerTwo)
-        gameLoop()
+        playCount += 1
     }
     
     open func isInProgress() -> Bool {
         return !rules.isGameOver()
-    }
-    
-    open func playerOne() -> Player {
-        return firstPlayer
-    }
-    
-    open func playerTwo() -> Player {
-        return secondPlayer
     }
     
     open func clear() {
@@ -65,11 +50,6 @@ open class Game: TwoPlayerGame {
         }
         endTurn()
     }
-
-    fileprivate func updatePlayers(playerOne: Player, playerTwo: Player) {
-        firstPlayer = playerOne
-        secondPlayer = playerTwo
-    }
     
     fileprivate func gameLoop() {
         var cellIndex = 0
@@ -77,17 +57,17 @@ open class Game: TwoPlayerGame {
             switch clock.playerOnesTurn() {
             case true:
                 printBoardAndBeginningMessagesToConsole(currentPlayer: .playerOne)
-                cellIndex = firstPlayer.getMove(board: gameBoard)!
+                cellIndex = firstPlayerType.getMove(board: gameBoard)!
             case false:
                 printBoardAndBeginningMessagesToConsole(currentPlayer: .playerTwo)
-                cellIndex = secondPlayer.getMove(board: gameBoard)!
+                cellIndex = secondPlayerType.getMove(board: gameBoard)!
             }
             takeTurn(cellIndex: cellIndex)
         }
         gameOverMessage()
     }
     
-    fileprivate func printBoardAndBeginningMessagesToConsole(currentPlayer: CurrentPlayer) {
+    fileprivate func printBoardAndBeginningMessagesToConsole(currentPlayer: PlayerNumber) {
         print(boardPrinter.formattedBoardForConsole())
         switch currentPlayer {
         case .playerOne:
@@ -97,7 +77,7 @@ open class Game: TwoPlayerGame {
         }
     }
     
-    fileprivate func printEndingMessagesToConsole(currentPlayer: CurrentPlayer, cellIndex: Int) {
+    fileprivate func printEndingMessagesToConsole(currentPlayer: PlayerNumber, cellIndex: Int) {
         switch currentPlayer {
         case .playerOne:
             print(messages.playerOneJustMovedIn(cellIndex: cellIndex))
@@ -109,6 +89,11 @@ open class Game: TwoPlayerGame {
     fileprivate func endTurn() {
         clock.incrementTurnNumber()
         rules.updateGameStatus()
+        if currentPlayer == .playerOne {
+            currentPlayer = .playerTwo
+        } else {
+            currentPlayer = .playerOne
+        }
     }
     
     fileprivate func gameOverMessage() {
