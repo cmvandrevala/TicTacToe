@@ -12,8 +12,18 @@ open class Game: TwoPlayerGame {
     private let messages = TicTacToeMessages()
 
     public let marks = PlayerMarks()
-    public var currentPlayer: PlayerNumber = .playerOne
     public var playCount = 0
+
+    public var currentPlayer: PlayerNumber {
+        get {
+            switch clock.playerOnesTurn() {
+            case true:
+                return .playerOne
+            case false:
+                return .playerTwo
+            }
+        }
+    }
 
     public var firstPlayerType: Player = FirstAvailableSpotComputerPlayer()
     public var secondPlayerType: Player = FirstAvailableSpotComputerPlayer()
@@ -22,11 +32,6 @@ open class Game: TwoPlayerGame {
         gameBoard = board
         rules = Rules(board: gameBoard)
         boardPrinter = ConsoleBoard(board: gameBoard)
-    }
-    
-    open func play() {
-        gameLoop()
-        playCount += 1
     }
     
     open func isInProgress() -> Bool {
@@ -40,34 +45,42 @@ open class Game: TwoPlayerGame {
     }
 
     open func takeTurn(cellIndex: Int) {
-        switch clock.playerOnesTurn() {
-        case true:
+        switch currentPlayer {
+        case .playerOne:
             gameBoard.move(cellIndex: cellIndex, cellStatus: .playerOne)
-            printEndingMessagesToConsole(currentPlayer: .playerOne, cellIndex: cellIndex)
-        case false:
+        case .playerTwo:
             gameBoard.move(cellIndex: cellIndex, cellStatus: .playerTwo)
-            printEndingMessagesToConsole(currentPlayer: .playerTwo, cellIndex: cellIndex)
         }
-        endTurn()
     }
-    
+
+    open func endTurn() {
+        clock.incrementTurnNumber()
+        rules.updateGameStatus()
+    }
+
+    open func play() {
+        gameLoop()
+        playCount += 1
+    }
+
     fileprivate func gameLoop() {
-        var cellIndex = 0
+        var cellIndex: Int
         while isInProgress() {
-            switch clock.playerOnesTurn() {
-            case true:
-                printBoardAndBeginningMessagesToConsole(currentPlayer: .playerOne)
+            printBoardAndBeginningMessagesToConsole()
+            switch currentPlayer {
+            case .playerOne:
                 cellIndex = firstPlayerType.getMove(board: gameBoard)!
-            case false:
-                printBoardAndBeginningMessagesToConsole(currentPlayer: .playerTwo)
+            case .playerTwo:
                 cellIndex = secondPlayerType.getMove(board: gameBoard)!
             }
             takeTurn(cellIndex: cellIndex)
+            printEndingMessagesToConsole(cellIndex: cellIndex)
+            endTurn()
         }
         gameOverMessage()
     }
     
-    fileprivate func printBoardAndBeginningMessagesToConsole(currentPlayer: PlayerNumber) {
+    fileprivate func printBoardAndBeginningMessagesToConsole() {
         print(boardPrinter.formattedBoardForConsole())
         switch currentPlayer {
         case .playerOne:
@@ -77,22 +90,12 @@ open class Game: TwoPlayerGame {
         }
     }
     
-    fileprivate func printEndingMessagesToConsole(currentPlayer: PlayerNumber, cellIndex: Int) {
+    fileprivate func printEndingMessagesToConsole(cellIndex: Int) {
         switch currentPlayer {
         case .playerOne:
             print(messages.playerOneJustMovedIn(cellIndex: cellIndex))
         case .playerTwo:
             print(messages.playerTwoJustMovedIn(cellIndex: cellIndex))
-        }
-    }
-    
-    fileprivate func endTurn() {
-        clock.incrementTurnNumber()
-        rules.updateGameStatus()
-        if currentPlayer == .playerOne {
-            currentPlayer = .playerTwo
-        } else {
-            currentPlayer = .playerOne
         }
     }
     

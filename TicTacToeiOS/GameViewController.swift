@@ -37,6 +37,7 @@ public class GameViewController: UIViewController {
         if sender.isEnabled && gameType == .humanVsHuman {
             let humanMove = Int(sender.tag)
             game.takeTurn(cellIndex: humanMove)
+            game.endTurn()
             refreshBoard()
             refreshMessages()
         }
@@ -44,11 +45,13 @@ public class GameViewController: UIViewController {
         if sender.isEnabled && gameType == .humanVsComputer {
             let humanMove = Int(sender.tag)
             game.takeTurn(cellIndex: humanMove)
+            game.endTurn()
             refreshBoard()
             refreshMessages()
             if game.isInProgress() {
                 let computerMove = game.secondPlayerType.getMove(board: board)
                 game.takeTurn(cellIndex: computerMove!)
+                game.endTurn()
                 refreshBoard()
                 refreshMessages()
             }

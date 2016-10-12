@@ -12,9 +12,33 @@ class GameTests: QuickSpec {
             board = Board()
             game = Game(board: board)
         }
-        
-        describe("the current set of players") {
+
+        describe("#marks") {
+
+            it("has a mark for player one") {
+                expect(game.marks.playerOnesMark).to(equal("X"))
+            }
+
+            it("has a mark for player two") {
+                expect(game.marks.playerTwosMark).to(equal("O"))
+            }
+
+            it("has a blank mark") {
+                expect(game.marks.blankMark).to(equal(""))
+            }
+
+        }
+
+        describe("#currentPlayer") {
+
+            it("starts off as player one") {
+                expect(game.currentPlayer == .playerOne).to(beTrue())
+            }
             
+        }
+
+        describe("the current types of players") {
+
             it("defaults to two first available spot computer players") {
                 let mirrorPlayerOne = Mirror(reflecting: game.firstPlayerType)
                 let mirrorPlayerTwo = Mirror(reflecting: game.secondPlayerType)
@@ -38,8 +62,8 @@ class GameTests: QuickSpec {
                 let mirrorPlayerTwo = Mirror(reflecting: game.secondPlayerType)
                 expect(String(describing: mirrorPlayerOne.subjectType)).to(equal("RandomSpotComputerPlayer"))
                 expect(String(describing: mirrorPlayerTwo.subjectType)).to(equal("RandomSpotComputerPlayer"))
-                }
-
+            }
+            
         }
         
         describe("#isInProgress") {
@@ -53,9 +77,99 @@ class GameTests: QuickSpec {
                 expect(game.isInProgress()).to(beFalse())
             }
 
+            it("returns true when a game is restarted") {
+                game.play()
+                game.clear()
+                expect(game.isInProgress()).to(beTrue())
+            }
+
+            it("returns false when multiple games are played and ended") {
+                game.play()
+                game.clear()
+                game.play()
+                expect(game.isInProgress()).to(beFalse())
+            }
+
+        }
+        
+        describe("#clear") {
+            
+            it("clears the rules, setting isInProgress to true") {
+                game.play()
+                expect(game.isInProgress()).to(beFalse())
+                game.clear()
+                expect(game.isInProgress()).to(beTrue())
+            }
+
+            it("clears the game board") {
+                game.play()
+                game.clear()
+                expect(board.currentBoard() == [.empty, .empty, .empty, .empty, .empty, .empty, .empty, .empty, .empty]).to(beTrue())
+            }
+
+            it("resets the clock, setting the current player to .playerOne") {
+                game.takeTurn(cellIndex: 5)
+                game.clear()
+                expect(game.currentPlayer == .playerOne).to(beTrue())
+            }
+
         }
 
-        describe("#gameCount") {
+        describe("#takeTurn") {
+
+            it("moves the first player in a cell") {
+                game.takeTurn(cellIndex: 3)
+                expect(board.currentBoard() == [.empty, .empty, .empty, .playerOne, .empty, .empty, .empty, .empty, .empty]).to(beTrue())
+            }
+
+            it("moves the second player in a cell") {
+                game.takeTurn(cellIndex: 3)
+                game.endTurn()
+                game.takeTurn(cellIndex: 8)
+                expect(board.currentBoard() == [.empty, .empty, .empty, .playerOne, .empty, .empty, .empty, .empty, .playerTwo]).to(beTrue())
+            }
+
+            it("moves multiple players in multiple cells") {
+                game.takeTurn(cellIndex: 1)
+                game.endTurn()
+                game.takeTurn(cellIndex: 3)
+                game.endTurn()
+                game.takeTurn(cellIndex: 5)
+                game.endTurn()
+                game.takeTurn(cellIndex: 8)
+                expect(board.currentBoard() == [.empty, .playerOne, .empty, .playerTwo, .empty, .playerOne, .empty, .empty, .playerTwo]).to(beTrue())
+            }
+
+        }
+
+        describe("#endTurn") {
+
+            it("#sets the current player to playerTwo after one move") {
+                game.endTurn()
+                expect(game.currentPlayer == .playerTwo).to(beTrue())
+            }
+
+            it("#sets the current player to playerOne after two moves") {
+                game.endTurn()
+                game.endTurn()
+                expect(game.currentPlayer == .playerOne).to(beTrue())
+            }
+
+            it("#updates the status of the game") {
+                game.takeTurn(cellIndex: 0)
+                game.takeTurn(cellIndex: 3)
+                game.takeTurn(cellIndex: 1)
+                game.takeTurn(cellIndex: 4)
+                game.takeTurn(cellIndex: 2)
+
+                game.endTurn()
+
+                expect(game.isInProgress()).to(beFalse())
+            }
+
+        }
+
+        describe("#playCount and #play") {
 
             it("starts off with a value of zero") {
                 expect(game.playCount).to(equal(0))
@@ -66,36 +180,13 @@ class GameTests: QuickSpec {
                 expect(game.playCount).to(equal(1))
             }
 
-        }
-        
-        describe("#clear") {
-            
-            it("resets the game to start anew") {
+            it("increases repeatedly when multiple games end") {
                 game.play()
-                expect(game.isInProgress()).to(beFalse())
-                game.clear()
-                expect(game.isInProgress()).to(beTrue())
+                game.play()
+                game.play()
+                expect(game.playCount).to(equal(3))
             }
-
-        }
-
-        describe("#currentPlayer") {
-
-            it("starts off as player one") {
-                expect(game.currentPlayer == .playerOne).to(beTrue())
-            }
-
-            it("#becomes player two after one move") {
-                game.takeTurn(cellIndex: 5)
-                expect(game.currentPlayer == .playerTwo).to(beTrue())
-            }
-
-            it("#becomes player one after two moves") {
-                game.takeTurn(cellIndex: 5)
-                game.takeTurn(cellIndex: 1)
-                expect(game.currentPlayer == .playerOne).to(beTrue())
-            }
-
+            
         }
 
     }
