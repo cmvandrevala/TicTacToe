@@ -5,10 +5,10 @@ open class Game: TwoPlayerGame {
         case playerTwo
     }
 
-    private let gameBoard: Board!
+    private let gameBoard: Board
     private let clock = Clock()
-    private let rules: Rules!
-    private let boardPrinter: ConsoleBoard!
+    private let rules: Rules
+    private let boardPrinter: ConsoleBoard
     private let messages = TicTacToeMessages()
 
     public let marks = PlayerMarks()

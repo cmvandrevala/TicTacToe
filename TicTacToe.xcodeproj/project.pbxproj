@@ -29,7 +29,6 @@
 		6E420ED81D9D9E6C009B308F /* FirstAvailableSpotComputerPlayerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E2237841D88629300676B77 /* FirstAvailableSpotComputerPlayerTests.swift */; };
 		6E420ED91D9D9E6C009B308F /* GameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EEECB3D1D8B245E00B92641 /* GameTests.swift */; };
 		6E420EDA1D9D9E6C009B308F /* HumanPlayerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EEECB351D8B1AC200B92641 /* HumanPlayerTests.swift */; };
-		6E420EDB1D9D9E6C009B308F /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6E4E95351D9D9BC400B9B445 /* Info.plist */; };
 		6E420EDC1D9D9E6C009B308F /* MainMenuTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9DE1EB1D90807900321653 /* MainMenuTests.swift */; };
 		6E420EDD1D9D9E6C009B308F /* RandomSpotComputerPlayerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E36FC871D9416B60018E83F /* RandomSpotComputerPlayerTests.swift */; };
 		6E420EDE1D9D9E6C009B308F /* RulesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E1811611D80989D00B73B7A /* RulesTests.swift */; };
@@ -472,7 +471,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6E420EDB1D9D9E6C009B308F /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
