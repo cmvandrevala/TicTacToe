@@ -2,15 +2,15 @@ import Quick
 import Nimble
 import TicTacToeiOS
 
-class HumanVsHumanViewControllerTests: QuickSpec {
+class GameViewControllerTests: QuickSpec {
     override func spec() {
 
-        var controller: HumanVsHumanViewController!
+        var controller: GameViewController!
         var button: UIButton!
         var label: UILabel!
 
         beforeEach {
-            controller = HumanVsHumanViewController()
+            controller = GameViewController()
             button = UIButton()
             label = UILabel()
             controller.messages = label

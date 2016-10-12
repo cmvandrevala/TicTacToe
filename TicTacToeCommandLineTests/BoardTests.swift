@@ -106,6 +106,13 @@ class BoardTests: QuickSpec {
         
         describe("#clear") {
             
+            it("does nothing to an empty board") {
+                board.clear()
+                for i in 0...8 {
+                    expect(board.isEmptyCellAtIndex(cellIndex: i)).to(beTrue())
+                }
+            }
+
             it("erases all current moves on the board") {
                 board.move(cellIndex: 1, cellStatus: .playerOne)
                 board.clear()

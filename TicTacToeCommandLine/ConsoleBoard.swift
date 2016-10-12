@@ -2,8 +2,8 @@ import Foundation
 
 open class ConsoleBoard {
 
-    var marks: PlayerMarks!
-    var messages: TicTacToeMessages!
+    var marks: PlayerMarks
+    var messages: TicTacToeMessages
     var gameBoard: Board
     
     public init(board: Board) {

@@ -24,26 +24,19 @@ class MockInputReader: InputReader {
 
 class MockGame: TwoPlayerGame {
     
-    var hasBeenPlayed = false
-    var firstPlayer: Player!
-    var secondPlayer: Player!
-    
-    func play(playerOne: Player, playerTwo: Player) {
-        firstPlayer = playerOne
-        secondPlayer = playerTwo
-        hasBeenPlayed = true
+    public var playCount = 0
+
+    public var firstPlayerType: Player = FirstAvailableSpotComputerPlayer()
+    public var secondPlayerType: Player = FirstAvailableSpotComputerPlayer()
+
+    func play() {
+        playCount += 1
     }
-    
-    func clear() {
-        hasBeenPlayed = false
-    }
-    
-    func playerOne() -> Player {
-        return firstPlayer
-    }
-    
-    func playerTwo() -> Player {
-        return secondPlayer
+
+    func clear() {}
+
+    func isInProgress() -> Bool {
+        return true
     }
     
 }
@@ -52,25 +45,29 @@ class MainMenuTests: QuickSpec {
     override func spec() {
         
         describe("interpreting user input") {
-            
+
+            var game: TwoPlayerGame!
+
+            beforeEach {
+                game = MockGame()
+            }
+
             it("starts a new game if a user selects option 1") {
                 let inputReader = MockInputReader(mockOutputString: "1")
                 let menu = MainMenu(userInputReader: inputReader)
-                let game = MockGame()
-                
+
                 menu.start(game: game)
                 
-                expect(game.hasBeenPlayed).to(beTrue())
+                expect(game.playCount).to(equal(1))
             }
             
             it("plays human vs human if a user selects option 1") {
                 let inputReader = MockInputReader(mockOutputString: "1")
                 let menu = MainMenu(userInputReader: inputReader)
-                let game = MockGame()
                 
                 menu.start(game: game)
-                let p1 = Mirror(reflecting: game.playerOne())
-                let p2 = Mirror(reflecting: game.playerTwo())
+                let p1 = Mirror(reflecting: game.firstPlayerType)
+                let p2 = Mirror(reflecting: game.secondPlayerType)
 
                 expect(p1.subjectType == HumanPlayer.self).to(beTrue())
                 expect(p2.subjectType == HumanPlayer.self).to(beTrue())
@@ -79,21 +76,19 @@ class MainMenuTests: QuickSpec {
             it("starts a new game if a user selects option 2") {
                 let inputReader = MockInputReader(mockOutputString: "2")
                 let menu = MainMenu(userInputReader: inputReader)
-                let game = MockGame()
                 
                 menu.start(game: game)
                 
-                expect(game.hasBeenPlayed).to(beTrue())
+                expect(game.playCount).to(equal(1))
             }
             
             it("plays human vs computer if a user selects option 2") {
                 let inputReader = MockInputReader(mockOutputString: "2")
                 let menu = MainMenu(userInputReader: inputReader)
-                let game = MockGame()
                 
                 menu.start(game: game)
-                let p1 = Mirror(reflecting: game.playerOne())
-                let p2 = Mirror(reflecting: game.playerTwo())
+                let p1 = Mirror(reflecting: game.firstPlayerType)
+                let p2 = Mirror(reflecting: game.secondPlayerType)
                 
                 expect(p1.subjectType == HumanPlayer.self).to(beTrue())
                 expect(p2.subjectType == FirstAvailableSpotComputerPlayer.self).to(beTrue())
@@ -102,21 +97,19 @@ class MainMenuTests: QuickSpec {
             it("starts a new game if a user selects option 3") {
                 let inputReader = MockInputReader(mockOutputString: "3")
                 let menu = MainMenu(userInputReader: inputReader)
-                let game = MockGame()
                 
                 menu.start(game: game)
                 
-                expect(game.hasBeenPlayed).to(beTrue())
+                expect(game.playCount).to(equal(1))
             }
             
             it("plays computer vs human if a user selects option 3") {
                 let inputReader = MockInputReader(mockOutputString: "3")
                 let menu = MainMenu(userInputReader: inputReader)
-                let game = MockGame()
                 
                 menu.start(game: game)
-                let p1 = Mirror(reflecting: game.playerOne())
-                let p2 = Mirror(reflecting: game.playerTwo())
+                let p1 = Mirror(reflecting: game.firstPlayerType)
+                let p2 = Mirror(reflecting: game.secondPlayerType)
                 
                 expect(p1.subjectType == FirstAvailableSpotComputerPlayer.self).to(beTrue())
                 expect(p2.subjectType == HumanPlayer.self).to(beTrue())
@@ -125,11 +118,10 @@ class MainMenuTests: QuickSpec {
             it("does not start a new game if the player no longer wants to play") {
                 let inputReader = MockInputReader(mockOutputString: "4")
                 let menu = MainMenu(userInputReader: inputReader)
-                let game = MockGame()
                 
                 menu.start(game: game)
                 
-                expect(game.hasBeenPlayed).to(beFalse())
+                expect(game.playCount).to(equal(0))
             }
             
         }

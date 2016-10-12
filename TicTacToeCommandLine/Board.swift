@@ -7,8 +7,10 @@ open class Board {
     }
     
     open let numberOfCells = 9
+
     private var currentCells = [Int: CellStatus]()
-    
+    private var patterns = BoardPatterns()
+
     public init() {
         clear()
     }
@@ -26,7 +28,7 @@ open class Board {
     }
 
     open func threeInRow() -> CellStatus {
-        for group in groupsOfThreeCells() {
+        for group in patterns.groupsOfThreeCells() {
             if areAllCellsMatching(group: group) && areAllCellsFilled(group: group) {
                 return currentCells[group[0]]!
             }
@@ -63,22 +65,6 @@ open class Board {
         let secondMark = currentCells[group[1]]!
         let thirdMark = currentCells[group[2]]!
         return [firstMark, secondMark, thirdMark]
-    }
-    
-    fileprivate func groupsOfThreeCells() -> [[Int]] {
-        return rows() + columns() + diagonals()
-    }
-
-    fileprivate func rows() -> [[Int]] {
-        return [ [0, 1, 2], [3, 4, 5], [6, 7, 8] ]
-    }
-    
-    fileprivate func columns() -> [[Int]] {
-        return [ [0, 3, 6], [1, 4, 7], [2, 5, 8] ]
-    }
-    
-    fileprivate func diagonals() -> [[Int]] {
-        return [ [0, 4, 8], [2, 4, 6] ]
     }
     
 }

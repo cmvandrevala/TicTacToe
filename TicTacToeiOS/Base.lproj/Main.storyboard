@@ -10,20 +10,20 @@
         <!--Welcome to Tic-Tac-Toe-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TicTacToeiOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MainMenuViewController" customModule="TicTacToeiOS" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EDF-3u-cVy">
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <state key="normal" title="Human vs. Human"/>
                                 <connections>
-                                    <segue destination="4wa-nM-yst" kind="show" id="lML-NC-JiF"/>
+                                    <segue destination="4wa-nM-yst" kind="show" identifier="HumanVsHuman" id="lML-NC-JiF"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please Select a Game" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D6O-C4-kOk">
@@ -31,12 +31,21 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VOt-KZ-IrP">
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <state key="normal" title="Human vs. Computer"/>
+                                <connections>
+                                    <segue destination="4wa-nM-yst" kind="show" identifier="HumanVsComputer" id="ceS-JT-xEO"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="D6O-C4-kOk" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="45" id="LSv-61-gqI"/>
                             <constraint firstItem="D6O-C4-kOk" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="R1z-L0-ChM"/>
                             <constraint firstItem="EDF-3u-cVy" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Yj0-Tb-wgg"/>
+                            <constraint firstItem="VOt-KZ-IrP" firstAttribute="top" secondItem="EDF-3u-cVy" secondAttribute="bottom" constant="8" symbolic="YES" id="fxy-bI-eCW"/>
+                            <constraint firstItem="VOt-KZ-IrP" firstAttribute="centerX" secondItem="EDF-3u-cVy" secondAttribute="centerX" id="pur-B3-9D4"/>
                             <constraint firstItem="EDF-3u-cVy" firstAttribute="centerX" secondItem="D6O-C4-kOk" secondAttribute="centerX" id="ryV-Ga-nCc"/>
                         </constraints>
                     </view>
@@ -46,16 +55,16 @@
             </objects>
             <point key="canvasLocation" x="1056.8" y="122.78860569715144"/>
         </scene>
-        <!--Human Vs Human View Controller-->
+        <!--Game View Controller-->
         <scene sceneID="JxK-IF-E6t">
             <objects>
-                <viewController id="4wa-nM-yst" customClass="HumanVsHumanViewController" customModule="TicTacToeiOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="4wa-nM-yst" customClass="GameViewController" customModule="TicTacToeiOS" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="tX0-p0-APG"/>
                         <viewControllerLayoutGuide type="bottom" id="Gja-Ee-nxG"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="eJI-CO-MBg">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s0K-Lm-yfq">
@@ -216,4 +225,7 @@
             <point key="canvasLocation" x="117.59999999999999" y="122.78860569715144"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="ceS-JT-xEO"/>
+    </inferredMetricsTieBreakers>
 </document>

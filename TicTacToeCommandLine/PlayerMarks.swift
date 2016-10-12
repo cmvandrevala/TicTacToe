@@ -4,5 +4,6 @@ public struct PlayerMarks {
 
     public var playerOnesMark = "X"
     public var playerTwosMark = "O"
+    public var blankMark = ""
 
 }
