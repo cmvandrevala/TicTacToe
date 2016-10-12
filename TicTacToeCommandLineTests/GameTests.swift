@@ -189,5 +189,35 @@ class GameTests: QuickSpec {
             
         }
 
+        describe("#isCurrentPlayerHuman") {
+
+            it("returns false if the current player (player one) is not a human player") {
+                expect(game.isCurrentPlayerHuman).to(beFalse())
+            }
+
+            it("returns false if the current player (player two) is not a human player") {
+                game.takeTurn(cellIndex: 5)
+                expect(game.isCurrentPlayerHuman).to(beFalse())
+            }
+
+            it("returns true if the current player (player one) is a human player") {
+                game.firstPlayerType = HumanPlayer()
+                expect(game.isCurrentPlayerHuman).to(beTrue())
+            }
+
+            it("returns true if the current player (player two) is a human player") {
+                game.secondPlayerType = HumanPlayer()
+                game.endTurn()
+                expect(game.isCurrentPlayerHuman).to(beTrue())
+            }
+
+            it("returns false if player two is human, but it is player one's turn") {
+                game.secondPlayerType = HumanPlayer()
+                expect(game.isCurrentPlayerHuman).to(beFalse())
+            }
+
+
+        }
+
     }
 }

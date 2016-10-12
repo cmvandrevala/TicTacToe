@@ -34,28 +34,18 @@ public class GameViewController: UIViewController {
     }
 
     @IBAction public func playerTapsCell(_ sender: UIButton) {
-        if sender.isEnabled && gameType == .humanVsHuman {
+        if sender.isEnabled && game.isCurrentPlayerHuman {
             let humanMove = Int(sender.tag)
             game.takeTurn(cellIndex: humanMove)
             game.endTurn()
-            refreshBoard()
-            refreshMessages()
-        }
-
-        if sender.isEnabled && gameType == .humanVsComputer {
-            let humanMove = Int(sender.tag)
-            game.takeTurn(cellIndex: humanMove)
-            game.endTurn()
-            refreshBoard()
-            refreshMessages()
-            if game.isInProgress() {
+            if game.isInProgress() && !game.isCurrentPlayerHuman {
                 let computerMove = game.secondPlayerType.getMove(board: board)
                 game.takeTurn(cellIndex: computerMove!)
                 game.endTurn()
-                refreshBoard()
-                refreshMessages()
             }
         }
+        refreshBoard()
+        refreshMessages()
     }
 
     @IBAction public func newGame() {
@@ -77,26 +67,10 @@ public class GameViewController: UIViewController {
         for cell in cells {
             if let cell = cell {
                 refreshCell(cell: cell)
-            }
-        }
-        if !game.isInProgress() {
-            for cell in cells {
-                if let cell = cell {
+                if !game.isInProgress() {
                     cell.isEnabled = false
                 }
             }
-        }
-    }
-
-    fileprivate func refreshMessages() {
-        if game.isInProgress() {
-            if game.currentPlayer == .playerTwo {
-                messages.text = ticTacToeMessages.itsPlayerTwosTurn(playerTwosMark: game.marks.playerTwosMark)
-            } else {
-                messages.text = ticTacToeMessages.itsPlayerOnesTurn(playerOnesMark: game.marks.playerOnesMark)
-            }
-        } else {
-            messages.text = ticTacToeMessages.theGameHasEnded
         }
     }
 
@@ -112,6 +86,19 @@ public class GameViewController: UIViewController {
         case .empty:
             cell.setTitle(game.marks.blankMark, for: .normal)
             cell.isEnabled = true
+        }
+    }
+
+    fileprivate func refreshMessages() {
+        if game.isInProgress() {
+            switch game.currentPlayer {
+            case .playerOne:
+                messages.text = ticTacToeMessages.itsPlayerOnesTurn(playerOnesMark: game.marks.playerOnesMark)
+            case .playerTwo:
+                messages.text = ticTacToeMessages.itsPlayerTwosTurn(playerTwosMark: game.marks.playerTwosMark)
+            }
+        } else {
+            messages.text = ticTacToeMessages.theGameHasEnded
         }
     }
 

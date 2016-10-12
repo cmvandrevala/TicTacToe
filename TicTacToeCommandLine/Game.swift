@@ -27,7 +27,26 @@ open class Game: TwoPlayerGame {
 
     public var firstPlayerType: Player = FirstAvailableSpotComputerPlayer()
     public var secondPlayerType: Player = FirstAvailableSpotComputerPlayer()
-    
+
+    public var isCurrentPlayerHuman: Bool {
+        get {
+            switch clock.playerOnesTurn() {
+            case true:
+                if firstPlayerType is HumanPlayer {
+                    return true
+                } else {
+                    return false
+                }
+            case false:
+                if secondPlayerType is HumanPlayer {
+                    return true
+                } else {
+                    return false
+                }
+            }
+        }
+    }
+
     public init(board: Board) {
         gameBoard = board
         rules = Rules(board: gameBoard)
