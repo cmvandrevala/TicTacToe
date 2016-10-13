@@ -4,7 +4,6 @@ public class GameViewController: UIViewController {
 
     var game: Game!
     var board: Board!
-    var ticTacToeMessages: TicTacToeMessages!
 
     public enum GameType {
         case humanVsHuman
