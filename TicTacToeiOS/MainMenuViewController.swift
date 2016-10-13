@@ -8,6 +8,8 @@ public class MainMenuViewController: UIViewController {
             viewController.gameType = .humanVsHuman
         } else if segue.identifier == "HumanVsComputer" {
             viewController.gameType = .humanVsComputer
+        } else if segue.identifier == "ComputerVsHuman" {
+            viewController.gameType = .computerVsHuman
         }
     }
 

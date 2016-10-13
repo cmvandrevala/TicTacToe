@@ -9,6 +9,7 @@ public class GameViewController: UIViewController {
     public enum GameType {
         case humanVsHuman
         case humanVsComputer
+        case computerVsHuman
     }
 
     public var gameType: GameType = .humanVsHuman
@@ -31,6 +32,8 @@ public class GameViewController: UIViewController {
         game = Game(board: board)
         ticTacToeMessages = TicTacToeMessages()
         newGame()
+        refreshBoard()
+        refreshMessages()
     }
 
     @IBAction public func playerTapsCell(_ sender: UIButton) {
@@ -38,8 +41,13 @@ public class GameViewController: UIViewController {
             let humanMove = Int(sender.tag)
             game.takeTurn(cellIndex: humanMove)
             game.endTurn()
-            if game.isInProgress() && !game.isCurrentPlayerHuman {
+            if game.isInProgress() && !game.isCurrentPlayerHuman && gameType == .humanVsComputer {
                 let computerMove = game.secondPlayerType.getMove(board: board)
+                game.takeTurn(cellIndex: computerMove!)
+                game.endTurn()
+            }
+            if game.isInProgress() && !game.isCurrentPlayerHuman && gameType == .computerVsHuman {
+                let computerMove = game.firstPlayerType.getMove(board: board)
                 game.takeTurn(cellIndex: computerMove!)
                 game.endTurn()
             }
@@ -56,10 +64,18 @@ public class GameViewController: UIViewController {
         case .humanVsComputer:
             game.firstPlayerType = HumanPlayer()
             game.secondPlayerType = FirstAvailableSpotComputerPlayer()
+        case .computerVsHuman:
+            game.firstPlayerType = FirstAvailableSpotComputerPlayer()
+            game.secondPlayerType = HumanPlayer()
         }
         game.clear()
+        if game.isInProgress() && !game.isCurrentPlayerHuman {
+            let computerMove = game.firstPlayerType.getMove(board: board)
+            game.takeTurn(cellIndex: computerMove!)
+            game.endTurn()
+        }
         refreshBoard()
-        messages.text = ticTacToeMessages.itsPlayerOnesTurn(playerOnesMark: game.marks.playerOnesMark)
+        refreshMessages()
     }
 
     fileprivate func refreshBoard() {
