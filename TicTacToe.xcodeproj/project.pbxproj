@@ -46,6 +46,7 @@
 		6E9DE1F11D90830300321653 /* InputReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9DE1F01D90830300321653 /* InputReader.swift */; };
 		6E9DE1F21D90830300321653 /* InputReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9DE1F01D90830300321653 /* InputReader.swift */; };
 		6EAD07CF1DA557D80013AE5B /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EAD07CE1DA557D80013AE5B /* GameViewController.swift */; };
+		6EB05E451DB02EA400E22A1C /* IOSAcceptanceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EB05E441DB02EA400E22A1C /* IOSAcceptanceTests.swift */; };
 		6EB2E17F1DA7FD1A0072EEF4 /* GameViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EB2E17E1DA7FD1A0072EEF4 /* GameViewControllerTests.swift */; };
 		6EB5C1D91D7F5C7800A5829F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EB5C1D81D7F5C7800A5829F /* AppDelegate.swift */; };
 		6EB5C1DB1D7F5C7800A5829F /* MainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EB5C1DA1D7F5C7800A5829F /* MainMenuViewController.swift */; };
@@ -134,6 +135,7 @@
 		6E9DE1ED1D90826E00321653 /* MainMenuInputReader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenuInputReader.swift; sourceTree = "<group>"; };
 		6E9DE1F01D90830300321653 /* InputReader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputReader.swift; sourceTree = "<group>"; };
 		6EAD07CE1DA557D80013AE5B /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		6EB05E441DB02EA400E22A1C /* IOSAcceptanceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IOSAcceptanceTests.swift; sourceTree = "<group>"; };
 		6EB2E17E1DA7FD1A0072EEF4 /* GameViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewControllerTests.swift; sourceTree = "<group>"; };
 		6EB5C1D51D7F5C7800A5829F /* TicTacToeiOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TicTacToeiOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6EB5C1D81D7F5C7800A5829F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -306,6 +308,7 @@
 				6EB5C1EF1D7F5C7800A5829F /* Info.plist */,
 				6EB2E17E1DA7FD1A0072EEF4 /* GameViewControllerTests.swift */,
 				6EEF7BE01DAD2C1D000EC22C /* SegueTests.swift */,
+				6EB05E441DB02EA400E22A1C /* IOSAcceptanceTests.swift */,
 			);
 			path = TicTacToeiOSTests;
 			sourceTree = "<group>";
@@ -682,6 +685,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6EB2E17F1DA7FD1A0072EEF4 /* GameViewControllerTests.swift in Sources */,
+				6EB05E451DB02EA400E22A1C /* IOSAcceptanceTests.swift in Sources */,
 				6EEF7BE11DAD2C1D000EC22C /* SegueTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
