@@ -30,10 +30,7 @@ public class GameViewController: UIViewController {
         super.viewDidLoad()
         board = Board()
         game = Game(board: board)
-        ticTacToeMessages = TicTacToeMessages()
         newGame()
-        refreshBoard()
-        refreshMessages()
     }
 
     @IBAction public func playerTapsCell(_ sender: UIButton) {
@@ -52,8 +49,7 @@ public class GameViewController: UIViewController {
                 game.endTurn()
             }
         }
-        refreshBoard()
-        refreshMessages()
+        refresh()
     }
 
     @IBAction public func newGame() {
@@ -74,6 +70,10 @@ public class GameViewController: UIViewController {
             game.takeTurn(cellIndex: computerMove!)
             game.endTurn()
         }
+        refresh()
+    }
+
+    fileprivate func refresh() {
         refreshBoard()
         refreshMessages()
     }
@@ -106,16 +106,7 @@ public class GameViewController: UIViewController {
     }
 
     fileprivate func refreshMessages() {
-        if game.isInProgress() {
-            switch game.currentPlayer {
-            case .playerOne:
-                messages.text = ticTacToeMessages.itsPlayerOnesTurn(playerOnesMark: game.marks.playerOnesMark)
-            case .playerTwo:
-                messages.text = ticTacToeMessages.itsPlayerTwosTurn(playerTwosMark: game.marks.playerTwosMark)
-            }
-        } else {
-            messages.text = ticTacToeMessages.theGameHasEnded
-        }
+        messages.text = game.iOSMessage()
     }
 
 }
