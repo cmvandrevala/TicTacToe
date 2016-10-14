@@ -4,9 +4,14 @@ open class GameFactory {
         case humanVsHuman
         case humanVsComputer
         case computerVsHuman
+        case computerVsComputer
     }
 
-    public static func newGame(type: GameType) -> (Game, Board) {
+    public static func newGame() -> (Game?, Board?) {
+        return newGame(type: .computerVsComputer)
+    }
+
+    public static func newGame(type: GameType) -> (Game?, Board?) {
         let gameBoard = Board()
         let game = Game(board: gameBoard)
         switch type {
@@ -19,6 +24,9 @@ open class GameFactory {
         case .computerVsHuman:
             game.firstPlayerType = FirstAvailableSpotComputerPlayer()
             game.secondPlayerType = HumanPlayer()
+        case .computerVsComputer:
+            game.firstPlayerType = FirstAvailableSpotComputerPlayer()
+            game.secondPlayerType = FirstAvailableSpotComputerPlayer()
         }
         return (game, gameBoard)
     }
@@ -34,6 +42,9 @@ open class GameFactory {
         case .computerVsHuman:
             game.firstPlayerType = FirstAvailableSpotComputerPlayer()
             game.secondPlayerType = HumanPlayer()
+        case .computerVsComputer:
+            game.firstPlayerType = FirstAvailableSpotComputerPlayer()
+            game.secondPlayerType = FirstAvailableSpotComputerPlayer()
         }
         
     }

@@ -164,7 +164,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                         <state key="normal" title="New Game"/>
                                         <connections>
-                                            <action selector="newGame" destination="4wa-nM-yst" eventType="touchUpInside" id="ag6-1x-Qnv"/>
+                                            <action selector="clearAndPlayGame" destination="4wa-nM-yst" eventType="touchUpInside" id="1dj-Tt-PKn"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Messages" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KYE-Cx-Haw">
@@ -213,7 +213,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aR6-G4-aKm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1951.875" y="120.4225352112676"/>
+            <point key="canvasLocation" x="1951.2" y="120.08995502248877"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="B87-AH-53D">

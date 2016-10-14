@@ -143,7 +143,7 @@ class GameViewControllerTests: QuickSpec {
                 controller.cell0 = button
                 controller.playerTapsCell(button)
 
-                controller.newGame()
+                controller.clearAndPlayGame()
 
                 expect(button.titleLabel?.text).to(beNil())
             }
@@ -158,7 +158,7 @@ class GameViewControllerTests: QuickSpec {
                 controller.playerTapsCell(button0)
                 controller.playerTapsCell(button1)
 
-                controller.newGame()
+                controller.clearAndPlayGame()
 
                 expect(button0.titleLabel?.text).to(beNil())
                 expect(button1.titleLabel?.text).to(beNil())
@@ -168,7 +168,7 @@ class GameViewControllerTests: QuickSpec {
                 button.tag = 0
                 controller.cell0 = button
 
-                controller.newGame()
+                controller.clearAndPlayGame()
 
                 expect(controller.messages.text).to(equal("It is Player One's turn, moving as X.\n"))
             }
@@ -177,7 +177,7 @@ class GameViewControllerTests: QuickSpec {
                 button.tag = 0
                 controller.cell0 = button
                 controller.playerTapsCell(button)
-                controller.newGame()
+                controller.clearAndPlayGame()
 
                 expect(controller.messages.text).to(equal("It is Player One's turn, moving as X.\n"))
             }
