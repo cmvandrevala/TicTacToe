@@ -6,6 +6,7 @@ public class GameViewController: UIViewController {
     var board: Board?
 
     public var gameType = GameType()
+    private var computerMoveTime = 3
 
     @IBOutlet weak public var cell0: UIButton!
     @IBOutlet weak public var cell1: UIButton!
@@ -22,26 +23,23 @@ public class GameViewController: UIViewController {
     override public func viewDidLoad() {
         super.viewDidLoad()
         (game, board) = GameFactory.newGame()
+        GameFactory.updateGame(game: game!, type: gameType)
         clearAndPlayGame()
     }
 
     @IBAction public func playerTapsCell(_ sender: UIButton) {
         if sender.isEnabled && game!.isCurrentPlayerHuman {
-            let humanMove = Int(sender.tag)
-            game?.takeTurn(cellIndex: humanMove)
-            game?.endTurn()
-            if (game?.isInProgress())! && !game!.isCurrentPlayerHuman {
-                switch gameType {
-                case .humanVsComputer:
-                    let computerMove = game?.secondPlayerType.getMove(board: board!)
-                    game?.takeTurn(cellIndex: computerMove!)
-                    game?.endTurn()
-                case .computerVsHuman:
-                    let computerMove = game?.firstPlayerType.getMove(board: board!)
-                    game?.takeTurn(cellIndex: computerMove!)
-                    game?.endTurn()
-                default:
-                    break
+            humanMove(sender: sender)
+            if game!.isInProgress() && !game!.isCurrentPlayerHuman {
+                disableAllCells()
+                if ProcessInfo.processInfo.environment["XCTestConfigurationFilePath"] != nil {
+                    computerMove()
+                } else {
+                    Timer.scheduledTimer( timeInterval: TimeInterval(computerMoveTime),
+                                          target: self,
+                                          selector: #selector(computerMove),
+                                          userInfo: nil,
+                                          repeats: false )
                 }
             }
         }
@@ -49,14 +47,35 @@ public class GameViewController: UIViewController {
     }
 
     @IBAction public func clearAndPlayGame() {
-        GameFactory.updateGame(game: game!, type: gameType)
-        game?.clear()
-        if (game?.isInProgress())! && !(game?.isCurrentPlayerHuman)! {
-            let computerMove = game?.firstPlayerType.getMove(board: board!)
-            game?.takeTurn(cellIndex: computerMove!)
-            game?.endTurn()
+        game!.clear()
+        if game!.isInProgress() && !game!.isCurrentPlayerHuman {
+            computerPlayerMakesMove(player: game!.firstPlayerType)
         }
         refresh()
+    }
+
+    fileprivate func humanMove(sender: UIButton) {
+        let move = Int(sender.tag)
+        game!.takeTurn(cellIndex: move)
+        game!.endTurn()
+    }
+
+    @objc fileprivate func computerMove() {
+        switch gameType {
+        case .humanVsComputer:
+            computerPlayerMakesMove(player: game!.secondPlayerType)
+        case .computerVsHuman:
+            computerPlayerMakesMove(player: game!.firstPlayerType)
+        default:
+            break
+        }
+        refresh()
+    }
+
+    fileprivate func computerPlayerMakesMove(player: Player) {
+        let move = player.getMove(board: board!)
+        game!.takeTurn(cellIndex: move!)
+        game!.endTurn()
     }
 
     fileprivate func refresh() {
@@ -65,34 +84,47 @@ public class GameViewController: UIViewController {
     }
 
     fileprivate func refreshBoard() {
-        let cells: [UIButton?] = [cell0, cell1, cell2, cell3, cell4, cell5, cell6, cell7, cell8]
+        refreshAllCells()
+        if !game!.isInProgress() {
+            disableAllCells()
+        }
+    }
+
+    fileprivate func disableAllCells() {
+        let cells = [cell0, cell1, cell2, cell3, cell4, cell5, cell6, cell7, cell8]
         for cell in cells {
             if let cell = cell {
-                refreshCell(cell: cell)
-                if !(game?.isInProgress())! {
-                    cell.isEnabled = false
-                }
+                cell.isEnabled = false
             }
         }
     }
 
-    fileprivate func refreshCell(cell: UIButton) {
+    @objc fileprivate func refreshAllCells() {
+        let cells = [cell0, cell1, cell2, cell3, cell4, cell5, cell6, cell7, cell8]
+        for cell in cells {
+            if let cell = cell {
+                refreshSingleCell(cell: cell)
+            }
+        }
+    }
+
+    fileprivate func refreshSingleCell(cell: UIButton) {
         let currentBoard = board!.currentBoard()
         switch currentBoard[Int(cell.tag)] {
         case .playerOne:
-            cell.setTitle(game?.marks.playerOnesMark, for: .normal)
+            cell.setTitle(game!.marks.playerOnesMark, for: .normal)
             cell.isEnabled = false
         case .playerTwo:
-            cell.setTitle(game?.marks.playerTwosMark, for: .normal)
+            cell.setTitle(game!.marks.playerTwosMark, for: .normal)
             cell.isEnabled = false
         case .empty:
-            cell.setTitle(game?.marks.blankMark, for: .normal)
+            cell.setTitle(game!.marks.blankMark, for: .normal)
             cell.isEnabled = true
         }
     }
 
     fileprivate func refreshMessages() {
-        messages.text = game?.iOSMessage()
+        messages.text = game!.iOSMessage()
     }
 
 }
