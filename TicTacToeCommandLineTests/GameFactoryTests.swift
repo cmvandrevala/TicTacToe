@@ -39,17 +39,25 @@ class GameFactoryTests: QuickSpec {
                 expect(String(describing: mirrorPlayerTwo.subjectType)).to(equal("FirstAvailableSpotComputerPlayer"))
             }
 
+            it("handles an unassigned game by creating two human players") {
+                let (game, _) = GameFactory.newGame(type: .unassigned)
+                let mirrorPlayerOne = Mirror(reflecting: game!.firstPlayerType)
+                let mirrorPlayerTwo = Mirror(reflecting: game!.secondPlayerType)
+                expect(String(describing: mirrorPlayerOne.subjectType)).to(equal("HumanPlayer"))
+                expect(String(describing: mirrorPlayerTwo.subjectType)).to(equal("HumanPlayer"))
+            }
+
             it("returns a blank board") {
                 let (_, board) = GameFactory.newGame(type: .humanVsHuman)
                 expect(board!.currentBoard() == [.empty, .empty, .empty, .empty, .empty, .empty, .empty, .empty, .empty]).to(beTrue())
             }
 
-            it("creates a default computer vs. computer game if no argument is passed in") {
+            it("creates a default unassigned game if no argument is passed in") {
                 let (game, _) = GameFactory.newGame()
                 let mirrorPlayerOne = Mirror(reflecting: game!.firstPlayerType)
                 let mirrorPlayerTwo = Mirror(reflecting: game!.secondPlayerType)
-                expect(String(describing: mirrorPlayerOne.subjectType)).to(equal("FirstAvailableSpotComputerPlayer"))
-                expect(String(describing: mirrorPlayerTwo.subjectType)).to(equal("FirstAvailableSpotComputerPlayer"))
+                expect(String(describing: mirrorPlayerOne.subjectType)).to(equal("HumanPlayer"))
+                expect(String(describing: mirrorPlayerTwo.subjectType)).to(equal("HumanPlayer"))
             }
 
         }
@@ -85,7 +93,27 @@ class GameFactoryTests: QuickSpec {
                 expect(String(describing: mirrorPlayerOne.subjectType)).to(equal("FirstAvailableSpotComputerPlayer"))
                 expect(String(describing: mirrorPlayerTwo.subjectType)).to(equal("HumanPlayer"))
             }
-            
+
+            it("updates an existing game to computer vs. computer") {
+                let board = Board()
+                let game = Game(board: board)
+                GameFactory.updateGame(game: game, type: .computerVsComputer)
+                let mirrorPlayerOne = Mirror(reflecting: game.firstPlayerType)
+                let mirrorPlayerTwo = Mirror(reflecting: game.secondPlayerType)
+                expect(String(describing: mirrorPlayerOne.subjectType)).to(equal("FirstAvailableSpotComputerPlayer"))
+                expect(String(describing: mirrorPlayerTwo.subjectType)).to(equal("FirstAvailableSpotComputerPlayer"))
+            }
+
+            it("updates an existing game to unassigned (two human players)") {
+                let board = Board()
+                let game = Game(board: board)
+                GameFactory.updateGame(game: game, type: .unassigned)
+                let mirrorPlayerOne = Mirror(reflecting: game.firstPlayerType)
+                let mirrorPlayerTwo = Mirror(reflecting: game.secondPlayerType)
+                expect(String(describing: mirrorPlayerOne.subjectType)).to(equal("HumanPlayer"))
+                expect(String(describing: mirrorPlayerTwo.subjectType)).to(equal("HumanPlayer"))
+            }
+
         }
         
     }

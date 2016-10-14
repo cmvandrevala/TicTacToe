@@ -49,6 +49,10 @@
 		6EA3D63E1DB11434008DB8C8 /* GameFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EA3D63C1DB11434008DB8C8 /* GameFactory.swift */; };
 		6EA3D63F1DB11434008DB8C8 /* GameFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EA3D63C1DB11434008DB8C8 /* GameFactory.swift */; };
 		6EA3D6411DB1144D008DB8C8 /* GameFactoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EA3D6401DB1144D008DB8C8 /* GameFactoryTests.swift */; };
+		6EA3D6431DB12A94008DB8C8 /* GameType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EA3D6421DB12A94008DB8C8 /* GameType.swift */; };
+		6EA3D6441DB12A94008DB8C8 /* GameType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EA3D6421DB12A94008DB8C8 /* GameType.swift */; };
+		6EA3D6451DB12A94008DB8C8 /* GameType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EA3D6421DB12A94008DB8C8 /* GameType.swift */; };
+		6EA3D6471DB12C71008DB8C8 /* GameTypeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EA3D6461DB12C71008DB8C8 /* GameTypeTests.swift */; };
 		6EAD07CF1DA557D80013AE5B /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EAD07CE1DA557D80013AE5B /* GameViewController.swift */; };
 		6EB05E451DB02EA400E22A1C /* IOSAcceptanceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EB05E441DB02EA400E22A1C /* IOSAcceptanceTests.swift */; };
 		6EB2E17F1DA7FD1A0072EEF4 /* GameViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EB2E17E1DA7FD1A0072EEF4 /* GameViewControllerTests.swift */; };
@@ -140,6 +144,8 @@
 		6E9DE1F01D90830300321653 /* InputReader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputReader.swift; sourceTree = "<group>"; };
 		6EA3D63C1DB11434008DB8C8 /* GameFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameFactory.swift; sourceTree = "<group>"; };
 		6EA3D6401DB1144D008DB8C8 /* GameFactoryTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameFactoryTests.swift; sourceTree = "<group>"; };
+		6EA3D6421DB12A94008DB8C8 /* GameType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameType.swift; sourceTree = "<group>"; };
+		6EA3D6461DB12C71008DB8C8 /* GameTypeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameTypeTests.swift; sourceTree = "<group>"; };
 		6EAD07CE1DA557D80013AE5B /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		6EB05E441DB02EA400E22A1C /* IOSAcceptanceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IOSAcceptanceTests.swift; sourceTree = "<group>"; };
 		6EB2E17E1DA7FD1A0072EEF4 /* GameViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewControllerTests.swift; sourceTree = "<group>"; };
@@ -220,6 +226,7 @@
 				6E2E70BE1D91C5AE00BF8644 /* TwoPlayerGame.swift */,
 				6E4797911D83106D0027ADAC /* main.swift */,
 				6EA3D63C1DB11434008DB8C8 /* GameFactory.swift */,
+				6EA3D6421DB12A94008DB8C8 /* GameType.swift */,
 			);
 			path = TicTacToeCommandLine;
 			sourceTree = "<group>";
@@ -235,6 +242,7 @@
 				6EFC78AC1D907311005BB491 /* TTTAcceptanceTests.swift */,
 				6E75F1F31D87299A00FAB787 /* TTTMoveReaderTests.swift */,
 				6EA3D6401DB1144D008DB8C8 /* GameFactoryTests.swift */,
+				6EA3D6461DB12C71008DB8C8 /* GameTypeTests.swift */,
 			);
 			path = TicTacToeCommandLineTests;
 			sourceTree = "<group>";
@@ -619,6 +627,7 @@
 				6EA3D63E1DB11434008DB8C8 /* GameFactory.swift in Sources */,
 				6E36FC8B1D9416CA0018E83F /* RandomSpotComputerPlayer.swift in Sources */,
 				6E4797921D83106D0027ADAC /* main.swift in Sources */,
+				6EA3D6441DB12A94008DB8C8 /* GameType.swift in Sources */,
 				6E22377E1D885A6400676B77 /* ConsoleBoard.swift in Sources */,
 				6E4797981D8313350027ADAC /* Rules.swift in Sources */,
 			);
@@ -631,6 +640,7 @@
 				6EEF7BE81DAD4FF3000EC22C /* BoardPatterns.swift in Sources */,
 				6ECA90371D9DA0CE00E55C18 /* TTTMoveReader.swift in Sources */,
 				6E420EDD1D9D9E6C009B308F /* RandomSpotComputerPlayerTests.swift in Sources */,
+				6EA3D6471DB12C71008DB8C8 /* GameTypeTests.swift in Sources */,
 				6E26AB481DA6D1D4002B8C60 /* PlayerMarks.swift in Sources */,
 				6E420ED51D9D9E6C009B308F /* ClockTests.swift in Sources */,
 				6ECA902F1D9DA0CE00E55C18 /* FirstAvailableSpotComputerPlayer.swift in Sources */,
@@ -651,6 +661,7 @@
 				6E420ED81D9D9E6C009B308F /* FirstAvailableSpotComputerPlayerTests.swift in Sources */,
 				6ECA902E1D9DA0CE00E55C18 /* TicTacToeMessages.swift in Sources */,
 				6E420EE01D9D9E6C009B308F /* TTTMoveReaderTests.swift in Sources */,
+				6EA3D6451DB12A94008DB8C8 /* GameType.swift in Sources */,
 				6ECA90301D9DA0CE00E55C18 /* Game.swift in Sources */,
 				6ECA90381D9DA0CE00E55C18 /* TwoPlayerGame.swift in Sources */,
 				6ECA902B1D9DA0CE00E55C18 /* Clock.swift in Sources */,
@@ -675,6 +686,7 @@
 				6E1811641D8099F200B73B7A /* Rules.swift in Sources */,
 				6EF6F6BE1D81D20D00B545F2 /* TicTacToeMessages.swift in Sources */,
 				6EEECB431D8B255A00B92641 /* Player.swift in Sources */,
+				6EA3D6431DB12A94008DB8C8 /* GameType.swift in Sources */,
 				6E36FC8A1D9416CA0018E83F /* RandomSpotComputerPlayer.swift in Sources */,
 				6E22377D1D885A6400676B77 /* ConsoleBoard.swift in Sources */,
 				6EB5C1D91D7F5C7800A5829F /* AppDelegate.swift in Sources */,

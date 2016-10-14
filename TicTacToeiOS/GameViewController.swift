@@ -5,13 +5,7 @@ public class GameViewController: UIViewController {
     var game: Game?
     var board: Board?
 
-    public enum GameType {
-        case humanVsHuman
-        case humanVsComputer
-        case computerVsHuman
-    }
-
-    public var gameType: GameType = .humanVsHuman
+    public var gameType = GameType()
 
     @IBOutlet weak public var cell0: UIButton!
     @IBOutlet weak public var cell1: UIButton!
@@ -32,11 +26,11 @@ public class GameViewController: UIViewController {
     }
 
     @IBAction public func playerTapsCell(_ sender: UIButton) {
-        if sender.isEnabled && (game?.isCurrentPlayerHuman)! {
+        if sender.isEnabled && game!.isCurrentPlayerHuman {
             let humanMove = Int(sender.tag)
             game?.takeTurn(cellIndex: humanMove)
             game?.endTurn()
-            if (game?.isInProgress())! && !(game?.isCurrentPlayerHuman)! {
+            if (game?.isInProgress())! && !game!.isCurrentPlayerHuman {
                 switch gameType {
                 case .humanVsComputer:
                     let computerMove = game?.secondPlayerType.getMove(board: board!)
@@ -46,7 +40,7 @@ public class GameViewController: UIViewController {
                     let computerMove = game?.firstPlayerType.getMove(board: board!)
                     game?.takeTurn(cellIndex: computerMove!)
                     game?.endTurn()
-                case .humanVsHuman:
+                default:
                     break
                 }
             }
@@ -55,14 +49,7 @@ public class GameViewController: UIViewController {
     }
 
     @IBAction public func clearAndPlayGame() {
-        switch gameType {
-        case .humanVsHuman:
-            GameFactory.updateGame(game: game!, type: .humanVsHuman)
-        case .humanVsComputer:
-            GameFactory.updateGame(game: game!, type: .humanVsComputer)
-        case .computerVsHuman:
-            GameFactory.updateGame(game: game!, type: .computerVsHuman)
-        }
+        GameFactory.updateGame(game: game!, type: gameType)
         game?.clear()
         if (game?.isInProgress())! && !(game?.isCurrentPlayerHuman)! {
             let computerMove = game?.firstPlayerType.getMove(board: board!)

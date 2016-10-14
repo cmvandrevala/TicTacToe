@@ -1,14 +1,7 @@
 open class GameFactory {
 
-    public enum GameType {
-        case humanVsHuman
-        case humanVsComputer
-        case computerVsHuman
-        case computerVsComputer
-    }
-
     public static func newGame() -> (Game?, Board?) {
-        return newGame(type: .computerVsComputer)
+        return newGame(type: .unassigned)
     }
 
     public static func newGame(type: GameType) -> (Game?, Board?) {
@@ -27,6 +20,9 @@ open class GameFactory {
         case .computerVsComputer:
             game.firstPlayerType = FirstAvailableSpotComputerPlayer()
             game.secondPlayerType = FirstAvailableSpotComputerPlayer()
+        case .unassigned:
+            game.firstPlayerType = HumanPlayer()
+            game.secondPlayerType = HumanPlayer()
         }
         return (game, gameBoard)
     }
@@ -45,6 +41,9 @@ open class GameFactory {
         case .computerVsComputer:
             game.firstPlayerType = FirstAvailableSpotComputerPlayer()
             game.secondPlayerType = FirstAvailableSpotComputerPlayer()
+        case .unassigned:
+            game.firstPlayerType = HumanPlayer()
+            game.secondPlayerType = HumanPlayer()
         }
         
     }
