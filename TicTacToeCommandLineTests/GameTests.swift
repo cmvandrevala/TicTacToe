@@ -216,6 +216,23 @@ class GameTests: QuickSpec {
                 expect(game.isCurrentPlayerHuman).to(beFalse())
             }
 
+        }
+
+        describe("#iOSMessage") {
+
+            it("returns the end game message if the game has ended") {
+                game.play()
+                expect(game.iOSMessage()).to(equal("The game has ended.\n"))
+            }
+
+            it("returns the player one's turn message if it is player one's turn") {
+                expect(game.iOSMessage()).to(equal("It is Player One's turn, moving as X.\n"))
+            }
+
+            it("returns the player two's turn message if it is player two's turn") {
+                game.endTurn()
+                expect(game.iOSMessage()).to(equal("It is Player Two's turn, moving as O.\n"))
+            }
 
         }
 

@@ -82,6 +82,19 @@ open class Game: TwoPlayerGame {
         playCount += 1
     }
 
+    open func iOSMessage() -> String {
+        if isInProgress() {
+            switch currentPlayer {
+            case .playerOne:
+                return messages.itsPlayerOnesTurn(playerOnesMark: marks.playerOnesMark)
+            case .playerTwo:
+                return messages.itsPlayerTwosTurn(playerTwosMark: marks.playerTwosMark)
+            }
+        } else {
+            return messages.theGameHasEnded
+        }
+    }
+
     fileprivate func gameLoop() {
         var cellIndex: Int
         while isInProgress() {

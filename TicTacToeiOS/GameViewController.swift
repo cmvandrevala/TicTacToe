@@ -2,16 +2,11 @@ import UIKit
 
 public class GameViewController: UIViewController {
 
-    var game: Game!
-    var board: Board!
-    var ticTacToeMessages: TicTacToeMessages!
+    var game: Game?
+    var board: Board?
 
-    public enum GameType {
-        case humanVsHuman
-        case humanVsComputer
-    }
-
-    public var gameType: GameType = .humanVsHuman
+    public var gameType = GameType()
+    private var computerMoveTime = 3
 
     @IBOutlet weak public var cell0: UIButton!
     @IBOutlet weak public var cell1: UIButton!
@@ -27,79 +22,109 @@ public class GameViewController: UIViewController {
 
     override public func viewDidLoad() {
         super.viewDidLoad()
-        board = Board()
-        game = Game(board: board)
-        ticTacToeMessages = TicTacToeMessages()
-        newGame()
+        (game, board) = GameFactory.newGame()
+        GameFactory.updateGame(game: game!, type: gameType)
+        clearAndPlayGame()
     }
 
     @IBAction public func playerTapsCell(_ sender: UIButton) {
-        if sender.isEnabled && game.isCurrentPlayerHuman {
-            let humanMove = Int(sender.tag)
-            game.takeTurn(cellIndex: humanMove)
-            game.endTurn()
-            if game.isInProgress() && !game.isCurrentPlayerHuman {
-                let computerMove = game.secondPlayerType.getMove(board: board)
-                game.takeTurn(cellIndex: computerMove!)
-                game.endTurn()
+        if sender.isEnabled && game!.isCurrentPlayerHuman {
+            humanMove(sender: sender)
+            if game!.isInProgress() && !game!.isCurrentPlayerHuman {
+                disableAllCells()
+                if ProcessInfo.processInfo.environment["XCTestConfigurationFilePath"] != nil {
+                    computerMove()
+                } else {
+                    Timer.scheduledTimer( timeInterval: TimeInterval(computerMoveTime),
+                                          target: self,
+                                          selector: #selector(computerMove),
+                                          userInfo: nil,
+                                          repeats: false )
+                }
             }
         }
+        refresh()
+    }
+
+    @IBAction public func clearAndPlayGame() {
+        game!.clear()
+        if game!.isInProgress() && !game!.isCurrentPlayerHuman {
+            computerPlayerMakesMove(player: game!.firstPlayerType)
+        }
+        refresh()
+    }
+
+    fileprivate func humanMove(sender: UIButton) {
+        let move = Int(sender.tag)
+        game!.takeTurn(cellIndex: move)
+        game!.endTurn()
+    }
+
+    @objc fileprivate func computerMove() {
+        switch gameType {
+        case .humanVsComputer:
+            computerPlayerMakesMove(player: game!.secondPlayerType)
+        case .computerVsHuman:
+            computerPlayerMakesMove(player: game!.firstPlayerType)
+        default:
+            break
+        }
+        refresh()
+    }
+
+    fileprivate func computerPlayerMakesMove(player: Player) {
+        let move = player.getMove(board: board!)
+        game!.takeTurn(cellIndex: move!)
+        game!.endTurn()
+    }
+
+    fileprivate func refresh() {
         refreshBoard()
         refreshMessages()
     }
 
-    @IBAction public func newGame() {
-        switch gameType {
-        case .humanVsHuman:
-            game.firstPlayerType = HumanPlayer()
-            game.secondPlayerType = HumanPlayer()
-        case .humanVsComputer:
-            game.firstPlayerType = HumanPlayer()
-            game.secondPlayerType = FirstAvailableSpotComputerPlayer()
+    fileprivate func refreshBoard() {
+        refreshAllCells()
+        if !game!.isInProgress() {
+            disableAllCells()
         }
-        game.clear()
-        refreshBoard()
-        messages.text = ticTacToeMessages.itsPlayerOnesTurn(playerOnesMark: game.marks.playerOnesMark)
     }
 
-    fileprivate func refreshBoard() {
-        let cells: [UIButton?] = [cell0, cell1, cell2, cell3, cell4, cell5, cell6, cell7, cell8]
+    fileprivate func disableAllCells() {
+        let cells = [cell0, cell1, cell2, cell3, cell4, cell5, cell6, cell7, cell8]
         for cell in cells {
             if let cell = cell {
-                refreshCell(cell: cell)
-                if !game.isInProgress() {
-                    cell.isEnabled = false
-                }
+                cell.isEnabled = false
             }
         }
     }
 
-    fileprivate func refreshCell(cell: UIButton) {
-        let currentBoard = board.currentBoard()
+    @objc fileprivate func refreshAllCells() {
+        let cells = [cell0, cell1, cell2, cell3, cell4, cell5, cell6, cell7, cell8]
+        for cell in cells {
+            if let cell = cell {
+                refreshSingleCell(cell: cell)
+            }
+        }
+    }
+
+    fileprivate func refreshSingleCell(cell: UIButton) {
+        let currentBoard = board!.currentBoard()
         switch currentBoard[Int(cell.tag)] {
         case .playerOne:
-            cell.setTitle(game.marks.playerOnesMark, for: .normal)
+            cell.setTitle(game!.marks.playerOnesMark, for: .normal)
             cell.isEnabled = false
         case .playerTwo:
-            cell.setTitle(game.marks.playerTwosMark, for: .normal)
+            cell.setTitle(game!.marks.playerTwosMark, for: .normal)
             cell.isEnabled = false
         case .empty:
-            cell.setTitle(game.marks.blankMark, for: .normal)
+            cell.setTitle(game!.marks.blankMark, for: .normal)
             cell.isEnabled = true
         }
     }
 
     fileprivate func refreshMessages() {
-        if game.isInProgress() {
-            switch game.currentPlayer {
-            case .playerOne:
-                messages.text = ticTacToeMessages.itsPlayerOnesTurn(playerOnesMark: game.marks.playerOnesMark)
-            case .playerTwo:
-                messages.text = ticTacToeMessages.itsPlayerTwosTurn(playerTwosMark: game.marks.playerTwosMark)
-            }
-        } else {
-            messages.text = ticTacToeMessages.theGameHasEnded
-        }
+        messages.text = game!.iOSMessage()
     }
 
 }
