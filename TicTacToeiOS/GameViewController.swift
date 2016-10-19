@@ -6,7 +6,6 @@ public class GameViewController: UIViewController {
     var board: Board?
 
     public var gameType = GameType()
-    private var computerMoveTime = 3
 
     @IBOutlet weak public var cell0: UIButton!
     @IBOutlet weak public var cell1: UIButton!
@@ -32,15 +31,7 @@ public class GameViewController: UIViewController {
             humanMove(sender: sender)
             if game!.isInProgress() && !game!.isCurrentPlayerHuman {
                 disableAllCells()
-                if ProcessInfo.processInfo.environment["XCTestConfigurationFilePath"] != nil {
-                    computerMove()
-                } else {
-                    Timer.scheduledTimer( timeInterval: TimeInterval(computerMoveTime),
-                                          target: self,
-                                          selector: #selector(computerMove),
-                                          userInfo: nil,
-                                          repeats: false )
-                }
+                computerMove()
             }
         }
         refresh()
