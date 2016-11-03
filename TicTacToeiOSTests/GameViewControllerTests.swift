@@ -14,6 +14,7 @@ class GameViewControllerTests: QuickSpec {
             button = UIButton()
             label = UILabel()
             controller.messages = label
+            controller.gameType = .humanVsHuman
             controller.viewDidLoad()
         }
 
