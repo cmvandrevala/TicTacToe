@@ -19,6 +19,7 @@ In order to run the app on the iOS simulator or a personal device, open the Xcod
 Xcode saves the executable files for a project under the `DerivedData` directory. You can find the location of this directory by opening up Xcode and selecting `Xcode > Preferences > Locations` from the menu. In order to create an executable, run one of the following commands from the root directory of the project folder:
 
 Command Line App: `xcodebuild -workspace TicTacToe.xcworkspace -scheme TicTacToeCommandLine clean build`
+
 iOS App: `xcodebuild -workspace TicTacToe.xcworkspace -scheme TicTacToeiOS clean build`
 
 The executable will be located in `path/to/DerivedData/TicTacToe-<Some-Unique-ID>/Build/Products/Debug/`
