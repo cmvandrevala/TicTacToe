@@ -1,10 +1,10 @@
 open class GameFactory {
 
-    public static func newGame() -> (Game?, Board?) {
+    public static func newGame() -> (Game, Board) {
         return newGame(type: .unassigned)
     }
 
-    public static func newGame(type: GameType) -> (Game?, Board?) {
+    public static func newGame(type: GameType) -> (Game, Board) {
         let gameBoard = Board()
         let game = Game(board: gameBoard)
         switch type {

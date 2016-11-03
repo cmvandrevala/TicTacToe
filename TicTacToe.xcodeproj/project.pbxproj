@@ -84,7 +84,7 @@
 		6EEECB411D8B246B00B92641 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EEECB3F1D8B246B00B92641 /* Game.swift */; };
 		6EEECB431D8B255A00B92641 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EEECB421D8B255A00B92641 /* Player.swift */; };
 		6EEECB441D8B255A00B92641 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EEECB421D8B255A00B92641 /* Player.swift */; };
-		6EEF7BE11DAD2C1D000EC22C /* SegueTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EEF7BE01DAD2C1D000EC22C /* SegueTests.swift */; };
+		6EEF7BE11DAD2C1D000EC22C /* MainMenuViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EEF7BE01DAD2C1D000EC22C /* MainMenuViewControllerTests.swift */; };
 		6EEF7BE51DAD4FAB000EC22C /* BoardPatterns.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EEF7BE41DAD4FAB000EC22C /* BoardPatterns.swift */; };
 		6EEF7BE61DAD4FD1000EC22C /* BoardPatterns.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EEF7BE41DAD4FAB000EC22C /* BoardPatterns.swift */; };
 		6EEF7BE71DAD4FDE000EC22C /* BoardPatternsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EEF7BE21DAD4F79000EC22C /* BoardPatternsTests.swift */; };
@@ -165,7 +165,7 @@
 		6EEECB3D1D8B245E00B92641 /* GameTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameTests.swift; sourceTree = "<group>"; };
 		6EEECB3F1D8B246B00B92641 /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		6EEECB421D8B255A00B92641 /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Player.swift; path = TicTacToeCommandLine/Player.swift; sourceTree = "<group>"; };
-		6EEF7BE01DAD2C1D000EC22C /* SegueTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegueTests.swift; sourceTree = "<group>"; };
+		6EEF7BE01DAD2C1D000EC22C /* MainMenuViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenuViewControllerTests.swift; sourceTree = "<group>"; };
 		6EEF7BE21DAD4F79000EC22C /* BoardPatternsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardPatternsTests.swift; sourceTree = "<group>"; };
 		6EEF7BE41DAD4FAB000EC22C /* BoardPatterns.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardPatterns.swift; sourceTree = "<group>"; };
 		6EF6F6BB1D81D1FF00B545F2 /* TicTacToeMessagesTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TicTacToeMessagesTests.swift; path = TicTacToeCommandLineTests/TicTacToeMessagesTests.swift; sourceTree = "<group>"; };
@@ -323,7 +323,7 @@
 			children = (
 				6EB5C1EF1D7F5C7800A5829F /* Info.plist */,
 				6EB2E17E1DA7FD1A0072EEF4 /* GameViewControllerTests.swift */,
-				6EEF7BE01DAD2C1D000EC22C /* SegueTests.swift */,
+				6EEF7BE01DAD2C1D000EC22C /* MainMenuViewControllerTests.swift */,
 				6EB05E441DB02EA400E22A1C /* IOSAcceptanceTests.swift */,
 			);
 			path = TicTacToeiOSTests;
@@ -710,7 +710,7 @@
 			files = (
 				6EB2E17F1DA7FD1A0072EEF4 /* GameViewControllerTests.swift in Sources */,
 				6EB05E451DB02EA400E22A1C /* IOSAcceptanceTests.swift in Sources */,
-				6EEF7BE11DAD2C1D000EC22C /* SegueTests.swift in Sources */,
+				6EEF7BE11DAD2C1D000EC22C /* MainMenuViewControllerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

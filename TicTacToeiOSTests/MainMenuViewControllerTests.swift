@@ -2,7 +2,7 @@ import Quick
 import Nimble
 import TicTacToeiOS
 
-class SegueTests: QuickSpec {
+class MainMenuViewControllerTests: QuickSpec {
     override func spec() {
 
         it("correctly sets the game type in a human vs. human game") {
