@@ -2,8 +2,7 @@ import UIKit
 
 public class GameViewController: UIViewController {
 
-    private var (game, board) = GameFactory.newGame()
-
+    public var presenter: GamePresenter?
     public var gameType = GameType()
 
     @IBOutlet weak public var cell0: UIButton!
@@ -20,14 +19,15 @@ public class GameViewController: UIViewController {
 
     override public func viewDidLoad() {
         super.viewDidLoad()
-        GameFactory.updateGame(game: game, type: gameType)
+        presenter = GamePresenter()
+        GameFactory.updateGame(game: (presenter?.game)!, type: gameType)
         clearAndPlayGame()
     }
 
     @IBAction public func playerTapsCell(_ sender: UIButton) {
-        if sender.isEnabled && game.isCurrentPlayerHuman {
+        if sender.isEnabled && (presenter?.game.isCurrentPlayerHuman)! {
             humanMove(sender: sender)
-            if game.isInProgress() && !game.isCurrentPlayerHuman {
+            if (presenter?.game.isInProgress())! && !(presenter?.game.isCurrentPlayerHuman)! {
                 disableAllCells()
                 computerMove()
             }
@@ -36,25 +36,25 @@ public class GameViewController: UIViewController {
     }
 
     @IBAction public func clearAndPlayGame() {
-        game.clear()
-        if game.isInProgress() && !game.isCurrentPlayerHuman {
-            computerPlayerMakesMove(player: game.firstPlayerType)
+        presenter?.game.clear()
+        if (presenter?.game.isInProgress())! && !(presenter?.game.isCurrentPlayerHuman)! {
+            computerPlayerMakesMove(player: (presenter?.game.firstPlayerType)!)
         }
         refresh()
     }
 
     fileprivate func humanMove(sender: UIButton) {
         let move = Int(sender.tag)
-        game.takeTurn(cellIndex: move)
-        game.endTurn()
+        presenter?.game.takeTurn(cellIndex: move)
+        presenter?.game.endTurn()
     }
 
     @objc fileprivate func computerMove() {
         switch gameType {
         case .humanVsComputer:
-            computerPlayerMakesMove(player: game.secondPlayerType)
+            computerPlayerMakesMove(player: (presenter?.game.secondPlayerType)!)
         case .computerVsHuman:
-            computerPlayerMakesMove(player: game.firstPlayerType)
+            computerPlayerMakesMove(player: (presenter?.game.firstPlayerType)!)
         default:
             break
         }
@@ -62,9 +62,9 @@ public class GameViewController: UIViewController {
     }
 
     fileprivate func computerPlayerMakesMove(player: Player) {
-        let move = player.getMove(board: board)
-        game.takeTurn(cellIndex: move!)
-        game.endTurn()
+        let move = player.getMove(board: (presenter?.board)!)
+        presenter?.game.takeTurn(cellIndex: move!)
+        presenter?.game.endTurn()
     }
 
     fileprivate func refresh() {
@@ -74,7 +74,7 @@ public class GameViewController: UIViewController {
 
     fileprivate func refreshBoard() {
         refreshAllCells()
-        if !game.isInProgress() {
+        if !(presenter?.game.isInProgress())! {
             disableAllCells()
         }
     }
@@ -88,7 +88,7 @@ public class GameViewController: UIViewController {
         }
     }
 
-    @objc fileprivate func refreshAllCells() {
+    fileprivate func refreshAllCells() {
         let cells = [cell0, cell1, cell2, cell3, cell4, cell5, cell6, cell7, cell8]
         for cell in cells {
             if let cell = cell {
@@ -98,22 +98,22 @@ public class GameViewController: UIViewController {
     }
 
     fileprivate func refreshSingleCell(cell: UIButton) {
-        let currentBoard = board.currentBoard()
+        let currentBoard = presenter!.board.currentBoard()
         switch currentBoard[Int(cell.tag)] {
         case .playerOne:
-            cell.setTitle(game.marks.playerOnesMark, for: .normal)
+            cell.setTitle(presenter?.game.marks.playerOnesMark, for: .normal)
             cell.isEnabled = false
         case .playerTwo:
-            cell.setTitle(game.marks.playerTwosMark, for: .normal)
+            cell.setTitle(presenter?.game.marks.playerTwosMark, for: .normal)
             cell.isEnabled = false
         case .empty:
-            cell.setTitle(game.marks.blankMark, for: .normal)
+            cell.setTitle(presenter?.game.marks.blankMark, for: .normal)
             cell.isEnabled = true
         }
     }
 
     fileprivate func refreshMessages() {
-        messages.text = game.iOSMessage()
+        messages.text = presenter?.currentMessage
     }
 
 }

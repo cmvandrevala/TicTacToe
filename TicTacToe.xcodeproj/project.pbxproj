@@ -78,6 +78,8 @@
 		6ECA90381D9DA0CE00E55C18 /* TwoPlayerGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E2E70BE1D91C5AE00BF8644 /* TwoPlayerGame.swift */; };
 		6ECEA3531D883F6F0035E9DA /* Clock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ECEA3521D883F6F0035E9DA /* Clock.swift */; };
 		6ECEA3561D883F870035E9DA /* Clock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ECEA3521D883F6F0035E9DA /* Clock.swift */; };
+		6ED8FB1A1DCBB4CB008BE705 /* GamePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ED8FB191DCBB4CB008BE705 /* GamePresenter.swift */; };
+		6ED8FB1C1DCBB4DF008BE705 /* GamePresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ED8FB1B1DCBB4DF008BE705 /* GamePresenterTests.swift */; };
 		6EEECB381D8B1ADE00B92641 /* HumanPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EEECB371D8B1ADE00B92641 /* HumanPlayer.swift */; };
 		6EEECB391D8B1ADE00B92641 /* HumanPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EEECB371D8B1ADE00B92641 /* HumanPlayer.swift */; };
 		6EEECB401D8B246B00B92641 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EEECB3F1D8B246B00B92641 /* Game.swift */; };
@@ -160,6 +162,8 @@
 		6EB5C1EF1D7F5C7800A5829F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6ECEA3521D883F6F0035E9DA /* Clock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Clock.swift; path = TicTacToeCommandLine/Clock.swift; sourceTree = "<group>"; };
 		6ECEA3541D883F830035E9DA /* ClockTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ClockTests.swift; path = TicTacToeCommandLineTests/ClockTests.swift; sourceTree = "<group>"; };
+		6ED8FB191DCBB4CB008BE705 /* GamePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GamePresenter.swift; sourceTree = "<group>"; };
+		6ED8FB1B1DCBB4DF008BE705 /* GamePresenterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GamePresenterTests.swift; sourceTree = "<group>"; };
 		6EEECB351D8B1AC200B92641 /* HumanPlayerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HumanPlayerTests.swift; sourceTree = "<group>"; };
 		6EEECB371D8B1ADE00B92641 /* HumanPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HumanPlayer.swift; sourceTree = "<group>"; };
 		6EEECB3D1D8B245E00B92641 /* GameTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameTests.swift; sourceTree = "<group>"; };
@@ -314,6 +318,7 @@
 				6EB5C1DC1D7F5C7800A5829F /* Main.storyboard */,
 				6EB5C1DA1D7F5C7800A5829F /* MainMenuViewController.swift */,
 				6EAD07CE1DA557D80013AE5B /* GameViewController.swift */,
+				6ED8FB191DCBB4CB008BE705 /* GamePresenter.swift */,
 			);
 			path = TicTacToeiOS;
 			sourceTree = "<group>";
@@ -325,6 +330,7 @@
 				6EB2E17E1DA7FD1A0072EEF4 /* GameViewControllerTests.swift */,
 				6EEF7BE01DAD2C1D000EC22C /* MainMenuViewControllerTests.swift */,
 				6EB05E441DB02EA400E22A1C /* IOSAcceptanceTests.swift */,
+				6ED8FB1B1DCBB4DF008BE705 /* GamePresenterTests.swift */,
 			);
 			path = TicTacToeiOSTests;
 			sourceTree = "<group>";
@@ -685,6 +691,7 @@
 				6EB5C1DB1D7F5C7800A5829F /* MainMenuViewController.swift in Sources */,
 				6E1811641D8099F200B73B7A /* Rules.swift in Sources */,
 				6EF6F6BE1D81D20D00B545F2 /* TicTacToeMessages.swift in Sources */,
+				6ED8FB1A1DCBB4CB008BE705 /* GamePresenter.swift in Sources */,
 				6EEECB431D8B255A00B92641 /* Player.swift in Sources */,
 				6EA3D6431DB12A94008DB8C8 /* GameType.swift in Sources */,
 				6E36FC8A1D9416CA0018E83F /* RandomSpotComputerPlayer.swift in Sources */,
@@ -708,6 +715,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6ED8FB1C1DCBB4DF008BE705 /* GamePresenterTests.swift in Sources */,
 				6EB2E17F1DA7FD1A0072EEF4 /* GameViewControllerTests.swift in Sources */,
 				6EB05E451DB02EA400E22A1C /* IOSAcceptanceTests.swift in Sources */,
 				6EEF7BE11DAD2C1D000EC22C /* MainMenuViewControllerTests.swift in Sources */,
