@@ -2,7 +2,9 @@
 
 [![Build Status](https://travis-ci.org/cmvandrevala/TicTacToe.svg?branch=master)](https://travis-ci.org/cmvandrevala/TicTacToe)
 
-This is my first project as an apprentice at 8th Light. It is a Tic-Tac-Toe app in Swift.
+## Background
+
+This tic-tac-toe app in Swift is my first project as an apprentice at 8th Light. Note that the project name changed from TTTSwift to TicTacToe in October 2016 to simplify the naming conventions used throughout the project. If your version of this repository contains any files or directories with the prefix "TTTSwift", please re-clone this repository in order to ensure that you have the latest version with the correct naming conventions.
 
 ## Development
 
