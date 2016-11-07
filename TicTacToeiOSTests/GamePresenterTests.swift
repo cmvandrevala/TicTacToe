@@ -6,9 +6,11 @@ class GamePresenterTests: QuickSpec {
     override func spec() {
 
         var presenter: GamePresenter!
+        var view: GameViewController!
 
         beforeEach {
-            presenter = GamePresenter()
+            view = GameViewController()
+            presenter = GamePresenter(viewController: view)
         }
 
         describe("game type") {

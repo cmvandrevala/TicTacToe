@@ -3,9 +3,11 @@ public class GamePresenter {
     public var board: Board
     public var game: Game
     public var gameType = GameType()
+    private var view: GameViewController
 
-    public init() {
+    public init(viewController: GameViewController) {
         (game, board) = GameFactory.newGame()
+        view = viewController
     }
 
     public func setGameType(gameType: GameType) {
@@ -46,6 +48,7 @@ public class GamePresenter {
         if !game.isCurrentPlayerHuman {
             computerPlayerMakesMove(player: game.firstPlayerType)
         }
+        view.refresh()
     }
 
     public func playerMoved(move: Int) {

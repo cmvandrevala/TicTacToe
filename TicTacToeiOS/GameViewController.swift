@@ -19,9 +19,9 @@ public class GameViewController: UIViewController {
 
     override public func viewDidLoad() {
         super.viewDidLoad()
-        presenter = GamePresenter()
+        presenter = GamePresenter(viewController: self)
         presenter?.setGameType(gameType: gameType)
-        clearAndStartGame()
+        presenter?.clearAndStartGame()
     }
 
     @IBAction public func playerTapsCell(_ sender: UIButton) {
@@ -37,19 +37,14 @@ public class GameViewController: UIViewController {
     }
 
     @IBAction func newGame() {
-        clearAndStartGame()
-    }
-
-    public func clearAndStartGame() {
         presenter?.clearAndStartGame()
-        refresh()
     }
 
     fileprivate func cells() -> [UIButton?] {
         return [cell0, cell1, cell2, cell3, cell4, cell5, cell6, cell7, cell8]
     }
 
-    fileprivate func refresh() {
+    public func refresh() {
         refreshBoard()
         refreshMessages()
     }
