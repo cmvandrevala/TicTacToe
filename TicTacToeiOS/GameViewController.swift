@@ -30,7 +30,7 @@ public class GameViewController: UIViewController {
             presenter?.humanMove(move: move)
             if (presenter?.game.isInProgress())! && !(presenter?.game.isCurrentPlayerHuman)! {
                 disableAllCells()
-                computerMove()
+                presenter?.computerMove()
             }
         }
         refresh()
@@ -40,18 +40,6 @@ public class GameViewController: UIViewController {
         presenter?.game.clear()
         if (presenter?.game.isInProgress())! && !(presenter?.game.isCurrentPlayerHuman)! {
             computerPlayerMakesMove(player: (presenter?.game.firstPlayerType)!)
-        }
-        refresh()
-    }
-
-    @objc fileprivate func computerMove() {
-        switch gameType {
-        case .humanVsComputer:
-            computerPlayerMakesMove(player: (presenter?.game.secondPlayerType)!)
-        case .computerVsHuman:
-            computerPlayerMakesMove(player: (presenter?.game.firstPlayerType)!)
-        default:
-            break
         }
         refresh()
     }

@@ -31,7 +31,7 @@ public class GamePresenter {
         game.endTurn()
     }
 
-    fileprivate func computerMove() {
+    public func computerMove() {
         switch gameType {
         case .humanVsComputer:
             computerPlayerMakesMove(player: game.secondPlayerType)
