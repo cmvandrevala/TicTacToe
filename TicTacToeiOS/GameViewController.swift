@@ -36,7 +36,11 @@ public class GameViewController: UIViewController {
         refresh()
     }
 
-    @IBAction public func clearAndStartGame() {
+    @IBAction func newGame() {
+        clearAndStartGame()
+    }
+
+    public func clearAndStartGame() {
         presenter?.clearAndStartGame()
         refresh()
     }

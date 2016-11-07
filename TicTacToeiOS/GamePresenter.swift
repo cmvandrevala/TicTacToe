@@ -43,8 +43,8 @@ public class GamePresenter {
 
     public func clearAndStartGame() {
         game.clear()
-        if (game.isInProgress()) && !(game.isCurrentPlayerHuman) {
-            computerPlayerMakesMove(player: (game.firstPlayerType))
+        if !game.isCurrentPlayerHuman {
+            computerPlayerMakesMove(player: game.firstPlayerType)
         }
     }
 
