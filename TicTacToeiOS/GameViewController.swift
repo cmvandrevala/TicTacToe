@@ -41,6 +41,10 @@ public class GameViewController: UIViewController {
         refresh()
     }
 
+    fileprivate func cells() -> [UIButton?] {
+        return [cell0, cell1, cell2, cell3, cell4, cell5, cell6, cell7, cell8]
+    }
+
     fileprivate func refresh() {
         refreshBoard()
         refreshMessages()
@@ -54,8 +58,7 @@ public class GameViewController: UIViewController {
     }
 
     fileprivate func disableAllCells() {
-        let cells = [cell0, cell1, cell2, cell3, cell4, cell5, cell6, cell7, cell8]
-        for cell in cells {
+        for cell in cells() {
             if let cell = cell {
                 cell.isEnabled = false
             }
@@ -63,8 +66,7 @@ public class GameViewController: UIViewController {
     }
 
     fileprivate func refreshAllCells() {
-        let cells = [cell0, cell1, cell2, cell3, cell4, cell5, cell6, cell7, cell8]
-        for cell in cells {
+        for cell in cells() {
             if let cell = cell {
                 refreshSingleCell(cell: cell)
             }
