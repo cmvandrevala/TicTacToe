@@ -1,8 +1,8 @@
 public class GamePresenter {
 
     public var board: Board
-    public var game: Game
-    public var gameType = GameType()
+    private var game: Game
+    private var gameType = GameType()
     private var view: GameViewController
 
     public init(viewController: GameViewController) {
@@ -52,18 +52,22 @@ public class GamePresenter {
     }
 
     public func playerMoved(move: Int) {
-        humanMove(move: move)
+        if game.isCurrentPlayerHuman {
+            humanMove(move: move)
+        }
         if game.isInProgress() && !game.isCurrentPlayerHuman {
+            view.disableAllCells()
             computerMove()
         }
+        view.refresh()
     }
 
-    public func humanMove(move: Int) {
+    private func humanMove(move: Int) {
         game.takeTurn(cellIndex: move)
         game.endTurn()
     }
 
-    public func computerMove() {
+    private func computerMove() {
         switch gameType {
         case .humanVsComputer:
             computerPlayerMakesMove(player: game.secondPlayerType)
@@ -74,7 +78,7 @@ public class GamePresenter {
         }
     }
 
-    public func computerPlayerMakesMove(player: Player) {
+    private func computerPlayerMakesMove(player: Player) {
         let move = player.getMove(board: board)
         game.takeTurn(cellIndex: move!)
         game.endTurn()

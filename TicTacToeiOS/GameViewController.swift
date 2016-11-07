@@ -25,15 +25,9 @@ public class GameViewController: UIViewController {
     }
 
     @IBAction public func playerTapsCell(_ sender: UIButton) {
-        if sender.isEnabled && (presenter?.game.isCurrentPlayerHuman)! {
-            let move = Int(sender.tag)
-            presenter?.humanMove(move: move)
-            if (presenter?.game.isInProgress())! && !(presenter?.game.isCurrentPlayerHuman)! {
-                disableAllCells()
-                presenter?.computerMove()
-            }
+        if sender.isEnabled {
+            presenter?.playerMoved(move: Int(sender.tag))
         }
-        refresh()
     }
 
     @IBAction func newGame() {
@@ -56,7 +50,7 @@ public class GameViewController: UIViewController {
         }
     }
 
-    fileprivate func disableAllCells() {
+    public func disableAllCells() {
         for cell in cells() {
             if let cell = cell {
                 cell.isEnabled = false
