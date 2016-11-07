@@ -2,7 +2,7 @@ import UIKit
 
 public class GamePresenter {
 
-    public var board: Board
+    private var board: Board
     private var game: Game
     private var gameType = GameType()
     private var view: GameViewController
@@ -23,8 +23,10 @@ public class GamePresenter {
         }
     }
 
-    public func gameIsOver() -> Bool {
-        return !game.isInProgress()
+    public func disableCellsIfGameIsOver() {
+        if !game.isInProgress() {
+            view.disableAllCells()
+        }
     }
 
     public func clearAndStartGame() {

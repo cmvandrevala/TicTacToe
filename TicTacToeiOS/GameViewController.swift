@@ -34,20 +34,9 @@ public class GameViewController: UIViewController {
         presenter?.clearAndStartGame()
     }
 
-    public func cells() -> [UIButton?] {
-        return [cell0, cell1, cell2, cell3, cell4, cell5, cell6, cell7, cell8]
-    }
-
     public func refresh() {
         refreshBoard()
         refreshMessages()
-    }
-
-    fileprivate func refreshBoard() {
-        refreshAllCells()
-        if (presenter?.gameIsOver())! {
-            disableAllCells()
-        }
     }
 
     public func disableAllCells() {
@@ -56,6 +45,15 @@ public class GameViewController: UIViewController {
                 cell.isEnabled = false
             }
         }
+    }
+
+    fileprivate func cells() -> [UIButton?] {
+        return [cell0, cell1, cell2, cell3, cell4, cell5, cell6, cell7, cell8]
+    }
+
+    fileprivate func refreshBoard() {
+        refreshAllCells()
+        presenter?.disableCellsIfGameIsOver()
     }
 
     fileprivate func refreshAllCells() {
