@@ -20,7 +20,7 @@ public class GameViewController: UIViewController {
     override public func viewDidLoad() {
         super.viewDidLoad()
         presenter = GamePresenter()
-        GameFactory.updateGame(game: (presenter?.game)!, type: gameType)
+        presenter?.setGameType(gameType: gameType)
         clearAndPlayGame()
     }
 

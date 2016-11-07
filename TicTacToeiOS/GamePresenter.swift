@@ -10,6 +10,7 @@ public class GamePresenter {
 
     public func setGameType(gameType: GameType) {
         self.gameType = gameType
+        GameFactory.updateGame(game: game, type: gameType)
     }
 
     public var currentMessage: String {
