@@ -21,7 +21,7 @@ public class GameViewController: UIViewController {
         super.viewDidLoad()
         presenter = GamePresenter()
         presenter?.setGameType(gameType: gameType)
-        clearAndPlayGame()
+        clearAndStartGame()
     }
 
     @IBAction public func playerTapsCell(_ sender: UIButton) {
@@ -36,11 +36,8 @@ public class GameViewController: UIViewController {
         refresh()
     }
 
-    @IBAction public func clearAndPlayGame() {
-        presenter?.game.clear()
-        if (presenter?.game.isInProgress())! && !(presenter?.game.isCurrentPlayerHuman)! {
-            presenter?.computerPlayerMakesMove(player: (presenter?.game.firstPlayerType)!)
-        }
+    @IBAction public func clearAndStartGame() {
+        presenter?.clearAndStartGame()
         refresh()
     }
 

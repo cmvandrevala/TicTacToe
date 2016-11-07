@@ -19,6 +19,13 @@ public class GamePresenter {
         }
     }
 
+    public func clearAndStartGame() {
+        game.clear()
+        if (game.isInProgress()) && !(game.isCurrentPlayerHuman) {
+            computerPlayerMakesMove(player: (game.firstPlayerType))
+        }
+    }
+
     public func playerMoved(move: Int) {
         humanMove(move: move)
         if game.isInProgress() && !game.isCurrentPlayerHuman {
