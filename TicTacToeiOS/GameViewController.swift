@@ -26,7 +26,8 @@ public class GameViewController: UIViewController {
 
     @IBAction public func playerTapsCell(_ sender: UIButton) {
         if sender.isEnabled && (presenter?.game.isCurrentPlayerHuman)! {
-            humanMove(sender: sender)
+            let move = Int(sender.tag)
+            presenter?.humanMove(move: move)
             if (presenter?.game.isInProgress())! && !(presenter?.game.isCurrentPlayerHuman)! {
                 disableAllCells()
                 computerMove()
@@ -41,12 +42,6 @@ public class GameViewController: UIViewController {
             computerPlayerMakesMove(player: (presenter?.game.firstPlayerType)!)
         }
         refresh()
-    }
-
-    fileprivate func humanMove(sender: UIButton) {
-        let move = Int(sender.tag)
-        presenter?.game.takeTurn(cellIndex: move)
-        presenter?.game.endTurn()
     }
 
     @objc fileprivate func computerMove() {

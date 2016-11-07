@@ -26,7 +26,7 @@ public class GamePresenter {
         }
     }
 
-    fileprivate func humanMove(move: Int) {
+    public func humanMove(move: Int) {
         game.takeTurn(cellIndex: move)
         game.endTurn()
     }
