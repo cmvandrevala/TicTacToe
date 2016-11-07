@@ -34,7 +34,7 @@ public class GameViewController: UIViewController {
         presenter?.clearAndStartGame()
     }
 
-    fileprivate func cells() -> [UIButton?] {
+    public func cells() -> [UIButton?] {
         return [cell0, cell1, cell2, cell3, cell4, cell5, cell6, cell7, cell8]
     }
 
@@ -61,23 +61,8 @@ public class GameViewController: UIViewController {
     fileprivate func refreshAllCells() {
         for cell in cells() {
             if let cell = cell {
-                refreshSingleCell(cell: cell)
+                presenter?.refreshSingleCell(cell: cell)
             }
-        }
-    }
-
-    fileprivate func refreshSingleCell(cell: UIButton) {
-        let currentBoard = presenter!.board.currentBoard()
-        switch currentBoard[Int(cell.tag)] {
-        case .playerOne:
-            cell.setTitle(presenter?.playerOnesMark, for: .normal)
-            cell.isEnabled = false
-        case .playerTwo:
-            cell.setTitle(presenter?.playerTwosMark, for: .normal)
-            cell.isEnabled = false
-        case .empty:
-            cell.setTitle(presenter?.blankMark, for: .normal)
-            cell.isEnabled = true
         }
     }
 

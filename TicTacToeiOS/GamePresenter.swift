@@ -1,3 +1,5 @@
+import UIKit
+
 public class GamePresenter {
 
     public var board: Board
@@ -18,24 +20,6 @@ public class GamePresenter {
     public var currentMessage: String {
         get {
             return game.iOSMessage()
-        }
-    }
-
-    public var playerOnesMark: String {
-        get {
-            return game.marks.playerOnesMark
-        }
-    }
-
-    public var blankMark: String {
-        get {
-            return game.marks.blankMark
-        }
-    }
-
-    public var playerTwosMark: String {
-        get {
-            return game.marks.playerTwosMark
         }
     }
 
@@ -60,6 +44,21 @@ public class GamePresenter {
             computerMove()
         }
         view.refresh()
+    }
+
+    public func refreshSingleCell(cell: UIButton) {
+        let currentBoard = board.currentBoard()
+        switch currentBoard[Int(cell.tag)] {
+        case .playerOne:
+            cell.setTitle(game.marks.playerOnesMark, for: .normal)
+            cell.isEnabled = false
+        case .playerTwo:
+            cell.setTitle(game.marks.playerTwosMark, for: .normal)
+            cell.isEnabled = false
+        case .empty:
+            cell.setTitle(game.marks.blankMark, for: .normal)
+            cell.isEnabled = true
+        }
     }
 
     private func humanMove(move: Int) {
