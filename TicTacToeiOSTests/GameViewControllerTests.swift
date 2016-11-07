@@ -5,15 +5,19 @@ import TicTacToeiOS
 class GameViewControllerTests: QuickSpec {
     override func spec() {
 
+        var presenter: GamePresenter!
         var controller: GameViewController!
         var button: UIButton!
         var label: UILabel!
 
         beforeEach {
             controller = GameViewController()
+            presenter = GamePresenter(viewController: controller)
+            controller.presenter = presenter
             button = UIButton()
             label = UILabel()
             controller.messages = label
+            controller.gameType = .humanVsHuman
             controller.viewDidLoad()
         }
 
@@ -143,7 +147,7 @@ class GameViewControllerTests: QuickSpec {
                 controller.cell0 = button
                 controller.playerTapsCell(button)
 
-                controller.clearAndPlayGame()
+                controller.presenter?.clearAndStartGame()
 
                 expect(button.titleLabel?.text).to(beNil())
             }
@@ -158,7 +162,7 @@ class GameViewControllerTests: QuickSpec {
                 controller.playerTapsCell(button0)
                 controller.playerTapsCell(button1)
 
-                controller.clearAndPlayGame()
+                controller.presenter?.clearAndStartGame()
 
                 expect(button0.titleLabel?.text).to(beNil())
                 expect(button1.titleLabel?.text).to(beNil())
@@ -168,7 +172,7 @@ class GameViewControllerTests: QuickSpec {
                 button.tag = 0
                 controller.cell0 = button
 
-                controller.clearAndPlayGame()
+                controller.presenter?.clearAndStartGame()
 
                 expect(controller.messages.text).to(equal("It is Player One's turn, moving as X.\n"))
             }
@@ -177,7 +181,7 @@ class GameViewControllerTests: QuickSpec {
                 button.tag = 0
                 controller.cell0 = button
                 controller.playerTapsCell(button)
-                controller.clearAndPlayGame()
+                controller.presenter?.clearAndStartGame()
 
                 expect(controller.messages.text).to(equal("It is Player One's turn, moving as X.\n"))
             }

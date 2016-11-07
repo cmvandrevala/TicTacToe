@@ -3,9 +3,8 @@ public enum GameType {
     case humanVsComputer
     case computerVsHuman
     case computerVsComputer
-    case unassigned
 
     init() {
-        self = .unassigned
+        self = .computerVsComputer
     }
 }

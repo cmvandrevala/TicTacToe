@@ -13,8 +13,8 @@ class GameTypeTests: QuickSpec {
                 type = GameType()
             }
 
-            it("defaults to unassigned") {
-                expect(type == .unassigned).to(beTrue())
+            it("defaults to computer vs. computer") {
+                expect(type == .computerVsComputer).to(beTrue())
             }
 
             it("can be human vs human") {
@@ -33,6 +33,7 @@ class GameTypeTests: QuickSpec {
             }
 
             it("can be computer vs computer") {
+                type = .humanVsComputer
                 type = .computerVsComputer
                 expect(type == .computerVsComputer).to(beTrue())
             }

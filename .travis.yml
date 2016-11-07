@@ -1,4 +1,5 @@
 language: objective-c
 osx_image: xcode8
-script: xcodebuild -workspace TicTacToe.xcworkspace -scheme TicTacToeCommandLine -sdk macosx10.11 clean build test
-before_script: security delete-certificate -c "Apple Worldwide Developer Relations Certification Authority" /Library/Keychains/System.keychain; security delete-certificate -c "Apple Worldwide Developer Relations Certification Authority" /Library/Keychains/login.keychain; curl -O -L http://developer.apple.com/certificationauthority/AppleWWDRCA.cer; security import AppleWWDRCA.cer  -k ~/Library/Keychains/login.keychain -A
+xcode_workspace: TicTacToe.xcworkspace
+xcode_scheme: TicTacToeCommandLine
+script: xcodebuild -workspace TicTacToe.xcworkspace -scheme TicTacToeCommandLine clean build test
