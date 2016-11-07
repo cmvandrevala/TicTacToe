@@ -39,15 +39,9 @@ public class GameViewController: UIViewController {
     @IBAction public func clearAndPlayGame() {
         presenter?.game.clear()
         if (presenter?.game.isInProgress())! && !(presenter?.game.isCurrentPlayerHuman)! {
-            computerPlayerMakesMove(player: (presenter?.game.firstPlayerType)!)
+            presenter?.computerPlayerMakesMove(player: (presenter?.game.firstPlayerType)!)
         }
         refresh()
-    }
-
-    fileprivate func computerPlayerMakesMove(player: Player) {
-        let move = player.getMove(board: (presenter?.board)!)
-        presenter?.game.takeTurn(cellIndex: move!)
-        presenter?.game.endTurn()
     }
 
     fileprivate func refresh() {

@@ -42,7 +42,7 @@ public class GamePresenter {
         }
     }
 
-    fileprivate func computerPlayerMakesMove(player: Player) {
+    public func computerPlayerMakesMove(player: Player) {
         let move = player.getMove(board: board)
         game.takeTurn(cellIndex: move!)
         game.endTurn()
