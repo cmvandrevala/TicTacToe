@@ -52,7 +52,7 @@ public class GameViewController: UIViewController {
 
     fileprivate func refreshBoard() {
         refreshAllCells()
-        if !(presenter?.game.isInProgress())! {
+        if (presenter?.gameIsOver())! {
             disableAllCells()
         }
     }
@@ -77,13 +77,13 @@ public class GameViewController: UIViewController {
         let currentBoard = presenter!.board.currentBoard()
         switch currentBoard[Int(cell.tag)] {
         case .playerOne:
-            cell.setTitle(presenter?.game.marks.playerOnesMark, for: .normal)
+            cell.setTitle(presenter?.playerOnesMark, for: .normal)
             cell.isEnabled = false
         case .playerTwo:
-            cell.setTitle(presenter?.game.marks.playerTwosMark, for: .normal)
+            cell.setTitle(presenter?.playerTwosMark, for: .normal)
             cell.isEnabled = false
         case .empty:
-            cell.setTitle(presenter?.game.marks.blankMark, for: .normal)
+            cell.setTitle(presenter?.blankMark, for: .normal)
             cell.isEnabled = true
         }
     }
