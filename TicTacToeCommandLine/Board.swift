@@ -10,6 +10,7 @@ open class Board {
 
     private var currentCells = [Int: CellStatus]()
     private var patterns = BoardPatterns()
+    private let emptyJSONString = "{\"moves\": []}"
 
     public init() {
         clear()
@@ -21,6 +22,14 @@ open class Board {
             marksInCells[cell] = status
         }
         return marksInCells
+    }
+    
+    open func currentBoardJSON() -> String {
+        if(boardIsEmpty()) {
+            return emptyJSONString
+        } else {
+            return formattedJSONString()
+        }
     }
     
     open func move(cellIndex: Int, cellStatus: CellStatus) {
@@ -47,6 +56,36 @@ open class Board {
     open func clear() {
         for cell in 0...numberOfCells - 1 {
             currentCells[cell] = .empty
+        }
+    }
+    
+    fileprivate func formattedJSONString() -> String {
+        var rawOutputString = "{\"moves\": ["
+        for move in filledCells() {
+            rawOutputString = "\(rawOutputString)\(move), "
+        }
+        let endIndex = rawOutputString.index(rawOutputString.endIndex, offsetBy: -2)
+        let truncatedOutputString = rawOutputString.substring(to: endIndex)
+        return "\(truncatedOutputString)]}"
+    }
+    
+    fileprivate func boardIsEmpty() -> Bool {
+        return filledCells().count == 0
+    }
+    
+    fileprivate func filledCells() -> [String] {
+        let moveArray = currentBoard().enumerated().map { (index, element) in cellToJSON(index: index, element: element) }
+        return moveArray.filter { $0 != "" }
+    }
+    
+    fileprivate func cellToJSON(index: Int, element: CellStatus) -> String {
+        switch(element) {
+        case .playerOne:
+            return "{\"player_one\": \(index)}"
+        case .playerTwo:
+            return "{\"player_two\": \(index)}"
+        case .empty:
+            return ""
         }
     }
     

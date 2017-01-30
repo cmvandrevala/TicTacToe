@@ -45,6 +45,31 @@ class BoardTests: QuickSpec {
 
         }
         
+        describe("returning a board in JSON format via #currentBoardJSON") {
+            
+            it("starts off with nine empty cells") {
+                expect(board.currentBoardJSON()).to(equal("{\"moves\": []}"))
+            }
+            
+            it("returns a move at index 0 by player one") {
+                board.move(cellIndex: 0, cellStatus: .playerOne)
+                expect(board.currentBoardJSON()).to(equal("{\"moves\": [{\"player_one\": 0}]}"))
+            }
+            
+            it("returns a move at index 2 by player two") {
+                board.move(cellIndex: 2, cellStatus: .playerTwo)
+                expect(board.currentBoardJSON()).to(equal("{\"moves\": [{\"player_two\": 2}]}"))
+            }
+            
+            it("multiple cells can be taken by player one and player two") {
+                board.move(cellIndex: 1, cellStatus: .playerTwo)
+                board.move(cellIndex: 2, cellStatus: .playerOne)
+                board.move(cellIndex: 0, cellStatus: .playerTwo)
+                expect(board.currentBoardJSON()).to(equal("{\"moves\": [{\"player_two\": 0}, {\"player_two\": 1}, {\"player_one\": 2}]}"))
+            }
+            
+        }
+        
         describe("#threeInRow") {
             var board: Board!
             
