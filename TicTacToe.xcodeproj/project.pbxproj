@@ -10,6 +10,10 @@
 		2A59133398252D5A15AC0D8C /* Pods_TicTacToeiOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DDB6B62D0ECC7660DC76C70 /* Pods_TicTacToeiOSTests.framework */; };
 		2D199D24C6A2BDB6A8B45D52 /* Pods_TicTacToeCommandLineTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC09E3F5F41476B23648C945 /* Pods_TicTacToeCommandLineTests.framework */; };
 		6E1811641D8099F200B73B7A /* Rules.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E1811631D8099F200B73B7A /* Rules.swift */; };
+		6E1F6A431E3FA5DE000A9A8C /* NetworkComputerPlayerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E1F6A411E3FA5A9000A9A8C /* NetworkComputerPlayerSpec.swift */; };
+		6E1F6A481E3FA6A1000A9A8C /* NetworkComputerPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E1F6A461E3FA69C000A9A8C /* NetworkComputerPlayer.swift */; };
+		6E1F6A491E3FA7DB000A9A8C /* NetworkComputerPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E1F6A461E3FA69C000A9A8C /* NetworkComputerPlayer.swift */; };
+		6E1F6A4A1E3FA7DC000A9A8C /* NetworkComputerPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E1F6A461E3FA69C000A9A8C /* NetworkComputerPlayer.swift */; };
 		6E22377D1D885A6400676B77 /* ConsoleBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E22377C1D885A6400676B77 /* ConsoleBoard.swift */; };
 		6E22377E1D885A6400676B77 /* ConsoleBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E22377C1D885A6400676B77 /* ConsoleBoard.swift */; };
 		6E2237821D88628300676B77 /* FirstAvailableSpotComputerPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E2237811D88628300676B77 /* FirstAvailableSpotComputerPlayer.swift */; };
@@ -123,6 +127,8 @@
 		53D8AC7E668D1EB7C483B3B5 /* Pods-TicTacToeiOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TicTacToeiOSTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TicTacToeiOSTests/Pods-TicTacToeiOSTests.debug.xcconfig"; sourceTree = "<group>"; };
 		6E1811611D80989D00B73B7A /* RulesTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RulesTests.swift; path = TicTacToeCommandLineTests/RulesTests.swift; sourceTree = "<group>"; };
 		6E1811631D8099F200B73B7A /* Rules.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Rules.swift; path = TicTacToeCommandLine/Rules.swift; sourceTree = "<group>"; };
+		6E1F6A411E3FA5A9000A9A8C /* NetworkComputerPlayerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NetworkComputerPlayerSpec.swift; path = TicTacToeCommandLineTests/NetworkComputerPlayerSpec.swift; sourceTree = "<group>"; };
+		6E1F6A461E3FA69C000A9A8C /* NetworkComputerPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkComputerPlayer.swift; sourceTree = "<group>"; };
 		6E22377C1D885A6400676B77 /* ConsoleBoard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsoleBoard.swift; sourceTree = "<group>"; };
 		6E22377F1D885A7900676B77 /* ConsoleBoardTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsoleBoardTests.swift; sourceTree = "<group>"; };
 		6E2237811D88628300676B77 /* FirstAvailableSpotComputerPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FirstAvailableSpotComputerPlayer.swift; path = TicTacToeCommandLine/FirstAvailableSpotComputerPlayer.swift; sourceTree = "<group>"; };
@@ -263,6 +269,7 @@
 				6E9995251D7F60D500616838 /* Board.swift */,
 				6ECEA3521D883F6F0035E9DA /* Clock.swift */,
 				6EEF7BE41DAD4FAB000EC22C /* BoardPatterns.swift */,
+				6E1F6A461E3FA69C000A9A8C /* NetworkComputerPlayer.swift */,
 			);
 			name = TicTacToe;
 			sourceTree = "<group>";
@@ -278,6 +285,7 @@
 				6E1811611D80989D00B73B7A /* RulesTests.swift */,
 				6E26AB461DA6D048002B8C60 /* PlayerMarksTests.swift */,
 				6EEF7BE21DAD4F79000EC22C /* BoardPatternsTests.swift */,
+				6E1F6A411E3FA5A9000A9A8C /* NetworkComputerPlayerSpec.swift */,
 			);
 			name = TicTacToeTests;
 			sourceTree = "<group>";
@@ -629,6 +637,7 @@
 				6E75F1F71D8729AA00FAB787 /* TTTMoveReader.swift in Sources */,
 				6EFC78AB1D9070B5005BB491 /* MainMenu.swift in Sources */,
 				6E2237831D88628300676B77 /* FirstAvailableSpotComputerPlayer.swift in Sources */,
+				6E1F6A481E3FA6A1000A9A8C /* NetworkComputerPlayer.swift in Sources */,
 				6EEF7BE61DAD4FD1000EC22C /* BoardPatterns.swift in Sources */,
 				6EA3D63E1DB11434008DB8C8 /* GameFactory.swift in Sources */,
 				6E36FC8B1D9416CA0018E83F /* RandomSpotComputerPlayer.swift in Sources */,
@@ -670,6 +679,7 @@
 				6EA3D6451DB12A94008DB8C8 /* GameType.swift in Sources */,
 				6ECA90301D9DA0CE00E55C18 /* Game.swift in Sources */,
 				6ECA90381D9DA0CE00E55C18 /* TwoPlayerGame.swift in Sources */,
+				6E1F6A431E3FA5DE000A9A8C /* NetworkComputerPlayerSpec.swift in Sources */,
 				6ECA902B1D9DA0CE00E55C18 /* Clock.swift in Sources */,
 				6ECA90321D9DA0CE00E55C18 /* MainMenu.swift in Sources */,
 				6E420ED61D9D9E6C009B308F /* ConsoleBoardTests.swift in Sources */,
@@ -678,6 +688,7 @@
 				6E420EDF1D9D9E6C009B308F /* TTTAcceptanceTests.swift in Sources */,
 				6EA3D63F1DB11434008DB8C8 /* GameFactory.swift in Sources */,
 				6E26AB471DA6D048002B8C60 /* PlayerMarksTests.swift in Sources */,
+				6E1F6A4A1E3FA7DC000A9A8C /* NetworkComputerPlayer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -689,6 +700,7 @@
 				6E2237821D88628300676B77 /* FirstAvailableSpotComputerPlayer.swift in Sources */,
 				6EAD07CF1DA557D80013AE5B /* GameViewController.swift in Sources */,
 				6EB5C1DB1D7F5C7800A5829F /* MainMenuViewController.swift in Sources */,
+				6E1F6A491E3FA7DB000A9A8C /* NetworkComputerPlayer.swift in Sources */,
 				6E1811641D8099F200B73B7A /* Rules.swift in Sources */,
 				6EF6F6BE1D81D20D00B545F2 /* TicTacToeMessages.swift in Sources */,
 				6ED8FB1A1DCBB4CB008BE705 /* GamePresenter.swift in Sources */,
