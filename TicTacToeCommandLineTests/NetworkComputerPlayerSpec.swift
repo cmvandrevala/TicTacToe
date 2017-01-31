@@ -7,10 +7,12 @@ class NetworkComputerPlayerTests: QuickSpec {
         
         var ai: NetworkComputerPlayer!
         var board: Board!
+        var game: Game!
         
         beforeEach {
             ai = NetworkComputerPlayer()
             board = Board()
+            game = Game(board: board)
         }
         
         describe("network player parameters") {
@@ -27,7 +29,7 @@ class NetworkComputerPlayerTests: QuickSpec {
         
         describe("filled board") {
             
-            it("returns nil if there are no available spaces") {
+            it("does nothing if the board is filled") {
                 board.move(cellIndex: 0, cellStatus: .playerTwo)
                 board.move(cellIndex: 1, cellStatus: .playerTwo)
                 board.move(cellIndex: 2, cellStatus: .playerTwo)
@@ -37,7 +39,8 @@ class NetworkComputerPlayerTests: QuickSpec {
                 board.move(cellIndex: 6, cellStatus: .playerTwo)
                 board.move(cellIndex: 7, cellStatus: .playerTwo)
                 board.move(cellIndex: 8, cellStatus: .playerTwo)
-                expect(ai.getMove(board: board)).to(beNil())
+                ai.makeMove(game: game)
+                expect(board.isFilled()).to(beTruthy())
             }
             
         }

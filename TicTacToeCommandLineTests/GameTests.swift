@@ -53,16 +53,6 @@ class GameTests: QuickSpec {
                 expect(String(describing: mirrorPlayerOne.subjectType)).to(equal("FirstAvailableSpotComputerPlayer"))
                 expect(String(describing: mirrorPlayerTwo.subjectType)).to(equal("FirstAvailableSpotComputerPlayer"))
             }
-
-            it("plays a game through with two non-default players") {
-                game.firstPlayerType = RandomSpotComputerPlayer()
-                game.secondPlayerType = RandomSpotComputerPlayer()
-                game.play()
-                let mirrorPlayerOne = Mirror(reflecting: game.firstPlayerType)
-                let mirrorPlayerTwo = Mirror(reflecting: game.secondPlayerType)
-                expect(String(describing: mirrorPlayerOne.subjectType)).to(equal("RandomSpotComputerPlayer"))
-                expect(String(describing: mirrorPlayerTwo.subjectType)).to(equal("RandomSpotComputerPlayer"))
-            }
             
         }
         

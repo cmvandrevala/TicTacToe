@@ -80,8 +80,7 @@ public class GamePresenter {
     }
 
     private func computerPlayerMakesMove(player: Player) {
-        let move = player.getMove(board: board)
-        game.takeTurn(cellIndex: move!)
+        player.makeMove(game: game)
         game.endTurn()
     }
 

@@ -8,9 +8,10 @@ open class HumanPlayer: Player {
         wantsToContinuePlaying = !wantsToContinuePlaying
     }
     
-    open func getMove(board: Board) -> Int? {
-        let inputReader = TTTMoveReader(board: board)
-        return Int(inputReader.getInput()!)
+    open func makeMove(game: Game) {
+        let inputReader = TTTMoveReader(board: game.gameBoard)
+        let cellIndex = Int(inputReader.getInput()!)
+        game.takeTurn(cellIndex: cellIndex!)
     }
     
     

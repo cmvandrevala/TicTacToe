@@ -5,7 +5,7 @@ open class Game: TwoPlayerGame {
         case playerTwo
     }
 
-    private let gameBoard: Board
+    public let gameBoard: Board
     private let clock = Clock()
     private let rules: Rules
     private let boardPrinter: ConsoleBoard
@@ -96,17 +96,15 @@ open class Game: TwoPlayerGame {
     }
 
     fileprivate func gameLoop() {
-        var cellIndex: Int
         while isInProgress() {
             printBoardAndBeginningMessagesToConsole()
             switch currentPlayer {
             case .playerOne:
-                cellIndex = firstPlayerType.getMove(board: gameBoard)!
+                firstPlayerType.makeMove(game: self)
             case .playerTwo:
-                cellIndex = secondPlayerType.getMove(board: gameBoard)!
+                secondPlayerType.makeMove(game: self)
             }
-            takeTurn(cellIndex: cellIndex)
-            printEndingMessagesToConsole(cellIndex: cellIndex)
+//            printEndingMessagesToConsole(cellIndex: cellIndex)
             endTurn()
         }
         gameOverMessage()

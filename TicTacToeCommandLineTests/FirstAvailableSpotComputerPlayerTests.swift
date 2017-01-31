@@ -7,25 +7,32 @@ class FirstAvailableSpotComputerPlayerTests: QuickSpec {
         
         var ai: FirstAvailableSpotComputerPlayer!
         var board: Board!
+        var game: Game!
         
         beforeEach {
             ai = FirstAvailableSpotComputerPlayer()
             board = Board()
+            game = Game(board: board)
         }
         
         describe("filled board") {
 
-            it("returns nil if there are no available spaces") {
-                board.move(cellIndex: 0, cellStatus: .playerTwo)
-                board.move(cellIndex: 1, cellStatus: .playerTwo)
-                board.move(cellIndex: 2, cellStatus: .playerTwo)
-                board.move(cellIndex: 3, cellStatus: .playerTwo)
-                board.move(cellIndex: 4, cellStatus: .playerOne)
-                board.move(cellIndex: 5, cellStatus: .playerTwo)
-                board.move(cellIndex: 6, cellStatus: .playerTwo)
-                board.move(cellIndex: 7, cellStatus: .playerTwo)
-                board.move(cellIndex: 8, cellStatus: .playerTwo)
-                expect(ai.getMove(board: board)).to(beNil())
+            describe("filled board") {
+                
+                it("does nothing if the board is filled") {
+                    board.move(cellIndex: 0, cellStatus: .playerTwo)
+                    board.move(cellIndex: 1, cellStatus: .playerTwo)
+                    board.move(cellIndex: 2, cellStatus: .playerTwo)
+                    board.move(cellIndex: 3, cellStatus: .playerTwo)
+                    board.move(cellIndex: 4, cellStatus: .playerOne)
+                    board.move(cellIndex: 5, cellStatus: .playerTwo)
+                    board.move(cellIndex: 6, cellStatus: .playerTwo)
+                    board.move(cellIndex: 7, cellStatus: .playerTwo)
+                    board.move(cellIndex: 8, cellStatus: .playerTwo)
+                    ai.makeMove(game: game)
+                    expect(board.isFilled()).to(beTruthy())
+                }
+                
             }
 
         }
@@ -41,7 +48,8 @@ class FirstAvailableSpotComputerPlayerTests: QuickSpec {
                 board.move(cellIndex: 6, cellStatus: .playerOne)
                 board.move(cellIndex: 7, cellStatus: .playerOne)
                 board.move(cellIndex: 8, cellStatus: .playerOne)
-                expect(ai.getMove(board: board)).to(equal(1))
+                ai.makeMove(game: game)
+                expect(board.isFilled()).to(beTruthy())
             }
             
             it("takes the final unoccupied cell at the end of the game if it is a win") {
@@ -53,7 +61,8 @@ class FirstAvailableSpotComputerPlayerTests: QuickSpec {
                 board.move(cellIndex: 6, cellStatus: .playerTwo)
                 board.move(cellIndex: 7, cellStatus: .playerTwo)
                 board.move(cellIndex: 8, cellStatus: .playerTwo)
-                expect(ai.getMove(board: board)).to(equal(4))
+                ai.makeMove(game: game)
+                expect(board.isFilled()).to(beTruthy())
             }
             
         }
@@ -66,28 +75,32 @@ class FirstAvailableSpotComputerPlayerTests: QuickSpec {
                 board.move(cellIndex: 4, cellStatus: .playerOne)
                 board.move(cellIndex: 6, cellStatus: .playerTwo)
                 board.move(cellIndex: 7, cellStatus: .playerOne)
-                expect(ai.getMove(board: board)).to(equal(0))
+                ai.makeMove(game: game)
+                expect(board.isEmptyCellAtIndex(cellIndex: 0)).to(beFalsy())
             }
             
             it("takes the second cell if the first one is taken") {
                 board.move(cellIndex: 0, cellStatus: .playerTwo)
                 board.move(cellIndex: 2, cellStatus: .playerTwo)
                 board.move(cellIndex: 3, cellStatus: .playerOne)
-                expect(ai.getMove(board: board)).to(equal(1))
+                ai.makeMove(game: game)
+                expect(board.isEmptyCellAtIndex(cellIndex: 1)).to(beFalsy())
             }
             
             it("takes the next available cell") {
                 board.move(cellIndex: 0, cellStatus: .playerTwo)
                 board.move(cellIndex: 1, cellStatus: .playerTwo)
                 board.move(cellIndex: 2, cellStatus: .playerOne)
-                expect(ai.getMove(board: board)).to(equal(3))
+                ai.makeMove(game: game)
+                expect(board.isEmptyCellAtIndex(cellIndex: 3)).to(beFalsy())
             }
             
             it("takes the next available cell, even if it means a loss") {
                 board.move(cellIndex: 0, cellStatus: .playerTwo)
                 board.move(cellIndex: 2, cellStatus: .playerOne)
                 board.move(cellIndex: 5, cellStatus: .playerOne)
-                expect(ai.getMove(board: board)).to(equal(1))
+                ai.makeMove(game: game)
+                expect(board.isEmptyCellAtIndex(cellIndex: 1)).to(beFalsy())
             }
             
         }
