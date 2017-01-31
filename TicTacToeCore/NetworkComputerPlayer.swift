@@ -10,7 +10,6 @@ open class NetworkComputerPlayer: Player {
     public func makeMove(game: Game) {
         if(game.isInProgress()) {
             let url = createUrl(game: game)
-            print(url)
             let config = URLSessionConfiguration.default
             let session = URLSession(configuration: config)
             
@@ -20,11 +19,9 @@ open class NetworkComputerPlayer: Player {
                     print(error!.localizedDescription)
                 } else {
                     do {
-                        if let json = try JSONSerialization.jsonObject(with: data!, options: .allowFragments) as? [String: Any] {
-                            let cellIndex = json["move"] as! Int
-                            print("XXXXXXXXXXXX")
-                            print(cellIndex)
-                            print("XXXXXXXXXXXX")
+                        if let json = try JSONSerialization.jsonObject(with: data!, options: .allowFragments) as? [String: Int] {
+                            let cellIndex = json["move"]!
+                            print("The API returned \(cellIndex).")
                             game.takeTurn(cellIndex: cellIndex)
                         }
                     } catch {

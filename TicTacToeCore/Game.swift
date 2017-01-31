@@ -97,6 +97,7 @@ open class Game: TwoPlayerGame {
 
     fileprivate func gameLoop() {
         while isInProgress() {
+            printBoardAndBeginningMessagesToConsole()
             switch currentPlayer {
             case .playerOne:
                 firstPlayerType.makeMove(game: self)
@@ -106,6 +107,26 @@ open class Game: TwoPlayerGame {
             endTurn()
         }
         gameOverMessage()
+    }
+    
+    fileprivate func printBoardAndBeginningMessagesToConsole() {
+        let boardPrinter = ConsoleBoard(board: game.gameBoard)
+        print(boardPrinter.formattedBoardForConsole())
+        switch currentPlayer {
+        case .playerOne:
+            print(messages.itsPlayerOnesTurn(playerOnesMark: marks.playerOnesMark))
+        case .playerTwo:
+            print(messages.itsPlayerTwosTurn(playerTwosMark: marks.playerTwosMark))
+        }
+    }
+    
+    fileprivate func printEndingMessagesToConsole(cellIndex: Int, currentPlayer: Game.PlayerNumber) {
+        switch currentPlayer {
+        case .playerOne:
+            print(messages.playerOneJustMovedIn(cellIndex: cellIndex))
+        case .playerTwo:
+            print(messages.playerTwoJustMovedIn(cellIndex: cellIndex))
+        }
     }
     
     fileprivate func gameOverMessage() {

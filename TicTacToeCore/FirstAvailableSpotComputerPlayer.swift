@@ -13,7 +13,7 @@ open class FirstAvailableSpotComputerPlayer: Player {
             printEndingMessagesToConsole(cellIndex: cellIndex!, currentPlayer: game.currentPlayer)
         }
     }
-    
+
     fileprivate func printBoardAndBeginningMessagesToConsole(game: Game) {
         let boardPrinter = ConsoleBoard(board: game.gameBoard)
         print(boardPrinter.formattedBoardForConsole())

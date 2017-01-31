@@ -109,7 +109,7 @@ class IOSAcceptanceTests: QuickSpec {
                     segue = UIStoryboardSegue(identifier: "ComputerVsHuman", source: mainMenuVC, destination: gameVC)
                 }
 
-                it("initializes from the main menu") {
+                xit("initializes from the main menu") {
                     let button = UIButton()
                     gameVC.cell0 = button
                     mainMenuVC.prepare(for: segue, sender: UIButton())
@@ -118,7 +118,7 @@ class IOSAcceptanceTests: QuickSpec {
                     expect(gameVC.cell0.titleLabel?.text).to(equal("X"))
                 }
 
-                it("plays a game to completion") {
+                xit("plays a game to completion") {
                     let button1 = UIButton()
                     let button3 = UIButton()
                     let button5 = UIButton()
