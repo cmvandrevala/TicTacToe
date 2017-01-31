@@ -115,6 +115,20 @@ class RulesTests: QuickSpec {
                 rules.updateGameStatus()
                 expect(rules.isGameOver()).to(beTrue())
             }
+            
+            it("returns true if all of the cells are filled with one player") {
+                board.move(cellIndex: 0, cellStatus: .playerOne)
+                board.move(cellIndex: 1, cellStatus: .playerOne)
+                board.move(cellIndex: 2, cellStatus: .playerOne)
+                board.move(cellIndex: 3, cellStatus: .playerOne)
+                board.move(cellIndex: 4, cellStatus: .playerOne)
+                board.move(cellIndex: 5, cellStatus: .playerOne)
+                board.move(cellIndex: 6, cellStatus: .playerOne)
+                board.move(cellIndex: 7, cellStatus: .playerOne)
+                board.move(cellIndex: 8, cellStatus: .playerOne)
+                rules.updateGameStatus()
+                expect(rules.isGameOver()).to(beTrue())
+            }
 
         }
         

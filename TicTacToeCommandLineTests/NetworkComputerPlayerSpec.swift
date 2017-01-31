@@ -29,21 +29,19 @@ class NetworkComputerPlayerTests: QuickSpec {
         
         describe("filled board") {
             
-            it("does nothing if the board is filled") {
-                board.move(cellIndex: 0, cellStatus: .playerTwo)
-                board.move(cellIndex: 1, cellStatus: .playerTwo)
-                board.move(cellIndex: 2, cellStatus: .playerTwo)
-                board.move(cellIndex: 3, cellStatus: .playerTwo)
-                board.move(cellIndex: 4, cellStatus: .playerOne)
-                board.move(cellIndex: 5, cellStatus: .playerTwo)
-                board.move(cellIndex: 6, cellStatus: .playerTwo)
-                board.move(cellIndex: 7, cellStatus: .playerTwo)
-                board.move(cellIndex: 8, cellStatus: .playerTwo)
-                ai.makeMove(game: game)
-                expect(board.isFilled()).to(beTruthy())
+            describe("filled board") {
+                
+                it("does nothing if the board is filled") {
+                    for i in 0...8 {
+                        game.takeTurn(cellIndex: i)
+                        game.endTurn()
+                    }
+                    ai.makeMove(game: game)
+                    expect(board.isFilled()).to(beTruthy())
+                }
+                
             }
             
         }
-        
     }
 }
