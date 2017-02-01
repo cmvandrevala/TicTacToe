@@ -3,8 +3,4 @@ osx_image: xcode8.2
 xcode_workspace: TicTacToe.xcworkspace
 xcode_scheme: TicTacToeCommandLine
 
-before_install:
-  - brew update
-  - brew outdated xctool || brew upgrade xctool
-
-script: xctool -workspace TicTacToe.xcworkspace -scheme TicTacToeCommandLine clean build test
+script: xcodebuild test -workspace TicTacToe.xcworkspace -scheme TicTacToeCommandLine -destination 'platform=OS X,arch=x86_64'
