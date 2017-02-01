@@ -13,13 +13,13 @@ open class GameFactory {
             game.secondPlayerType = HumanPlayer()
         case .humanVsComputer:
             game.firstPlayerType = HumanPlayer()
-            game.secondPlayerType = NetworkComputerPlayer()
+            game.secondPlayerType = FirstAvailableSpotComputerPlayer()
         case .computerVsHuman:
-            game.firstPlayerType = NetworkComputerPlayer()
+            game.firstPlayerType = FirstAvailableSpotComputerPlayer()
             game.secondPlayerType = HumanPlayer()
         case .computerVsComputer:
-            game.firstPlayerType = NetworkComputerPlayer()
-            game.secondPlayerType = NetworkComputerPlayer()
+            game.firstPlayerType = FirstAvailableSpotComputerPlayer()
+            game.secondPlayerType = FirstAvailableSpotComputerPlayer()
         }
         
     }

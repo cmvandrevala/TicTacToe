@@ -1,6 +1,7 @@
 import Quick
 import Nimble
-import TicTacToeCommandLine
+import UIKit
+import TicTacToeiOS
 
 class NetworkComputerPlayerTests: QuickSpec {
     override func spec() {
@@ -10,7 +11,7 @@ class NetworkComputerPlayerTests: QuickSpec {
         var game: Game!
         
         beforeEach {
-            ai = NetworkComputerPlayer()
+            ai = NetworkComputerPlayer(view: GameViewController())
             board = Board()
             game = Game(board: board)
         }

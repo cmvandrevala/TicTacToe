@@ -7,7 +7,7 @@ class GameFactoryTests: QuickSpec {
 
         describe("creating a new game") {
 
-            xit("creates a computer vs. computer game by default") {
+            it("creates a computer vs. computer game by default") {
                 let (game, _) = GameFactory.newGame()
                 let mirrorPlayerOne = Mirror(reflecting: game.firstPlayerType)
                 let mirrorPlayerTwo = Mirror(reflecting: game.secondPlayerType)
@@ -34,7 +34,7 @@ class GameFactoryTests: QuickSpec {
                 expect(String(describing: mirrorPlayerTwo.subjectType)).to(equal("HumanPlayer"))
             }
 
-            xit("updates an existing game to human vs. computer") {
+            it("updates an existing game to human vs. computer") {
                 let board = Board()
                 let game = Game(board: board)
                 GameFactory.updateGame(game: game, type: .humanVsComputer)
@@ -44,7 +44,7 @@ class GameFactoryTests: QuickSpec {
                 expect(String(describing: mirrorPlayerTwo.subjectType)).to(equal("FirstAvailableSpotComputerPlayer"))
             }
 
-            xit("updates an existing game to computer vs. human") {
+            it("updates an existing game to computer vs. human") {
                 let board = Board()
                 let game = Game(board: board)
                 GameFactory.updateGame(game: game, type: .computerVsHuman)
@@ -54,7 +54,7 @@ class GameFactoryTests: QuickSpec {
                 expect(String(describing: mirrorPlayerTwo.subjectType)).to(equal("HumanPlayer"))
             }
 
-            xit("updates an existing game to computer vs. computer") {
+            it("updates an existing game to computer vs. computer") {
                 let board = Board()
                 let game = Game(board: board)
                 GameFactory.updateGame(game: game, type: .computerVsComputer)

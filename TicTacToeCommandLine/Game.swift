@@ -25,8 +25,8 @@ open class Game: TwoPlayerGame {
         }
     }
 
-    public var firstPlayerType: Player = NetworkComputerPlayer()
-    public var secondPlayerType: Player = NetworkComputerPlayer()
+    public var firstPlayerType: Player = FirstAvailableSpotComputerPlayer()
+    public var secondPlayerType: Player = FirstAvailableSpotComputerPlayer()
 
     public var isCurrentPlayerHuman: Bool {
         get {

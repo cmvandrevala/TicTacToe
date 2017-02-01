@@ -7,18 +7,18 @@ class TTTAcceptanceTests: QuickSpec {
         
         describe("playing a full game between two first available space computers") {
             
-            xit("starts off in progress") {
+            it("starts off in progress") {
                 let game = Game(board: Board())
                 expect(game.isInProgress()).to(beTrue())
             }
 
-            xit("plays through and exits properly") {
+            it("plays through and exits properly") {
                 let game = Game(board: Board())
                 game.play()
                 expect(game.isInProgress()).to(beFalse())
             }
 
-            xit("marks the first seven cells of the board") {
+            it("marks the first seven cells of the board") {
                 let board = Board()
                 let game = Game(board: board)
                 game.play()
