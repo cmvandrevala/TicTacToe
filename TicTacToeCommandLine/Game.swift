@@ -8,7 +8,7 @@ open class Game: TwoPlayerGame {
     public let gameBoard: Board
     private let clock = Clock()
     private let rules: Rules
-    private let boardPrinter: ConsoleBoard
+    private let boardPrinter: ConsoleBoardPrinter
     private let messages = TicTacToeMessages()
 
     public let marks = PlayerMarks()
@@ -49,7 +49,7 @@ open class Game: TwoPlayerGame {
 
     public init(board: Board) {
         gameBoard = board
-        boardPrinter = ConsoleBoard(board: gameBoard)
+        boardPrinter = ConsoleBoardPrinter(board: gameBoard)
         rules = Rules(board: gameBoard)
     }
     

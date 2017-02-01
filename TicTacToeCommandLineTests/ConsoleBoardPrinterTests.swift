@@ -2,15 +2,15 @@ import Quick
 import Nimble
 import TicTacToeCommandLine
 
-class ConsoleBoardTests: QuickSpec {
+class ConsoleBoardPrinterTests: QuickSpec {
     override func spec() {
         
         var board: Board!
-        var printer: ConsoleBoard!
+        var printer: ConsoleBoardPrinter!
         
         beforeEach {
             board = Board()
-            printer = ConsoleBoard(board: board)
+            printer = ConsoleBoardPrinter(board: board)
         }
         
         describe("#formattedBoardForConsole") {

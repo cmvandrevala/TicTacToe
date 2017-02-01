@@ -15,7 +15,7 @@ open class FirstAvailableSpotComputerPlayer: Player {
     }
 
     fileprivate func printBoardAndBeginningMessagesToConsole(game: Game) {
-        let boardPrinter = ConsoleBoard(board: game.gameBoard)
+        let boardPrinter = ConsoleBoardPrinter(board: game.gameBoard)
         print(boardPrinter.formattedBoardForConsole())
         switch game.currentPlayer {
         case .playerOne:
