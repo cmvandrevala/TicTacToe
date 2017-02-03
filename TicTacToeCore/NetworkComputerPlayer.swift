@@ -8,8 +8,9 @@ open class NetworkComputerPlayer: Player {
         self.view = view
     }
     
-    public let urlString = "https://dry-wave-85958.herokuapp.com/api/get_move"
+    public let urlString = "https://dry-wave-85958.herokuapp.com/api/computer_move"
     public let boardKey = "board"
+    public let clientNameKey = "client_name"
     
     public func makeMove(game: Game) {
         if(game.isInProgress()) {
@@ -45,7 +46,7 @@ open class NetworkComputerPlayer: Player {
     fileprivate func createUrl(game: Game) -> URL {
         let boardValue = game.gameBoard.currentBoardJSON()
         var urlComponents = URLComponents(string: urlString)!
-        urlComponents.queryItems = [URLQueryItem(name: boardKey, value: boardValue)]
+        urlComponents.queryItems = [URLQueryItem(name: boardKey, value: boardValue), URLQueryItem(name: clientNameKey, value: "iPhone App")]
         return urlComponents.url!
     }
     
