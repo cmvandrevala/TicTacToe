@@ -9,7 +9,6 @@ open class Board {
     open let numberOfCells = 9
 
     private var currentCells = [Int: CellStatus]()
-    private var patterns = BoardPatterns()
     private let emptyJSONString = "{\"moves\": []}"
 
     public init() {
@@ -37,7 +36,7 @@ open class Board {
     }
 
     open func threeInRow() -> CellStatus {
-        for group in patterns.groupsOfThreeCells() {
+        for group in groupsOfThreeCells() {
             if areAllCellsMatching(group: group) && areAllCellsFilled(group: group) {
                 return currentCells[group[0]]!
             }
@@ -57,6 +56,22 @@ open class Board {
         for cell in 0...numberOfCells - 1 {
             currentCells[cell] = .empty
         }
+    }
+    
+    fileprivate func groupsOfThreeCells() -> [[Int]] {
+        return rows() + columns() + diagonals()
+    }
+    
+    fileprivate func rows() -> [[Int]] {
+        return [ [0, 1, 2], [3, 4, 5], [6, 7, 8] ]
+    }
+    
+    fileprivate func columns() -> [[Int]] {
+        return [ [0, 3, 6], [1, 4, 7], [2, 5, 8] ]
+    }
+    
+    fileprivate func diagonals() -> [[Int]] {
+        return [ [0, 4, 8], [2, 4, 6] ]
     }
     
     fileprivate func formattedJSONString() -> String {

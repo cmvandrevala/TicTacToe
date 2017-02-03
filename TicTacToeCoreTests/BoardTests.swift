@@ -153,6 +153,6 @@ class BoardTests: QuickSpec {
             }
 
         }
-
+        
     }
 }
