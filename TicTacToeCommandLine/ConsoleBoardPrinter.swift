@@ -1,6 +1,6 @@
 import Foundation
 
-open class ConsoleBoard {
+open class ConsoleBoardPrinter {
 
     var marks: PlayerMarks
     var messages: TicTacToeMessages

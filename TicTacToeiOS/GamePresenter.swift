@@ -80,9 +80,8 @@ public class GamePresenter {
     }
 
     private func computerPlayerMakesMove(player: Player) {
-        let move = player.getMove(board: board)
-        game.takeTurn(cellIndex: move!)
-        game.endTurn()
+        let networkPlayer = NetworkComputerPlayer(view: view)
+        networkPlayer.makeMove(game: game)
     }
 
 }

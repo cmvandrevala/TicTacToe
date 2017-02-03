@@ -1,23 +1,19 @@
-open class HumanPlayer: Player {
-    
-    open var wantsToContinuePlaying: Bool = true
-    private let messages = TicTacToeMessages()
-    public let marks = PlayerMarks()
+open class FirstAvailableSpotComputerPlayer: Player {
     
     public init() {}
     
-    open func noLongerWantsToPlay() {
-        wantsToContinuePlaying = !wantsToContinuePlaying
-    }
+    private let messages = TicTacToeMessages()
+    public let marks = PlayerMarks()
     
     open func makeMove(game: Game) {
         printBoardAndBeginningMessagesToConsole(game: game)
-        let inputReader = TTTMoveReader(board: game.gameBoard)
-        let cellIndex = Int(inputReader.getInput()!)
-        game.takeTurn(cellIndex: cellIndex!)
-        printEndingMessagesToConsole(cellIndex: cellIndex!, currentPlayer: game.currentPlayer)
+        if !game.gameBoard.isFilled() {
+            let cellIndex = game.gameBoard.currentBoard().index(of: .empty)
+            game.takeTurn(cellIndex: cellIndex!)
+            printEndingMessagesToConsole(cellIndex: cellIndex!, currentPlayer: game.currentPlayer)
+        }
     }
-    
+
     fileprivate func printBoardAndBeginningMessagesToConsole(game: Game) {
         let boardPrinter = ConsoleBoardPrinter(board: game.gameBoard)
         print(boardPrinter.formattedBoardForConsole())
@@ -37,6 +33,5 @@ open class HumanPlayer: Player {
             print(messages.playerTwoJustMovedIn(cellIndex: cellIndex))
         }
     }
-    
-    
+
 }

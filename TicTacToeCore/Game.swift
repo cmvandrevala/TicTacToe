@@ -8,7 +8,7 @@ open class Game: TwoPlayerGame {
     public let gameBoard: Board
     private let clock = Clock()
     private let rules: Rules
-    private let boardPrinter: ConsoleBoardPrinter
+    private let boardPrinter: ConsoleBoard
     private let messages = TicTacToeMessages()
 
     public let marks = PlayerMarks()
@@ -25,8 +25,8 @@ open class Game: TwoPlayerGame {
         }
     }
 
-    public var firstPlayerType: Player = FirstAvailableSpotComputerPlayer()
-    public var secondPlayerType: Player = FirstAvailableSpotComputerPlayer()
+    public var firstPlayerType: Player = NetworkComputerPlayer()
+    public var secondPlayerType: Player = NetworkComputerPlayer()
 
     public var isCurrentPlayerHuman: Bool {
         get {
@@ -49,7 +49,7 @@ open class Game: TwoPlayerGame {
 
     public init(board: Board) {
         gameBoard = board
-        boardPrinter = ConsoleBoardPrinter(board: gameBoard)
+        boardPrinter = ConsoleBoard(board: gameBoard)
         rules = Rules(board: gameBoard)
     }
     
@@ -97,6 +97,7 @@ open class Game: TwoPlayerGame {
 
     fileprivate func gameLoop() {
         while isInProgress() {
+            printBoardAndBeginningMessagesToConsole()
             switch currentPlayer {
             case .playerOne:
                 firstPlayerType.makeMove(game: self)
@@ -106,6 +107,26 @@ open class Game: TwoPlayerGame {
             endTurn()
         }
         gameOverMessage()
+    }
+    
+    fileprivate func printBoardAndBeginningMessagesToConsole() {
+        let boardPrinter = ConsoleBoard(board: game.gameBoard)
+        print(boardPrinter.formattedBoardForConsole())
+        switch currentPlayer {
+        case .playerOne:
+            print(messages.itsPlayerOnesTurn(playerOnesMark: marks.playerOnesMark))
+        case .playerTwo:
+            print(messages.itsPlayerTwosTurn(playerTwosMark: marks.playerTwosMark))
+        }
+    }
+    
+    fileprivate func printEndingMessagesToConsole(cellIndex: Int, currentPlayer: Game.PlayerNumber) {
+        switch currentPlayer {
+        case .playerOne:
+            print(messages.playerOneJustMovedIn(cellIndex: cellIndex))
+        case .playerTwo:
+            print(messages.playerTwoJustMovedIn(cellIndex: cellIndex))
+        }
     }
     
     fileprivate func gameOverMessage() {
