@@ -3,4 +3,4 @@ osx_image: xcode8.2
 xcode_workspace: TicTacToe.xcworkspace
 xcode_scheme: TicTacToeCommandLine
 
-script: xcodebuild test -workspace TicTacToe.xcworkspace -scheme TicTacToeCommandLine -destination 'platform=OS X,arch=x86_64'
+script: xcodebuild test -workspace TicTacToe.xcworkspace -scheme TicTacToeiOS -sdk iphoneos10.2
