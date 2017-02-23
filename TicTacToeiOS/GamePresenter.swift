@@ -8,13 +8,27 @@ public class GamePresenter {
     private var view: GameViewController
 
     public init(viewController: GameViewController) {
-        (game, board) = GameFactory.newGame()
+        board = Board()
+        game = Game(board: board)
         view = viewController
     }
 
     public func setGameType(gameType: GameType) {
         self.gameType = gameType
-        GameFactory.updateGame(game: game, type: gameType)
+        switch self.gameType {
+        case .humanVsHuman:
+            game.firstPlayerType = HumanPlayer()
+            game.secondPlayerType = HumanPlayer()
+        case .humanVsComputer:
+            game.firstPlayerType = HumanPlayer()
+            game.secondPlayerType = FirstAvailableSpotComputerPlayer()
+        case .computerVsHuman:
+            game.firstPlayerType = FirstAvailableSpotComputerPlayer()
+            game.secondPlayerType = HumanPlayer()
+        case .computerVsComputer:
+            game.firstPlayerType = FirstAvailableSpotComputerPlayer()
+            game.secondPlayerType = FirstAvailableSpotComputerPlayer()
+        }
     }
 
     public var currentMessage: String {
